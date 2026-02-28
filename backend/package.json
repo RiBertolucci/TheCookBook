@@ -1,0 +1,20 @@
+{
+  "name": "thecookbook-backend",
+  "version": "0.1.0",
+  "description": "Backend service for TheCookBook project, built with Node.js",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "sync": "node src/index.js sync"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "keywords": [
+    "cookbook",
+    "markdown",
+    "recipes"
+  ],
+  "author": "",
+  "license": "MIT"
+}

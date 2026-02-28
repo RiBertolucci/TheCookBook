@@ -1,0 +1,71 @@
+<div class="container mt-4">
+  <h1 class="mb-3">{{ title }}</h1>
+  <!-- debug: show full hierarchy -->
+  <pre style="font-size:0.75rem;color:gray;">{{ hierarchy | json }}</pre>
+  <div *ngIf="hierarchy">
+    <div>
+      <ng-container *ngFor="let section of keys(hierarchy)">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <button (click)="toggleExpand(section)" style="width:28px">{{ isExpanded(section) ? '▾' : '▸' }}</button>
+          <strong (click)="toggleExpand(section)" style="cursor:pointer">{{ section }}</strong>
+        </div>
+        <div *ngIf="isExpanded(section)" style="margin-left:1rem;margin-top:6px;">
+          <ng-container *ngTemplateOutlet="folderNode; context: { node: hierarchy[section], path: section }"></ng-container>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <!-- Tabbed viewer area -->
+  <div class="mt-4">
+    <div class="tabs-bar" style="display:flex;align-items:center;gap:8px;">
+      <div style="flex:1;overflow:hidden;">
+        <div style="display:flex;overflow-x:auto;white-space:nowrap;padding-bottom:4px;">
+          <ng-container *ngFor="let t of tabs">
+            <div (click)="activeTabId = t.id" [class.active]="activeTabId===t.id" style="display:inline-flex;align-items:center;padding:6px 10px;border:1px solid #ddd;border-radius:4px;margin-right:6px;cursor:pointer;background:#f8f9fa;">
+              <span style="margin-right:8px;">{{ t.title }}</span>
+              <button class="btn btn-sm btn-outline-secondary" (click)="$event.stopPropagation(); closeTab(t.id)">×</button>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="activeTabId !== null" class="border p-3 mt-3" style="max-height:60vh;overflow:auto;">
+      <ng-container *ngFor="let t of tabs">
+        <div *ngIf="t.id === activeTabId" [innerHTML]="t.renderedContent" (click)="onRenderedClick($event)"></div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #folderNode let-node let-path="path">
+  <div *ngIf="node" [attr.data-path]="path">
+    <div *ngIf="node.subdirs && keys(node.subdirs).length">
+      <ng-container *ngFor="let sub of keys(node.subdirs)">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <button (click)="toggleExpand(path + '/' + sub)" style="width:24px">{{ isExpanded(path + '/' + sub) ? '▾' : '▸' }}</button>
+          <span (click)="toggleExpand(path + '/' + sub)" style="cursor:pointer">{{ sub }}</span>
+        </div>
+        <div *ngIf="isExpanded(path + '/' + sub)" style="margin-left:1rem;margin-top:4px;" [attr.data-path]="path + '/' + sub">
+          <ng-container *ngIf="node.subdirs && node.subdirs[sub]">
+            <ng-container *ngTemplateOutlet="folderNode; context: { node: node.subdirs[sub], path: path + '/' + sub }"></ng-container>
+          </ng-container>
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- debug output -->
+    <pre style="font-size:0.75rem; color:gray;">{{ node | json }}</pre>
+    <div *ngIf="node.files && node.files.length" style="background:#ffe;width:fit-content;">
+      <strong>debug files:</strong> {{ node.files.join(', ') }}
+    </div>
+
+    <ul class="list-group list-group-flush ms-3" *ngIf="node.files && node.files.length">
+      <ng-container *ngFor="let file of node.files">
+        <li class="list-group-item">
+          <a href="#" (click)="$event.preventDefault(); openTab(getSectionFromPath(path), file)">{{ file }}</a>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</ng-template>
