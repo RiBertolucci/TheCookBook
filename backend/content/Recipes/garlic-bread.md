@@ -3,13 +3,7 @@
 Crispy garlic-infused bread perfect as a side dish.
 
 ## Ingredients
-
-- Garlic
-- Butter
-- Bread
-- Parsley
-- Salt
-
+- [Garlic](/api/ingredients/Mediterranei/garlic.md)
 ## Procedure
 
 1. Mince fresh garlic and mix with softened butter.

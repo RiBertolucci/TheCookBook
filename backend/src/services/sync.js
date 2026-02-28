@@ -73,7 +73,11 @@ async function processFile(filePath) {
       break;
     case 'modified':
       logger.info({ service: 'sync', method: 'processFile', data: path.relative(_rootDir, filePath) }, 'modified file');
-      // TODO: re-parse and update links for modified files
+      try {
+        await linker.processModifiedFile(filePath, _rootDir);
+      } catch (err) {
+        logger.error({ service: 'sync', method: 'processFile', data: err.message }, `Error processing modified file ${filePath}`);
+      }
       break;
     case 'unchanged':
       logger.debug({ service: 'sync', method: 'processFile', data: path.relative(_rootDir, filePath) }, 'unchanged file');

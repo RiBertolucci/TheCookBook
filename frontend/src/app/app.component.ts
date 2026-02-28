@@ -10,6 +10,9 @@ import { LoggerService } from './logger.service';
 export class AppComponent implements OnInit {
   title = 'TheCookBook';
   hierarchy: { [key: string]: FolderNode } = {};
+  isSyncing = false;
+  isSettingsOpen = false;
+  theme: 'light' | 'dark' = 'light';
 
   // currently-selected document; null when nothing chosen
   selected: { filename: string; type: string; content: string } | null = null;
@@ -27,10 +30,75 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.logger.info({ service: 'AppComponent', method: 'ngOnInit' }, 'initialising component');
+    this.loadTheme();
+    this.loadHierarchy();
+  }
+
+  toggleSettings(): void {
+    this.isSettingsOpen = !this.isSettingsOpen;
+  }
+
+  setTheme(theme: 'light' | 'dark'): void {
+    this.theme = theme;
+    this.isSettingsOpen = false;
+    try {
+      localStorage.setItem('cookbook-theme', theme);
+    } catch {
+      this.logger.warn({ service: 'AppComponent', method: 'setTheme', data: theme }, 'could not persist theme');
+    }
+    this.logger.info({ service: 'AppComponent', method: 'setTheme', data: theme }, 'theme updated');
+  }
+
+  private loadTheme(): void {
+    try {
+      const saved = localStorage.getItem('cookbook-theme');
+      if (saved === 'dark' || saved === 'light') {
+        this.theme = saved;
+      }
+    } catch {
+      this.logger.warn({ service: 'AppComponent', method: 'loadTheme' }, 'could not read theme from storage');
+    }
+  }
+
+  loadHierarchy(): void {
     this.content.getHierarchy().subscribe(data => {
       this.hierarchy = data;
-      this.logger.debug({ service: 'AppComponent', method: 'ngOnInit', data: data }, 'hierarchy received');
+      this.logger.debug({ service: 'AppComponent', method: 'loadHierarchy', data }, 'hierarchy received');
+    }, err => {
+      this.logger.error({ service: 'AppComponent', method: 'loadHierarchy', data: err.message }, 'failed to load hierarchy');
     });
+  }
+
+  runSync(): void {
+    if (this.isSyncing) return;
+    this.isSyncing = true;
+    this.logger.info({ service: 'AppComponent', method: 'runSync' }, 'sync requested from UI');
+    this.content.sync().subscribe(() => {
+      this.loadHierarchy();
+      this.refreshOpenTabs();
+      this.isSyncing = false;
+      this.logger.info({ service: 'AppComponent', method: 'runSync' }, 'sync completed');
+    }, err => {
+      this.isSyncing = false;
+      this.logger.error({ service: 'AppComponent', method: 'runSync', data: err.message }, 'sync failed');
+    });
+  }
+
+  private refreshOpenTabs(): void {
+    for (const tab of this.tabs) {
+      this.content.getFile(tab.section, tab.filename).subscribe(data => {
+        if (!data) return;
+        let html = '';
+        try {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const m: any = (window as any).marked;
+          html = m ? m(data.content) : this.basicRender(data.content);
+        } catch {
+          html = this.basicRender(data.content);
+        }
+        tab.renderedContent = html;
+      });
+    }
   }
 
   // helper to iterate object keys in template
@@ -158,6 +226,13 @@ export class AppComponent implements OnInit {
     return parts.length > 0 ? parts[0] : path;
   }
 
+  getFilenameForPath(path: string, file: string): string {
+    const parts = path.split('/').filter(Boolean);
+    if (parts.length <= 1) return file;
+    const nestedPath = parts.slice(1).join('/');
+    return `${nestedPath}/${file}`;
+  }
+
   /**
    * Click handler attached to the rendered HTML block. Intercepts clicks on
    * anchors that point to `/api/...` endpoints and loads the target into the popup.
@@ -181,7 +256,30 @@ export class AppComponent implements OnInit {
         const section = this.mapApiSectionToName(sectionKey);
         if (section) this.openTab(section, filename);
       }
+      return;
     }
+
+    const relativeMdTarget = this.extractRelativeMarkdownTarget(href);
+    if (relativeMdTarget) {
+      ev.preventDefault();
+      const activeTab = this.tabs.find(t => t.id === this.activeTabId);
+      if (!activeTab) return;
+      this.openTab(activeTab.section, relativeMdTarget);
+    }
+  }
+
+  private extractRelativeMarkdownTarget(href: string): string | null {
+    const cleaned = (href || '').trim();
+    if (!cleaned || cleaned.startsWith('#')) return null;
+    if (cleaned.startsWith('/')) return null;
+    if (/^(https?:|mailto:|tel:)/i.test(cleaned)) return null;
+
+    const noHash = cleaned.split('#')[0];
+    const noQuery = noHash.split('?')[0];
+    if (!noQuery.toLowerCase().endsWith('.md')) return null;
+
+    const normalized = noQuery.replace(/^\.\//, '');
+    return decodeURIComponent(normalized);
   }
 
   private mapApiSectionToName(key: string): string | null {

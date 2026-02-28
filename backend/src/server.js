@@ -35,17 +35,20 @@ app.get('/', (req, res) => {
 // Currently no body parameters are used; the endpoint simply scans the
 // content directories for new/modified markdown files.
 // Response: { status: 'ok' } on success or an error object on failure.
-app.post('/sync', async (req, res) => {
+const handleSync = async (req, res) => {
   const root = path.resolve(__dirname, '../content');
-  logger.info({ service: 'sync', method: 'POST /sync', requestId: req.requestId }, 'sync requested');
+  logger.info({ service: 'sync', method: `POST ${req.path}`, requestId: req.requestId }, 'sync requested');
   try {
     await sync.run(root);
     res.json({ status: 'ok' });
   } catch (err) {
-    logger.error({ service: 'sync', method: 'POST /sync', requestId: req.requestId, data: err.message }, 'Sync error');
+    logger.error({ service: 'sync', method: `POST ${req.path}`, requestId: req.requestId, data: err.message }, 'Sync error');
     res.status(500).json({ status: 'error', message: err.message });
   }
-});
+};
+
+app.post('/sync', handleSync);
+app.post('/api/sync', handleSync);
 
 // Retrieve a recipe by filename.
 // Method: GET
@@ -71,13 +74,16 @@ app.get('/api/recipes/:filename', async (req, res) => {
 // Method: GET
 // URL: /api/ingredients/:filename (e.g., /api/ingredients/tomato or /api/ingredients/tomato.md)
 // Response: { filename, type, content } containing the markdown content or 404 if not found.
-app.get('/api/ingredients/:filename', async (req, res) => {
+app.get('/api/ingredients/*filename', async (req, res) => {
   const root = path.resolve(__dirname, '../content');
-  logger.debug({ service: 'fileReader', method: 'getIngredient', requestId: req.requestId, data: req.params.filename }, 'fetching ingredient');
+  const filename = Array.isArray(req.params.filename)
+    ? req.params.filename.join('/')
+    : req.params.filename;
+  logger.debug({ service: 'fileReader', method: 'getIngredient', requestId: req.requestId, data: filename }, 'fetching ingredient');
   try {
-    const data = await fileReader.getIngredient(root, req.params.filename);
+    const data = await fileReader.getIngredient(root, filename);
     if (!data) {
-      logger.warn({ service: 'fileReader', method: 'getIngredient', requestId: req.requestId, data: req.params.filename }, 'ingredient not found');
+      logger.warn({ service: 'fileReader', method: 'getIngredient', requestId: req.requestId, data: filename }, 'ingredient not found');
       return res.status(404).json({ error: 'Ingredient not found' });
     }
     res.json(data);
