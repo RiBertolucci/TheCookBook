@@ -47,12 +47,12 @@ async function augmentContent(content, filePath, rootDir) {
   return content;
 }
 
-async function processNewFile(filePath, rootDir) {
-  logger.info({ service: 'linker', method: 'processNewFile', data: filePath }, 'processing new file');
+async function processFileWithPropagation(filePath, rootDir, methodName, logMessage) {
+  logger.info({ service: 'linker', method: methodName, data: filePath }, logMessage);
   const docType = parser.getDocumentType(filePath, rootDir);
 
   if (!docType) {
-    logger.warn({ service: 'linker', method: 'processNewFile', data: filePath }, 'unknown document type');
+    logger.warn({ service: 'linker', method: methodName, data: filePath }, 'unknown document type');
     return;
   }
 
@@ -61,10 +61,158 @@ async function processNewFile(filePath, rootDir) {
   const modified = updated !== content;
   if (modified) {
     await fs.writeFile(filePath, updated, 'utf8');
-    logger.info({ service: 'linker', method: 'processNewFile', data: path.relative(rootDir, filePath) }, 'updated file with links');
+    logger.info({ service: 'linker', method: methodName, data: path.relative(rootDir, filePath) }, 'updated file with links');
+  }
+
+  if (docType === 'ingredient') {
+    await propagateNewIngredient(filePath, updated, rootDir);
+  } else if (docType === 'spice') {
+    await propagateNewSpice(filePath, updated, rootDir);
   }
 
   return { modified, docType };
+}
+
+async function processNewFile(filePath, rootDir) {
+  return processFileWithPropagation(filePath, rootDir, 'processNewFile', 'processing new file');
+}
+
+async function processModifiedFile(filePath, rootDir) {
+  return processFileWithPropagation(filePath, rootDir, 'processModifiedFile', 'processing modified file');
+}
+
+function extractDisplayName(item) {
+  const linkMatch = String(item || '').match(/^\s*\[(.+?)\]\(.+?\)\s*$/);
+  return (linkMatch ? linkMatch[1] : String(item || '')).trim();
+}
+
+function normalizeName(name) {
+  return String(name || '').toLowerCase().replace(/\s+/g, ' ').trim();
+}
+
+function toPosixPath(p) {
+  return String(p || '').split('\\').join('/');
+}
+
+function sectionExists(content, sectionName) {
+  return content.includes(`## ${sectionName}`);
+}
+
+function pickSectionName(content, candidates) {
+  for (const candidate of candidates) {
+    if (sectionExists(content, candidate)) {
+      return candidate;
+    }
+  }
+  return candidates[0];
+}
+
+function getSectionItemsByCandidates(content, candidates) {
+  const existing = candidates.find(candidate => sectionExists(content, candidate));
+  if (!existing) return [];
+  return parser.extractSection(content, existing);
+}
+
+function getTitleFromContent(content) {
+  const line = String(content || '').split(/\r?\n/).find(l => l.startsWith('# '));
+  return line ? line.slice(2).trim() : '';
+}
+
+async function upsertBackLinkInTarget(targetFilePath, sectionCandidates, sourceDisplayName, sourceApiPath) {
+  let targetContent;
+  try {
+    targetContent = await fs.readFile(targetFilePath, 'utf8');
+  } catch (err) {
+    logger.warn({ service: 'linker', method: 'upsertBackLinkInTarget', data: targetFilePath }, `unable to read target file: ${err.message}`);
+    return;
+  }
+
+  const sectionName = pickSectionName(targetContent, sectionCandidates);
+  const items = getSectionItemsByCandidates(targetContent, sectionCandidates);
+  const exists = items.some(item => normalizeName(extractDisplayName(item)) === normalizeName(sourceDisplayName));
+  if (exists) return;
+
+  const updatedItems = [...items, `[${sourceDisplayName}](${sourceApiPath})`];
+  const newTargetContent = parser.updateOrCreateSection(targetContent, sectionName, updatedItems);
+  if (newTargetContent === targetContent) return;
+
+  await fs.writeFile(targetFilePath, newTargetContent, 'utf8');
+}
+
+async function propagateNewIngredient(sourceFilePath, sourceContent, rootDir) {
+  const ingredientDir = path.join(rootDir, 'Ingredients');
+  const spiceDir = path.join(rootDir, 'SpicesAndHerbs');
+  const sourceRelPath = toPosixPath(path.relative(ingredientDir, sourceFilePath));
+  const sourceDisplayName = getTitleFromContent(sourceContent) || path.basename(sourceFilePath, '.md');
+
+  const goesWithIngredients = parser.extractSection(sourceContent, 'Goes with ingredients');
+  for (const item of goesWithIngredients) {
+    const targetName = extractDisplayName(item);
+    const targetRelPath = await parser.findFile(ingredientDir, targetName);
+    if (!targetRelPath) continue;
+    const targetFilePath = path.join(ingredientDir, targetRelPath.split('/').join(path.sep));
+    if (path.resolve(targetFilePath) === path.resolve(sourceFilePath)) continue;
+
+    await upsertBackLinkInTarget(
+      targetFilePath,
+      ['Goes with ingredients'],
+      sourceDisplayName,
+      `/api/ingredients/${sourceRelPath}`,
+    );
+  }
+
+  const goesWithSpices = parser.extractSection(sourceContent, 'Goes with spicesAndHerbs');
+  for (const item of goesWithSpices) {
+    const targetName = extractDisplayName(item);
+    const targetRelPath = await parser.findFile(spiceDir, targetName);
+    if (!targetRelPath) continue;
+    const targetFilePath = path.join(spiceDir, targetRelPath.split('/').join(path.sep));
+
+    await upsertBackLinkInTarget(
+      targetFilePath,
+      ['Good With Ingredients', 'Goes with ingredients'],
+      sourceDisplayName,
+      `/api/ingredients/${sourceRelPath}`,
+    );
+  }
+}
+
+async function propagateNewSpice(sourceFilePath, sourceContent, rootDir) {
+  const ingredientDir = path.join(rootDir, 'Ingredients');
+  const spiceDir = path.join(rootDir, 'SpicesAndHerbs');
+  const sourceRelPath = toPosixPath(path.relative(spiceDir, sourceFilePath));
+  const sourceDisplayName = getTitleFromContent(sourceContent) || path.basename(sourceFilePath, '.md');
+
+  const mixesWithSpices = parser.extractSection(sourceContent, 'Mixes Well With');
+  for (const item of mixesWithSpices) {
+    const targetName = extractDisplayName(item);
+    const targetRelPath = await parser.findFile(spiceDir, targetName);
+    if (!targetRelPath) continue;
+    const targetFilePath = path.join(spiceDir, targetRelPath.split('/').join(path.sep));
+    if (path.resolve(targetFilePath) === path.resolve(sourceFilePath)) continue;
+
+    await upsertBackLinkInTarget(
+      targetFilePath,
+      ['Mixes Well With', 'Goes with spicesAndHerbs'],
+      sourceDisplayName,
+      `/api/spices/${sourceRelPath}`,
+    );
+  }
+
+  const goodWithIngredients = parser.extractSection(sourceContent, 'Good With Ingredients');
+  for (const item of goodWithIngredients) {
+    const targetName = extractDisplayName(item);
+    const targetRelPath = await parser.findFile(ingredientDir, targetName);
+    if (!targetRelPath) continue;
+    const targetFilePath = path.join(ingredientDir, targetRelPath.split('/').join(path.sep));
+
+    await upsertBackLinkInTarget(
+      targetFilePath,
+      ['Goes with spicesAndHerbs'],
+      sourceDisplayName,
+      `/api/spices/${sourceRelPath}`,
+    );
+  }
 }
 
 
@@ -78,10 +226,12 @@ async function processIngredient(content, filePath, rootDir) {
     const ingredientDir = path.join(rootDir, 'Ingredients');
     const links = [];
     for (const item of goesWithIngredients) {
-      logger.debug({ service: 'linker', method: 'processIngredient', data: item }, 'looking for ingredient file');
-      const foundFile = await parser.findFile(ingredientDir, item);
+      const linkMatch = item.match(/^\s*\[(.+?)\]\(.+?\)\s*$/);
+      const displayName = linkMatch ? linkMatch[1] : item;
+      logger.debug({ service: 'linker', method: 'processIngredient', data: displayName }, 'looking for ingredient file');
+      const foundFile = await parser.findFile(ingredientDir, displayName);
       if (foundFile) {
-        links.push(parser.formatLink(item, '.'));
+        links.push(`[${displayName}](/api/ingredients/${foundFile.split('\\').join('/')})`);
         modified = true;
       }
     }
@@ -97,9 +247,11 @@ async function processIngredient(content, filePath, rootDir) {
     const spiceDir = path.join(rootDir, 'SpicesAndHerbs');
     const links = [];
     for (const item of goesWithSpices) {
-      const foundFile = await parser.findFile(spiceDir, item);
+      const linkMatch = item.match(/^\s*\[(.+?)\]\(.+?\)\s*$/);
+      const displayName = linkMatch ? linkMatch[1] : item;
+      const foundFile = await parser.findFile(spiceDir, displayName);
       if (foundFile) {
-        links.push(parser.formatLink(item, '.'));
+        links.push(`[${displayName}](/api/spices/${foundFile.split('\\').join('/')})`);
         modified = true;
       }
     }
@@ -130,7 +282,7 @@ async function processRecipe(content, filePath, rootDir) {
       const foundFile = await parser.findFile(ingredientDir, displayName);
       if (foundFile) {
         // create API endpoint link target so frontend can intercept
-        const apiPath = `/api/ingredients/${foundFile}`;
+        const apiPath = `/api/ingredients/${foundFile.split('\\').join('/')}`;
         links.push(`[${displayName}](${apiPath})`);
         foundMap.push({ item: displayName, file: foundFile });
         modified = true;
@@ -161,10 +313,12 @@ async function processSpice(content, filePath, rootDir) {
     const ingredientDir = path.join(rootDir, 'Ingredients');
     const links = [];
     for (const item of goesWithIngredients) {
-      logger.debug({ service: 'linker', method: 'processSpice', data: item }, 'searching ingredient for spice');
-      const foundFile = await parser.findFile(ingredientDir, item);
+      const linkMatch = item.match(/^\s*\[(.+?)\]\(.+?\)\s*$/);
+      const displayName = linkMatch ? linkMatch[1] : item;
+      logger.debug({ service: 'linker', method: 'processSpice', data: displayName }, 'searching ingredient for spice');
+      const foundFile = await parser.findFile(ingredientDir, displayName);
       if (foundFile) {
-        links.push(parser.formatLink(item, '.'));
+        links.push(`[${displayName}](/api/ingredients/${foundFile.split('\\').join('/')})`);
         modified = true;
       }
     }
@@ -180,10 +334,12 @@ async function processSpice(content, filePath, rootDir) {
     const spiceDir = path.join(rootDir, 'SpicesAndHerbs');
     const links = [];
     for (const item of goesWithSpices) {
-      logger.debug({ service: 'linker', method: 'processSpice', data: item }, 'searching spice for spice');
-      const foundFile = await parser.findFile(spiceDir, item);
+      const linkMatch = item.match(/^\s*\[(.+?)\]\(.+?\)\s*$/);
+      const displayName = linkMatch ? linkMatch[1] : item;
+      logger.debug({ service: 'linker', method: 'processSpice', data: displayName }, 'searching spice for spice');
+      const foundFile = await parser.findFile(spiceDir, displayName);
       if (foundFile) {
-        links.push(parser.formatLink(item, '.'));
+        links.push(`[${displayName}](/api/spices/${foundFile.split('\\').join('/')})`);
         modified = true;
       }
     }
@@ -198,6 +354,7 @@ async function processSpice(content, filePath, rootDir) {
 
 module.exports = {
   processNewFile,
+  processModifiedFile,
   processIngredient,
   processRecipe,
   processSpice,

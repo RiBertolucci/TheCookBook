@@ -71,14 +71,28 @@ async function scanFolderRecursive(dirPath) {
 
 
 async function readMarkdownFile(rootDir, folder, filename) {
-  // Sanitize filename to prevent directory traversal
-  if (filename.includes('..') || filename.includes('/') || filename.includes('\\')) {
+  const normalizedInput = String(filename || '').replace(/\\/g, '/');
+  const normalizedPath = path.posix.normalize(normalizedInput);
+
+  // Sanitize filename/path to prevent directory traversal
+  if (
+    !normalizedPath ||
+    normalizedPath === '.' ||
+    normalizedPath.startsWith('/') ||
+    normalizedPath.startsWith('../') ||
+    normalizedPath.includes('/../')
+  ) {
     throw new Error('Invalid filename');
   }
 
   // Ensure .md extension
-  const safeFilename = filename.endsWith('.md') ? filename : `${filename}.md`;
-  const filePath = path.join(rootDir, folder, safeFilename);
+  const safeFilename = normalizedPath.endsWith('.md') ? normalizedPath : `${normalizedPath}.md`;
+  const baseFolder = path.resolve(rootDir, folder);
+  const filePath = path.resolve(baseFolder, safeFilename);
+
+  if (!filePath.startsWith(baseFolder + path.sep) && filePath !== baseFolder) {
+    throw new Error('Invalid filename');
+  }
 
   try {
     let content = await fs.readFile(filePath, 'utf8');

@@ -16,13 +16,10 @@ A vibrant red fruit commonly used in cooking.
 - Tomato Paste
 
 ## Goes with ingredients
-
-- Garlic
-- Basil
-- Onion
-
+- [Garlic](/api/ingredients/Mediterranei/garlic.md)
+- [Onion](/api/ingredients/onion.md)
+- [Celery](/api/ingredients/Mediterranei/celery.md)
 ## Goes with spicesAndHerbs
-
-- Oregano
-- Basil
-- Black Pepper
+- [Oregano](/api/spices/oregano.md)
+- [Basil](/api/spices/basil.md)
+- [Black Pepper](/api/spices/black-pepper.md)

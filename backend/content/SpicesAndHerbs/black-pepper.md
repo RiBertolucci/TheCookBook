@@ -9,7 +9,7 @@ A pungent spice that adds heat and depth to dishes.
 - Thyme
 
 ## Good With Ingredients
-
 - Tomato
 - Garlic
 - Onion
+- [Celery](/api/ingredients/Mediterranei/celery.md)

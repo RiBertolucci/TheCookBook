@@ -64,19 +64,34 @@ function formatLink(itemName, filePath) {
  * Returns relative path if found, null otherwise.
  */
 async function findFile(searchDir, itemName) {
-  try {
-    const entries = await fs.readdir(searchDir, { withFileTypes: true });
+  const linkMatch = itemName.match(/^\s*\[(.+?)\]\(.+?\)\s*$/);
+  const effectiveItemName = linkMatch ? linkMatch[1] : itemName;
+
+  async function walk(dirPath) {
+    const entries = await fs.readdir(dirPath, { withFileTypes: true });
     for (const entry of entries) {
-      if (entry.isFile() && entry.name.endsWith('.md')) {
-        // Simple matching: file name without .md should match item name (case-insensitive)
+      const entryPath = path.join(dirPath, entry.name);
+
+      if (entry.isDirectory()) {
+        const foundInSubdir = await walk(entryPath);
+        if (foundInSubdir) {
+          return foundInSubdir;
+        }
+      } else if (entry.isFile() && entry.name.endsWith('.md')) {
         const fileNameWithoutExt = entry.name.slice(0, -3);
         const normalizedFileName = fileNameWithoutExt.toLowerCase().replace(/-/g, ' ');
-        const normalizedItemName = itemName.toLowerCase().replace(/\s+/g, ' ');
+        const normalizedItemName = effectiveItemName.toLowerCase().replace(/\s+/g, ' ');
         if (normalizedFileName === normalizedItemName) {
-          return entry.name;
+          const relativePath = path.relative(searchDir, entryPath);
+          return relativePath.split(path.sep).join('/');
         }
       }
     }
+    return null;
+  }
+
+  try {
+    return await walk(searchDir);
   } catch (err) {
     logger.warn({ service: 'parser', method: 'findFile', data: searchDir }, `Error searching directory: ${err.message}`);
   }

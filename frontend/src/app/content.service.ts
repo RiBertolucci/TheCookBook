@@ -14,6 +14,11 @@ export interface FolderNode {
 export class ContentService {
   constructor(private http: HttpClient, private logger: LoggerService) {}
 
+  sync(): Observable<{ status: string; message?: string }> {
+    this.logger.info({ service: 'ContentService', method: 'sync' }, 'triggering backend sync');
+    return this.http.post<{ status: string; message?: string }>('/api/sync', {});
+  }
+
   getHierarchy(): Observable<{ [key: string]: FolderNode }> {
     this.logger.debug({ service: 'ContentService', method: 'getHierarchy' }, 'requesting hierarchy');
     return this.http.get<{ [key: string]: FolderNode }>('/api/hierarchy');

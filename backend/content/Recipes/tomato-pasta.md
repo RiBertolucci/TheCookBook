@@ -3,13 +3,9 @@
 A simple yet delicious pasta dish with fresh tomato sauce.
 
 ## Ingredients
-
-- Tomato
-- Garlic
-- Onion
-- Olive Oil
-- Salt
-
+- [Tomato](/api/ingredients/tomato.md)
+- [Garlic](/api/ingredients/Mediterranei/garlic.md)
+- [Onion](/api/ingredients/onion.md)
 ## Procedure
 
 1. Heat olive oil in a large pan over medium heat.
