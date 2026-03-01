@@ -12,7 +12,7 @@ A crisp, fibrous stalk vegetable commonly used for flavor, texture, and aromatic
 
 ## Substitutes
 
-- Fennel (for crunch with slight sweetness)
+253- Fennel (for crunch with slight sweetness)
 - Bok choy stems
 - Green bell pepper (for texture in cooked dishes)
 - Celeriac (celery root, for similar flavor)
