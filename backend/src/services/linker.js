@@ -224,20 +224,25 @@ async function processIngredient(content, filePath, rootDir) {
   const goesWithIngredients = parser.extractSection(newContent, 'Goes with ingredients');
   if (goesWithIngredients.length > 0) {
     const ingredientDir = path.join(rootDir, 'Ingredients');
-    const links = [];
+    const rewrittenItems = [];
     for (const item of goesWithIngredients) {
       const linkMatch = item.match(/^\s*\[(.+?)\]\(.+?\)\s*$/);
       const displayName = linkMatch ? linkMatch[1] : item;
       logger.debug({ service: 'linker', method: 'processIngredient', data: displayName }, 'looking for ingredient file');
       const foundFile = await parser.findFile(ingredientDir, displayName);
       if (foundFile) {
-        links.push(`[${displayName}](/api/ingredients/${foundFile.split('\\').join('/')})`);
-        modified = true;
+        const linkedItem = `[${displayName}](/api/ingredients/${foundFile.split('\\').join('/')})`;
+        rewrittenItems.push(linkedItem);
+        if (linkedItem !== item) {
+          modified = true;
+        }
+      } else {
+        rewrittenItems.push(item);
       }
     }
-    if (links.length > 0) {
-      newContent = parser.updateOrCreateSection(newContent, 'Goes with ingredients', links);
-      logger.info({ service: 'linker', method: 'processIngredient', data: links }, 'added ingredient links');
+    if (modified) {
+      newContent = parser.updateOrCreateSection(newContent, 'Goes with ingredients', rewrittenItems);
+      logger.info({ service: 'linker', method: 'processIngredient', data: rewrittenItems }, 'updated ingredient links');
     }
   }
 
@@ -245,18 +250,23 @@ async function processIngredient(content, filePath, rootDir) {
   const goesWithSpices = parser.extractSection(newContent, 'Goes with spicesAndHerbs');
   if (goesWithSpices.length > 0) {
     const spiceDir = path.join(rootDir, 'SpicesAndHerbs');
-    const links = [];
+    const rewrittenItems = [];
     for (const item of goesWithSpices) {
       const linkMatch = item.match(/^\s*\[(.+?)\]\(.+?\)\s*$/);
       const displayName = linkMatch ? linkMatch[1] : item;
       const foundFile = await parser.findFile(spiceDir, displayName);
       if (foundFile) {
-        links.push(`[${displayName}](/api/spices/${foundFile.split('\\').join('/')})`);
-        modified = true;
+        const linkedItem = `[${displayName}](/api/spices/${foundFile.split('\\').join('/')})`;
+        rewrittenItems.push(linkedItem);
+        if (linkedItem !== item) {
+          modified = true;
+        }
+      } else {
+        rewrittenItems.push(item);
       }
     }
-    if (links.length > 0) {
-      newContent = parser.updateOrCreateSection(newContent, 'Goes with spicesAndHerbs', links);
+    if (modified) {
+      newContent = parser.updateOrCreateSection(newContent, 'Goes with spicesAndHerbs', rewrittenItems);
     }
   }
 
@@ -316,20 +326,25 @@ async function processSpice(content, filePath, rootDir) {
   const goesWithIngredients = parser.extractSection(newContent, 'Goes with ingredients');
   if (goesWithIngredients.length > 0) {
     const ingredientDir = path.join(rootDir, 'Ingredients');
-    const links = [];
+    const rewrittenItems = [];
     for (const item of goesWithIngredients) {
       const linkMatch = item.match(/^\s*\[(.+?)\]\(.+?\)\s*$/);
       const displayName = linkMatch ? linkMatch[1] : item;
       logger.debug({ service: 'linker', method: 'processSpice', data: displayName }, 'searching ingredient for spice');
       const foundFile = await parser.findFile(ingredientDir, displayName);
       if (foundFile) {
-        links.push(`[${displayName}](/api/ingredients/${foundFile.split('\\').join('/')})`);
-        modified = true;
+        const linkedItem = `[${displayName}](/api/ingredients/${foundFile.split('\\').join('/')})`;
+        rewrittenItems.push(linkedItem);
+        if (linkedItem !== item) {
+          modified = true;
+        }
+      } else {
+        rewrittenItems.push(item);
       }
     }
-    if (links.length > 0) {
-      newContent = parser.updateOrCreateSection(newContent, 'Goes with ingredients', links);
-      logger.info({ service: 'linker', method: 'processSpice', data: links }, 'added ingredient links for spice');
+    if (modified) {
+      newContent = parser.updateOrCreateSection(newContent, 'Goes with ingredients', rewrittenItems);
+      logger.info({ service: 'linker', method: 'processSpice', data: rewrittenItems }, 'updated ingredient links for spice');
     }
   }
 
@@ -337,20 +352,25 @@ async function processSpice(content, filePath, rootDir) {
   const goesWithSpices = parser.extractSection(newContent, 'Goes with spicesAndHerbs');
   if (goesWithSpices.length > 0) {
     const spiceDir = path.join(rootDir, 'SpicesAndHerbs');
-    const links = [];
+    const rewrittenItems = [];
     for (const item of goesWithSpices) {
       const linkMatch = item.match(/^\s*\[(.+?)\]\(.+?\)\s*$/);
       const displayName = linkMatch ? linkMatch[1] : item;
       logger.debug({ service: 'linker', method: 'processSpice', data: displayName }, 'searching spice for spice');
       const foundFile = await parser.findFile(spiceDir, displayName);
       if (foundFile) {
-        links.push(`[${displayName}](/api/spices/${foundFile.split('\\').join('/')})`);
-        modified = true;
+        const linkedItem = `[${displayName}](/api/spices/${foundFile.split('\\').join('/')})`;
+        rewrittenItems.push(linkedItem);
+        if (linkedItem !== item) {
+          modified = true;
+        }
+      } else {
+        rewrittenItems.push(item);
       }
     }
-    if (links.length > 0) {
-      newContent = parser.updateOrCreateSection(newContent, 'Goes with spicesAndHerbs', links);
-      logger.info({ service: 'linker', method: 'processSpice', data: links }, 'added spice links for spice');
+    if (modified) {
+      newContent = parser.updateOrCreateSection(newContent, 'Goes with spicesAndHerbs', rewrittenItems);
+      logger.info({ service: 'linker', method: 'processSpice', data: rewrittenItems }, 'updated spice links for spice');
     }
   }
 
