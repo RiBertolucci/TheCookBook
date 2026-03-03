@@ -1,8 +1,33 @@
 const logger = require('../services/logger');
 const storage = require('../services/content-storage.service');
+const indexStore = require('../services/index-store.service');
 const {
   mapSectionToFolder
 } = require('../utils/content-path.utils');
+
+async function syncIndexesSafely(requestId, operation, actionLabel) {
+  try {
+    await operation();
+  } catch (err) {
+    logger.error(
+      { service: 'server', method: actionLabel, requestId, data: err.message },
+      'index update failed, trying full rebuild'
+    );
+
+    try {
+      await indexStore.rebuildAllIndexes();
+      logger.warn(
+        { service: 'server', method: actionLabel, requestId },
+        'index rebuild completed after update failure'
+      );
+    } catch (rebuildErr) {
+      logger.error(
+        { service: 'server', method: actionLabel, requestId, data: rebuildErr.message },
+        'index rebuild failed'
+      );
+    }
+  }
+}
 
 async function addFile(req, res) {
   const { path: targetPath, title, markdown } = req.body || {};
@@ -24,6 +49,8 @@ async function addFile(req, res) {
       { service: 'server', method: 'POST /api/addFile', requestId: req.requestId, data: relativeFile },
       'content file created'
     );
+
+    await syncIndexesSafely(req.requestId, () => indexStore.refreshFile(relativeFile), 'POST /api/addFile');
 
     res.status(201).json({ status: 'ok', file: relativeFile });
   } catch (err) {
@@ -59,6 +86,8 @@ async function updateFile(req, res) {
       { service: 'server', method: 'POST /api/updateFile', requestId: req.requestId, data: relativeFile },
       'content file updated'
     );
+
+    await syncIndexesSafely(req.requestId, () => indexStore.refreshFile(relativeFile), 'POST /api/updateFile');
 
     res.json({ status: 'ok', file: relativeFile });
   } catch (err) {

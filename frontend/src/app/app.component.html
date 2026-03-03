@@ -21,6 +21,10 @@
           <div class="settings-label">Theme</div>
           <button class="theme-option" [class.active]="theme === 'light'" (click)="setTheme('light')">Light</button>
           <button class="theme-option" [class.active]="theme === 'dark'" (click)="setTheme('dark')">Dark</button>
+          <div class="settings-label">Index</div>
+          <button class="theme-option" (click)="runForceIndexing()" [disabled]="isForceIndexing">
+            {{ isForceIndexing ? 'Force Indexing...' : 'Force Indexing' }}
+          </button>
         </div>
       </div>
     </div>

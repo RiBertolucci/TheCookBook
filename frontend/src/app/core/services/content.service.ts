@@ -46,6 +46,11 @@ export class ContentService {
     return this.http.post<{ status: string; message?: string }>('/api/sync', {});
   }
 
+  forceIndexing(): Observable<{ status: string; message?: string }> {
+    this.logger.info({ service: 'ContentService', method: 'forceIndexing' }, 'triggering full index rebuild');
+    return this.http.post<{ status: string; message?: string }>('/api/indexes/rebuild', {});
+  }
+
   getHierarchy(): Observable<{ [key: string]: FolderNode }> {
     this.logger.debug({ service: 'ContentService', method: 'getHierarchy' }, 'requesting hierarchy');
     return this.http.get<{ [key: string]: FolderNode }>('/api/hierarchy');

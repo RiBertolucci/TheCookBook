@@ -112,10 +112,11 @@
 
       <ng-container *ngIf="selectedKind === 'recipe'">
         <div class="list-block">
-          <div class="list-header">Ingredients <button class="btn btn-sm btn-outline-primary" (click)="addItem('recipeIngredients')">+</button></div>
-          <div class="list-row" *ngFor="let item of recipeIngredients; let i = index; trackBy: trackByIndex">
-            <input class="form-control" [(ngModel)]="recipeIngredients[i]" placeholder="Tomato or Mediterranei/garlic" />
-            <button class="btn btn-sm btn-outline-danger" (click)="removeItem('recipeIngredients', i)">-</button>
+          <div class="list-header">Ingredients <button class="btn btn-sm btn-outline-primary" (click)="addRecipeIngredient()">+</button></div>
+          <div class="list-row recipe-ingredient-row" *ngFor="let item of recipeIngredientNames; let i = index; trackBy: trackByIndex">
+            <input class="form-control" [(ngModel)]="recipeIngredientQuantities[i]" placeholder="Quantity (e.g. 200 g)" />
+            <input class="form-control" [(ngModel)]="recipeIngredientNames[i]" placeholder="Ingredient name" />
+            <button class="btn btn-sm btn-outline-danger" (click)="removeRecipeIngredient(i)">-</button>
           </div>
         </div>
 

@@ -1,0 +1,21 @@
+{
+  "name": "recipes-by-ingredients",
+  "version": 1,
+  "strategy": "key-set",
+  "updatedAt": "2026-03-03T23:11:31.966Z",
+  "entries": {
+    "Recipes/gateu-di-patate.md": [
+      "patata",
+      "prosciutto cotto"
+    ],
+    "Recipes/pollo-garam-masala.md": [
+      "aglio",
+      "burro",
+      "cipolla",
+      "latte di cocco",
+      "patata",
+      "riso basmati",
+      "zenzero fresco"
+    ]
+  }
+}

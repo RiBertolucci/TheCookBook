@@ -3,8 +3,8 @@
 Tortino semplice di patate, formaggio e prosciutto
 
 ## Ingredients
-- [Patata](/api/ingredients/verdure/patata.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- 300g [Patata](/api/ingredients/verdure/patata.md)
+- Prosciutto cotto
 
 ## Procedure
 

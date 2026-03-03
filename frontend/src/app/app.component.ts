@@ -4,6 +4,7 @@ import { filter } from 'rxjs/operators';
 import { ContentBrowserComponent } from './features/content/browser/content-browser.component';
 import { EditRequest } from './features/content/models/content-shell.models';
 import { LoggerService } from './core/services/logger.service';
+import { ContentService } from './core/services/content.service';
 
 @Component({
   selector: 'app-root',
@@ -18,10 +19,11 @@ export class AppComponent implements OnInit {
   isEditPage = false;
   isSettingsOpen = false;
   isSyncing = false;
+  isForceIndexing = false;
   theme: 'light' | 'dark' = 'light';
   activeEditRequest: EditRequest | null = null;
 
-  constructor(private router: Router, private logger: LoggerService) {}
+  constructor(private router: Router, private logger: LoggerService, private content: ContentService) {}
 
   ngOnInit(): void {
     this.loadTheme();
@@ -43,6 +45,26 @@ export class AppComponent implements OnInit {
   runSync(): void {
     if (this.isEditPage) return;
     this.contentBrowser?.runSync();
+  }
+
+  runForceIndexing(): void {
+    if (this.isForceIndexing) return;
+
+    this.isForceIndexing = true;
+    this.content.forceIndexing().subscribe({
+      next: () => {
+        this.isForceIndexing = false;
+        this.isSettingsOpen = false;
+        this.logger.info({ service: 'AppComponent', method: 'runForceIndexing' }, 'force indexing completed');
+      },
+      error: (err) => {
+        this.isForceIndexing = false;
+        this.logger.error(
+          { service: 'AppComponent', method: 'runForceIndexing', data: err?.message || err?.error?.message || 'unknown error' },
+          'force indexing failed'
+        );
+      }
+    });
   }
 
   onEditRequested(request: EditRequest): void {

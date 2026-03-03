@@ -389,6 +389,10 @@
 	align-items: start;
 }
 
+.recipe-ingredient-row {
+	grid-template-columns: minmax(120px, 180px) 1fr auto;
+}
+
 .save-row {
 	display: flex;
 	align-items: center;
@@ -471,6 +475,10 @@
 	}
 
 	.list-row {
+		grid-template-columns: 1fr;
+	}
+
+	.recipe-ingredient-row {
 		grid-template-columns: 1fr;
 	}
 }

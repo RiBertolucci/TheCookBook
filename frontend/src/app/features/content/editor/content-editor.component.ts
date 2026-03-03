@@ -39,7 +39,8 @@ export class ContentEditorComponent implements OnInit, OnChanges {
   mixMixesWellWith: string[] = [''];
   mixGoodWithIngredients: string[] = [''];
 
-  recipeIngredients: string[] = [''];
+  recipeIngredientNames: string[] = [''];
+  recipeIngredientQuantities: string[] = [''];
   recipeProcedure: string[] = [''];
 
   constructor(private content: ContentService) {}
@@ -264,7 +265,7 @@ export class ContentEditorComponent implements OnInit, OnChanges {
     }
 
     lines.push('## Ingredients');
-    this.pushLinkedIngredients(lines, this.recipeIngredients);
+    this.pushRecipeIngredients(lines);
     lines.push('');
     lines.push('## Procedure');
     lines.push('');
@@ -304,6 +305,27 @@ export class ContentEditorComponent implements OnInit, OnChanges {
       return;
     }
     cleaned.forEach(value => lines.push(`- ${this.toSpiceReference(value)}`));
+  }
+
+  private pushRecipeIngredients(lines: string[]): void {
+    const rowCount = Math.max(this.recipeIngredientNames.length, this.recipeIngredientQuantities.length);
+    const output: string[] = [];
+
+    for (let index = 0; index < rowCount; index += 1) {
+      const name = (this.recipeIngredientNames[index] || '').trim();
+      const quantity = (this.recipeIngredientQuantities[index] || '').trim();
+      if (!name) continue;
+
+      const ingredientRef = this.toIngredientReference(name);
+      output.push(quantity ? `${quantity} ${ingredientRef}` : ingredientRef);
+    }
+
+    if (output.length === 0) {
+      lines.push('- ');
+      return;
+    }
+
+    output.forEach(item => lines.push(`- ${item}`));
   }
 
   private toIngredientReference(value: string): string {
@@ -423,7 +445,8 @@ export class ContentEditorComponent implements OnInit, OnChanges {
     this.mixComposedOf = [''];
     this.mixMixesWellWith = [''];
     this.mixGoodWithIngredients = [''];
-    this.recipeIngredients = [''];
+    this.recipeIngredientNames = [''];
+    this.recipeIngredientQuantities = [''];
     this.recipeProcedure = [''];
     this.isEditingExistingFile = false;
     this.editingTargetSection = null;
@@ -450,8 +473,6 @@ export class ContentEditorComponent implements OnInit, OnChanges {
         return this.mixMixesWellWith;
       case 'mixGoodWithIngredients':
         return this.mixGoodWithIngredients;
-      case 'recipeIngredients':
-        return this.recipeIngredients;
       case 'recipeProcedure':
         return this.recipeProcedure;
       default:
@@ -544,8 +565,74 @@ export class ContentEditorComponent implements OnInit, OnChanges {
       return;
     }
 
-    this.recipeIngredients = bullets('Ingredients');
+    this.setRecipeIngredientsFromBullets(bullets('Ingredients'));
     this.recipeProcedure = numbered('Procedure');
+  }
+
+  addRecipeIngredient(): void {
+    this.recipeIngredientNames.push('');
+    this.recipeIngredientQuantities.push('');
+  }
+
+  removeRecipeIngredient(index: number): void {
+    if (this.recipeIngredientNames.length <= 1) {
+      this.recipeIngredientNames[0] = '';
+      this.recipeIngredientQuantities[0] = '';
+      return;
+    }
+    this.recipeIngredientNames.splice(index, 1);
+    this.recipeIngredientQuantities.splice(index, 1);
+  }
+
+  private setRecipeIngredientsFromBullets(items: string[]): void {
+    const source = items.length ? items : [''];
+    const parsed = source.map((item) => this.parseRecipeIngredientItem(item));
+    this.recipeIngredientNames = parsed.map((entry) => entry.name || '');
+    this.recipeIngredientQuantities = parsed.map((entry) => entry.quantity || '');
+  }
+
+  private parseRecipeIngredientItem(item: string): { quantity: string; name: string } {
+    const text = String(item || '').trim();
+    if (!text) return { quantity: '', name: '' };
+
+    const fullLinkMatch = text.match(/^\s*\[(.+?)\]\(.+?\)\s*$/);
+    if (fullLinkMatch) {
+      return { quantity: '', name: fullLinkMatch[1].trim() };
+    }
+
+    const qtyPlusLinkMatch = text.match(/^(.*?)(\[(.+?)\]\(.+?\))(.*)$/);
+    if (qtyPlusLinkMatch) {
+      const quantity = `${qtyPlusLinkMatch[1] || ''} ${qtyPlusLinkMatch[4] || ''}`.trim();
+      const name = (qtyPlusLinkMatch[3] || '').trim();
+      return { quantity, name };
+    }
+
+    const tokens = text.split(/\s+/).filter(Boolean);
+    if (tokens.length <= 1) {
+      return { quantity: '', name: text };
+    }
+
+    const normalizedToken = (value: string) => value.toLowerCase().replace(/[.,]/g, '');
+    const units = new Set(['g', 'kg', 'mg', 'ml', 'l', 'cl', 'cup', 'cups', 'tbsp', 'tsp', 'oz', 'lb', 'pcs', 'pc']);
+    const isQuantityToken = (value: string) => /\d/.test(value) || ['q.b.', 'qb', 'circa', 'ca', 'ca.', 'about', 'x'].includes(normalizedToken(value));
+    const isUnitToken = (value: string) => units.has(normalizedToken(value));
+
+    let splitIndex = 0;
+    if (isQuantityToken(tokens[0])) {
+      splitIndex = 1;
+      while (splitIndex < tokens.length && (isQuantityToken(tokens[splitIndex]) || isUnitToken(tokens[splitIndex])) && splitIndex < 3) {
+        splitIndex += 1;
+      }
+    }
+
+    if (splitIndex === 0 || splitIndex >= tokens.length) {
+      return { quantity: '', name: text };
+    }
+
+    return {
+      quantity: tokens.slice(0, splitIndex).join(' ').trim(),
+      name: tokens.slice(splitIndex).join(' ').trim(),
+    };
   }
 
   private toTitleLabel(value: string): string {

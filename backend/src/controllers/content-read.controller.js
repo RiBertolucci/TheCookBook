@@ -1,5 +1,6 @@
 const path = require('path');
 const fileReader = require('../services/fileReader');
+const indexStore = require('../services/index-store.service');
 const logger = require('../services/logger');
 const { normalizeFilenameParam } = require('../utils/content-path.utils');
 
@@ -63,9 +64,39 @@ async function getHierarchy(req, res) {
   }
 }
 
+async function getIndexes(req, res) {
+  try {
+    await indexStore.ensureInitialized();
+    res.json({ indexes: indexStore.listIndexes() });
+  } catch (err) {
+    logger.error({ service: 'indexStore', method: 'getIndexes', requestId: req.requestId, data: err.message }, 'Error listing indexes');
+    res.status(500).json({ error: err.message });
+  }
+}
+
+async function getIndexByName(req, res) {
+  const indexName = String(req.params.indexName || '').trim();
+  if (!indexName) {
+    return res.status(400).json({ error: 'indexName is required' });
+  }
+
+  try {
+    const snapshot = await indexStore.getIndexSnapshot(indexName);
+    res.json(snapshot);
+  } catch (err) {
+    if (String(err.message || '').startsWith('Unknown index:')) {
+      return res.status(404).json({ error: err.message });
+    }
+    logger.error({ service: 'indexStore', method: 'getIndexByName', requestId: req.requestId, data: err.message }, 'Error loading index');
+    res.status(500).json({ error: err.message });
+  }
+}
+
 module.exports = {
   getRecipe,
   getIngredient,
   getSpice,
-  getHierarchy
+  getHierarchy,
+  getIndexes,
+  getIndexByName
 };

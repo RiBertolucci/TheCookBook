@@ -9,6 +9,7 @@ const path = require('path');
 
 const metadata = require('./metadata');
 const linker = require('./linker');
+const indexStore = require('./index-store.service');
 const logger = require('./logger');
 let _rootDir = null;
 
@@ -24,6 +25,8 @@ async function run(rootDir) {
     logger.debug({ service: 'sync', method: 'run', data: folder }, 'scanning folder');
     await scanDirectory(dirPath);
   }
+
+  await indexStore.rebuildAllIndexes();
 
   // Persist metadata after scanning
   await metadata.save();

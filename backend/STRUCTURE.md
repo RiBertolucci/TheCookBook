@@ -13,15 +13,20 @@ backend/
 │   ├── Ingredients/          # Ingredient files (.md)
 │   └── SpicesAndHerbs/       # Spice and herb files (.md)
 │   └── sync-metadata.json    # Metadata (auto-generated, tracks file changes)
+│   └── .indexes/             # Persistent search indexes (auto-generated JSON)
 │
 └── src/                      # Application source code
     ├── index.js              # CLI entry point (npm run sync)
     ├── server.js             # HTTP server (Express, npm start)
     │
     └── services/             # Core business logic
+        ├── index-adapters/   # One adapter per index (preprocessing + mapping)
+        │   ├── registry.js
+        │   └── recipes-by-ingredients.adapter.js
         ├── metadata.js       # Tracks file creation/modification times
         ├── parser.js         # Markdown parsing and link formatting
         ├── linker.js         # Cross-document linking logic
+        ├── index-store.service.js # Generic key-set persistent indexing engine
         └── sync.js           # Main sync orchestration
 ```
 
