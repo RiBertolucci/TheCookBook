@@ -1,0 +1,113 @@
+<pre class="debug-hidden">{{ hierarchy | json }}</pre>
+
+<div class="workspace-layout">
+  <aside id="hierarchy-wrapper" class="panel hierarchy-panel" *ngIf="hierarchy">
+    <div class="panel-header hierarchy-header-row">
+      <span>Content hierarchy</span>
+      <label class="delete-toggle-label">
+        <input type="checkbox" [(ngModel)]="showFolderDeleteBins" />
+        Delete mode
+      </label>
+    </div>
+    <div id="hierarchy-sections" class="hierarchy-sections">
+      <ng-container *ngFor="let section of keys(hierarchy); let sectionIndex = index">
+        <div [attr.id]="'section-header-' + sectionIndex" class="tree-row section-row">
+          <button class="tree-toggle" (click)="toggleExpand(section)">{{ isExpanded(section) ? '▾' : '▸' }}</button>
+          <strong class="tree-label" (click)="toggleExpand(section)">{{ section }}</strong>
+        </div>
+        <div [attr.id]="'section-content-' + sectionIndex" class="tree-children" *ngIf="isExpanded(section)">
+          <ng-container *ngTemplateOutlet="folderNode; context: { node: hierarchy[section], path: section }"></ng-container>
+        </div>
+      </ng-container>
+    </div>
+  </aside>
+
+  <section id="tabbed-viewer" class="panel viewer-panel">
+    <div id="tabs-header" class="tabs-toolbar">
+      <div id="tabs-scroll-wrapper" class="tabs-scroll-wrapper">
+        <div id="tabs-list" class="tabs-list">
+          <ng-container *ngFor="let t of tabs">
+            <div [attr.id]="'tab-item-' + t.id" class="tab-pill" (click)="activeTabId = t.id" [class.active]="activeTabId===t.id">
+              <span class="tab-title">{{ t.title }}</span>
+              <button class="tab-close" (click)="$event.stopPropagation(); closeTab(t.id)">×</button>
+            </div>
+          </ng-container>
+          <span class="tabs-empty" *ngIf="tabs.length === 0">No open files</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="active-tab-panel" class="rendered-panel" *ngIf="activeTabId !== null; else emptyState">
+      <div class="file-title-row">
+        <div class="file-title-text">{{ getActiveTabTitle() }}</div>
+        <div class="file-title-actions">
+          <button
+            class="btn btn-sm btn-outline-secondary icon-edit-btn"
+            (click)="editActiveFile()"
+            aria-label="Edit file"
+            title="Edit file"
+          >
+            ✏️
+          </button>
+          <button
+            class="btn btn-sm btn-outline-danger icon-delete-btn"
+            *ngIf="showFolderDeleteBins"
+            (click)="deleteActiveFile()"
+            [disabled]="isDeleting"
+            aria-label="Delete file"
+            title="Delete file"
+          >
+            🗑️
+          </button>
+        </div>
+      </div>
+
+      <ng-container *ngFor="let t of tabs">
+        <div [attr.id]="'tab-content-' + t.id" class="rendered-content" *ngIf="t.id === activeTabId" [innerHTML]="t.renderedContent" (click)="onRenderedClick($event)"></div>
+      </ng-container>
+      <span class="save-error" *ngIf="deleteError">{{ deleteError }}</span>
+    </div>
+
+    <ng-template #emptyState>
+      <div class="rendered-empty">Select a file from the hierarchy to open it in a tab.</div>
+    </ng-template>
+  </section>
+</div>
+
+<ng-template #folderNode let-node="node" let-path="path">
+  <div [attr.id]="'folder-node-root-' + path.split('/').join('-')" class="folder-node" *ngIf="node" [attr.data-path]="path">
+    <div [attr.id]="'subdirs-container-' + path.split('/').join('-')" class="subdirs-container" *ngIf="node.subdirs && keys(node.subdirs).length">
+      <ng-container *ngFor="let sub of keys(node.subdirs); let subIndex = index">
+        <div [attr.id]="'subdir-header-' + subIndex" class="tree-row subdir-row">
+          <button class="tree-toggle" (click)="toggleExpand(path + '/' + sub)">{{ isExpanded(path + '/' + sub) ? '▾' : '▸' }}</button>
+          <span class="tree-label" (click)="toggleExpand(path + '/' + sub)">{{ sub }}</span>
+          <button
+            class="folder-delete-btn"
+            *ngIf="showFolderDeleteBins"
+            (click)="$event.stopPropagation(); deleteFolder(path + '/' + sub)"
+            [disabled]="isDeleting"
+            aria-label="Delete folder"
+            title="Delete folder"
+          >
+            🗑️
+          </button>
+        </div>
+        <div [attr.id]="'subdir-content-' + subIndex" class="tree-children" *ngIf="isExpanded(path + '/' + sub)" [attr.data-path]="path + '/' + sub">
+          <ng-container *ngIf="node.subdirs && node.subdirs[sub]">
+            <ng-container *ngTemplateOutlet="folderNode; context: { node: node.subdirs[sub], path: path + '/' + sub }"></ng-container>
+          </ng-container>
+        </div>
+      </ng-container>
+    </div>
+
+    <pre class="debug-hidden">{{ node | json }}</pre>
+
+    <ul class="file-list" *ngIf="node.files && node.files.length">
+      <ng-container *ngFor="let file of node.files">
+        <li class="file-item">
+          <a class="file-link" href="#" (click)="$event.preventDefault(); openTab(getSectionFromPath(path), getFilenameForPath(path, file))">{{ file }}</a>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</ng-template>

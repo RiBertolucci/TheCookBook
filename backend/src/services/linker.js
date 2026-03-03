@@ -271,8 +271,7 @@ async function processRecipe(content, filePath, rootDir) {
   const ingredients = parser.extractSection(newContent, 'Ingredients');
   if (ingredients.length > 0) {
     const ingredientDir = path.join(rootDir, 'Ingredients');
-    const links = [];
-    const foundMap = []; // { item, file }
+    const rewrittenItems = [];
     for (const item of ingredients) {
       // If the item is already a markdown link like [Name](...), extract the
       // visible text to avoid creating nested links.
@@ -283,14 +282,20 @@ async function processRecipe(content, filePath, rootDir) {
       if (foundFile) {
         // create API endpoint link target so frontend can intercept
         const apiPath = `/api/ingredients/${foundFile.split('\\').join('/')}`;
-        links.push(`[${displayName}](${apiPath})`);
-        foundMap.push({ item: displayName, file: foundFile });
-        modified = true;
+        const linkedItem = `[${displayName}](${apiPath})`;
+        rewrittenItems.push(linkedItem);
+        if (linkedItem !== item) {
+          modified = true;
+        }
+      } else {
+        // keep unknown ingredients as plain text (do not delete them)
+        rewrittenItems.push(item);
       }
     }
-    if (links.length > 0) {
-      newContent = parser.updateOrCreateSection(newContent, 'Ingredients', links);
-      logger.info({ service: 'linker', method: 'processRecipe', data: links }, 'added recipe ingredient links');
+
+    if (modified) {
+      newContent = parser.updateOrCreateSection(newContent, 'Ingredients', rewrittenItems);
+      logger.info({ service: 'linker', method: 'processRecipe', data: rewrittenItems }, 'updated recipe ingredient links');
 
       // Intentionally do NOT replace inline occurrences throughout the
       // recipe body. Replacing inside paragraphs can create nested links or

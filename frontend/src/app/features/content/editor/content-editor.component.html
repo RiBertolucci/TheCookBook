@@ -1,0 +1,138 @@
+<section class="panel edit-panel">
+  <div class="panel-header">{{ isEditingExistingFile ? 'Edit markdown file' : 'Create new markdown file' }}</div>
+  <div class="edit-body">
+    <div class="edit-row">
+      <label class="edit-label" for="kind">Type</label>
+      <select id="kind" class="form-select" [(ngModel)]="selectedKind" (change)="onKindChanged()">
+        <option value="">Select type</option>
+        <option value="ingredient">Ingredient</option>
+        <option value="spice">Spice/Herb</option>
+        <option value="mix">Mix</option>
+        <option value="recipe">Recipe</option>
+      </select>
+    </div>
+
+    <ng-container *ngIf="selectedKind">
+      <div class="edit-row">
+        <label class="edit-label" for="path">Path (subfolder)</label>
+        <input id="path" class="form-control" [(ngModel)]="formPath" (ngModelChange)="onPathInputChange($event)" placeholder="Example: Mediterranei (optional)" list="path-suggestions" />
+        <datalist id="path-suggestions">
+          <option *ngFor="let suggestion of getPathSuggestions()" [value]="suggestion"></option>
+        </datalist>
+        <small class="path-hint">Base folder: {{ getSelectedSectionRoot() }}</small>
+      </div>
+
+      <div class="edit-row">
+        <label class="edit-label" for="title">Title</label>
+        <input id="title" class="form-control" [(ngModel)]="formTitle" placeholder="File title" />
+      </div>
+
+      <div class="edit-row">
+        <label class="edit-label" for="description">Description</label>
+        <textarea id="description" class="form-control" rows="3" [(ngModel)]="formDescription"></textarea>
+      </div>
+
+      <ng-container *ngIf="selectedKind === 'ingredient'">
+        <div class="list-block">
+          <div class="list-header">Properties <button class="btn btn-sm btn-outline-primary" (click)="addItem('ingredientProperties')">+</button></div>
+          <div class="list-row" *ngFor="let item of ingredientProperties; let i = index; trackBy: trackByIndex">
+            <input class="form-control" [(ngModel)]="ingredientProperties[i]" />
+            <button class="btn btn-sm btn-outline-danger" (click)="removeItem('ingredientProperties', i)">-</button>
+          </div>
+        </div>
+
+        <div class="list-block">
+          <div class="list-header">Substitutes <button class="btn btn-sm btn-outline-primary" (click)="addItem('ingredientSubstitutes')">+</button></div>
+          <div class="list-row" *ngFor="let item of ingredientSubstitutes; let i = index; trackBy: trackByIndex">
+            <input class="form-control" [(ngModel)]="ingredientSubstitutes[i]" />
+            <button class="btn btn-sm btn-outline-danger" (click)="removeItem('ingredientSubstitutes', i)">-</button>
+          </div>
+        </div>
+
+        <div class="list-block">
+          <div class="list-header">Goes with ingredients <button class="btn btn-sm btn-outline-primary" (click)="addItem('ingredientGoesWithIngredients')">+</button></div>
+          <div class="list-row" *ngFor="let item of ingredientGoesWithIngredients; let i = index; trackBy: trackByIndex">
+            <input class="form-control" [(ngModel)]="ingredientGoesWithIngredients[i]" placeholder="Onion or Mediterranei/garlic" />
+            <button class="btn btn-sm btn-outline-danger" (click)="removeItem('ingredientGoesWithIngredients', i)">-</button>
+          </div>
+        </div>
+
+        <div class="list-block">
+          <div class="list-header">Goes with spicesAndHerbs <button class="btn btn-sm btn-outline-primary" (click)="addItem('ingredientGoesWithSpicesAndHerbs')">+</button></div>
+          <div class="list-row" *ngFor="let item of ingredientGoesWithSpicesAndHerbs; let i = index; trackBy: trackByIndex">
+            <input class="form-control" [(ngModel)]="ingredientGoesWithSpicesAndHerbs[i]" placeholder="Black pepper" />
+            <button class="btn btn-sm btn-outline-danger" (click)="removeItem('ingredientGoesWithSpicesAndHerbs', i)">-</button>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="selectedKind === 'spice'">
+        <div class="list-block">
+          <div class="list-header">Mixes Well With <button class="btn btn-sm btn-outline-primary" (click)="addItem('spiceMixesWellWith')">+</button></div>
+          <div class="list-row" *ngFor="let item of spiceMixesWellWith; let i = index; trackBy: trackByIndex">
+            <input class="form-control" [(ngModel)]="spiceMixesWellWith[i]" />
+            <button class="btn btn-sm btn-outline-danger" (click)="removeItem('spiceMixesWellWith', i)">-</button>
+          </div>
+        </div>
+
+        <div class="list-block">
+          <div class="list-header">Good With Ingredients <button class="btn btn-sm btn-outline-primary" (click)="addItem('spiceGoodWithIngredients')">+</button></div>
+          <div class="list-row" *ngFor="let item of spiceGoodWithIngredients; let i = index; trackBy: trackByIndex">
+            <input class="form-control" [(ngModel)]="spiceGoodWithIngredients[i]" />
+            <button class="btn btn-sm btn-outline-danger" (click)="removeItem('spiceGoodWithIngredients', i)">-</button>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="selectedKind === 'mix'">
+        <div class="list-block">
+          <div class="list-header">Composed of <button class="btn btn-sm btn-outline-primary" (click)="addItem('mixComposedOf')">+</button></div>
+          <div class="list-row" *ngFor="let item of mixComposedOf; let i = index; trackBy: trackByIndex">
+            <input class="form-control" [(ngModel)]="mixComposedOf[i]" placeholder="Cumino o spezie-classiche/cumino" />
+            <button class="btn btn-sm btn-outline-danger" (click)="removeItem('mixComposedOf', i)">-</button>
+          </div>
+        </div>
+
+        <div class="list-block">
+          <div class="list-header">Mixes Well With <button class="btn btn-sm btn-outline-primary" (click)="addItem('mixMixesWellWith')">+</button></div>
+          <div class="list-row" *ngFor="let item of mixMixesWellWith; let i = index; trackBy: trackByIndex">
+            <input class="form-control" [(ngModel)]="mixMixesWellWith[i]" />
+            <button class="btn btn-sm btn-outline-danger" (click)="removeItem('mixMixesWellWith', i)">-</button>
+          </div>
+        </div>
+
+        <div class="list-block">
+          <div class="list-header">Good With Ingredients <button class="btn btn-sm btn-outline-primary" (click)="addItem('mixGoodWithIngredients')">+</button></div>
+          <div class="list-row" *ngFor="let item of mixGoodWithIngredients; let i = index; trackBy: trackByIndex">
+            <input class="form-control" [(ngModel)]="mixGoodWithIngredients[i]" />
+            <button class="btn btn-sm btn-outline-danger" (click)="removeItem('mixGoodWithIngredients', i)">-</button>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="selectedKind === 'recipe'">
+        <div class="list-block">
+          <div class="list-header">Ingredients <button class="btn btn-sm btn-outline-primary" (click)="addItem('recipeIngredients')">+</button></div>
+          <div class="list-row" *ngFor="let item of recipeIngredients; let i = index; trackBy: trackByIndex">
+            <input class="form-control" [(ngModel)]="recipeIngredients[i]" placeholder="Tomato or Mediterranei/garlic" />
+            <button class="btn btn-sm btn-outline-danger" (click)="removeItem('recipeIngredients', i)">-</button>
+          </div>
+        </div>
+
+        <div class="list-block">
+          <div class="list-header">Procedure <button class="btn btn-sm btn-outline-primary" (click)="addItem('recipeProcedure')">+</button></div>
+          <div class="list-row" *ngFor="let item of recipeProcedure; let i = index; trackBy: trackByIndex">
+            <textarea class="form-control" rows="2" [(ngModel)]="recipeProcedure[i]"></textarea>
+            <button class="btn btn-sm btn-outline-danger" (click)="removeItem('recipeProcedure', i)">-</button>
+          </div>
+        </div>
+      </ng-container>
+
+      <div class="save-row">
+        <button class="btn btn-primary" (click)="saveNewFile()" [disabled]="isSaving">{{ isSaving ? 'Saving...' : (isEditingExistingFile ? 'Update file' : 'Save file') }}</button>
+        <span class="save-ok" *ngIf="saveMessage">{{ saveMessage }}</span>
+        <span class="save-error" *ngIf="saveError">{{ saveError }}</span>
+      </div>
+    </ng-container>
+  </div>
+</section>

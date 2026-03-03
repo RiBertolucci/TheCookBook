@@ -1,0 +1,39 @@
+# Salsiccia
+
+Preparazione di carne suina macinata e speziata, usata in sughi, ragù, teglie e ripieni della tradizione italiana.
+
+## Properties
+
+- Ricca di grasso e sapore, ottima per fondi di cottura
+- Si presta a rosolatura, stufatura e cotture al forno
+- Disponibile in varianti dolci, piccanti e aromatizzate
+- Sgranata lega bene con sughi e verdure
+- Dona corpo proteico e sapidità ai piatti
+
+## Substitutes
+
+- Pancetta a cubetti (componente grassa e sapida)
+- Macinato misto suino-manzo (struttura simile)
+- Guanciale + carne magra (equilibrio grasso/proteina)
+- Cotechino sgranato asciutto (in preparazioni rustiche)
+- Tofu affumicato sbriciolato (alternativa vegetale)
+- Tempeh marinato (texture e sapidità)
+- Seitan tritato (buona resa in sughi)
+
+## Goes with ingredients
+- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Aglio](/api/ingredients/verdure/aglio.md)
+- [Sedano](/api/ingredients/verdure/sedano.md)
+- [Carota](/api/ingredients/verdure/carota.md)
+- [Pomodoro](/api/ingredients/verdure/pomodoro.md)
+- [Patata](/api/ingredients/verdure/patata.md)
+- [Funghi](/api/ingredients/verdure/funghi.md)
+- [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
+## Goes with spicesAndHerbs
+- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
+- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
+- [Alloro](/api/spices/erbe-mediterranee/alloro.md)
+- [Maggiorana](/api/spices/erbe-mediterranee/maggiorana.md)
+- [Rosmarino](/api/spices/erbe-mediterranee/rosmarino.md)
+- [Timo](/api/spices/erbe-mediterranee/timo.md)
+- [Paprika](/api/spices/spezie-classiche/paprika.md)

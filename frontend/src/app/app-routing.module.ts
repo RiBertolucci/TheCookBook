@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ViewerComponent } from './viewer.component';
+import { ViewerComponent } from './features/viewer/viewer.component';
 
 const routes: Routes = [
+  { path: 'edit', component: ViewerComponent },
   { path: 'view/:section/:filename', component: ViewerComponent },
-  { path: '', pathMatch: 'full', redirectTo: '' }
+  { path: '', pathMatch: 'full', component: ViewerComponent }
 ];
 
 @NgModule({
