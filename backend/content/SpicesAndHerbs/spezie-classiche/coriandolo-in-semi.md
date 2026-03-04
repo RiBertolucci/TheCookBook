@@ -13,10 +13,10 @@ Spezia agrumata e calda, molto usata in miscele e tostature per dare profondità
 - Ciao
 
 ## Good With Ingredients
-
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
 - [Cipolla](/api/ingredients/verdure/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Patata](/api/ingredients/verdure/patata.md)
 - Lenticchie rosse
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
+- [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)

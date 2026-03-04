@@ -11,10 +11,12 @@ Spezia intensa con note tostate e terrose, perfetta in miscele calde, legumi, ca
 - [Paprika](/api/spices/spezie-classiche/paprika.md)
 - [Garam Masala](/api/spices/mixes/garam-masala.md)
 ## Good With Ingredients
-
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
 - [Cipolla](/api/ingredients/verdure/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Pomodoro](/api/ingredients/verdure/pomodoro.md)
 - [Riso basmati](/api/ingredients/esotici/riso-basmati.md)
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
+- [Sale](/api/ingredients/dispensa/sale.md)
+- [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
+- [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)

@@ -30,6 +30,9 @@ Radice dolce usata per bilanciare acidità e sapidità, spesso nella base del so
 - [Piselli](/api/ingredients/verdure/piselli.md)
 - [Pancetta](/api/ingredients/salumi-e-proteine/pancetta.md)
 - [Salsiccia](/api/ingredients/salumi-e-proteine/salsiccia.md)
+- [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
+- [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/spices/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)

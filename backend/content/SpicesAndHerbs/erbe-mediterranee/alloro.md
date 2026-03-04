@@ -19,3 +19,6 @@ Foglia aromatica usata in cotture lunghe, brodi, legumi e stufati per profondit√
 - [Salsiccia](/api/ingredients/salumi-e-proteine/salsiccia.md)
 - [Pancetta](/api/ingredients/salumi-e-proteine/pancetta.md)
 - [Riso basmati](/api/ingredients/esotici/riso-basmati.md)
+- [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [Sale](/api/ingredients/dispensa/sale.md)
+- [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)

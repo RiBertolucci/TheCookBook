@@ -12,10 +12,10 @@ Erba aromatica dolce e rotonda, affine all'origano ma più delicata, ottima in s
 - Rosmarino
 
 ## Good With Ingredients
-
 - [Pomodoro](/api/ingredients/verdure/pomodoro.md)
 - [Melanzana](/api/ingredients/verdure/melanzana.md)
 - [Zucchina](/api/ingredients/verdure/zucchina.md)
 - [Salsiccia](/api/ingredients/salumi-e-proteine/salsiccia.md)
 - [Uova](/api/ingredients/salumi-e-proteine/uova.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
+- [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)

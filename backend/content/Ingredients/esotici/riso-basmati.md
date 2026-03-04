@@ -26,6 +26,8 @@ Riso a chicco lungo e profumato, ideale come accompagnamento per piatti speziati
 - [Cipolla](/api/ingredients/verdure/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Zenzero fresco](/api/ingredients/esotici/zenzero-fresco.md)
+- [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
 ## Goes with spicesAndHerbs
 - [Garam Masala](/api/spices/mixes/garam-masala.md)
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)

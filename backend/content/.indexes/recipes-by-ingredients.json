@@ -2,7 +2,7 @@
   "name": "recipes-by-ingredients",
   "version": 1,
   "strategy": "key-set",
-  "updatedAt": "2026-03-03T23:18:13.757Z",
+  "updatedAt": "2026-03-04T00:44:54.790Z",
   "entries": {
     "Recipes/gateu-di-patate.md": [
       "patata",
@@ -16,6 +16,23 @@
       "patata",
       "riso basmati",
       "zenzero fresco"
+    ],
+    "Recipes/ragu-vegano-di-soia.md": [
+      "[cipolla](/api/ingredients/verdure/cipolla.md) piccola",
+      "[macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md) secco",
+      "[pepe nero](/api/spices/spezie-classiche/pepe-nero.md) q.b.",
+      "[sale](/api/ingredients/dispensa/sale.md) q.b.",
+      "aglio",
+      "alloro",
+      "brodo vegetale",
+      "carota",
+      "cumino",
+      "olio extravergine di oliva",
+      "paprika",
+      "passata di pomodoro",
+      "rosmarino",
+      "salsa di soia",
+      "sedano"
     ]
   }
 }

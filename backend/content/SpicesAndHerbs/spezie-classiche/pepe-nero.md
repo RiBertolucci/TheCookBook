@@ -48,3 +48,8 @@ Spezia fondamentale della cucina italiana, usata in quasi tutte le categorie di 
 - [Sedano](/api/ingredients/verdure/sedano.md)
 - [Spinaci](/api/ingredients/verdure/spinaci.md)
 - [Zucchina](/api/ingredients/verdure/zucchina.md)
+- [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
+- [Sale](/api/ingredients/dispensa/sale.md)
+- [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
+- [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)

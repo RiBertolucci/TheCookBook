@@ -41,6 +41,9 @@ Bulbo aromatico fondamentale nella cucina italiana, usato per soffritti, intingo
 - [Peperoncino](/api/ingredients/verdure/peperoncino.md)
 - [Piselli](/api/ingredients/verdure/piselli.md)
 - [Spinaci](/api/ingredients/verdure/spinaci.md)
+- [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
+- [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
+- [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/spices/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)

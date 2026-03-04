@@ -31,6 +31,10 @@ Grasso cardine della cucina italiana, usato a crudo, in soffritto, in emulsione 
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
 - [Peperoncino](/api/ingredients/verdure/peperoncino.md)
+- [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
+- [Sale](/api/ingredients/dispensa/sale.md)
+- [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
+- [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/spices/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)

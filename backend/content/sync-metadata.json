@@ -77,7 +77,7 @@
   },
   "Ingredients\\dispensa\\olio-extravergine-di-oliva.md": {
     "created": "2026-03-02T17:51:34.658Z",
-    "modified": "2026-03-02T18:27:08.313Z"
+    "modified": "2026-03-04T00:40:03.539Z"
   },
   "Ingredients\\esotici\\latte-di-cocco.md": {
     "created": "2026-03-02T18:06:46.192Z",
@@ -85,11 +85,11 @@
   },
   "Ingredients\\esotici\\riso-basmati.md": {
     "created": "2026-03-02T18:06:46.198Z",
-    "modified": "2026-03-02T18:27:08.185Z"
+    "modified": "2026-03-04T00:40:03.461Z"
   },
   "Ingredients\\esotici\\zenzero-fresco.md": {
     "created": "2026-03-02T18:06:46.190Z",
-    "modified": "2026-03-02T18:27:07.236Z"
+    "modified": "2026-03-04T00:40:03.459Z"
   },
   "Ingredients\\latticini-e-formaggi\\burro.md": {
     "created": "2026-03-02T17:51:35.168Z",
@@ -133,15 +133,15 @@
   },
   "Ingredients\\verdure\\aglio.md": {
     "created": "2026-03-02T17:51:33.410Z",
-    "modified": "2026-03-02T18:27:08.306Z"
+    "modified": "2026-03-04T00:40:03.536Z"
   },
   "Ingredients\\verdure\\carota.md": {
     "created": "2026-03-02T17:51:33.514Z",
-    "modified": "2026-03-02T18:27:08.135Z"
+    "modified": "2026-03-04T00:40:03.533Z"
   },
   "Ingredients\\verdure\\cipolla.md": {
     "created": "2026-03-02T17:51:33.514Z",
-    "modified": "2026-03-02T18:27:08.181Z"
+    "modified": "2026-03-04T00:40:03.531Z"
   },
   "Ingredients\\verdure\\funghi.md": {
     "created": "2026-03-02T17:51:33.921Z",
@@ -153,7 +153,7 @@
   },
   "Ingredients\\verdure\\patata.md": {
     "created": "2026-03-02T17:51:33.661Z",
-    "modified": "2026-03-02T18:27:08.232Z"
+    "modified": "2026-03-04T00:40:03.426Z"
   },
   "Ingredients\\verdure\\peperoncino.md": {
     "created": "2026-03-02T17:52:03.785Z",
@@ -165,11 +165,11 @@
   },
   "Ingredients\\verdure\\pomodoro.md": {
     "created": "2026-03-02T17:51:33.557Z",
-    "modified": "2026-03-02T19:15:03.398Z"
+    "modified": "2026-03-04T00:40:03.541Z"
   },
   "Ingredients\\verdure\\sedano.md": {
     "created": "2026-03-02T17:51:33.537Z",
-    "modified": "2026-03-02T18:27:07.922Z"
+    "modified": "2026-03-04T00:40:03.534Z"
   },
   "Ingredients\\verdure\\spinaci.md": {
     "created": "2026-03-02T17:52:03.784Z",
@@ -181,15 +181,15 @@
   },
   "SpicesAndHerbs\\erbe-mediterranee\\alloro.md": {
     "created": "2026-03-02T17:58:22.997Z",
-    "modified": "2026-03-02T18:27:07.224Z"
+    "modified": "2026-03-04T00:40:03.548Z"
   },
   "SpicesAndHerbs\\erbe-mediterranee\\basilico.md": {
     "created": "2026-03-02T17:58:22.793Z",
-    "modified": "2026-03-02T18:27:08.301Z"
+    "modified": "2026-03-04T00:40:03.408Z"
   },
   "SpicesAndHerbs\\erbe-mediterranee\\maggiorana.md": {
     "created": "2026-03-02T17:58:22.947Z",
-    "modified": "2026-03-02T18:11:24.823Z"
+    "modified": "2026-03-04T00:40:03.379Z"
   },
   "SpicesAndHerbs\\erbe-mediterranee\\oregano.md": {
     "created": "2026-03-02T17:58:22.793Z",
@@ -197,11 +197,11 @@
   },
   "SpicesAndHerbs\\erbe-mediterranee\\prezzemolo.md": {
     "created": "2026-03-02T17:58:22.843Z",
-    "modified": "2026-03-02T18:11:24.829Z"
+    "modified": "2026-03-04T00:40:03.380Z"
   },
   "SpicesAndHerbs\\erbe-mediterranee\\rosmarino.md": {
     "created": "2026-03-02T17:58:22.814Z",
-    "modified": "2026-03-02T18:27:07.970Z"
+    "modified": "2026-03-04T00:40:03.547Z"
   },
   "SpicesAndHerbs\\erbe-mediterranee\\salvia.md": {
     "created": "2026-03-02T17:58:22.944Z",
@@ -229,11 +229,11 @@
   },
   "SpicesAndHerbs\\spezie-classiche\\coriandolo-in-semi.md": {
     "created": "2026-03-02T18:13:34.883Z",
-    "modified": "2026-03-02T19:14:47.665Z"
+    "modified": "2026-03-04T00:40:03.470Z"
   },
   "SpicesAndHerbs\\spezie-classiche\\cumino.md": {
     "created": "2026-03-02T18:13:34.884Z",
-    "modified": "2026-03-02T18:27:08.089Z"
+    "modified": "2026-03-04T00:40:03.544Z"
   },
   "SpicesAndHerbs\\spezie-classiche\\noce-moscata.md": {
     "created": "2026-03-02T17:58:23.168Z",
@@ -241,14 +241,42 @@
   },
   "SpicesAndHerbs\\spezie-classiche\\paprika.md": {
     "created": "2026-03-02T17:58:23.197Z",
-    "modified": "2026-03-02T18:27:08.190Z"
+    "modified": "2026-03-04T00:40:03.543Z"
   },
   "SpicesAndHerbs\\spezie-classiche\\pepe-nero.md": {
     "created": "2026-03-02T17:58:23.131Z",
-    "modified": "2026-03-02T18:27:08.176Z"
+    "modified": "2026-03-04T00:40:03.545Z"
   },
   "SpicesAndHerbs\\spezie-classiche\\peperoncino-secco.md": {
     "created": "2026-03-02T17:58:23.238Z",
     "modified": "2026-03-02T18:27:08.087Z"
+  },
+  "Recipes\\gateu-di-patate.md": {
+    "created": "2026-03-02T19:21:01.908Z",
+    "modified": "2026-03-03T09:51:46.884Z"
+  },
+  "Recipes\\ragu-vegano-di-soia.md": {
+    "created": "2026-03-04T00:36:43.121Z",
+    "modified": "2026-03-04T00:44:45.378Z"
+  },
+  "Ingredients\\dispensa\\brodo-vegetale.md": {
+    "created": "2026-03-04T00:39:47.825Z",
+    "modified": "2026-03-04T00:40:03.462Z"
+  },
+  "Ingredients\\dispensa\\passata-di-pomodoro.md": {
+    "created": "2026-03-04T00:39:47.987Z",
+    "modified": "2026-03-04T00:40:03.370Z"
+  },
+  "Ingredients\\dispensa\\sale.md": {
+    "created": "2026-03-04T00:39:48.152Z",
+    "modified": "2026-03-04T00:39:59.931Z"
+  },
+  "Ingredients\\dispensa\\salsa-di-soia.md": {
+    "created": "2026-03-04T00:39:47.691Z",
+    "modified": "2026-03-04T00:39:59.931Z"
+  },
+  "Ingredients\\salumi-e-proteine\\macinato-di-soia.md": {
+    "created": "2026-03-04T00:39:47.535Z",
+    "modified": "2026-03-04T00:40:03.430Z"
   }
 }

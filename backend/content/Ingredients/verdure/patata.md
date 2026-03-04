@@ -36,6 +36,8 @@ Tubero versatile per contorni, primi e secondi: assorbe condimenti e si presta a
 - [Carota](/api/ingredients/verdure/carota.md)
 - [Sedano](/api/ingredients/verdure/sedano.md)
 - [Zucchina](/api/ingredients/verdure/zucchina.md)
+- [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [Sale](/api/ingredients/dispensa/sale.md)
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
 - [Basilico](/api/spices/erbe-mediterranee/basilico.md)

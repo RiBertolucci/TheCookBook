@@ -39,6 +39,11 @@ Ortaggio di base per soffritti e stufati, capace di dare dolcezza, struttura e p
 - [Guanciale](/api/ingredients/salumi-e-proteine/guanciale.md)
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
 - [Piselli](/api/ingredients/verdure/piselli.md)
+- [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
+- [Sale](/api/ingredients/dispensa/sale.md)
+- [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
+- [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/spices/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)

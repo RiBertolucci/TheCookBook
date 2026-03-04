@@ -26,6 +26,7 @@ Radice aromatica piccante e profumata, fondamentale in molte preparazioni indian
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
 - [Patata](/api/ingredients/verdure/patata.md)
 - [Riso basmati](/api/ingredients/esotici/riso-basmati.md)
+- [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
 ## Goes with spicesAndHerbs
 - [Garam Masala](/api/spices/mixes/garam-masala.md)
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)

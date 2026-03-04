@@ -20,3 +20,7 @@ Spezia dal profilo dolce o affumicato usata per colore, rotondità e leggere not
 - [Zucchina](/api/ingredients/verdure/zucchina.md)
 - [Zenzero fresco](/api/ingredients/esotici/zenzero-fresco.md)
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
+- [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
+- [Sale](/api/ingredients/dispensa/sale.md)
+- [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
+- [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
