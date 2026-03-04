@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { ViewerComponent } from './features/viewer/viewer.component';
 import { ContentBrowserComponent } from './features/content/browser/content-browser.component';
 import { ContentEditorComponent } from './features/content/editor/content-editor.component';
+import { SearchTabComponent } from './features/search/search-tab.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewerComponent,
     ContentBrowserComponent,
-    ContentEditorComponent
+    ContentEditorComponent,
+    SearchTabComponent
   ],
   imports: [
     BrowserModule,

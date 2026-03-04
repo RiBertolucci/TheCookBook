@@ -20,10 +20,15 @@ export class AppComponent implements OnInit {
   isSettingsOpen = false;
   isSyncing = false;
   isForceIndexing = false;
+  activeMainTab: 'overview' | 'search' = 'overview';
   theme: 'light' | 'dark' = 'light';
   activeEditRequest: EditRequest | null = null;
 
-  constructor(private router: Router, private logger: LoggerService, private content: ContentService) {}
+  constructor(
+    private router: Router,
+    private logger: LoggerService,
+    private content: ContentService
+  ) {}
 
   ngOnInit(): void {
     this.loadTheme();
@@ -65,6 +70,10 @@ export class AppComponent implements OnInit {
         );
       }
     });
+  }
+
+  setMainTab(tab: 'overview' | 'search'): void {
+    this.activeMainTab = tab;
   }
 
   onEditRequested(request: EditRequest): void {

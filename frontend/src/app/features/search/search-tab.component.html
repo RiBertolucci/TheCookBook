@@ -1,0 +1,72 @@
+<section class="panel search-panel">
+  <div class="panel-header">Search</div>
+  <div class="search-body">
+    <div class="edit-row">
+      <label class="edit-label" for="search-query">Query</label>
+      <div class="search-input-wrap">
+        <input
+          id="search-query"
+          class="form-control"
+          [(ngModel)]="searchInput"
+          (ngModelChange)="onSearchInputChanged($event)"
+          (keydown)="onSearchInputKeydown($event)"
+          placeholder="Type ingredients or keywords" />
+        <button type="button" class="search-toggle-btn" (click)="toggleSearchSuggestions()">
+          {{ showSearchSuggestions ? '▴' : '▾' }}
+        </button>
+        <div class="search-suggestions" *ngIf="showSearchSuggestions && searchSuggestions.length > 0">
+          <button type="button" class="search-suggestion-item" *ngFor="let suggestion of searchSuggestions" (click)="selectSearchSuggestion(suggestion)">
+            {{ suggestion }}
+          </button>
+        </div>
+      </div>
+      <div class="search-bubbles" *ngIf="searchSelectedItems.length > 0">
+        <span class="search-bubble" *ngFor="let selected of searchSelectedItems">
+          {{ selected }}
+          <button type="button" class="search-bubble-remove" (click)="removeSearchItem(selected)">×</button>
+        </span>
+      </div>
+    </div>
+
+    <div class="edit-row">
+      <label class="edit-label" for="index-select">Index</label>
+      <select id="index-select" class="form-select" [(ngModel)]="selectedIndexName" (change)="onSearchIndexChanged()" [disabled]="isLoadingIndexes || availableIndexes.length === 0">
+        <option value="" disabled>{{ isLoadingIndexes ? 'Loading indexes...' : (isLoadingIndexValues ? 'Loading values...' : 'Select index') }}</option>
+        <option *ngFor="let index of availableIndexes" [value]="index.name">{{ getResearchTypeLabel(index.name) }}</option>
+      </select>
+    </div>
+
+    <div class="search-actions-row">
+      <button type="button" class="btn btn-sm btn-primary" (click)="runSearch()" [disabled]="!selectedIndexName || isSearching">
+        {{ isSearching ? 'Searching...' : 'Search' }}
+      </button>
+      <span class="save-error" *ngIf="searchError">{{ searchError }}</span>
+    </div>
+
+    <div class="search-results" *ngIf="groupedSearchResults.length > 0">
+      <div class="panel-header search-results-header">Results</div>
+      <div class="search-groups">
+        <section class="search-group" *ngFor="let group of groupedSearchResults">
+          <div class="search-group-title">{{ getGroupTitle(group) }}</div>
+          <ul class="search-results-list">
+            <li class="search-result-item" *ngFor="let file of group.files">
+              <button type="button" class="search-result-link" (click)="openSearchResult(file)">{{ file.path }}</button>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <div class="search-empty" *ngIf="hasSearched && !isSearching && groupedSearchResults.length === 0 && !searchError && searchResults.length === 0">
+      No matching recipes found.
+    </div>
+
+    <div class="search-preview panel" *ngIf="openedResult">
+      <div class="search-preview-header">
+        <div class="search-preview-title">{{ openedResult.title }}</div>
+        <button type="button" class="search-preview-close" (click)="closeOpenedResult()">×</button>
+      </div>
+      <div class="search-preview-content" [innerHTML]="openedResult.renderedContent"></div>
+    </div>
+  </div>
+</section>

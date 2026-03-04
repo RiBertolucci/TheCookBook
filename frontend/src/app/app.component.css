@@ -13,6 +13,9 @@
 	background: var(--bg);
 	color: var(--text);
 	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0;
 }
 
 .app-shell.dark-mode {
@@ -82,6 +85,7 @@
 	z-index: 20;
 }
 
+
 .settings-label {
 	font-size: 0.8rem;
 	font-weight: 600;
@@ -102,6 +106,57 @@
 	border-color: var(--accent);
 	background: var(--accent-soft);
 	color: var(--accent);
+}
+
+.main-tabs {
+	display: inline-flex;
+	align-items: flex-end;
+	gap: 0.18rem;
+	padding: 0;
+	margin-bottom: 0;
+	position: relative;
+	z-index: 4;
+}
+
+.main-tab {
+	border: 1px solid var(--border);
+	border-radius: 7px 7px 0 0;
+	padding: 0.45rem 1rem;
+	background: var(--surface-soft);
+	color: var(--text);
+	position: relative;
+	z-index: 1;
+	box-shadow: none;
+}
+
+.main-tab.active {
+	border-color: var(--accent);
+	background: var(--surface);
+	color: var(--accent);
+	box-shadow: var(--shadow);
+	z-index: 5;
+	transform: translateY(1px);
+	border-bottom-color: var(--surface);
+}
+
+.main-tab-content {
+	flex: 1;
+	min-height: 0;
+	display: flex;
+	margin-top: -1px;
+	padding: 0.7rem;
+	border: 1px solid var(--border);
+	border-radius: 0 8px 8px 8px;
+	background: var(--surface);
+	box-shadow: var(--shadow);
+	overflow: hidden;
+}
+
+.main-tab-content > app-content-browser,
+.main-tab-content > app-search-tab {
+	flex: 1;
+	min-height: 0;
+	display: block;
 }
 
 .workspace-layout {

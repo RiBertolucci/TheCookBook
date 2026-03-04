@@ -30,11 +30,20 @@
     </div>
   </div>
 
-  <app-content-browser
-    *ngIf="!isEditPage"
-    (editRequested)="onEditRequested($event)"
-    (syncStateChange)="onSyncStateChanged($event)">
-  </app-content-browser>
+  <div class="main-tabs" *ngIf="!isEditPage">
+    <button class="main-tab" [class.active]="activeMainTab === 'overview'" (click)="setMainTab('overview')">Overview</button>
+    <button class="main-tab" [class.active]="activeMainTab === 'search'" (click)="setMainTab('search')">Search</button>
+  </div>
+
+  <div class="main-tab-content" *ngIf="!isEditPage">
+    <app-content-browser
+      *ngIf="activeMainTab === 'overview'"
+      (editRequested)="onEditRequested($event)"
+      (syncStateChange)="onSyncStateChanged($event)">
+    </app-content-browser>
+
+    <app-search-tab *ngIf="activeMainTab === 'search'"></app-search-tab>
+  </div>
 
   <app-content-editor
     *ngIf="isEditPage"

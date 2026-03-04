@@ -1,6 +1,7 @@
 const path = require('path');
 const fileReader = require('../services/fileReader');
 const indexStore = require('../services/index-store.service');
+const indexSearch = require('../services/index-search.service');
 const logger = require('../services/logger');
 const { normalizeFilenameParam } = require('../utils/content-path.utils');
 
@@ -92,11 +93,35 @@ async function getIndexByName(req, res) {
   }
 }
 
+async function searchFilesByIndex(req, res) {
+  const indexName = String(req.params.indexName || '').trim();
+  if (!indexName) {
+    return res.status(400).json({ error: 'indexName is required' });
+  }
+
+  const terms = Array.isArray(req.body?.terms) ? req.body.terms : [];
+
+  try {
+    const response = await indexSearch.searchFilesByIndex(indexName, terms);
+    res.json(response);
+  } catch (err) {
+    if (String(err.message || '').startsWith('Unknown index:')) {
+      return res.status(404).json({ error: err.message });
+    }
+    if (String(err.message || '') === 'indexName is required') {
+      return res.status(400).json({ error: err.message });
+    }
+    logger.error({ service: 'indexSearch', method: 'searchFilesByIndex', requestId: req.requestId, data: err.message }, 'Error searching files by index');
+    res.status(500).json({ error: err.message });
+  }
+}
+
 module.exports = {
   getRecipe,
   getIngredient,
   getSpice,
   getHierarchy,
   getIndexes,
-  getIndexByName
+  getIndexByName,
+  searchFilesByIndex
 };

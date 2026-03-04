@@ -35,6 +35,41 @@ export interface UpdateFilePayload {
   markdown: string;
 }
 
+export interface IndexInfo {
+  name: string;
+  version: number;
+  strategy: string;
+}
+
+export interface IndexSnapshot {
+  name: string;
+  version: number;
+  strategy: string;
+  updatedAt?: string;
+  entries: { [key: string]: string[] };
+}
+
+export interface IndexSearchFile {
+  path: string;
+  section: 'Recipes' | 'Ingredients' | 'SpicesAndHerbs';
+  filename: string;
+  matchedTerms?: number;
+  totalSelectedTerms?: number;
+}
+
+export interface IndexSearchGroup {
+  matchedTerms: number;
+  totalSelectedTerms: number;
+  files: IndexSearchFile[];
+}
+
+export interface IndexSearchResponse {
+  indexName: string;
+  terms: string[];
+  files: IndexSearchFile[];
+  groupedByMatchedTerms?: IndexSearchGroup[];
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -54,6 +89,21 @@ export class ContentService {
   getHierarchy(): Observable<{ [key: string]: FolderNode }> {
     this.logger.debug({ service: 'ContentService', method: 'getHierarchy' }, 'requesting hierarchy');
     return this.http.get<{ [key: string]: FolderNode }>('/api/hierarchy');
+  }
+
+  getIndexes(): Observable<{ indexes: IndexInfo[] }> {
+    this.logger.debug({ service: 'ContentService', method: 'getIndexes' }, 'requesting index list');
+    return this.http.get<{ indexes: IndexInfo[] }>('/api/indexes');
+  }
+
+  getIndexSnapshot(indexName: string): Observable<IndexSnapshot> {
+    this.logger.debug({ service: 'ContentService', method: 'getIndexSnapshot', data: indexName }, 'requesting index snapshot');
+    return this.http.get<IndexSnapshot>(`/api/indexes/${encodeURIComponent(indexName)}`);
+  }
+
+  searchIndexFiles(indexName: string, terms: string[]): Observable<IndexSearchResponse> {
+    this.logger.info({ service: 'ContentService', method: 'searchIndexFiles', data: { indexName, terms } }, 'searching files by index');
+    return this.http.post<IndexSearchResponse>(`/api/indexes/${encodeURIComponent(indexName)}/search`, { terms });
   }
 
   /**
