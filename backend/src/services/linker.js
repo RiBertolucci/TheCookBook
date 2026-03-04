@@ -71,6 +71,107 @@ function toPosixPath(p) {
   return String(p || '').split('\\').join('/');
 }
 
+function normalizeForCatalog(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s-]/gu, ' ')
+    .replace(/-/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function escapeRegExp(value) {
+  return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+async function buildSearchCatalog(searchDir, apiPrefix, kind) {
+  const items = [];
+
+  async function walk(currentDir) {
+    const entries = await fs.readdir(currentDir, { withFileTypes: true });
+    for (const entry of entries) {
+      const absolutePath = path.join(currentDir, entry.name);
+      if (entry.isDirectory()) {
+        await walk(absolutePath);
+        continue;
+      }
+      if (!entry.isFile() || !entry.name.endsWith('.md')) continue;
+
+      const relativePath = path.relative(searchDir, absolutePath).split(path.sep).join('/');
+      const slug = entry.name.slice(0, -3).replace(/-/g, ' ').trim();
+      const normalizedName = normalizeForCatalog(slug);
+      if (!normalizedName) continue;
+
+      items.push({
+        kind,
+        relativePath,
+        apiPath: `${apiPrefix}/${relativePath}`,
+        normalizedName,
+      });
+    }
+  }
+
+  await walk(searchDir);
+  return items;
+}
+
+function findBestCatalogMatch(rawLine, catalog) {
+  const haystack = normalizeForCatalog(rawLine);
+  if (!haystack) return null;
+
+  let best = null;
+  for (const entry of catalog) {
+    const candidate = entry.normalizedName;
+    if (!candidate) continue;
+
+    const pattern = new RegExp(`(^|\\s)${escapeRegExp(candidate)}(?=\\s|$)`, 'i');
+    if (!pattern.test(haystack)) continue;
+
+    if (!best || candidate.length > best.normalizedName.length) {
+      best = entry;
+    }
+  }
+
+  return best;
+}
+
+function autoLinkRecipeIngredientLine(rawItem, catalog) {
+  const raw = String(rawItem || '').trim();
+  if (!raw) return raw;
+
+  const linkedMatch = raw.match(/^(.*?)\[(.+?)\]\(.+?\)(.*)$/);
+  if (linkedMatch) {
+    return raw;
+  }
+
+  const best = findBestCatalogMatch(raw, catalog);
+  if (!best) {
+    return raw;
+  }
+
+  const tokenPattern = best.normalizedName
+    .split(' ')
+    .filter(Boolean)
+    .map((part) => escapeRegExp(part))
+    .join('\\s+');
+
+  const finder = new RegExp(tokenPattern, 'i');
+  const found = raw.match(finder);
+  if (!found) {
+    return raw;
+  }
+
+  const matchedText = found[0];
+  let rewritten = raw.replace(finder, `[${matchedText}](${best.apiPath})`);
+
+  if (best.kind === 'spice') {
+    rewritten = rewritten.replace(/\s+in\s+polvere\b/ig, '');
+  }
+
+  rewritten = rewritten.replace(/\s{2,}/g, ' ').trim();
+  return rewritten;
+}
+
 async function resolveRecipeIngredientLine(item, ingredientDir) {
   const raw = String(item || '').trim();
   if (!raw) {
@@ -305,23 +406,17 @@ async function processRecipe(content, filePath, rootDir) {
   const ingredients = parser.extractSection(newContent, 'Ingredients');
   if (ingredients.length > 0) {
     const ingredientDir = path.join(rootDir, 'Ingredients');
+    const spiceDir = path.join(rootDir, 'SpicesAndHerbs');
+    const ingredientCatalog = await buildSearchCatalog(ingredientDir, '/api/ingredients', 'ingredient');
+    const spiceCatalog = await buildSearchCatalog(spiceDir, '/api/spices', 'spice');
+    const searchCatalog = [...ingredientCatalog, ...spiceCatalog];
     const rewrittenItems = [];
-    for (const item of ingredients) {
-      const { quantity, ingredientName, foundFile } = await resolveRecipeIngredientLine(item, ingredientDir);
-      logger.debug({ service: 'linker', method: 'processRecipe', data: ingredientName }, 'searching for ingredient');
 
-      if (foundFile) {
-        // create API endpoint link target so frontend can intercept
-        const apiPath = `/api/ingredients/${foundFile.split('\\').join('/')}`;
-        const linkedName = `[${ingredientName}](${apiPath})`;
-        const linkedItem = quantity ? `${quantity} ${linkedName}` : linkedName;
-        rewrittenItems.push(linkedItem);
-        if (linkedItem !== item) {
-          modified = true;
-        }
-      } else {
-        // keep unknown ingredients as plain text (do not delete them)
-        rewrittenItems.push(item);
+    for (const item of ingredients) {
+      const linkedItem = autoLinkRecipeIngredientLine(item, searchCatalog);
+      rewrittenItems.push(linkedItem);
+      if (linkedItem !== item) {
+        modified = true;
       }
     }
 
