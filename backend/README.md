@@ -29,4 +29,43 @@ A minimal HTTP layer (Express) exposes the sync functionality to a frontend or o
 - `POST /sync` – triggers a full repository scan; returns `{ status: 'ok' }` on success.
 - Root `/` responds with a simple liveness message.
 
+### Telegram Shopping List
+
+The backend can forward a shopping list to Telegram through a bot.
+
+- `POST /api/shopping-list/telegram`
+    - Request body: `{ "items": ["Item 1", "Item 2"], "targetId": "me" }`
+    - Response: `{ "status": "ok", "messageId": 123, "targetId": "me", "targetName": "Riccardo" }`
+
+- `GET /api/shopping-list/telegram/last`
+    - Query: `?targetId=me`
+    - Response: `{ "status": "ok", "items": ["Item 1"], "sentAt": "...", "messageId": 123, "targetId": "me", "targetName": "Riccardo" }`
+
+- `GET /api/shopping-list/telegram/targets`
+    - Response: `{ "status": "ok", "targets": [{ "id": "me", "name": "Riccardo" }] }`
+
+Required environment variables:
+
+- `TELEGRAM_BOT_TOKEN`
+- `TELEGRAM_TARGETS_JSON` (recommended for multiple named chats)
+
+Legacy fallback (single chat):
+
+- `TELEGRAM_CHAT_ID`
+
+You can store them in `backend/.env`:
+
+```env
+TELEGRAM_BOT_TOKEN=<your-bot-token>
+TELEGRAM_TARGETS_JSON=[{"id":"me","name":"Riccardo","chatId":"202258240"},{"id":"family","name":"Family","chatId":"-1001234567890"}]
+```
+
+PowerShell example before starting backend:
+
+```powershell
+$env:TELEGRAM_BOT_TOKEN = "<your-bot-token>"
+$env:TELEGRAM_TARGETS_JSON = '[{"id":"me","name":"Riccardo","chatId":"202258240"}]'
+npm start
+```
+
 The server is started with `npm start` (defaults to port 3000).

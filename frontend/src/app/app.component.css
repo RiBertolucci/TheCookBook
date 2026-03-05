@@ -65,6 +65,13 @@
 	gap: 0.5rem;
 }
 
+.toolbar-icon-btn {
+	min-width: 2rem;
+	font-size: 1rem;
+	line-height: 1;
+	padding: 0.25rem 0.5rem;
+}
+
 .settings-menu {
 	position: relative;
 }
@@ -153,7 +160,8 @@
 }
 
 .main-tab-content > app-content-browser,
-.main-tab-content > app-search-tab {
+.main-tab-content > app-search-tab,
+.main-tab-content > app-shopping-list {
 	flex: 1;
 	min-height: 0;
 	display: block;
@@ -353,6 +361,60 @@
 
 .rendered-content a {
 	color: var(--accent);
+}
+
+.rendered-content li.recipe-ingredient-item,
+.search-preview-content li.recipe-ingredient-item {
+	position: relative;
+	padding-right: 2.2rem;
+	min-height: 1.7rem;
+}
+
+.recipe-ingredient-add-btn {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1.75rem;
+	height: 1.75rem;
+	border: none;
+	border-radius: 999px;
+	background: transparent;
+	color: var(--accent);
+	font-weight: 700;
+	font-size: 1.28rem;
+	line-height: 1;
+	padding: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	cursor: pointer;
+	text-shadow: 0 1px 2px rgba(15, 23, 42, 0.22);
+	transition: color 120ms ease, transform 120ms ease, text-shadow 120ms ease;
+}
+
+.recipe-ingredient-add-btn:link,
+.recipe-ingredient-add-btn:visited,
+.recipe-ingredient-add-btn:hover,
+.recipe-ingredient-add-btn:active {
+	text-decoration: none;
+}
+
+.recipe-ingredient-add-btn:hover {
+	color: color-mix(in srgb, var(--accent) 85%, #0f172a 15%);
+	text-shadow: 0 2px 4px rgba(37, 99, 235, 0.38);
+	transform: translateY(calc(-50% - 1px));
+}
+
+.recipe-ingredient-add-btn:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.rendered-content li.recipe-ingredient-in-cart,
+.search-preview-content li.recipe-ingredient-in-cart {
+	padding-right: 0.35rem;
 }
 
 .debug-hidden {

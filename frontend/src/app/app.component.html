@@ -6,7 +6,7 @@
     </div>
 
     <div class="toolbar-actions">
-      <button id="create-button" class="btn btn-sm btn-success" (click)="goToEdit()" *ngIf="!isEditPage">+</button>
+      <button id="create-button" class="btn btn-sm btn-success toolbar-icon-btn" (click)="goToEdit()" *ngIf="!isEditPage">+</button>
       <button id="back-button" class="btn btn-sm btn-outline-primary" (click)="goToBrowse()" *ngIf="isEditPage">Back</button>
 
       <button id="sync-button" class="btn btn-sm btn-primary" (click)="runSync()" [disabled]="isSyncing || isEditPage">
@@ -33,6 +33,7 @@
   <div class="main-tabs" *ngIf="!isEditPage">
     <button class="main-tab" [class.active]="activeMainTab === 'overview'" (click)="setMainTab('overview')">Overview</button>
     <button class="main-tab" [class.active]="activeMainTab === 'search'" (click)="setMainTab('search')">Search</button>
+    <button class="main-tab" [class.active]="activeMainTab === 'shopping'" (click)="setMainTab('shopping')">Shopping list</button>
   </div>
 
   <div class="main-tab-content" *ngIf="!isEditPage">
@@ -43,6 +44,7 @@
     </app-content-browser>
 
     <app-search-tab *ngIf="activeMainTab === 'search'"></app-search-tab>
+    <app-shopping-list *ngIf="activeMainTab === 'shopping'"></app-shopping-list>
   </div>
 
   <app-content-editor

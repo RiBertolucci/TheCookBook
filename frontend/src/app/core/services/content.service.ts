@@ -70,6 +70,35 @@ export interface IndexSearchResponse {
   groupedByMatchedTerms?: IndexSearchGroup[];
 }
 
+export interface SendShoppingListResponse {
+  status: string;
+  messageId?: number | null;
+  targetId?: string;
+  targetName?: string;
+  error?: string;
+}
+
+export interface TelegramTarget {
+  id: string;
+  name: string;
+}
+
+export interface TelegramTargetsResponse {
+  status: string;
+  targets?: TelegramTarget[];
+  error?: string;
+}
+
+export interface LastShoppingListResponse {
+  status: string;
+  items?: string[];
+  sentAt?: string | null;
+  messageId?: number | null;
+  targetId?: string;
+  targetName?: string;
+  error?: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -151,5 +180,23 @@ export class ContentService {
   deleteFolder(payload: DeleteFolderPayload): Observable<{ status: string; error?: string }> {
     this.logger.info({ service: 'ContentService', method: 'deleteFolder', data: payload.path }, 'deleting folder hierarchy');
     return this.http.post<{ status: string; error?: string }>('/api/deleteFolder', payload);
+  }
+
+  sendShoppingListToTelegram(items: string[], targetId: string): Observable<SendShoppingListResponse> {
+    this.logger.info(
+      { service: 'ContentService', method: 'sendShoppingListToTelegram', data: { count: items.length, targetId } },
+      'sending shopping list to telegram'
+    );
+    return this.http.post<SendShoppingListResponse>('/api/shopping-list/telegram', { items, targetId });
+  }
+
+  getLastShoppingListFromTelegram(targetId: string): Observable<LastShoppingListResponse> {
+    this.logger.info({ service: 'ContentService', method: 'getLastShoppingListFromTelegram', data: targetId }, 'loading last shopping list sent to telegram');
+    return this.http.get<LastShoppingListResponse>(`/api/shopping-list/telegram/last?targetId=${encodeURIComponent(targetId)}`);
+  }
+
+  getTelegramTargets(): Observable<TelegramTargetsResponse> {
+    this.logger.info({ service: 'ContentService', method: 'getTelegramTargets' }, 'loading telegram targets');
+    return this.http.get<TelegramTargetsResponse>('/api/shopping-list/telegram/targets');
   }
 }

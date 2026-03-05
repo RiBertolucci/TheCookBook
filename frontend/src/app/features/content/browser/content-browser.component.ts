@@ -1,7 +1,9 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ContentService, FolderNode } from '../../../core/services/content.service';
 import { LoggerService } from '../../../core/services/logger.service';
 import { EditRequest } from '../models/content-shell.models';
+import { ShoppingListStateService } from '../../../core/services/shopping-list-state.service';
 
 interface OpenTab {
   id: number;
@@ -16,7 +18,7 @@ interface OpenTab {
   selector: 'app-content-browser',
   templateUrl: './content-browser.component.html'
 })
-export class ContentBrowserComponent implements OnInit {
+export class ContentBrowserComponent implements OnInit, OnDestroy {
   @Output() editRequested = new EventEmitter<EditRequest>();
   @Output() syncStateChange = new EventEmitter<boolean>();
 
@@ -29,13 +31,28 @@ export class ContentBrowserComponent implements OnInit {
   isDeleting = false;
   showFolderDeleteBins = false;
   deleteError = '';
+  private shoppingItemKeys = new Set<string>();
+  private shoppingItemsSubscription?: Subscription;
 
   private nextTabId = 1;
 
-  constructor(private content: ContentService, private logger: LoggerService) {}
+  constructor(
+    private content: ContentService,
+    private logger: LoggerService,
+    private shoppingListState: ShoppingListStateService
+  ) {}
 
   ngOnInit(): void {
+    this.shoppingItemKeys = new Set(this.shoppingListState.getItems().map((item) => this.shoppingListState.normalizeKey(item)));
+    this.shoppingItemsSubscription = this.shoppingListState.items$.subscribe((items) => {
+      this.shoppingItemKeys = new Set(items.map((item) => this.shoppingListState.normalizeKey(item)));
+      this.refreshRenderedTabsFromRaw();
+    });
     this.loadHierarchy();
+  }
+
+  ngOnDestroy(): void {
+    this.shoppingItemsSubscription?.unsubscribe();
   }
 
   runSync(): void {
@@ -79,14 +96,7 @@ export class ContentBrowserComponent implements OnInit {
 
     this.content.getFile(section, filename).subscribe(data => {
       if (!data) return;
-      let html = '';
-      try {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const m: any = (window as any).marked;
-        html = m ? m(data.content) : this.basicRender(data.content);
-      } catch {
-        html = this.basicRender(data.content);
-      }
+      const html = this.renderMarkdownForTab(section, data.content);
       const id = this.nextTabId++;
       const tab = { id, title: data.filename, section, filename, renderedContent: html, rawContent: data.content };
       this.tabs.push(tab);
@@ -207,6 +217,25 @@ export class ContentBrowserComponent implements OnInit {
   onRenderedClick(ev: MouseEvent): void {
     const target = ev.target as HTMLElement | null;
     if (!target) return;
+
+    const addButton = target.closest('.recipe-ingredient-add-btn') as HTMLElement | null;
+    if (addButton) {
+      ev.preventDefault();
+      ev.stopPropagation();
+
+      const ingredientItem = addButton.closest('li') as HTMLLIElement | null;
+      const ingredient = ingredientItem
+        ? this.normalizeShoppingItemLabel(this.extractIngredientLabel(ingredientItem))
+        : '';
+      if (!ingredient) return;
+
+      const wasAdded = this.shoppingListState.addItem(ingredient);
+      if (wasAdded) {
+        this.refreshRenderedTabsFromRaw();
+      }
+      return;
+    }
+
     let el: HTMLElement | null = target;
     while (el && el.tagName !== 'A') el = el.parentElement;
     if (!el) return;
@@ -241,19 +270,17 @@ export class ContentBrowserComponent implements OnInit {
     for (const tab of this.tabs) {
       this.content.getFile(tab.section, tab.filename).subscribe(data => {
         if (!data) return;
-        let html = '';
-        try {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const m: any = (window as any).marked;
-          html = m ? m(data.content) : this.basicRender(data.content);
-        } catch {
-          html = this.basicRender(data.content);
-        }
-        tab.renderedContent = html;
+        tab.renderedContent = this.renderMarkdownForTab(tab.section, data.content);
         tab.rawContent = data.content;
         tab.title = data.filename;
       });
     }
+  }
+
+  private refreshRenderedTabsFromRaw(): void {
+    this.tabs.forEach((tab) => {
+      tab.renderedContent = this.renderMarkdownForTab(tab.section, tab.rawContent);
+    });
   }
 
   private closeTabsForDeletedFolder(folderPath: string): void {
@@ -300,6 +327,94 @@ export class ContentBrowserComponent implements OnInit {
       default:
         return null;
     }
+  }
+
+  private renderMarkdownForTab(section: string, markdown: string): string {
+    let html = '';
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const m: any = (window as any).marked;
+      html = m ? m(markdown) : this.basicRender(markdown);
+    } catch {
+      html = this.basicRender(markdown);
+    }
+
+    if (section === 'Recipes') {
+      return this.decorateRecipeIngredients(html);
+    }
+
+    return html;
+  }
+
+  private decorateRecipeIngredients(renderedHtml: string): string {
+    const template = document.createElement('template');
+    template.innerHTML = renderedHtml;
+
+    const headings = Array.from(template.content.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+    const ingredientsHeading = headings.find((heading) => this.normalizeHeading(heading.textContent) === 'ingredients');
+    if (!ingredientsHeading) return renderedHtml;
+
+    const sectionLevel = Number(ingredientsHeading.tagName.slice(1)) || 2;
+    let current: Element | null = ingredientsHeading.nextElementSibling;
+
+    while (current) {
+      const tag = current.tagName.toUpperCase();
+      if (/^H[1-6]$/.test(tag)) {
+        const level = Number(tag.slice(1)) || 6;
+        if (level <= sectionLevel) break;
+      }
+
+      if (tag === 'UL' || tag === 'OL') {
+        this.decorateIngredientList(current as HTMLElement);
+      }
+
+      current = current.nextElementSibling;
+    }
+
+    return template.innerHTML;
+  }
+
+  private decorateIngredientList(listElement: HTMLElement): void {
+    const listItems = Array.from(listElement.children)
+      .filter((child) => child.tagName.toUpperCase() === 'LI') as HTMLLIElement[];
+
+    listItems.forEach((item) => {
+      const ingredient = this.normalizeShoppingItemLabel(this.extractIngredientLabel(item));
+      if (!ingredient) return;
+
+      const ingredientKey = this.shoppingListState.normalizeKey(ingredient);
+      item.classList.add('recipe-ingredient-item');
+
+      if (this.shoppingItemKeys.has(ingredientKey)) {
+        item.classList.add('recipe-ingredient-in-cart');
+        return;
+      }
+
+      const addButton = document.createElement('a');
+      addButton.href = '#';
+      addButton.className = 'recipe-ingredient-add-btn';
+      addButton.setAttribute('role', 'button');
+      addButton.setAttribute('title', 'Add to shopping list');
+      addButton.setAttribute('aria-label', `Add ${ingredient} to shopping list`);
+      addButton.textContent = '+';
+      item.appendChild(addButton);
+    });
+  }
+
+  private extractIngredientLabel(item: HTMLLIElement): string {
+    const clone = item.cloneNode(true) as HTMLElement;
+    Array.from(clone.querySelectorAll('.recipe-ingredient-add-btn, ul, ol')).forEach((el) => el.remove());
+    return String(clone.textContent || '').replace(/\s+/g, ' ').trim();
+  }
+
+  private normalizeHeading(value: string | null): string {
+    return String(value || '').trim().toLowerCase();
+  }
+
+  private normalizeShoppingItemLabel(value: string): string {
+    const compact = String(value || '').trim().replace(/\s+/g, ' ');
+    if (!compact) return '';
+    return compact.charAt(0).toUpperCase() + compact.slice(1);
   }
 
   private basicRender(md: string): string {

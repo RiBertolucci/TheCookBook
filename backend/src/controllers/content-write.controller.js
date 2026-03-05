@@ -1,6 +1,7 @@
 const logger = require('../services/logger');
 const storage = require('../services/content-storage.service');
 const indexStore = require('../services/index-store.service');
+const telegramShopping = require('../services/telegram-shopping.service');
 const {
   mapSectionToFolder
 } = require('../utils/content-path.utils');
@@ -156,9 +157,118 @@ async function deleteFolder(req, res) {
   }
 }
 
+async function sendShoppingListToTelegram(req, res) {
+  const rawItems = req.body && Array.isArray(req.body.items) ? req.body.items : null;
+  const targetId = req.body ? String(req.body.targetId || '').trim() : '';
+
+  if (!rawItems || rawItems.length === 0) {
+    return res.status(400).json({ error: 'items array is required' });
+  }
+
+  const items = rawItems
+    .map((item) => String(item || '').trim().replace(/\s+/g, ' '))
+    .filter(Boolean);
+
+  if (items.length === 0) {
+    return res.status(400).json({ error: 'items array is required' });
+  }
+
+  if (!targetId) {
+    return res.status(400).json({ error: 'targetId is required' });
+  }
+
+  try {
+    const result = await telegramShopping.sendShoppingListToTelegram(items, targetId);
+    logger.info(
+      { service: 'server', method: 'POST /api/shopping-list/telegram', requestId: req.requestId, data: { count: items.length, targetId } },
+      'shopping list sent to telegram'
+    );
+    res.json({ status: 'ok', messageId: result.messageId, targetId: result.targetId, targetName: result.targetName });
+  } catch (err) {
+    const errorCode = err && err.code ? err.code : 'UNKNOWN';
+
+    if (errorCode === 'MISSING_TELEGRAM_CONFIG') {
+      logger.error(
+        { service: 'server', method: 'POST /api/shopping-list/telegram', requestId: req.requestId, data: err.message },
+        'telegram configuration missing'
+      );
+      return res.status(500).json({ error: err.message });
+    }
+
+    if (errorCode === 'TELEGRAM_API_ERROR') {
+      logger.error(
+        { service: 'server', method: 'POST /api/shopping-list/telegram', requestId: req.requestId, data: err.message },
+        'telegram api request failed'
+      );
+      return res.status(502).json({ error: err.message });
+    }
+
+    if (errorCode === 'TARGET_NOT_FOUND' || errorCode === 'INVALID_TELEGRAM_TARGETS_CONFIG') {
+      return res.status(400).json({ error: err.message });
+    }
+
+    logger.error(
+      { service: 'server', method: 'POST /api/shopping-list/telegram', requestId: req.requestId, data: err.message },
+      'shopping list telegram send failed'
+    );
+    return res.status(500).json({ error: err.message });
+  }
+}
+
+async function getLastSentShoppingList(req, res) {
+  const targetId = String((req.query && req.query.targetId) || '').trim();
+
+  if (!targetId) {
+    return res.status(400).json({ error: 'targetId is required' });
+  }
+
+  try {
+    const result = await telegramShopping.getLastSentShoppingList(targetId);
+    return res.json({ status: 'ok', ...result });
+  } catch (err) {
+    const errorCode = err && err.code ? err.code : 'UNKNOWN';
+
+    if (errorCode === 'NO_LAST_SHOPPING_LIST') {
+      return res.status(404).json({ error: err.message });
+    }
+
+    if (errorCode === 'TARGET_NOT_FOUND' || errorCode === 'INVALID_TELEGRAM_TARGETS_CONFIG') {
+      return res.status(400).json({ error: err.message });
+    }
+
+    logger.error(
+      { service: 'server', method: 'GET /api/shopping-list/telegram/last', requestId: req.requestId, data: err.message },
+      'failed to read last sent shopping list'
+    );
+    return res.status(500).json({ error: err.message });
+  }
+}
+
+async function getTelegramTargets(req, res) {
+  try {
+    const targets = telegramShopping.getTelegramTargets();
+    return res.json({ status: 'ok', targets });
+  } catch (err) {
+    const errorCode = err && err.code ? err.code : 'UNKNOWN';
+
+    if (errorCode === 'MISSING_TELEGRAM_CONFIG' || errorCode === 'INVALID_TELEGRAM_TARGETS_CONFIG') {
+      return res.status(400).json({ error: err.message });
+    }
+
+    logger.error(
+      { service: 'server', method: 'GET /api/shopping-list/telegram/targets', requestId: req.requestId, data: err.message },
+      'failed to load telegram targets'
+    );
+    return res.status(500).json({ error: err.message });
+  }
+}
+
 module.exports = {
   addFile,
   updateFile,
   deleteFile,
-  deleteFolder
+  deleteFolder,
+  sendShoppingListToTelegram,
+  getLastSentShoppingList,
+  getTelegramTargets
 };

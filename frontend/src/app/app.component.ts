@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   isSettingsOpen = false;
   isSyncing = false;
   isForceIndexing = false;
-  activeMainTab: 'overview' | 'search' = 'overview';
+  activeMainTab: 'overview' | 'search' | 'shopping' = 'overview';
   theme: 'light' | 'dark' = 'light';
   activeEditRequest: EditRequest | null = null;
 
@@ -72,7 +72,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  setMainTab(tab: 'overview' | 'search'): void {
+  setMainTab(tab: 'overview' | 'search' | 'shopping'): void {
     this.activeMainTab = tab;
   }
 

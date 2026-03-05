@@ -9,6 +9,7 @@ import { ViewerComponent } from './features/viewer/viewer.component';
 import { ContentBrowserComponent } from './features/content/browser/content-browser.component';
 import { ContentEditorComponent } from './features/content/editor/content-editor.component';
 import { SearchTabComponent } from './features/search/search-tab.component';
+import { ShoppingListComponent } from './features/shopping-list/shopping-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SearchTabComponent } from './features/search/search-tab.component';
     ViewerComponent,
     ContentBrowserComponent,
     ContentEditorComponent,
-    SearchTabComponent
+    SearchTabComponent,
+    ShoppingListComponent
   ],
   imports: [
     BrowserModule,

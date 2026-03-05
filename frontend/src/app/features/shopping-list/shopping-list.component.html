@@ -1,0 +1,152 @@
+<section class="panel shopping-panel">
+  <div class="panel-header">Shopping list</div>
+
+  <div class="shopping-body">
+    <div class="shopping-layout">
+      <section class="shopping-list-column">
+        <div class="shopping-list-title">Items</div>
+
+        <div class="shopping-empty" *ngIf="items.length === 0">No items yet.</div>
+
+        <ol class="shopping-items" *ngIf="items.length > 0">
+          <li class="shopping-item" *ngFor="let item of items; let index = index">
+            <span>{{ item }}</span>
+            <button
+              type="button"
+              class="shopping-remove-btn"
+              (click)="removeItem(index)"
+              aria-label="Remove item"
+              title="Remove item"
+            >
+              ×
+            </button>
+          </li>
+        </ol>
+      </section>
+
+      <section class="shopping-controls-column">
+        <p class="shopping-help">Type an ingredient or any custom item, then press Enter or + to add it.</p>
+
+        <div class="edit-row shopping-input-row">
+          <label class="edit-label" for="shopping-item-input">Item</label>
+          <div class="shopping-input-wrap">
+            <input
+              id="shopping-item-input"
+              class="form-control"
+              [(ngModel)]="inputValue"
+              (ngModelChange)="onInputChanged($event)"
+              (keydown)="onInputKeydown($event)"
+              (focus)="onInputFocus()"
+              placeholder="Type ingredient or custom item" />
+
+            <button
+              type="button"
+              class="shopping-toggle-btn"
+              (click)="toggleSuggestions()"
+              [disabled]="isLoadingSuggestions || allIngredientSuggestions.length === 0"
+              aria-label="Toggle ingredient suggestions"
+              title="Ingredient suggestions"
+            >
+              {{ showSuggestions ? '▴' : '▾' }}
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-sm btn-success shopping-add-btn"
+              (click)="addCurrentInput()"
+              aria-label="Add shopping list item"
+              title="Add item"
+            >
+              +
+            </button>
+
+            <div class="shopping-suggestions" *ngIf="showSuggestions && filteredSuggestions.length > 0">
+              <button type="button" class="shopping-suggestion-item" *ngFor="let suggestion of filteredSuggestions" (click)="selectSuggestion(suggestion)">
+                {{ suggestion }}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="shopping-actions-row">
+          <button type="button" class="btn btn-sm btn-primary" (click)="exportList()" [disabled]="items.length === 0">Export .txt</button>
+          <div class="shopping-send-combo" [class.open]="showSendTargetMenu">
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-primary shopping-send-main-btn"
+              (click)="sendToTelegram()"
+              [disabled]="items.length === 0 || isSendingToTelegram || !selectedTelegramTargetId"
+              [title]="selectedTelegramTargetId ? ('Send to ' + getSelectedTargetName()) : 'Select chat target'"
+            >
+              {{ isSendingToTelegram ? 'Sending...' : ('Send to ' + (getSelectedTargetName() || 'Telegram')) }}
+            </button>
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-primary shopping-send-arrow-btn"
+              (click)="toggleSendTargetMenu()"
+              [disabled]="isLoadingTelegramTargets || telegramTargets.length === 0"
+              aria-label="Choose Telegram chat target"
+              title="Choose chat target"
+            >
+              ▾
+            </button>
+
+            <div class="shopping-send-target-menu" *ngIf="showSendTargetMenu">
+              <button
+                type="button"
+                class="shopping-send-target-item"
+                *ngFor="let target of telegramTargets"
+                (click)="selectTelegramTarget(target.id)"
+              >
+                <span class="shopping-target-radio" [class.active]="target.id === selectedTelegramTargetId" aria-hidden="true"></span>
+                <span class="shopping-target-label">{{ target.name }}</span>
+              </button>
+            </div>
+          </div>
+          <div class="shopping-load-combo" [class.open]="showLoadTargetMenu">
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-primary shopping-load-main-btn"
+              (click)="loadLastFromTelegram()"
+              [disabled]="isLoadingFromTelegram || !selectedLoadTargetId"
+              [title]="selectedLoadTargetId ? ('Load last list from ' + getSelectedLoadTargetName()) : 'Select chat target'"
+            >
+              {{ isLoadingFromTelegram ? 'Loading...' : ('Load from ' + (getSelectedLoadTargetName() || 'Telegram')) }}
+            </button>
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-primary shopping-load-arrow-btn"
+              (click)="toggleLoadTargetMenu()"
+              [disabled]="isLoadingTelegramTargets || telegramTargets.length === 0"
+              aria-label="Choose Telegram chat target for load"
+              title="Choose chat target"
+            >
+              ▾
+            </button>
+
+            <div class="shopping-load-target-menu" *ngIf="showLoadTargetMenu">
+              <button
+                type="button"
+                class="shopping-load-target-item"
+                *ngFor="let target of telegramTargets"
+                (click)="selectLoadTarget(target.id)"
+              >
+                <span class="shopping-target-radio" [class.active]="target.id === selectedLoadTargetId" aria-hidden="true"></span>
+                <span class="shopping-target-label">{{ target.name }}</span>
+              </button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="clearItems()" [disabled]="items.length === 0">Clear</button>
+        </div>
+
+        <div class="shopping-feedback-row">
+          <span class="shopping-success" *ngIf="telegramSuccess">{{ telegramSuccess }}</span>
+          <span class="shopping-error" *ngIf="telegramError">{{ telegramError }}</span>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<div class="shopping-target-backdrop" *ngIf="showSendTargetMenu" (click)="closeSendTargetMenu()"></div>
+<div class="shopping-target-backdrop" *ngIf="showLoadTargetMenu" (click)="closeLoadTargetMenu()"></div>

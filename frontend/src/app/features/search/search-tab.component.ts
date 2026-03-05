@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ContentService, IndexInfo, IndexSearchFile, IndexSearchGroup } from '../../core/services/content.service';
 import { IndexNameTranslatorService } from '../../core/services/index-name-translator.service';
 import { LoggerService } from '../../core/services/logger.service';
+import { ShoppingListStateService } from '../../core/services/shopping-list-state.service';
 
 interface OpenedSearchFile {
   title: string;
@@ -16,7 +18,7 @@ interface OpenedSearchFile {
   templateUrl: './search-tab.component.html',
   styleUrls: ['./search-tab.component.css']
 })
-export class SearchTabComponent implements OnInit {
+export class SearchTabComponent implements OnInit, OnDestroy {
   searchInput = '';
   searchSelectedItems: string[] = [];
   searchSuggestions: string[] = [];
@@ -33,15 +35,32 @@ export class SearchTabComponent implements OnInit {
   searchResults: IndexSearchFile[] = [];
   groupedSearchResults: IndexSearchGroup[] = [];
   openedResult: OpenedSearchFile | null = null;
+  private shoppingItemKeys = new Set<string>();
+  private shoppingItemsSubscription?: Subscription;
 
   constructor(
     private content: ContentService,
     private indexNameTranslator: IndexNameTranslatorService,
-    private logger: LoggerService
+    private logger: LoggerService,
+    private shoppingListState: ShoppingListStateService
   ) {}
 
   ngOnInit(): void {
+    this.shoppingItemKeys = new Set(this.shoppingListState.getItems().map((item) => this.shoppingListState.normalizeKey(item)));
+    this.shoppingItemsSubscription = this.shoppingListState.items$.subscribe((items) => {
+      this.shoppingItemKeys = new Set(items.map((item) => this.shoppingListState.normalizeKey(item)));
+      if (this.openedResult) {
+        this.openedResult = {
+          ...this.openedResult,
+          renderedContent: this.renderMarkdownForSection(this.openedResult.section, this.openedResult.rawContent)
+        };
+      }
+    });
     this.loadIndexes();
+  }
+
+  ngOnDestroy(): void {
+    this.shoppingItemsSubscription?.unsubscribe();
   }
 
   onSearchIndexChanged(): void {
@@ -147,14 +166,7 @@ export class SearchTabComponent implements OnInit {
       next: (data) => {
         if (!data) return;
 
-        let html = '';
-        try {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const m: any = (window as any).marked;
-          html = m ? m(data.content) : this.basicRender(data.content);
-        } catch {
-          html = this.basicRender(data.content);
-        }
+        const html = this.renderMarkdownForSection(file.section, data.content);
 
         this.openedResult = {
           title: data.filename,
@@ -171,6 +183,31 @@ export class SearchTabComponent implements OnInit {
         );
       }
     });
+  }
+
+  onPreviewClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement | null;
+    if (!target) return;
+
+    const addButton = target.closest('.recipe-ingredient-add-btn') as HTMLElement | null;
+    if (!addButton) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    const ingredientItem = addButton.closest('li') as HTMLLIElement | null;
+    const ingredient = ingredientItem
+      ? this.normalizeShoppingItemLabel(this.extractIngredientLabel(ingredientItem))
+      : '';
+    if (!ingredient) return;
+
+    const wasAdded = this.shoppingListState.addItem(ingredient);
+    if (wasAdded && this.openedResult) {
+      this.openedResult = {
+        ...this.openedResult,
+        renderedContent: this.renderMarkdownForSection(this.openedResult.section, this.openedResult.rawContent)
+      };
+    }
   }
 
   closeOpenedResult(): void {
@@ -282,6 +319,94 @@ export class SearchTabComponent implements OnInit {
 
     this.searchSuggestions = filtered.slice(0, 12);
     this.showSearchSuggestions = this.searchSuggestions.length > 0;
+  }
+
+  private renderMarkdownForSection(section: 'Recipes' | 'Ingredients' | 'SpicesAndHerbs', markdown: string): string {
+    let html = '';
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const m: any = (window as any).marked;
+      html = m ? m(markdown) : this.basicRender(markdown);
+    } catch {
+      html = this.basicRender(markdown);
+    }
+
+    if (section === 'Recipes') {
+      return this.decorateRecipeIngredients(html);
+    }
+
+    return html;
+  }
+
+  private decorateRecipeIngredients(renderedHtml: string): string {
+    const template = document.createElement('template');
+    template.innerHTML = renderedHtml;
+
+    const headings = Array.from(template.content.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+    const ingredientsHeading = headings.find((heading) => this.normalizeHeading(heading.textContent) === 'ingredients');
+    if (!ingredientsHeading) return renderedHtml;
+
+    const sectionLevel = Number(ingredientsHeading.tagName.slice(1)) || 2;
+    let current: Element | null = ingredientsHeading.nextElementSibling;
+
+    while (current) {
+      const tag = current.tagName.toUpperCase();
+      if (/^H[1-6]$/.test(tag)) {
+        const level = Number(tag.slice(1)) || 6;
+        if (level <= sectionLevel) break;
+      }
+
+      if (tag === 'UL' || tag === 'OL') {
+        this.decorateIngredientList(current as HTMLElement);
+      }
+
+      current = current.nextElementSibling;
+    }
+
+    return template.innerHTML;
+  }
+
+  private decorateIngredientList(listElement: HTMLElement): void {
+    const listItems = Array.from(listElement.children)
+      .filter((child) => child.tagName.toUpperCase() === 'LI') as HTMLLIElement[];
+
+    listItems.forEach((item) => {
+      const ingredient = this.normalizeShoppingItemLabel(this.extractIngredientLabel(item));
+      if (!ingredient) return;
+
+      const ingredientKey = this.shoppingListState.normalizeKey(ingredient);
+      item.classList.add('recipe-ingredient-item');
+
+      if (this.shoppingItemKeys.has(ingredientKey)) {
+        item.classList.add('recipe-ingredient-in-cart');
+        return;
+      }
+
+      const addButton = document.createElement('a');
+      addButton.href = '#';
+      addButton.className = 'recipe-ingredient-add-btn';
+      addButton.setAttribute('role', 'button');
+      addButton.setAttribute('title', 'Add to shopping list');
+      addButton.setAttribute('aria-label', `Add ${ingredient} to shopping list`);
+      addButton.textContent = '+';
+      item.appendChild(addButton);
+    });
+  }
+
+  private extractIngredientLabel(item: HTMLLIElement): string {
+    const clone = item.cloneNode(true) as HTMLElement;
+    Array.from(clone.querySelectorAll('.recipe-ingredient-add-btn, ul, ol')).forEach((el) => el.remove());
+    return String(clone.textContent || '').replace(/\s+/g, ' ').trim();
+  }
+
+  private normalizeHeading(value: string | null): string {
+    return String(value || '').trim().toLowerCase();
+  }
+
+  private normalizeShoppingItemLabel(value: string): string {
+    const compact = String(value || '').trim().replace(/\s+/g, ' ');
+    if (!compact) return '';
+    return compact.charAt(0).toUpperCase() + compact.slice(1);
   }
 
   private basicRender(md: string): string {

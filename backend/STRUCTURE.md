@@ -22,7 +22,8 @@ backend/
     └── services/             # Core business logic
         ├── index-adapters/   # One adapter per index (preprocessing + mapping)
         │   ├── registry.js
-        │   └── recipes-by-ingredients.adapter.js
+        │   ├── recipes-by-ingredients.adapter.js
+        │   └── ingredients-by-goes-with-ingredients.adapter.js
         ├── metadata.js       # Tracks file creation/modification times
         ├── parser.js         # Markdown parsing and link formatting
         ├── linker.js         # Cross-document linking logic
