@@ -2,9 +2,18 @@ import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { ContentBrowserComponent } from './features/content/browser/content-browser.component';
+import { SearchTabComponent } from './features/search/search-tab.component';
 import { EditRequest } from './features/content/models/content-shell.models';
 import { LoggerService } from './core/services/logger.service';
 import { ContentService } from './core/services/content.service';
+import { ContentSection, IndexSearchFile } from './core/interfaces/content';
+
+type MainTab = 'overview' | 'search' | 'shopping';
+
+interface OpenContentFileRef {
+  section: ContentSection;
+  filename: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -13,7 +22,25 @@ import { ContentService } from './core/services/content.service';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-  @ViewChild(ContentBrowserComponent) contentBrowser?: ContentBrowserComponent;
+  private contentBrowserInstance?: ContentBrowserComponent;
+  private searchTabInstance?: SearchTabComponent;
+  private overviewActiveRestoreIntervalId: number | null = null;
+
+  @ViewChild(ContentBrowserComponent)
+  set contentBrowser(component: ContentBrowserComponent | undefined) {
+    this.contentBrowserInstance = component;
+    if (component) {
+      this.restoreOverviewOpenFiles(component);
+    }
+  }
+
+  @ViewChild(SearchTabComponent)
+  set searchTab(component: SearchTabComponent | undefined) {
+    this.searchTabInstance = component;
+    if (component) {
+      this.restoreSearchOpenedFile(component);
+    }
+  }
 
   title = 'TheCookBook';
   isEditPage = false;
@@ -23,7 +50,7 @@ export class AppComponent implements OnInit {
   isAddingTelegramUser = false;
   telegramAddUserMessage = '';
   telegramAddUserError = false;
-  activeMainTab: 'overview' | 'search' | 'shopping' = 'overview';
+  activeMainTab: MainTab = 'overview';
   theme: 'light' | 'dark' = 'light';
   activeEditRequest: EditRequest | null = null;
 
@@ -42,6 +69,7 @@ export class AppComponent implements OnInit {
   }
 
   goToEdit(): void {
+    this.persistCurrentMainTabState();
     this.activeEditRequest = null;
     this.router.navigate(['/edit']);
   }
@@ -52,7 +80,7 @@ export class AppComponent implements OnInit {
 
   runSync(): void {
     if (this.isEditPage) return;
-    this.contentBrowser?.runSync();
+    this.contentBrowserInstance?.runSync();
   }
 
   runForceIndexing(): void {
@@ -109,11 +137,15 @@ export class AppComponent implements OnInit {
     });
   }
 
-  setMainTab(tab: 'overview' | 'search' | 'shopping'): void {
+  setMainTab(tab: MainTab): void {
+    if (tab === this.activeMainTab) return;
+
+    this.persistCurrentMainTabState();
     this.activeMainTab = tab;
   }
 
   onEditRequested(request: EditRequest): void {
+    this.persistCurrentMainTabState();
     this.activeEditRequest = request;
     this.router.navigate(['/edit']);
   }
@@ -159,5 +191,112 @@ export class AppComponent implements OnInit {
     } catch {
       this.logger.warn({ service: 'AppComponent', method: 'loadTheme' }, 'could not read theme from storage');
     }
+  }
+
+  private persistCurrentMainTabState(): void {
+    if (this.activeMainTab === 'overview') {
+      this.persistOverviewOpenFilesState();
+      return;
+    }
+
+    if (this.activeMainTab === 'search') {
+      this.persistSearchOpenedFileState();
+    }
+  }
+
+  private persistOverviewOpenFilesState(): void {
+    const component = this.contentBrowserInstance;
+    if (!component) return;
+
+    const openFiles = component.tabs
+      .map((tab) => {
+        const section = this.toContentSection(tab.section);
+        if (!section) return null;
+        return { section, filename: tab.filename };
+      })
+      .filter((file): file is OpenContentFileRef => file !== null);
+
+    const activeFile = component.activeTabId === null
+      ? null
+      : component.tabs
+        .filter((tab) => tab.id === component.activeTabId)
+        .map((tab) => {
+          const section = this.toContentSection(tab.section);
+          return section ? { section, filename: tab.filename } : null;
+        })
+        .find((tab): tab is OpenContentFileRef => tab !== null) || null;
+
+    this.content.setOverviewOpenFilesState(openFiles, activeFile);
+  }
+
+  private restoreOverviewOpenFiles(component: ContentBrowserComponent): void {
+    const state = this.content.getOverviewOpenFilesState();
+    if (!state.openFiles.length) return;
+
+    state.openFiles.forEach((file) => component.openTab(file.section, file.filename));
+    if (state.activeFile) {
+      this.restoreOverviewActiveTabWhenReady(component, state.activeFile);
+    }
+  }
+
+  private restoreOverviewActiveTabWhenReady(component: ContentBrowserComponent, activeFile: OpenContentFileRef): void {
+    if (this.overviewActiveRestoreIntervalId !== null) {
+      window.clearInterval(this.overviewActiveRestoreIntervalId);
+      this.overviewActiveRestoreIntervalId = null;
+    }
+
+    let attempts = 0;
+    this.overviewActiveRestoreIntervalId = window.setInterval(() => {
+      attempts += 1;
+
+      const matchingTab = component.tabs.find((tab) => tab.section === activeFile.section && tab.filename === activeFile.filename);
+      if (matchingTab) {
+        component.activeTabId = matchingTab.id;
+        if (this.overviewActiveRestoreIntervalId !== null) {
+          window.clearInterval(this.overviewActiveRestoreIntervalId);
+          this.overviewActiveRestoreIntervalId = null;
+        }
+        return;
+      }
+
+      if (attempts >= 40 && this.overviewActiveRestoreIntervalId !== null) {
+        window.clearInterval(this.overviewActiveRestoreIntervalId);
+        this.overviewActiveRestoreIntervalId = null;
+      }
+    }, 50);
+  }
+
+  private persistSearchOpenedFileState(): void {
+    const openedResult = this.searchTabInstance?.openedResult;
+    if (!openedResult) {
+      this.content.setSearchOpenedFileState(null);
+      return;
+    }
+
+    this.content.setSearchOpenedFileState({
+      section: openedResult.section,
+      filename: openedResult.filename
+    });
+  }
+
+  private restoreSearchOpenedFile(component: SearchTabComponent): void {
+    const openedFile = this.content.getSearchOpenedFileState();
+    if (!openedFile) return;
+
+    const searchFile: IndexSearchFile = {
+      path: '',
+      section: openedFile.section,
+      filename: openedFile.filename
+    };
+
+    component.openSearchResult(searchFile);
+  }
+
+  private toContentSection(section: string): ContentSection | null {
+    if (section === 'Recipes' || section === 'Ingredients' || section === 'SpicesAndHerbs') {
+      return section;
+    }
+
+    return null;
   }
 }

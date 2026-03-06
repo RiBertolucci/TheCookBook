@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, shareReplay, tap } from 'rxjs/operators';
 import { LoggerService } from './logger.service';
 import {
+  ContentSection,
   ContentFileResponse,
   CreateContentPayload,
   CreateContentResponse,
@@ -23,6 +24,16 @@ import {
   UpdateFilePayload
 } from '../interfaces/content';
 
+interface OpenContentFileRef {
+  section: ContentSection;
+  filename: string;
+}
+
+interface OverviewOpenFilesState {
+  openFiles: OpenContentFileRef[];
+  activeFile: OpenContentFileRef | null;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -30,6 +41,8 @@ export class ContentService {
   private hierarchyCache$?: Observable<{ [key: string]: FolderNode }>;
   private ingredientSuggestionsCache$?: Observable<IngredientSuggestionsResponse>;
   private ingredientFamiliesCache$?: Observable<IngredientFamiliesResponse>;
+  private overviewOpenFilesState: OverviewOpenFilesState = { openFiles: [], activeFile: null };
+  private searchOpenedFile: OpenContentFileRef | null = null;
 
   constructor(private http: HttpClient, private logger: LoggerService) {}
 
@@ -209,5 +222,39 @@ export class ContentService {
       'adding telegram target from latest bot message'
     );
     return this.http.post<AddTelegramTargetResponse>('/api/shopping-list/telegram/targets/add-latest', {});
+  }
+
+  setOverviewOpenFilesState(openFiles: OpenContentFileRef[], activeFile: OpenContentFileRef | null): void {
+    this.overviewOpenFilesState = {
+      openFiles: (openFiles || []).map((file) => ({ section: file.section, filename: file.filename })),
+      activeFile: activeFile ? { section: activeFile.section, filename: activeFile.filename } : null
+    };
+  }
+
+  getOverviewOpenFilesState(): OverviewOpenFilesState {
+    return {
+      openFiles: this.overviewOpenFilesState.openFiles.map((file) => ({ section: file.section, filename: file.filename })),
+      activeFile: this.overviewOpenFilesState.activeFile
+        ? {
+            section: this.overviewOpenFilesState.activeFile.section,
+            filename: this.overviewOpenFilesState.activeFile.filename
+          }
+        : null
+    };
+  }
+
+  setSearchOpenedFileState(openedFile: OpenContentFileRef | null): void {
+    this.searchOpenedFile = openedFile
+      ? { section: openedFile.section, filename: openedFile.filename }
+      : null;
+  }
+
+  getSearchOpenedFileState(): OpenContentFileRef | null {
+    if (!this.searchOpenedFile) return null;
+
+    return {
+      section: this.searchOpenedFile.section,
+      filename: this.searchOpenedFile.filename
+    };
   }
 }
