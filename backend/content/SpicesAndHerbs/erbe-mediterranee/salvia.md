@@ -12,10 +12,11 @@ Erba aromatica dal profumo caldo e canforato, usata in burro fuso, ripieni, seco
 - Maggiorana
 
 ## Good With Ingredients
-
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Patata](/api/ingredients/verdure/patata.md)
 - [Uova](/api/ingredients/salumi-e-proteine/uova.md)
 - [Ricotta](/api/ingredients/latticini-e-formaggi/ricotta.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
 - [Funghi](/api/ingredients/verdure/funghi.md)
+- [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)

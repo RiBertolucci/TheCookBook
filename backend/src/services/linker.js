@@ -139,9 +139,39 @@ function autoLinkRecipeIngredientLine(rawItem, catalog) {
   const raw = String(rawItem || '').trim();
   if (!raw) return raw;
 
-  const linkedMatch = raw.match(/^(.*?)\[(.+?)\]\(.+?\)(.*)$/);
+  const linkedMatch = raw.match(/^(.*?)\[(.+?)\]\((.+?)\)(.*)$/);
   if (linkedMatch) {
-    return raw;
+    const prefix = String(linkedMatch[1] || '');
+    const linkedLabel = String(linkedMatch[2] || '').trim();
+    const linkedHref = String(linkedMatch[3] || '').trim();
+    const suffix = String(linkedMatch[4] || '');
+
+    if (!linkedHref.toLowerCase().startsWith('/api/')) {
+      return raw;
+    }
+
+    const hasValidTarget = catalog.some((entry) => entry.apiPath.toLowerCase() === linkedHref.toLowerCase());
+    if (hasValidTarget) {
+      return raw;
+    }
+
+    const unlinked = `${prefix}${linkedLabel}${suffix}`
+      .replace(/\s{2,}/g, ' ')
+      .trim();
+    const fallback = findBestCatalogMatch(unlinked, catalog);
+    if (!fallback) {
+      return unlinked;
+    }
+
+    const escapedLabel = escapeRegExp(linkedLabel);
+    const labelFinder = new RegExp(escapedLabel, 'i');
+    const relinked = unlinked.replace(labelFinder, `[${linkedLabel}](${fallback.apiPath})`);
+    let rewrittenLinked = relinked;
+    if (fallback.kind === 'spice') {
+      rewrittenLinked = rewrittenLinked.replace(/\s+in\s+polvere\b/ig, '');
+    }
+
+    return rewrittenLinked.replace(/\s{2,}/g, ' ').trim();
   }
 
   const best = findBestCatalogMatch(raw, catalog);

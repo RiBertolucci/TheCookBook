@@ -32,6 +32,7 @@ Categoria molto usata nella cucina italiana per sughi, risotti, contorni e ripie
 - [Uova](/api/ingredients/salumi-e-proteine/uova.md)
 - [Pomodoro](/api/ingredients/verdure/pomodoro.md)
 - [Zucchina](/api/ingredients/verdure/zucchina.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
 - [Basilico](/api/spices/erbe-mediterranee/basilico.md)

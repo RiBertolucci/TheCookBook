@@ -21,3 +21,6 @@ Erba aromatica resinosa e persistente, perfetta per cotture lunghe, arrosti, pat
 - [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
+- [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)
+- [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)

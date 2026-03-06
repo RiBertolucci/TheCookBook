@@ -33,6 +33,9 @@ Radice dolce usata per bilanciare acidità e sapidità, spesso nella base del so
 - [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
 - [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
 - [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
+- [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)
+- [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/spices/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)

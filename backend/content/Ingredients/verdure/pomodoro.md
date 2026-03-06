@@ -42,6 +42,7 @@ Ingrediente simbolo della cucina italiana, usato fresco, in salsa o passata per 
 - [Peperoncino](/api/ingredients/verdure/peperoncino.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/spices/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)

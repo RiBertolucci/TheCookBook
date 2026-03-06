@@ -12,10 +12,10 @@ Spezia calda e dolce-speziata, utile in mix aromatici salati e dolci, soprattutt
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
 
 ## Good With Ingredients
-
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
 - [Cipolla](/api/ingredients/verdure/cipolla.md)
 - [Carota](/api/ingredients/verdure/carota.md)
 - [Patata](/api/ingredients/verdure/patata.md)
 - [Riso basmati](/api/ingredients/esotici/riso-basmati.md)
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)

@@ -20,3 +20,4 @@ Spezia agrumata e calda, molto usata in miscele e tostature per dare profondità
 - Lenticchie rosse
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
 - [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)

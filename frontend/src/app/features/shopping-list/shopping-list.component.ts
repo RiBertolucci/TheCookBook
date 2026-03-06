@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ContentService, FolderNode, TelegramTarget } from '../../core/services/content.service';
+import { TelegramTarget } from '../../core/interfaces/content';
+import { ContentService } from '../../core/services/content.service';
 import { LoggerService } from '../../core/services/logger.service';
 import { ShoppingListStateService } from '../../core/services/shopping-list-state.service';
 
@@ -298,10 +299,10 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     if (this.isLoadingSuggestions) return;
 
     this.isLoadingSuggestions = true;
-    this.content.getHierarchy().subscribe({
-      next: (hierarchy) => {
+    this.content.getIngredientSuggestions().subscribe({
+      next: (response) => {
         this.isLoadingSuggestions = false;
-        this.allIngredientSuggestions = this.extractIngredientSuggestions(hierarchy?.['Ingredients']);
+        this.allIngredientSuggestions = Array.isArray(response?.suggestions) ? response.suggestions : [];
       },
       error: (err) => {
         this.isLoadingSuggestions = false;
@@ -312,43 +313,6 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
         );
       }
     });
-  }
-
-  private extractIngredientSuggestions(root: FolderNode | undefined): string[] {
-    if (!root) return [];
-
-    const labelsByKey = new Map<string, string>();
-
-    const walk = (node: FolderNode): void => {
-      (node.files || []).forEach((file) => {
-        const label = this.toDisplayName(file);
-        if (!label) return;
-
-        const key = label.toLowerCase();
-        if (!labelsByKey.has(key)) {
-          labelsByKey.set(key, label);
-        }
-      });
-
-      Object.keys(node.subdirs || {}).forEach((subdir) => {
-        const child = node.subdirs[subdir];
-        if (child) walk(child);
-      });
-    };
-
-    walk(root);
-    return Array.from(labelsByKey.values()).sort((left, right) => left.localeCompare(right, 'it'));
-  }
-
-  private toDisplayName(fileName: string): string {
-    const raw = String(fileName || '').trim().replace(/\.md$/i, '');
-    if (!raw) return '';
-
-    return raw
-      .split(/[-_]+/)
-      .filter(Boolean)
-      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-      .join(' ');
   }
 
   private normalizeItem(value: string): string {

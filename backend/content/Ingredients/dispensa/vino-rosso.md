@@ -19,19 +19,18 @@ Ingrediente liquido aromatico usato in cottura per dare profondità, acidità e 
 - Succo d’uva rossa non zuccherato + aceto (sostituzione tecnica)
 
 ## Goes with ingredients
-- manzo da brasato
-- cipolla
-- carota
-- sedano
-- aglio
-- brodo vegetale
-- passata di pomodoro
-- olio extravergine di oliva
-- sale
-
+- [manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
+- [cipolla](/api/ingredients/verdure/cipolla.md)
+- [carota](/api/ingredients/verdure/carota.md)
+- [sedano](/api/ingredients/verdure/sedano.md)
+- [aglio](/api/ingredients/verdure/aglio.md)
+- [brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
+- [olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
+- [sale](/api/ingredients/dispensa/sale.md)
 ## Goes with spicesAndHerbs
-- pepe nero
-- alloro
-- rosmarino
-- chiodi di garofano
-- timo
+- [pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
+- [alloro](/api/spices/erbe-mediterranee/alloro.md)
+- [rosmarino](/api/spices/erbe-mediterranee/rosmarino.md)
+- [chiodi di garofano](/api/spices/spezie-classiche/chiodi-di-garofano.md)
+- [timo](/api/spices/erbe-mediterranee/timo.md)

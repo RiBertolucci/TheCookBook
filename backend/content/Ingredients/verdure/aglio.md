@@ -44,6 +44,9 @@ Bulbo aromatico fondamentale nella cucina italiana, usato per soffritti, intingo
 - [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
 - [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
 - [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
+- [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)
+- [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/spices/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)

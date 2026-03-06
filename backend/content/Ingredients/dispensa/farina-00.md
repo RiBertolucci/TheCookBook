@@ -31,6 +31,7 @@ Farina di grano tenero molto raffinata, base di pasta fresca, pizza, focacce, im
 - [Pecorino Romano](/api/ingredients/latticini-e-formaggi/pecorino-romano.md)
 - [Guanciale](/api/ingredients/salumi-e-proteine/guanciale.md)
 - [Spinaci](/api/ingredients/verdure/spinaci.md)
+- [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
 - [Basilico](/api/spices/erbe-mediterranee/basilico.md)

@@ -30,6 +30,7 @@ Grasso lattiero usato in mantecature, salse, impasti e cotture dolci o salate, s
 - [Riso basmati](/api/ingredients/esotici/riso-basmati.md)
 - [Piselli](/api/ingredients/verdure/piselli.md)
 - [Spinaci](/api/ingredients/verdure/spinaci.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
 - [Basilico](/api/spices/erbe-mediterranee/basilico.md)

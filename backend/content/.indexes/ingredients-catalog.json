@@ -1,0 +1,110 @@
+{
+  "name": "ingredients-catalog",
+  "version": 1,
+  "strategy": "key-set",
+  "updatedAt": "2026-03-06T00:56:46.191Z",
+  "entries": {
+    "Ingredients/dispensa/brodo-vegetale.md": [
+      "brodo vegetale"
+    ],
+    "Ingredients/dispensa/farina-00.md": [
+      "farina 00"
+    ],
+    "Ingredients/dispensa/olio-extravergine-di-oliva.md": [
+      "olio extravergine di oliva"
+    ],
+    "Ingredients/dispensa/passata-di-pomodoro.md": [
+      "passata di pomodoro"
+    ],
+    "Ingredients/dispensa/sale.md": [
+      "sale"
+    ],
+    "Ingredients/dispensa/salsa-di-soia.md": [
+      "salsa di soia"
+    ],
+    "Ingredients/dispensa/vino-rosso.md": [
+      "vino rosso"
+    ],
+    "Ingredients/esotici/latte-di-cocco.md": [
+      "latte di cocco"
+    ],
+    "Ingredients/esotici/riso-basmati.md": [
+      "riso basmati"
+    ],
+    "Ingredients/esotici/zenzero-fresco.md": [
+      "zenzero fresco"
+    ],
+    "Ingredients/latticini-e-formaggi/burro.md": [
+      "burro"
+    ],
+    "Ingredients/latticini-e-formaggi/mozzarella.md": [
+      "mozzarella"
+    ],
+    "Ingredients/latticini-e-formaggi/parmigiano-reggiano.md": [
+      "parmigiano reggiano"
+    ],
+    "Ingredients/latticini-e-formaggi/pecorino-romano.md": [
+      "pecorino romano"
+    ],
+    "Ingredients/latticini-e-formaggi/ricotta.md": [
+      "ricotta"
+    ],
+    "Ingredients/salumi-e-proteine/guanciale.md": [
+      "guanciale"
+    ],
+    "Ingredients/salumi-e-proteine/macinato-di-soia.md": [
+      "macinato di soia"
+    ],
+    "Ingredients/salumi-e-proteine/manzo-da-brasato.md": [
+      "manzo da brasato"
+    ],
+    "Ingredients/salumi-e-proteine/pancetta.md": [
+      "pancetta"
+    ],
+    "Ingredients/salumi-e-proteine/pollo.md": [
+      "pollo"
+    ],
+    "Ingredients/salumi-e-proteine/salsiccia.md": [
+      "salsiccia"
+    ],
+    "Ingredients/salumi-e-proteine/uova.md": [
+      "uova"
+    ],
+    "Ingredients/verdure/aglio.md": [
+      "aglio"
+    ],
+    "Ingredients/verdure/carota.md": [
+      "carota"
+    ],
+    "Ingredients/verdure/cipolla.md": [
+      "cipolla"
+    ],
+    "Ingredients/verdure/funghi.md": [
+      "funghi"
+    ],
+    "Ingredients/verdure/melanzana.md": [
+      "melanzana"
+    ],
+    "Ingredients/verdure/Patata/Patata-novella.md": [
+      "patata novella"
+    ],
+    "Ingredients/verdure/peperoncino.md": [
+      "peperoncino"
+    ],
+    "Ingredients/verdure/piselli.md": [
+      "piselli"
+    ],
+    "Ingredients/verdure/pomodoro.md": [
+      "pomodoro"
+    ],
+    "Ingredients/verdure/sedano.md": [
+      "sedano"
+    ],
+    "Ingredients/verdure/spinaci.md": [
+      "spinaci"
+    ],
+    "Ingredients/verdure/zucchina.md": [
+      "zucchina"
+    ]
+  }
+}

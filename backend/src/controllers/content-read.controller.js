@@ -2,10 +2,32 @@ const path = require('path');
 const fileReader = require('../services/fileReader');
 const indexStore = require('../services/index-store.service');
 const indexSearch = require('../services/index-search.service');
+const ingredientFamilies = require('../services/ingredient-families.service');
 const logger = require('../services/logger');
 const { normalizeFilenameParam } = require('../utils/content-path.utils');
 
 const contentRoot = path.resolve(__dirname, '../../content');
+const INGREDIENT_SUGGESTIONS_INDEX = 'ingredients-catalog';
+
+function toDisplayName(value) {
+  const compact = String(value || '').trim().replace(/\s+/g, ' ');
+  if (!compact) return '';
+
+  return compact
+    .split(' ')
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
+function toIngredientFamiliesResponse(snapshot) {
+  const catalog = ingredientFamilies.buildIngredientFamiliesFromSnapshot(snapshot);
+  return {
+    indexName: snapshot.name,
+    updatedAt: snapshot.updatedAt || null,
+    families: catalog.families
+  };
+}
 
 async function getRecipe(req, res) {
   logger.debug({ service: 'fileReader', method: 'getRecipe', requestId: req.requestId, data: req.params.filename }, 'fetching recipe');
@@ -93,6 +115,86 @@ async function getIndexByName(req, res) {
   }
 }
 
+async function getIngredientSuggestions(req, res) {
+  try {
+    const snapshot = await indexStore.getIndexSnapshot(INGREDIENT_SUGGESTIONS_INDEX);
+    const labelsByKey = new Map();
+
+    for (const values of Object.values(snapshot.entries || {})) {
+      for (const value of Array.isArray(values) ? values : []) {
+        const key = String(value || '').trim().toLowerCase();
+        if (!key || labelsByKey.has(key)) continue;
+        labelsByKey.set(key, toDisplayName(key));
+      }
+    }
+
+    const suggestions = Array.from(labelsByKey.values())
+      .filter(Boolean)
+      .sort((left, right) => left.localeCompare(right, 'it'));
+
+    return res.json({
+      indexName: snapshot.name,
+      updatedAt: snapshot.updatedAt || null,
+      suggestions
+    });
+  } catch (err) {
+    if (String(err.message || '').startsWith('Unknown index:')) {
+      return res.status(404).json({ error: err.message });
+    }
+    logger.error(
+      { service: 'indexStore', method: 'getIngredientSuggestions', requestId: req.requestId, data: err.message },
+      'Error loading ingredient suggestions index'
+    );
+    return res.status(500).json({ error: err.message });
+  }
+}
+
+async function getIngredientFamilies(req, res) {
+  try {
+    const snapshot = await indexStore.getIndexSnapshot(INGREDIENT_SUGGESTIONS_INDEX);
+    return res.json(toIngredientFamiliesResponse(snapshot));
+  } catch (err) {
+    if (String(err.message || '').startsWith('Unknown index:')) {
+      return res.status(404).json({ error: err.message });
+    }
+    logger.error(
+      { service: 'indexStore', method: 'getIngredientFamilies', requestId: req.requestId, data: err.message },
+      'Error loading ingredient families'
+    );
+    return res.status(500).json({ error: err.message });
+  }
+}
+
+async function getIngredientFamilyByName(req, res) {
+  const name = String(req.params.name || '').trim();
+  if (!name) {
+    return res.status(400).json({ error: 'name is required' });
+  }
+
+  try {
+    const snapshot = await indexStore.getIndexSnapshot(INGREDIENT_SUGGESTIONS_INDEX);
+    const family = ingredientFamilies.findIngredientFamilyByName(snapshot, name);
+    if (!family) {
+      return res.status(404).json({ error: 'Family not found' });
+    }
+
+    return res.json({
+      indexName: snapshot.name,
+      updatedAt: snapshot.updatedAt || null,
+      family
+    });
+  } catch (err) {
+    if (String(err.message || '').startsWith('Unknown index:')) {
+      return res.status(404).json({ error: err.message });
+    }
+    logger.error(
+      { service: 'indexStore', method: 'getIngredientFamilyByName', requestId: req.requestId, data: err.message },
+      'Error loading ingredient family'
+    );
+    return res.status(500).json({ error: err.message });
+  }
+}
+
 async function searchFilesByIndex(req, res) {
   const indexName = String(req.params.indexName || '').trim();
   if (!indexName) {
@@ -123,5 +225,8 @@ module.exports = {
   getHierarchy,
   getIndexes,
   getIndexByName,
-  searchFilesByIndex
+  searchFilesByIndex,
+  getIngredientSuggestions,
+  getIngredientFamilies,
+  getIngredientFamilyByName
 };

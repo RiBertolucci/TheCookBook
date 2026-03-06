@@ -122,6 +122,8 @@ async function deleteFile(req, res) {
       'content file deleted'
     );
 
+    await syncIndexesSafely(req.requestId, () => indexStore.removeFile(deletedRef), 'POST /api/deleteFile');
+
     res.json({ status: 'ok' });
   } catch (err) {
     if (err && err.status) {
@@ -146,6 +148,8 @@ async function deleteFolder(req, res) {
       { service: 'server', method: 'POST /api/deleteFolder', requestId: req.requestId, data: safePath },
       'folder hierarchy deleted'
     );
+
+    await syncIndexesSafely(req.requestId, () => indexStore.removeByPrefix(safePath), 'POST /api/deleteFolder');
 
     res.json({ status: 'ok' });
   } catch (err) {

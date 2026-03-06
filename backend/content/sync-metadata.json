@@ -73,15 +73,15 @@
   },
   "Ingredients\\dispensa\\farina-00.md": {
     "created": "2026-03-02T17:51:35.070Z",
-    "modified": "2026-03-02T19:15:02.761Z"
+    "modified": "2026-03-06T00:53:11.421Z"
   },
   "Ingredients\\dispensa\\olio-extravergine-di-oliva.md": {
     "created": "2026-03-02T17:51:34.658Z",
-    "modified": "2026-03-04T00:40:03.539Z"
+    "modified": "2026-03-06T00:53:11.648Z"
   },
   "Ingredients\\esotici\\latte-di-cocco.md": {
     "created": "2026-03-02T18:06:46.192Z",
-    "modified": "2026-03-02T18:27:08.186Z"
+    "modified": "2026-03-06T00:53:11.649Z"
   },
   "Ingredients\\esotici\\riso-basmati.md": {
     "created": "2026-03-02T18:06:46.198Z",
@@ -89,15 +89,15 @@
   },
   "Ingredients\\esotici\\zenzero-fresco.md": {
     "created": "2026-03-02T18:06:46.190Z",
-    "modified": "2026-03-04T00:40:03.459Z"
+    "modified": "2026-03-06T00:53:11.650Z"
   },
   "Ingredients\\latticini-e-formaggi\\burro.md": {
     "created": "2026-03-02T17:51:35.168Z",
-    "modified": "2026-03-02T18:27:08.196Z"
+    "modified": "2026-03-06T00:53:11.652Z"
   },
   "Ingredients\\latticini-e-formaggi\\mozzarella.md": {
     "created": "2026-03-02T17:51:34.381Z",
-    "modified": "2026-03-02T19:15:02.925Z"
+    "modified": "2026-03-06T00:53:11.647Z"
   },
   "Ingredients\\latticini-e-formaggi\\parmigiano-reggiano.md": {
     "created": "2026-03-02T17:51:33.921Z",
@@ -117,15 +117,15 @@
   },
   "Ingredients\\salumi-e-proteine\\pancetta.md": {
     "created": "2026-03-02T17:51:34.577Z",
-    "modified": "2026-03-02T19:15:03.037Z"
+    "modified": "2026-03-06T00:53:11.642Z"
   },
   "Ingredients\\salumi-e-proteine\\pollo.md": {
     "created": "2026-03-02T18:06:46.186Z",
-    "modified": "2026-03-02T18:27:08.179Z"
+    "modified": "2026-03-06T00:53:11.653Z"
   },
   "Ingredients\\salumi-e-proteine\\salsiccia.md": {
     "created": "2026-03-02T17:51:35.304Z",
-    "modified": "2026-03-02T19:15:03.088Z"
+    "modified": "2026-03-06T00:53:11.644Z"
   },
   "Ingredients\\salumi-e-proteine\\uova.md": {
     "created": "2026-03-02T17:51:34.869Z",
@@ -133,19 +133,19 @@
   },
   "Ingredients\\verdure\\aglio.md": {
     "created": "2026-03-02T17:51:33.410Z",
-    "modified": "2026-03-04T00:40:03.536Z"
+    "modified": "2026-03-06T00:53:11.636Z"
   },
   "Ingredients\\verdure\\carota.md": {
     "created": "2026-03-02T17:51:33.514Z",
-    "modified": "2026-03-04T00:40:03.533Z"
+    "modified": "2026-03-06T00:53:11.655Z"
   },
   "Ingredients\\verdure\\cipolla.md": {
     "created": "2026-03-02T17:51:33.514Z",
-    "modified": "2026-03-04T00:40:03.531Z"
+    "modified": "2026-03-06T00:53:11.638Z"
   },
   "Ingredients\\verdure\\funghi.md": {
     "created": "2026-03-02T17:51:33.921Z",
-    "modified": "2026-03-02T18:27:08.072Z"
+    "modified": "2026-03-06T00:53:11.645Z"
   },
   "Ingredients\\verdure\\melanzana.md": {
     "created": "2026-03-02T17:51:33.848Z",
@@ -165,11 +165,11 @@
   },
   "Ingredients\\verdure\\pomodoro.md": {
     "created": "2026-03-02T17:51:33.557Z",
-    "modified": "2026-03-04T00:40:03.541Z"
+    "modified": "2026-03-06T00:53:11.640Z"
   },
   "Ingredients\\verdure\\sedano.md": {
     "created": "2026-03-02T17:51:33.537Z",
-    "modified": "2026-03-04T00:40:03.534Z"
+    "modified": "2026-03-06T00:53:11.657Z"
   },
   "Ingredients\\verdure\\spinaci.md": {
     "created": "2026-03-02T17:52:03.784Z",
@@ -177,15 +177,15 @@
   },
   "Ingredients\\verdure\\zucchina.md": {
     "created": "2026-03-02T17:51:33.759Z",
-    "modified": "2026-03-02T19:15:03.476Z"
+    "modified": "2026-03-06T00:53:11.660Z"
   },
   "SpicesAndHerbs\\erbe-mediterranee\\alloro.md": {
     "created": "2026-03-02T17:58:22.997Z",
-    "modified": "2026-03-04T00:40:03.548Z"
+    "modified": "2026-03-06T00:53:11.665Z"
   },
   "SpicesAndHerbs\\erbe-mediterranee\\basilico.md": {
     "created": "2026-03-02T17:58:22.793Z",
-    "modified": "2026-03-04T00:40:03.408Z"
+    "modified": "2026-03-06T00:53:11.664Z"
   },
   "SpicesAndHerbs\\erbe-mediterranee\\maggiorana.md": {
     "created": "2026-03-02T17:58:22.947Z",
@@ -197,27 +197,27 @@
   },
   "SpicesAndHerbs\\erbe-mediterranee\\prezzemolo.md": {
     "created": "2026-03-02T17:58:22.843Z",
-    "modified": "2026-03-04T00:40:03.380Z"
+    "modified": "2026-03-06T00:53:11.666Z"
   },
   "SpicesAndHerbs\\erbe-mediterranee\\rosmarino.md": {
     "created": "2026-03-02T17:58:22.814Z",
-    "modified": "2026-03-04T00:40:03.547Z"
+    "modified": "2026-03-06T00:53:11.667Z"
   },
   "SpicesAndHerbs\\erbe-mediterranee\\salvia.md": {
     "created": "2026-03-02T17:58:22.944Z",
-    "modified": "2026-03-02T18:11:24.834Z"
+    "modified": "2026-03-06T00:53:11.668Z"
   },
   "SpicesAndHerbs\\erbe-mediterranee\\timo.md": {
     "created": "2026-03-02T17:58:22.869Z",
-    "modified": "2026-03-02T18:27:08.217Z"
+    "modified": "2026-03-06T00:53:11.669Z"
   },
   "SpicesAndHerbs\\mixes\\garam-masala.md": {
     "created": "2026-03-02T18:06:46.198Z",
-    "modified": "2026-03-02T18:11:24.838Z"
+    "modified": "2026-03-06T00:53:11.670Z"
   },
   "SpicesAndHerbs\\spezie-classiche\\cannella.md": {
     "created": "2026-03-02T18:13:34.889Z",
-    "modified": "2026-03-02T18:13:38.732Z"
+    "modified": "2026-03-06T00:53:11.673Z"
   },
   "SpicesAndHerbs\\spezie-classiche\\cardamomo.md": {
     "created": "2026-03-02T18:13:34.885Z",
@@ -225,11 +225,11 @@
   },
   "SpicesAndHerbs\\spezie-classiche\\chiodi-di-garofano.md": {
     "created": "2026-03-02T18:13:34.890Z",
-    "modified": "2026-03-02T18:27:07.918Z"
+    "modified": "2026-03-06T00:53:11.674Z"
   },
   "SpicesAndHerbs\\spezie-classiche\\coriandolo-in-semi.md": {
     "created": "2026-03-02T18:13:34.883Z",
-    "modified": "2026-03-04T00:40:03.470Z"
+    "modified": "2026-03-06T00:53:11.676Z"
   },
   "SpicesAndHerbs\\spezie-classiche\\cumino.md": {
     "created": "2026-03-02T18:13:34.884Z",
@@ -237,15 +237,15 @@
   },
   "SpicesAndHerbs\\spezie-classiche\\noce-moscata.md": {
     "created": "2026-03-02T17:58:23.168Z",
-    "modified": "2026-03-02T18:27:08.161Z"
+    "modified": "2026-03-06T00:53:11.677Z"
   },
   "SpicesAndHerbs\\spezie-classiche\\paprika.md": {
     "created": "2026-03-02T17:58:23.197Z",
-    "modified": "2026-03-04T00:40:03.543Z"
+    "modified": "2026-03-06T00:53:11.678Z"
   },
   "SpicesAndHerbs\\spezie-classiche\\pepe-nero.md": {
     "created": "2026-03-02T17:58:23.131Z",
-    "modified": "2026-03-04T00:40:03.545Z"
+    "modified": "2026-03-06T00:53:11.663Z"
   },
   "SpicesAndHerbs\\spezie-classiche\\peperoncino-secco.md": {
     "created": "2026-03-02T17:58:23.238Z",
@@ -257,19 +257,19 @@
   },
   "Recipes\\ragu-vegano-di-soia.md": {
     "created": "2026-03-04T00:36:43.121Z",
-    "modified": "2026-03-04T00:44:45.378Z"
+    "modified": "2026-03-04T00:45:08.270Z"
   },
   "Ingredients\\dispensa\\brodo-vegetale.md": {
     "created": "2026-03-04T00:39:47.825Z",
-    "modified": "2026-03-04T00:40:03.462Z"
+    "modified": "2026-03-06T00:53:11.661Z"
   },
   "Ingredients\\dispensa\\passata-di-pomodoro.md": {
     "created": "2026-03-04T00:39:47.987Z",
-    "modified": "2026-03-04T00:40:03.370Z"
+    "modified": "2026-03-06T00:53:11.370Z"
   },
   "Ingredients\\dispensa\\sale.md": {
     "created": "2026-03-04T00:39:48.152Z",
-    "modified": "2026-03-04T00:39:59.931Z"
+    "modified": "2026-03-06T00:53:11.662Z"
   },
   "Ingredients\\dispensa\\salsa-di-soia.md": {
     "created": "2026-03-04T00:39:47.691Z",
@@ -278,5 +278,21 @@
   "Ingredients\\salumi-e-proteine\\macinato-di-soia.md": {
     "created": "2026-03-04T00:39:47.535Z",
     "modified": "2026-03-04T00:40:03.430Z"
+  },
+  "Recipes\\brasato-al-vino-rosso.md": {
+    "created": "2026-03-04T00:46:33.530Z",
+    "modified": "2026-03-06T00:53:11.316Z"
+  },
+  "Ingredients\\dispensa\\vino-rosso.md": {
+    "created": "2026-03-04T00:46:33.883Z",
+    "modified": "2026-03-06T00:53:11.350Z"
+  },
+  "Ingredients\\salumi-e-proteine\\manzo-da-brasato.md": {
+    "created": "2026-03-04T00:46:33.739Z",
+    "modified": "2026-03-06T00:53:11.405Z"
+  },
+  "Ingredients\\verdure\\Patata\\Patata-novella.md": {
+    "created": "2026-03-06T00:51:45.802Z",
+    "modified": "2026-03-06T00:52:03.791Z"
   }
 }

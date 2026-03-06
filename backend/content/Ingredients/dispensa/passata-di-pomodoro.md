@@ -27,6 +27,7 @@ Pomodoro setacciato e conservato, base pratica per sughi, ragù e cotture in umi
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/spices/erbe-mediterranee/basilico.md)
 - [Origano](/api/spices/erbe-mediterranee/oregano.md)

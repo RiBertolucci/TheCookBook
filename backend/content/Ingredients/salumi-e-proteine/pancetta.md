@@ -32,6 +32,7 @@ Salume suino molto usato per dare grasso, sapore e rosolatura a soffritti, sughi
 - [Carota](/api/ingredients/verdure/carota.md)
 - [Piselli](/api/ingredients/verdure/piselli.md)
 - [Sedano](/api/ingredients/verdure/sedano.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
 - [Basilico](/api/spices/erbe-mediterranee/basilico.md)

@@ -26,6 +26,7 @@ Ingrediente cremoso e aromatico usato in curry e stufati per dare corpo, dolcezz
 - [Cipolla](/api/ingredients/verdure/cipolla.md)
 - [Patata](/api/ingredients/verdure/patata.md)
 - [Riso basmati](/api/ingredients/esotici/riso-basmati.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 ## Goes with spicesAndHerbs
 - [Garam Masala](/api/spices/mixes/garam-masala.md)
 - [Peperoncino secco](/api/spices/spezie-classiche/peperoncino-secco.md)

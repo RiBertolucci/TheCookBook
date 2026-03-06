@@ -19,3 +19,4 @@ Erba fresca molto versatile usata per rifiniture, salse verdi, triti aromatici e
 - [Uova](/api/ingredients/salumi-e-proteine/uova.md)
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)

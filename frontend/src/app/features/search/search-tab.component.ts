@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ContentService, IndexInfo, IndexSearchFile, IndexSearchGroup } from '../../core/services/content.service';
+import { ContentSection, IndexInfo, IndexSearchFile, IndexSearchGroup, IngredientFamily } from '../../core/interfaces/content';
+import { ContentService } from '../../core/services/content.service';
 import { IndexNameTranslatorService } from '../../core/services/index-name-translator.service';
 import { LoggerService } from '../../core/services/logger.service';
+import { RecipeIngredientRenderService } from '../../core/services/recipe-ingredient-render.service';
 import { ShoppingListStateService } from '../../core/services/shopping-list-state.service';
 
 interface OpenedSearchFile {
@@ -36,12 +38,14 @@ export class SearchTabComponent implements OnInit, OnDestroy {
   groupedSearchResults: IndexSearchGroup[] = [];
   openedResult: OpenedSearchFile | null = null;
   private shoppingItemKeys = new Set<string>();
+  private ingredientFamiliesByKey: { [key: string]: IngredientFamily } = {};
   private shoppingItemsSubscription?: Subscription;
 
   constructor(
     private content: ContentService,
     private indexNameTranslator: IndexNameTranslatorService,
     private logger: LoggerService,
+    private recipeIngredientRender: RecipeIngredientRenderService,
     private shoppingListState: ShoppingListStateService
   ) {}
 
@@ -56,6 +60,7 @@ export class SearchTabComponent implements OnInit, OnDestroy {
         };
       }
     });
+    this.loadIngredientFamilies();
     this.loadIndexes();
   }
 
@@ -161,53 +166,30 @@ export class SearchTabComponent implements OnInit, OnDestroy {
 
   openSearchResult(file: IndexSearchFile): void {
     if (!file) return;
-
-    this.content.getFile(file.section, file.filename).subscribe({
-      next: (data) => {
-        if (!data) return;
-
-        const html = this.renderMarkdownForSection(file.section, data.content);
-
-        this.openedResult = {
-          title: data.filename,
-          section: file.section,
-          filename: file.filename,
-          renderedContent: html,
-          rawContent: data.content
-        };
-      },
-      error: (err) => {
-        this.logger.error(
-          { service: 'SearchTabComponent', method: 'openSearchResult', data: err?.message || err?.error?.message || 'unknown error' },
-          'failed to open searched file'
-        );
-      }
-    });
+    this.openPreviewFile(file.section, file.filename);
   }
 
   onPreviewClick(event: MouseEvent): void {
-    const target = event.target as HTMLElement | null;
-    if (!target) return;
+    const fallbackSection = this.openedResult ? this.openedResult.section : undefined;
+    const action = this.recipeIngredientRender.resolveRenderedAction(event, fallbackSection);
+    if (!action) return;
 
-    const addButton = target.closest('.recipe-ingredient-add-btn') as HTMLElement | null;
-    if (!addButton) return;
-
-    event.preventDefault();
-    event.stopPropagation();
-
-    const ingredientItem = addButton.closest('li') as HTMLLIElement | null;
-    const ingredient = ingredientItem
-      ? this.normalizeShoppingItemLabel(this.extractIngredientLabel(ingredientItem))
-      : '';
-    if (!ingredient) return;
-
-    const wasAdded = this.shoppingListState.addItem(ingredient);
-    if (wasAdded && this.openedResult) {
-      this.openedResult = {
-        ...this.openedResult,
-        renderedContent: this.renderMarkdownForSection(this.openedResult.section, this.openedResult.rawContent)
-      };
+    if (action.type === 'toggle-family') {
+      return;
     }
+
+    if (action.type === 'add-to-shopping') {
+      const wasAdded = this.shoppingListState.addItem(action.item);
+      if (wasAdded && this.openedResult) {
+        this.openedResult = {
+          ...this.openedResult,
+          renderedContent: this.renderMarkdownForSection(this.openedResult.section, this.openedResult.rawContent)
+        };
+      }
+      return;
+    }
+
+    this.openPreviewFile(action.section, action.filename);
   }
 
   closeOpenedResult(): void {
@@ -332,81 +314,61 @@ export class SearchTabComponent implements OnInit, OnDestroy {
     }
 
     if (section === 'Recipes') {
-      return this.decorateRecipeIngredients(html);
+      return this.recipeIngredientRender.decorateRecipeIngredients(html, this.shoppingItemKeys, this.ingredientFamiliesByKey);
     }
 
     return html;
   }
 
-  private decorateRecipeIngredients(renderedHtml: string): string {
-    const template = document.createElement('template');
-    template.innerHTML = renderedHtml;
+  private loadIngredientFamilies(): void {
+    this.content.getIngredientFamilies().subscribe({
+      next: (response) => {
+        const nextFamiliesByKey: { [key: string]: IngredientFamily } = {};
+        (response?.families || []).forEach((family) => {
+          if (!family || !family.key) return;
+          nextFamiliesByKey[family.key] = family;
+        });
+        this.ingredientFamiliesByKey = nextFamiliesByKey;
 
-    const headings = Array.from(template.content.querySelectorAll('h1, h2, h3, h4, h5, h6'));
-    const ingredientsHeading = headings.find((heading) => this.normalizeHeading(heading.textContent) === 'ingredients');
-    if (!ingredientsHeading) return renderedHtml;
-
-    const sectionLevel = Number(ingredientsHeading.tagName.slice(1)) || 2;
-    let current: Element | null = ingredientsHeading.nextElementSibling;
-
-    while (current) {
-      const tag = current.tagName.toUpperCase();
-      if (/^H[1-6]$/.test(tag)) {
-        const level = Number(tag.slice(1)) || 6;
-        if (level <= sectionLevel) break;
+        if (this.openedResult) {
+          this.openedResult = {
+            ...this.openedResult,
+            renderedContent: this.renderMarkdownForSection(this.openedResult.section, this.openedResult.rawContent)
+          };
+        }
+      },
+      error: (err) => {
+        this.ingredientFamiliesByKey = {};
+        this.logger.error(
+          { service: 'SearchTabComponent', method: 'loadIngredientFamilies', data: err?.message || err?.error?.message || 'unknown error' },
+          'failed to load ingredient families'
+        );
       }
-
-      if (tag === 'UL' || tag === 'OL') {
-        this.decorateIngredientList(current as HTMLElement);
-      }
-
-      current = current.nextElementSibling;
-    }
-
-    return template.innerHTML;
-  }
-
-  private decorateIngredientList(listElement: HTMLElement): void {
-    const listItems = Array.from(listElement.children)
-      .filter((child) => child.tagName.toUpperCase() === 'LI') as HTMLLIElement[];
-
-    listItems.forEach((item) => {
-      const ingredient = this.normalizeShoppingItemLabel(this.extractIngredientLabel(item));
-      if (!ingredient) return;
-
-      const ingredientKey = this.shoppingListState.normalizeKey(ingredient);
-      item.classList.add('recipe-ingredient-item');
-
-      if (this.shoppingItemKeys.has(ingredientKey)) {
-        item.classList.add('recipe-ingredient-in-cart');
-        return;
-      }
-
-      const addButton = document.createElement('a');
-      addButton.href = '#';
-      addButton.className = 'recipe-ingredient-add-btn';
-      addButton.setAttribute('role', 'button');
-      addButton.setAttribute('title', 'Add to shopping list');
-      addButton.setAttribute('aria-label', `Add ${ingredient} to shopping list`);
-      addButton.textContent = '+';
-      item.appendChild(addButton);
     });
   }
 
-  private extractIngredientLabel(item: HTMLLIElement): string {
-    const clone = item.cloneNode(true) as HTMLElement;
-    Array.from(clone.querySelectorAll('.recipe-ingredient-add-btn, ul, ol')).forEach((el) => el.remove());
-    return String(clone.textContent || '').replace(/\s+/g, ' ').trim();
-  }
+  private openPreviewFile(section: ContentSection, filename: string): void {
+    this.content.getFile(section, filename).subscribe({
+      next: (data) => {
+        if (!data) return;
 
-  private normalizeHeading(value: string | null): string {
-    return String(value || '').trim().toLowerCase();
-  }
+        const html = this.renderMarkdownForSection(section, data.content);
 
-  private normalizeShoppingItemLabel(value: string): string {
-    const compact = String(value || '').trim().replace(/\s+/g, ' ');
-    if (!compact) return '';
-    return compact.charAt(0).toUpperCase() + compact.slice(1);
+        this.openedResult = {
+          title: data.filename,
+          section,
+          filename,
+          renderedContent: html,
+          rawContent: data.content
+        };
+      },
+      error: (err) => {
+        this.logger.error(
+          { service: 'SearchTabComponent', method: 'openPreviewFile', data: err?.message || err?.error?.message || 'unknown error' },
+          'failed to open searched file'
+        );
+      }
+    });
   }
 
   private basicRender(md: string): string {

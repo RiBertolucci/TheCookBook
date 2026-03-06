@@ -26,7 +26,9 @@ Condimento essenziale per bilanciare i sapori e valorizzare aromi, dolcezza natu
 - [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
 - [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
-
+- [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)
+- [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
 - [Paprika](/api/spices/spezie-classiche/paprika.md)

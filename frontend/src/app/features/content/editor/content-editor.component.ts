@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { ContentService, FolderNode } from '../../../core/services/content.service';
+import { FolderNode } from '../../../core/interfaces/content';
+import { ContentService } from '../../../core/services/content.service';
 import { EditRequest } from '../models/content-shell.models';
 
 type ContentKind = 'ingredient' | 'spice' | 'mix' | 'recipe';

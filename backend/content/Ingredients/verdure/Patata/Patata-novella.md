@@ -1,4 +1,4 @@
-# Patata
+# Patata novella
 
 Tubero versatile per contorni, primi e secondi: assorbe condimenti e si presta a bollitura, forno, frittura e stufatura.
 

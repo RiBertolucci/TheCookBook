@@ -28,6 +28,7 @@ Formaggio fresco molto usato in pizze, paste al forno, antipasti e preparazioni 
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/spices/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)

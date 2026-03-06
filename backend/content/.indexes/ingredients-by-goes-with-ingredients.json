@@ -2,22 +2,26 @@
   "name": "ingredients-by-goes-with-ingredients",
   "version": 1,
   "strategy": "key-set",
-  "updatedAt": "2026-03-04T23:55:41.250Z",
+  "updatedAt": "2026-03-06T00:56:46.190Z",
   "entries": {
     "Ingredients/dispensa/brodo-vegetale.md": [
       "carota",
       "cipolla",
       "macinato di soia",
+      "manzo da brasato",
       "passata di pomodoro",
       "patata",
+      "patata novella",
       "riso basmati",
       "sale",
       "salsa di soia",
-      "sedano"
+      "sedano",
+      "vino rosso"
     ],
     "Ingredients/dispensa/farina-00.md": [
       "burro",
       "guanciale",
+      "manzo da brasato",
       "mozzarella",
       "olio extravergine di oliva",
       "parmigiano reggiano",
@@ -32,15 +36,18 @@
       "cipolla",
       "farina 00",
       "macinato di soia",
+      "manzo da brasato",
       "melanzana",
       "mozzarella",
       "parmigiano reggiano",
       "passata di pomodoro",
       "patata",
+      "patata novella",
       "peperoncino",
       "pomodoro",
       "sale",
       "salsa di soia",
+      "vino rosso",
       "zucchina"
     ],
     "Ingredients/dispensa/passata-di-pomodoro.md": [
@@ -51,16 +58,20 @@
       "macinato di soia",
       "olio extravergine di oliva",
       "sale",
-      "sedano"
+      "sedano",
+      "vino rosso"
     ],
     "Ingredients/dispensa/sale.md": [
       "brodo vegetale",
       "cipolla",
       "macinato di soia",
+      "manzo da brasato",
       "olio extravergine di oliva",
       "passata di pomodoro",
       "patata",
-      "pomodoro"
+      "patata novella",
+      "pomodoro",
+      "vino rosso"
     ],
     "Ingredients/dispensa/salsa-di-soia.md": [
       "aglio",
@@ -86,6 +97,7 @@
       "aglio",
       "cipolla",
       "patata",
+      "patata novella",
       "pollo",
       "riso basmati",
       "zenzero fresco"
@@ -105,6 +117,7 @@
       "cipolla",
       "latte di cocco",
       "patata",
+      "patata novella",
       "pollo",
       "riso basmati",
       "salsa di soia"
@@ -114,6 +127,7 @@
       "funghi",
       "parmigiano reggiano",
       "patata",
+      "patata novella",
       "piselli",
       "ricotta",
       "riso basmati",
@@ -126,6 +140,7 @@
       "melanzana",
       "olio extravergine di oliva",
       "patata",
+      "patata novella",
       "pomodoro",
       "zucchina"
     ],
@@ -200,6 +215,7 @@
       "funghi",
       "parmigiano reggiano",
       "patata",
+      "patata novella",
       "pecorino romano",
       "piselli",
       "pomodoro",
@@ -211,6 +227,7 @@
       "cipolla",
       "latte di cocco",
       "patata",
+      "patata novella",
       "riso basmati",
       "zenzero fresco"
     ],
@@ -221,6 +238,7 @@
       "funghi",
       "parmigiano reggiano",
       "patata",
+      "patata novella",
       "pomodoro",
       "sedano"
     ],
@@ -242,12 +260,14 @@
       "funghi",
       "latte di cocco",
       "macinato di soia",
+      "manzo da brasato",
       "melanzana",
       "mozzarella",
       "olio extravergine di oliva",
       "pancetta",
       "passata di pomodoro",
       "patata",
+      "patata novella",
       "peperoncino",
       "piselli",
       "pollo",
@@ -257,6 +277,7 @@
       "salsiccia",
       "sedano",
       "spinaci",
+      "vino rosso",
       "zenzero fresco",
       "zucchina"
     ],
@@ -265,13 +286,16 @@
       "brodo vegetale",
       "cipolla",
       "macinato di soia",
+      "manzo da brasato",
       "pancetta",
       "passata di pomodoro",
       "patata",
+      "patata novella",
       "piselli",
       "pomodoro",
       "salsiccia",
       "sedano",
+      "vino rosso",
       "zucchina"
     ],
     "Ingredients/verdure/cipolla.md": [
@@ -282,11 +306,13 @@
       "guanciale",
       "latte di cocco",
       "macinato di soia",
+      "manzo da brasato",
       "melanzana",
       "olio extravergine di oliva",
       "pancetta",
       "passata di pomodoro",
       "patata",
+      "patata novella",
       "piselli",
       "pollo",
       "pomodoro",
@@ -295,6 +321,7 @@
       "salsa di soia",
       "salsiccia",
       "sedano",
+      "vino rosso",
       "zenzero fresco",
       "zucchina"
     ],
@@ -305,6 +332,7 @@
       "pancetta",
       "parmigiano reggiano",
       "patata",
+      "patata novella",
       "pomodoro",
       "salsiccia",
       "sedano",
@@ -321,7 +349,7 @@
       "ricotta",
       "zucchina"
     ],
-    "Ingredients/verdure/patata.md": [
+    "Ingredients/verdure/Patata/Patata-novella.md": [
       "aglio",
       "brodo vegetale",
       "burro",
@@ -369,6 +397,7 @@
       "pancetta",
       "parmigiano reggiano",
       "patata",
+      "patata novella",
       "pecorino romano",
       "peperoncino",
       "ricotta",
@@ -384,11 +413,14 @@
       "cipolla",
       "funghi",
       "macinato di soia",
+      "manzo da brasato",
       "pancetta",
       "passata di pomodoro",
       "patata",
+      "patata novella",
       "pomodoro",
-      "salsiccia"
+      "salsiccia",
+      "vino rosso"
     ],
     "Ingredients/verdure/spinaci.md": [
       "aglio",
@@ -408,6 +440,7 @@
       "olio extravergine di oliva",
       "parmigiano reggiano",
       "patata",
+      "patata novella",
       "pomodoro",
       "ricotta",
       "uova"

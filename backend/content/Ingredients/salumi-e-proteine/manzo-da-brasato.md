@@ -19,19 +19,18 @@ Taglio bovino adatto a cotture lente in umido, ideale per ottenere carne morbida
 - Spalla di vitello (risultato più delicato)
 
 ## Goes with ingredients
-- vino rosso
-- cipolla
-- carota
-- sedano
-- aglio
-- brodo vegetale
-- olio extravergine di oliva
-- farina 00
-- sale
-
+- [vino rosso](/api/ingredients/dispensa/vino-rosso.md)
+- [cipolla](/api/ingredients/verdure/cipolla.md)
+- [carota](/api/ingredients/verdure/carota.md)
+- [sedano](/api/ingredients/verdure/sedano.md)
+- [aglio](/api/ingredients/verdure/aglio.md)
+- [brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
+- [farina 00](/api/ingredients/dispensa/farina-00.md)
+- [sale](/api/ingredients/dispensa/sale.md)
 ## Goes with spicesAndHerbs
-- pepe nero
-- alloro
-- rosmarino
-- chiodi di garofano
-- salvia
+- [pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
+- [alloro](/api/spices/erbe-mediterranee/alloro.md)
+- [rosmarino](/api/spices/erbe-mediterranee/rosmarino.md)
+- [chiodi di garofano](/api/spices/spezie-classiche/chiodi-di-garofano.md)
+- [salvia](/api/spices/erbe-mediterranee/salvia.md)

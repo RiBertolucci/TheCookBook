@@ -11,10 +11,12 @@ Spezia potente e balsamica, da usare in piccole dosi per aromatizzare stufati, b
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
 - [Alloro](/api/spices/erbe-mediterranee/alloro.md)
 ## Good With Ingredients
-
 - [Cipolla](/api/ingredients/verdure/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
 - [Patata](/api/ingredients/verdure/patata.md)
 - [Riso basmati](/api/ingredients/esotici/riso-basmati.md)
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
+- [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)
+- [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)

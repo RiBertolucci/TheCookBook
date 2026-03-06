@@ -12,10 +12,10 @@ Spezia calda e profumata usata in besciamella, ripieni, puree e preparazioni cre
 - [Cardamomo](/api/spices/spezie-classiche/cardamomo.md)
 - [Coriandolo in semi](/api/spices/spezie-classiche/coriandolo-in-semi.md)
 ## Good With Ingredients
-
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - Latte intero
 - [Ricotta](/api/ingredients/latticini-e-formaggi/ricotta.md)
 - [Spinaci](/api/ingredients/verdure/spinaci.md)
 - [Patata](/api/ingredients/verdure/patata.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)

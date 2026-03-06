@@ -29,6 +29,7 @@ Preparazione di carne suina macinata e speziata, usata in sughi, ragù, teglie e
 - [Patata](/api/ingredients/verdure/patata.md)
 - [Funghi](/api/ingredients/verdure/funghi.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
 - [Basilico](/api/spices/erbe-mediterranee/basilico.md)

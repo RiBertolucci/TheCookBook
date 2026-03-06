@@ -36,3 +36,4 @@ Erba aromatica simbolo della cucina italiana, fresca e profumata, usata soprattu
 - [Sedano](/api/ingredients/verdure/sedano.md)
 - [Spinaci](/api/ingredients/verdure/spinaci.md)
 - [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)

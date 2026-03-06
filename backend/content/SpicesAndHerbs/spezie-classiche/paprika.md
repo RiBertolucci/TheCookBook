@@ -24,3 +24,4 @@ Spezia dal profilo dolce o affumicato usata per colore, rotondità e leggere not
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
 - [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)

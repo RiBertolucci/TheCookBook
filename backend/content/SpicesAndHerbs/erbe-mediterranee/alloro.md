@@ -22,3 +22,6 @@ Foglia aromatica usata in cotture lunghe, brodi, legumi e stufati per profondit√
 - [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
+- [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)
+- [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)

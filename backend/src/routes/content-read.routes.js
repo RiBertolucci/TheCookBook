@@ -4,6 +4,9 @@ const {
   getIngredient,
   getSpice,
   getHierarchy,
+  getIngredientSuggestions,
+  getIngredientFamilies,
+  getIngredientFamilyByName,
   getIndexes,
   getIndexByName,
   searchFilesByIndex
@@ -12,6 +15,9 @@ const {
 const router = express.Router();
 
 router.get('/api/recipes/:filename', getRecipe);
+router.get('/api/ingredients/suggestions', getIngredientSuggestions);
+router.get('/api/ingredients/families', getIngredientFamilies);
+router.get('/api/ingredients/families/:name', getIngredientFamilyByName);
 router.get('/api/ingredients/*filename', getIngredient);
 router.get('/api/spices/*filename', getSpice);
 router.get('/api/hierarchy', getHierarchy);
