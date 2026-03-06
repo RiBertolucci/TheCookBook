@@ -25,6 +25,18 @@
           <button class="theme-option" (click)="runForceIndexing()" [disabled]="isForceIndexing">
             {{ isForceIndexing ? 'Force Indexing...' : 'Force Indexing' }}
           </button>
+
+          <div class="settings-label">Telegram</div>
+          <button class="theme-option" (click)="addTelegramUser()" [disabled]="isAddingTelegramUser">
+            {{ isAddingTelegramUser ? 'Adding user...' : 'Add user' }}
+          </button>
+          <div
+            *ngIf="telegramAddUserMessage"
+            class="settings-note"
+            [class.error]="telegramAddUserError"
+            [title]="telegramAddUserMessage">
+            {{ telegramAddUserMessage }}
+          </div>
         </div>
       </div>
     </div>

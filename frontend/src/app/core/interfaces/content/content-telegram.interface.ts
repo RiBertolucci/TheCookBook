@@ -11,6 +11,17 @@ export interface TelegramTarget {
   name: string;
 }
 
+export interface AddTelegramTargetResponse {
+  status: string;
+  created?: boolean;
+  target?: {
+    id: string;
+    name: string;
+    chatId?: string;
+  };
+  error?: string;
+}
+
 export interface TelegramTargetsResponse {
   status: string;
   targets?: TelegramTarget[];

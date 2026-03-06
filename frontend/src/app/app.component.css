@@ -80,7 +80,7 @@
 	position: absolute;
 	right: 0;
 	top: calc(100% + 0.4rem);
-	min-width: 170px;
+	min-width: 210px;
 	padding: 0.6rem;
 	border-radius: 10px;
 	border: 1px solid var(--border);
@@ -113,6 +113,30 @@
 	border-color: var(--accent);
 	background: var(--accent-soft);
 	color: var(--accent);
+}
+
+.settings-note {
+	font-size: 0.76rem;
+	line-height: 1.35;
+	color: var(--text-soft);
+	background: var(--surface-soft);
+	border: 1px solid var(--border);
+	border-radius: 7px;
+	padding: 0.34rem 0.45rem;
+	max-width: 250px;
+	word-break: break-word;
+}
+
+.settings-note.error {
+	color: #b91c1c;
+	border-color: #fca5a5;
+	background: #fef2f2;
+}
+
+.dark-mode .settings-note.error {
+	color: #fecaca;
+	border-color: #7f1d1d;
+	background: #3f1d1d;
 }
 
 .main-tabs {

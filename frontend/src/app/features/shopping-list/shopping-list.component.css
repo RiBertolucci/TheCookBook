@@ -182,6 +182,10 @@
   border-top: 1px solid var(--border);
 }
 
+.shopping-actions-row.menu-open {
+  z-index: 60;
+}
+
 .shopping-send-combo,
 .shopping-load-combo {
   position: relative;

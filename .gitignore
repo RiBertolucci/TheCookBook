@@ -41,3 +41,6 @@ tmp/
 
 # bump package
 npm-bundle.js
+
+# Private filew
+Todo.md

@@ -191,12 +191,12 @@ async function sendShoppingListToTelegram(req, res) {
   } catch (err) {
     const errorCode = err && err.code ? err.code : 'UNKNOWN';
 
-    if (errorCode === 'MISSING_TELEGRAM_CONFIG') {
+    if (errorCode === 'MISSING_TELEGRAM_TOKEN' || errorCode === 'MISSING_TELEGRAM_TARGETS') {
       logger.error(
         { service: 'server', method: 'POST /api/shopping-list/telegram', requestId: req.requestId, data: err.message },
         'telegram configuration missing'
       );
-      return res.status(500).json({ error: err.message });
+      return res.status(400).json({ error: err.message });
     }
 
     if (errorCode === 'TELEGRAM_API_ERROR') {
@@ -207,7 +207,7 @@ async function sendShoppingListToTelegram(req, res) {
       return res.status(502).json({ error: err.message });
     }
 
-    if (errorCode === 'TARGET_NOT_FOUND' || errorCode === 'INVALID_TELEGRAM_TARGETS_CONFIG') {
+    if (errorCode === 'TARGET_NOT_FOUND' || errorCode === 'INVALID_TELEGRAM_TARGETS_CONFIG' || errorCode === 'INVALID_TELEGRAM_TARGETS_STORAGE') {
       return res.status(400).json({ error: err.message });
     }
 
@@ -236,7 +236,11 @@ async function getLastSentShoppingList(req, res) {
       return res.status(404).json({ error: err.message });
     }
 
-    if (errorCode === 'TARGET_NOT_FOUND' || errorCode === 'INVALID_TELEGRAM_TARGETS_CONFIG') {
+    if (errorCode === 'TARGET_NOT_FOUND' || errorCode === 'INVALID_TELEGRAM_TARGETS_CONFIG' || errorCode === 'INVALID_TELEGRAM_TARGETS_STORAGE') {
+      return res.status(400).json({ error: err.message });
+    }
+
+    if (errorCode === 'MISSING_TELEGRAM_TOKEN' || errorCode === 'MISSING_TELEGRAM_TARGETS') {
       return res.status(400).json({ error: err.message });
     }
 
@@ -250,12 +254,17 @@ async function getLastSentShoppingList(req, res) {
 
 async function getTelegramTargets(req, res) {
   try {
-    const targets = telegramShopping.getTelegramTargets();
+    const targets = await telegramShopping.getTelegramTargets();
     return res.json({ status: 'ok', targets });
   } catch (err) {
     const errorCode = err && err.code ? err.code : 'UNKNOWN';
 
-    if (errorCode === 'MISSING_TELEGRAM_CONFIG' || errorCode === 'INVALID_TELEGRAM_TARGETS_CONFIG') {
+    if (
+      errorCode === 'MISSING_TELEGRAM_TOKEN'
+      || errorCode === 'MISSING_TELEGRAM_TARGETS'
+      || errorCode === 'INVALID_TELEGRAM_TARGETS_CONFIG'
+      || errorCode === 'INVALID_TELEGRAM_TARGETS_STORAGE'
+    ) {
       return res.status(400).json({ error: err.message });
     }
 
@@ -267,6 +276,61 @@ async function getTelegramTargets(req, res) {
   }
 }
 
+async function addTelegramTargetFromLatestMessage(req, res) {
+  try {
+    const result = await telegramShopping.addTelegramTargetFromLatestMessage();
+    logger.info(
+      {
+        service: 'server',
+        method: 'POST /api/shopping-list/telegram/targets/add-latest',
+        requestId: req.requestId,
+        data: { targetId: result.target.id, created: result.created }
+      },
+      'telegram target resolved from latest message'
+    );
+
+    return res.json({
+      status: 'ok',
+      created: result.created,
+      target: {
+        id: result.target.id,
+        name: result.target.name,
+        chatId: result.target.chatId
+      }
+    });
+  } catch (err) {
+    const errorCode = err && err.code ? err.code : 'UNKNOWN';
+
+    if (errorCode === 'MISSING_TELEGRAM_TOKEN') {
+      return res.status(400).json({ error: err.message });
+    }
+
+    if (errorCode === 'NO_TELEGRAM_UPDATES') {
+      return res.status(404).json({ error: err.message });
+    }
+
+    if (errorCode === 'INVALID_TELEGRAM_TARGETS_CONFIG' || errorCode === 'INVALID_TELEGRAM_TARGETS_STORAGE') {
+      return res.status(400).json({ error: err.message });
+    }
+
+    if (errorCode === 'TELEGRAM_API_ERROR') {
+      return res.status(502).json({ error: err.message });
+    }
+
+    logger.error(
+      {
+        service: 'server',
+        method: 'POST /api/shopping-list/telegram/targets/add-latest',
+        requestId: req.requestId,
+        data: err.message
+      },
+      'failed to add telegram target from latest message'
+    );
+
+    return res.status(500).json({ error: err.message });
+  }
+}
+
 module.exports = {
   addFile,
   updateFile,
@@ -274,5 +338,6 @@ module.exports = {
   deleteFolder,
   sendShoppingListToTelegram,
   getLastSentShoppingList,
-  getTelegramTargets
+  getTelegramTargets,
+  addTelegramTargetFromLatestMessage
 };

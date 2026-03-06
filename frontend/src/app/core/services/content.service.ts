@@ -17,6 +17,7 @@ import {
   IndexSnapshot,
   IngredientSuggestionsResponse,
   LastShoppingListResponse,
+  AddTelegramTargetResponse,
   SendShoppingListResponse,
   TelegramTargetsResponse,
   UpdateFilePayload
@@ -200,5 +201,13 @@ export class ContentService {
   getTelegramTargets(): Observable<TelegramTargetsResponse> {
     this.logger.info({ service: 'ContentService', method: 'getTelegramTargets' }, 'loading telegram targets');
     return this.http.get<TelegramTargetsResponse>('/api/shopping-list/telegram/targets');
+  }
+
+  addTelegramTargetFromLatestMessage(): Observable<AddTelegramTargetResponse> {
+    this.logger.info(
+      { service: 'ContentService', method: 'addTelegramTargetFromLatestMessage' },
+      'adding telegram target from latest bot message'
+    );
+    return this.http.post<AddTelegramTargetResponse>('/api/shopping-list/telegram/targets/add-latest', {});
   }
 }

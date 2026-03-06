@@ -6,7 +6,8 @@ const {
   deleteFolder,
   sendShoppingListToTelegram,
   getLastSentShoppingList,
-  getTelegramTargets
+  getTelegramTargets,
+  addTelegramTargetFromLatestMessage
 } = require('../controllers/content-write.controller');
 
 const router = express.Router();
@@ -18,5 +19,6 @@ router.post('/api/deleteFolder', deleteFolder);
 router.post('/api/shopping-list/telegram', sendShoppingListToTelegram);
 router.get('/api/shopping-list/telegram/last', getLastSentShoppingList);
 router.get('/api/shopping-list/telegram/targets', getTelegramTargets);
+router.post('/api/shopping-list/telegram/targets/add-latest', addTelegramTargetFromLatestMessage);
 
 module.exports = router;

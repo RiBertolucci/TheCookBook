@@ -29,6 +29,9 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   telegramError = '';
   telegramSuccess = '';
   private itemsSubscription?: Subscription;
+  private readonly onTelegramTargetsUpdated = () => {
+    this.loadTelegramTargets();
+  };
 
   constructor(
     private content: ContentService,
@@ -44,10 +47,12 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     });
     this.loadTelegramTargets();
     this.loadIngredientSuggestions();
+    window.addEventListener('telegram-targets-updated', this.onTelegramTargetsUpdated);
   }
 
   ngOnDestroy(): void {
     this.itemsSubscription?.unsubscribe();
+    window.removeEventListener('telegram-targets-updated', this.onTelegramTargetsUpdated);
   }
 
   onInputChanged(value: string): void {
@@ -225,11 +230,21 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     if (this.isLoadingTelegramTargets) return;
 
     this.isLoadingTelegramTargets = true;
+    const previousSendTargetId = this.selectedTelegramTargetId;
+    const previousLoadTargetId = this.selectedLoadTargetId;
     this.content.getTelegramTargets().subscribe({
       next: (response) => {
         this.telegramTargets = Array.isArray(response?.targets) ? response.targets : [];
-        this.selectedTelegramTargetId = this.telegramTargets.length > 0 ? this.telegramTargets[0].id : '';
-        this.selectedLoadTargetId = this.selectedTelegramTargetId;
+
+        const hasSendTarget = this.telegramTargets.some((target) => target.id === previousSendTargetId);
+        const hasLoadTarget = this.telegramTargets.some((target) => target.id === previousLoadTargetId);
+
+        this.selectedTelegramTargetId = hasSendTarget
+          ? previousSendTargetId
+          : (this.telegramTargets.length > 0 ? this.telegramTargets[0].id : '');
+        this.selectedLoadTargetId = hasLoadTarget
+          ? previousLoadTargetId
+          : this.selectedTelegramTargetId;
         this.showSendTargetMenu = false;
         this.showLoadTargetMenu = false;
         this.isLoadingTelegramTargets = false;

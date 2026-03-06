@@ -20,6 +20,9 @@ export class AppComponent implements OnInit {
   isSettingsOpen = false;
   isSyncing = false;
   isForceIndexing = false;
+  isAddingTelegramUser = false;
+  telegramAddUserMessage = '';
+  telegramAddUserError = false;
   activeMainTab: 'overview' | 'search' | 'shopping' = 'overview';
   theme: 'light' | 'dark' = 'light';
   activeEditRequest: EditRequest | null = null;
@@ -72,6 +75,40 @@ export class AppComponent implements OnInit {
     });
   }
 
+  addTelegramUser(): void {
+    if (this.isAddingTelegramUser) return;
+
+    this.isAddingTelegramUser = true;
+    this.telegramAddUserMessage = '';
+    this.telegramAddUserError = false;
+
+    this.content.addTelegramTargetFromLatestMessage().subscribe({
+      next: (response) => {
+        this.isAddingTelegramUser = false;
+
+        const targetName = String(response?.target?.name || '').trim() || 'Telegram user';
+        const targetId = String(response?.target?.id || '').trim();
+        const actionLabel = response?.created ? 'Added' : 'Already available';
+        this.telegramAddUserMessage = targetId
+          ? `${actionLabel}: ${targetName} (${targetId})`
+          : `${actionLabel}: ${targetName}`;
+        this.telegramAddUserError = false;
+
+        window.dispatchEvent(new Event('telegram-targets-updated'));
+      },
+      error: (err) => {
+        this.isAddingTelegramUser = false;
+        this.telegramAddUserError = true;
+        this.telegramAddUserMessage = err?.error?.error || err?.message || 'Failed to add Telegram user.';
+
+        this.logger.error(
+          { service: 'AppComponent', method: 'addTelegramUser', data: this.telegramAddUserMessage },
+          'add telegram user failed'
+        );
+      }
+    });
+  }
+
   setMainTab(tab: 'overview' | 'search' | 'shopping'): void {
     this.activeMainTab = tab;
   }
@@ -92,6 +129,10 @@ export class AppComponent implements OnInit {
 
   toggleSettings(): void {
     this.isSettingsOpen = !this.isSettingsOpen;
+    if (!this.isSettingsOpen) {
+      this.telegramAddUserMessage = '';
+      this.telegramAddUserError = false;
+    }
   }
 
   setTheme(theme: 'light' | 'dark'): void {

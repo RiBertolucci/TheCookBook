@@ -68,7 +68,7 @@
           </div>
         </div>
 
-        <div class="shopping-actions-row">
+        <div class="shopping-actions-row" [class.menu-open]="showSendTargetMenu || showLoadTargetMenu">
           <button type="button" class="btn btn-sm btn-primary" (click)="exportList()" [disabled]="items.length === 0">Export .txt</button>
           <div class="shopping-send-combo" [class.open]="showSendTargetMenu">
             <button

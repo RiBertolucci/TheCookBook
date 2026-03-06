@@ -44,6 +44,12 @@ The backend can forward a shopping list to Telegram through a bot.
 - `GET /api/shopping-list/telegram/targets`
     - Response: `{ "status": "ok", "targets": [{ "id": "me", "name": "Riccardo" }] }`
 
+- `POST /api/shopping-list/telegram/targets/add-latest`
+    - Reads `TELEGRAM_BOT_TOKEN` from env and calls Telegram `getUpdates`.
+    - Uses the chat from the latest update only.
+    - Response: `{ "status": "ok", "created": true, "target": { "id": "riccardo-202258240", "name": "Riccardo", "chatId": "202258240" } }`
+    - If the chat already exists in configured/stored targets: `"created": false`.
+
 Required environment variables:
 
 - `TELEGRAM_BOT_TOKEN`
