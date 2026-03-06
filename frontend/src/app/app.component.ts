@@ -6,7 +6,7 @@ import { SearchTabComponent } from './features/search/search-tab.component';
 import { EditRequest } from './features/content/models/content-shell.models';
 import { LoggerService } from './core/services/logger.service';
 import { ContentService } from './core/services/content.service';
-import { ContentSection, IndexSearchFile } from './core/interfaces/content';
+import { ContentSection, FolderNode, ImportContentKind, IndexSearchFile } from './core/interfaces/content';
 
 type MainTab = 'overview' | 'search' | 'shopping' | 'mixer';
 
@@ -14,6 +14,8 @@ interface OpenContentFileRef {
   section: ContentSection;
   filename: string;
 }
+
+type CreateEditorMode = 'frontend';
 
 @Component({
   selector: 'app-root',
@@ -55,6 +57,16 @@ export class AppComponent implements OnInit {
   theme: 'light' | 'dark' = 'light';
   activeEditRequest: EditRequest | null = null;
 
+  isImportModalOpen = false;
+  isImporting = false;
+  importKind: ImportContentKind = 'ingredient';
+  importPath = '';
+  importDragActive = false;
+  importSelectedFile: File | null = null;
+  importError = '';
+  importSuccess = '';
+  private importHierarchy: { [key: string]: FolderNode } = {};
+
   constructor(
     private router: Router,
     private logger: LoggerService,
@@ -85,9 +97,143 @@ export class AppComponent implements OnInit {
     }
   }
 
-  openCreateEditor(_mode: 'frontend' | 'import'): void {
+  openCreateEditor(_mode: CreateEditorMode): void {
     this.isCreateMenuOpen = false;
     this.goToEdit();
+  }
+
+  openImportModal(): void {
+    this.isCreateMenuOpen = false;
+    this.isSettingsOpen = false;
+    this.importError = '';
+    this.importSuccess = '';
+    this.importDragActive = false;
+    this.isImportModalOpen = true;
+    this.loadImportHierarchy();
+  }
+
+  closeImportModal(): void {
+    this.isImportModalOpen = false;
+    this.importDragActive = false;
+    this.importError = '';
+    this.importSuccess = '';
+    this.importSelectedFile = null;
+    this.importPath = '';
+    this.importKind = 'ingredient';
+    this.isImporting = false;
+  }
+
+  onImportKindChanged(): void {
+    this.importPath = '';
+  }
+
+  onImportPathInputChange(value: string): void {
+    const currentValue = String(value || '').replace(/\\/g, '/');
+    const allFolders = this.getAllFolderPathsForImportKind();
+    if (allFolders.includes(currentValue) && !currentValue.endsWith('/')) {
+      this.importPath = `${currentValue}/`;
+      return;
+    }
+    this.importPath = currentValue;
+  }
+
+  getImportBaseFolder(): string {
+    return this.importKind === 'recipe' ? 'Recipes' : 'Ingredients';
+  }
+
+  getImportPathSuggestions(): string[] {
+    const rootNode = this.getImportRootNode();
+    if (!rootNode) return [];
+
+    const normalized = (this.importPath || '').replace(/\\/g, '/').replace(/^\/+/, '');
+    const hasTrailingSlash = normalized.endsWith('/');
+    const segments = normalized.split('/').filter(Boolean);
+
+    const parentSegments = hasTrailingSlash ? segments : segments.slice(0, -1);
+    const currentPartial = hasTrailingSlash ? '' : (segments[segments.length - 1] || '');
+
+    let node: FolderNode | null = rootNode;
+    for (const segment of parentSegments) {
+      if (!node?.subdirs?.[segment]) return [];
+      node = node.subdirs[segment];
+    }
+
+    return Object.keys(node?.subdirs || {})
+      .filter((name) => name.toLowerCase().startsWith(currentPartial.toLowerCase()))
+      .map((name) => [...parentSegments, name].join('/'));
+  }
+
+  openImportFilePicker(input: HTMLInputElement): void {
+    if (this.isImporting) return;
+    input.click();
+  }
+
+  onImportFileInputChanged(event: Event): void {
+    const input = event.target as HTMLInputElement | null;
+    const file = input?.files?.[0] || null;
+    if (!file) return;
+
+    this.setImportFile(file);
+  }
+
+  onImportDragOver(event: DragEvent): void {
+    event.preventDefault();
+    if (this.isImporting) return;
+    this.importDragActive = true;
+  }
+
+  onImportDragLeave(event: DragEvent): void {
+    event.preventDefault();
+    this.importDragActive = false;
+  }
+
+  onImportDrop(event: DragEvent): void {
+    event.preventDefault();
+    this.importDragActive = false;
+    if (this.isImporting) return;
+
+    const file = event.dataTransfer?.files?.[0] || null;
+    if (!file) return;
+
+    this.setImportFile(file);
+  }
+
+  submitImport(): void {
+    this.importError = '';
+    this.importSuccess = '';
+
+    if (!this.importSelectedFile) {
+      this.importError = 'Select a markdown file to import.';
+      return;
+    }
+
+    const file = this.importSelectedFile;
+    this.isImporting = true;
+
+    this.readFileAsText(file)
+      .then((markdown) => {
+        this.content.importMarkdown({
+          path: this.importPath,
+          kind: this.importKind,
+          originalFilename: file.name,
+          markdown,
+        }).subscribe({
+          next: (response) => {
+            this.isImporting = false;
+            this.importSuccess = `Imported: ${response.file || file.name}`;
+            this.importSelectedFile = null;
+            this.importPath = '';
+          },
+          error: (err) => {
+            this.isImporting = false;
+            this.importError = err?.error?.error || err?.message || 'Import failed.';
+          }
+        });
+      })
+      .catch((err) => {
+        this.isImporting = false;
+        this.importError = err?.message || 'Unable to read selected file.';
+      });
   }
 
   goToBrowse(): void {
@@ -207,7 +353,55 @@ export class AppComponent implements OnInit {
     if (this.isEditPage) {
       this.isCreateMenuOpen = false;
       this.isSettingsOpen = false;
+      this.isImportModalOpen = false;
     }
+  }
+
+  private loadImportHierarchy(): void {
+    this.content.getHierarchy().subscribe({
+      next: (hierarchy) => {
+        this.importHierarchy = hierarchy || {};
+      },
+      error: (err) => {
+        this.importError = err?.error?.error || err?.message || 'Unable to load folders for import.';
+      }
+    });
+  }
+
+  private getImportRootNode(): FolderNode | null {
+    return this.importHierarchy?.[this.getImportBaseFolder()] || null;
+  }
+
+  private getAllFolderPathsForImportKind(): string[] {
+    const rootNode = this.getImportRootNode();
+    if (!rootNode) return [];
+
+    const folders: string[] = [];
+    const walk = (node: FolderNode, currentPath: string) => {
+      for (const sub of Object.keys(node.subdirs || {})) {
+        const nextPath = currentPath ? `${currentPath}/${sub}` : sub;
+        folders.push(nextPath);
+        walk(node.subdirs[sub], nextPath);
+      }
+    };
+
+    walk(rootNode, '');
+    return folders;
+  }
+
+  private setImportFile(file: File): void {
+    this.importSelectedFile = file;
+    this.importError = '';
+    this.importSuccess = '';
+  }
+
+  private readFileAsText(file: File): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result || ''));
+      reader.onerror = () => reject(new Error('Unable to read file content.'));
+      reader.readAsText(file);
+    });
   }
 
   private loadTheme(): void {

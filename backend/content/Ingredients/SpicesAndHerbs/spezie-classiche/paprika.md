@@ -32,3 +32,4 @@ Spezia dal profilo dolce o affumicato usata per colore, rotondità e leggere not
 - [Patata Viola](/api/ingredients/verdure/Patata/patata-viola.md)
 - [Melanzana Lunga](/api/ingredients/verdure/Melanzana/melanzana-lunga.md)
 - [Melanzana generica](/api/ingredients/verdure/Melanzana/melanzana-generica.md)
+- [Cipolla TEST](/api/ingredients/dispensa/cipolla-test.md)

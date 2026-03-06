@@ -12,6 +12,21 @@ export interface CreateContentResponse {
   error?: string;
 }
 
+export type ImportContentKind = 'recipe' | 'ingredient';
+
+export interface ImportMarkdownPayload {
+  path: string;
+  kind: ImportContentKind;
+  originalFilename: string;
+  markdown: string;
+}
+
+export interface ImportMarkdownResponse {
+  status: string;
+  file?: string;
+  error?: string;
+}
+
 export interface DeleteFilePayload {
   section: ContentSection;
   filename: string;

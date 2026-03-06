@@ -2,7 +2,7 @@
   "name": "ingredients-by-goes-with-ingredients",
   "version": 1,
   "strategy": "key-set",
-  "updatedAt": "2026-03-06T16:34:38.093Z",
+  "updatedAt": "2026-03-06T16:51:45.708Z",
   "entries": {
     "Ingredients/dispensa/brodo-vegetale.md": [
       "carota",
@@ -20,6 +20,15 @@
       "salsa di soia",
       "sedano",
       "vino rosso"
+    ],
+    "Ingredients/dispensa/cipolla-test.md": [
+      "aglio",
+      "olio extravergine di oliva",
+      "peperoncino",
+      "pollo",
+      "pomodoro",
+      "sale",
+      "zucchina gialla"
     ],
     "Ingredients/dispensa/Farina/farina-0.md": [
       "brodo vegetale",
@@ -72,6 +81,7 @@
       "cipolla bianca",
       "cipolla dorata",
       "cipolla rossa",
+      "cipolla test",
       "farina 0",
       "farina 00",
       "farina tipo 1",
@@ -127,6 +137,7 @@
       "cipolla",
       "cipolla bianca",
       "cipolla rossa",
+      "cipolla test",
       "farina 0",
       "farina manitoba",
       "farina tipo 1",
@@ -364,6 +375,7 @@
       "carota baby",
       "cipolla",
       "cipolla bianca",
+      "cipolla test",
       "latte di cocco",
       "patata",
       "patata americana",
@@ -410,6 +422,7 @@
       "cipolla",
       "cipolla bianca",
       "cipolla dorata",
+      "cipolla test",
       "funghi porcini",
       "macinato di soia",
       "manzo da brasato",
@@ -519,6 +532,7 @@
       "carote arancioni standard",
       "cipolla bianca",
       "cipolla dorata",
+      "cipolla test",
       "farina 0",
       "farina tipo 1",
       "funghi",
@@ -653,6 +667,7 @@
     "Ingredients/SpicesAndHerbs/spezie-classiche/paprika.md": [
       "cipolla bianca",
       "cipolla dorata",
+      "cipolla test",
       "macinato di soia",
       "melanzana",
       "melanzana generica",
@@ -685,6 +700,7 @@
       "cipolla bianca",
       "cipolla dorata",
       "cipolla rossa",
+      "cipolla test",
       "farina 0",
       "farina 00",
       "farina manitoba",
@@ -761,6 +777,7 @@
       "cipolla",
       "cipolla bianca",
       "cipolla dorata",
+      "cipolla test",
       "funghi",
       "funghi champignon",
       "funghi champignones",
@@ -1005,6 +1022,7 @@
     "Ingredients/verdure/peperoncino.md": [
       "aglio",
       "cipolla bianca",
+      "cipolla test",
       "guanciale",
       "olio extravergine di oliva",
       "pecorino romano",
@@ -1089,6 +1107,7 @@
       "cipolla bianca",
       "cipolla dorata",
       "cipolla rossa",
+      "cipolla test",
       "farina 0",
       "farina 00",
       "farina manitoba",
@@ -1143,6 +1162,7 @@
     ],
     "Ingredients/verdure/Zucchina/zucchina-gialla.md": [
       "cipolla bianca",
+      "cipolla test",
       "farina 00",
       "mozzarella",
       "olio extravergine di oliva",

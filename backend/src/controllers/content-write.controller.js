@@ -2,6 +2,7 @@ const logger = require('../services/logger');
 const storage = require('../services/content-storage.service');
 const indexStore = require('../services/index-store.service');
 const telegramShopping = require('../services/telegram-shopping.service');
+const importValidator = require('../services/import-validator.service');
 const {
   mapSectionToFolder
 } = require('../utils/content-path.utils');
@@ -60,6 +61,42 @@ async function addFile(req, res) {
     }
     logger.error({ service: 'server', method: 'POST /api/addFile', requestId: req.requestId, data: err.message }, 'create content failed');
     res.status(500).json({ error: err.message });
+  }
+}
+
+async function importMarkdownFile(req, res) {
+  try {
+    const validated = importValidator.validateImportPayload(req.body || {});
+
+    const relativeFile = await storage.createMarkdownFile({
+      targetPath: validated.targetPath,
+      title: validated.storageTitle,
+      markdown: validated.markdown,
+    });
+
+    logger.info(
+      {
+        service: 'server',
+        method: 'POST /api/importMarkdown',
+        requestId: req.requestId,
+        data: { file: relativeFile, kind: validated.kind, sourceFile: validated.originalFilename }
+      },
+      'markdown file imported'
+    );
+
+    await syncIndexesSafely(req.requestId, () => indexStore.refreshFile(relativeFile), 'POST /api/importMarkdown');
+
+    return res.status(201).json({ status: 'ok', file: relativeFile });
+  } catch (err) {
+    if (err && err.status) {
+      return res.status(err.status).json({ error: err.message });
+    }
+
+    logger.error(
+      { service: 'server', method: 'POST /api/importMarkdown', requestId: req.requestId, data: err.message },
+      'markdown import failed'
+    );
+    return res.status(500).json({ error: err.message });
   }
 }
 
@@ -333,6 +370,7 @@ async function addTelegramTargetFromLatestMessage(req, res) {
 
 module.exports = {
   addFile,
+  importMarkdownFile,
   updateFile,
   deleteFile,
   deleteFolder,

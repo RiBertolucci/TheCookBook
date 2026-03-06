@@ -22,7 +22,7 @@
 
         <div class="create-menu-popover" *ngIf="isCreateMenuOpen">
           <button class="create-menu-option" type="button" (click)="openCreateEditor('frontend')">frontend</button>
-          <button class="create-menu-option" type="button" (click)="openCreateEditor('import')">import</button>
+          <button class="create-menu-option" type="button" (click)="openImportModal()">import</button>
         </div>
       </div>
 
@@ -105,4 +105,68 @@
     [editRequest]="activeEditRequest"
     (savedExisting)="onExistingSaved()">
   </app-content-editor>
+
+  <div class="import-modal-overlay" *ngIf="isImportModalOpen" (click)="closeImportModal()">
+    <section class="import-modal" (click)="$event.stopPropagation()">
+      <div class="import-modal-header">
+        <h2>Import Markdown</h2>
+        <button type="button" class="import-modal-close" (click)="closeImportModal()" aria-label="Close import popup">×</button>
+      </div>
+
+      <div class="import-modal-body">
+        <div class="edit-row">
+          <label class="edit-label" for="import-kind">Type</label>
+          <select id="import-kind" class="form-select" [(ngModel)]="importKind" (change)="onImportKindChanged()">
+            <option value="ingredient">Ingredient</option>
+            <option value="recipe">Recipe</option>
+          </select>
+        </div>
+
+        <div class="edit-row">
+          <label class="edit-label" for="import-path">Path (subfolder)</label>
+          <input
+            id="import-path"
+            class="form-control"
+            [(ngModel)]="importPath"
+            (ngModelChange)="onImportPathInputChange($event)"
+            placeholder="Example: Mediterranei (optional)"
+            list="import-path-suggestions" />
+          <datalist id="import-path-suggestions">
+            <option *ngFor="let suggestion of getImportPathSuggestions()" [value]="suggestion"></option>
+          </datalist>
+          <small class="path-hint">Base folder: {{ getImportBaseFolder() }}</small>
+        </div>
+
+        <input
+          #importFileInput
+          type="file"
+          accept=".md,text/markdown"
+          (change)="onImportFileInputChanged($event)"
+          hidden />
+
+        <div
+          class="import-dropzone"
+          [class.drag-active]="importDragActive"
+          [class.has-file]="!!importSelectedFile"
+          (click)="openImportFilePicker(importFileInput)"
+          (dragover)="onImportDragOver($event)"
+          (dragleave)="onImportDragLeave($event)"
+          (drop)="onImportDrop($event)">
+          <div class="import-dropzone-main">Drop `.md` file here or click to browse</div>
+          <div class="import-dropzone-sub" *ngIf="!importSelectedFile">Validator runs in backend on upload</div>
+          <div class="import-dropzone-file" *ngIf="importSelectedFile">Selected: {{ importSelectedFile.name }}</div>
+        </div>
+
+        <div class="import-feedback import-ok" *ngIf="importSuccess">{{ importSuccess }}</div>
+        <div class="import-feedback import-error" *ngIf="importError">{{ importError }}</div>
+      </div>
+
+      <div class="import-modal-actions">
+        <button type="button" class="btn btn-outline-secondary" (click)="closeImportModal()" [disabled]="isImporting">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="submitImport()" [disabled]="isImporting">
+          {{ isImporting ? 'Importing...' : 'Import file' }}
+        </button>
+      </div>
+    </section>
+  </div>
 </div>

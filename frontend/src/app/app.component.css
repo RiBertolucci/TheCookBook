@@ -159,6 +159,148 @@
 	box-shadow: 0 0 0 2px var(--accent-soft);
 }
 
+.import-modal-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(15, 23, 42, 0.4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 120;
+	padding: 1rem;
+}
+
+.import-modal {
+	width: min(36rem, 100%);
+	max-height: min(90vh, 42rem);
+	overflow: auto;
+	border: 1px solid var(--border);
+	border-radius: 0.9rem;
+	background: var(--surface);
+	box-shadow: 0 20px 50px rgba(15, 23, 42, 0.34);
+	display: flex;
+	flex-direction: column;
+}
+
+.import-modal-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.9rem 1rem;
+	border-bottom: 1px solid var(--border);
+}
+
+.import-modal-header h2 {
+	margin: 0;
+	font-size: 1.05rem;
+}
+
+.import-modal-close {
+	border: none;
+	background: transparent;
+	color: var(--text-soft);
+	font-size: 1.5rem;
+	line-height: 1;
+	padding: 0;
+	width: 1.8rem;
+	height: 1.8rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.import-modal-body {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+}
+
+.import-modal .form-control,
+.import-modal .form-select {
+	border: 1px solid var(--border);
+	background: var(--surface);
+	color: var(--text);
+	border-radius: 8px;
+	padding: 0.5rem 0.7rem;
+	box-shadow: none;
+}
+
+.import-modal .form-control:focus,
+.import-modal .form-select:focus {
+	border-color: var(--accent);
+	outline: none;
+	box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.import-dropzone {
+	border: 1px dashed var(--border);
+	border-radius: 0.75rem;
+	background: var(--surface-soft);
+	padding: 1rem;
+	text-align: center;
+	cursor: pointer;
+	transition: border-color 120ms ease, background-color 120ms ease, transform 120ms ease;
+}
+
+.import-dropzone.drag-active {
+	border-color: var(--accent);
+	background: color-mix(in srgb, var(--accent-soft) 65%, var(--surface));
+	transform: translateY(-1px);
+}
+
+.import-dropzone.has-file {
+	border-style: solid;
+	border-color: color-mix(in srgb, #15803d 45%, var(--border));
+}
+
+.import-dropzone-main {
+	font-weight: 600;
+	font-size: 0.94rem;
+}
+
+.import-dropzone-sub {
+	margin-top: 0.4rem;
+	font-size: 0.8rem;
+	color: var(--text-soft);
+}
+
+.import-dropzone-file {
+	margin-top: 0.5rem;
+	font-size: 0.86rem;
+	color: #166534;
+	font-weight: 600;
+	word-break: break-word;
+}
+
+.import-feedback {
+	font-size: 0.84rem;
+	line-height: 1.4;
+	border-radius: 0.45rem;
+	padding: 0.45rem 0.55rem;
+	border: 1px solid transparent;
+}
+
+.import-ok {
+	color: #166534;
+	background: #ecfdf3;
+	border-color: #a7f3d0;
+}
+
+.import-error {
+	color: #b91c1c;
+	background: #fef2f2;
+	border-color: #fecaca;
+}
+
+.import-modal-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.5rem;
+	padding: 0.85rem 1rem 1rem;
+	border-top: 1px solid var(--border);
+}
+
 .toolbar-plain-icon-btn {
 	width: 2.05rem;
 	height: 2.05rem;

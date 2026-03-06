@@ -44,6 +44,7 @@ Condimento essenziale per bilanciare i sapori e valorizzare aromi, dolcezza natu
 - [Farina Manitoba](/api/ingredients/dispensa/Farina/farina-manitoba.md)
 - [Farina Tipo 1](/api/ingredients/dispensa/Farina/farina-tipo-1.md)
 - [Funghi Pleurotus](/api/ingredients/verdure/Funghi/funghi-pleurotus.md)
+- [Cipolla TEST](/api/ingredients/dispensa/cipolla-test.md)
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
 - [Paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md)

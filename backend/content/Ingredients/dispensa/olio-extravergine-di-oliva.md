@@ -61,6 +61,7 @@ Grasso cardine della cucina italiana, usato a crudo, in soffritto, in emulsione 
 - [Zucchina Scura](/api/ingredients/verdure/Zucchina/zucchina-scura.md)
 - [Zucchina Trombetta di Albenga](/api/ingredients/verdure/Zucchina/zucchina-trombetta-di-albenga.md)
 - [Melanzana generica](/api/ingredients/verdure/Melanzana/melanzana-generica.md)
+- [Cipolla TEST](/api/ingredients/dispensa/cipolla-test.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)

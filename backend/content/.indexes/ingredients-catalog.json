@@ -2,10 +2,13 @@
   "name": "ingredients-catalog",
   "version": 1,
   "strategy": "key-set",
-  "updatedAt": "2026-03-06T16:34:38.095Z",
+  "updatedAt": "2026-03-06T16:51:45.709Z",
   "entries": {
     "Ingredients/dispensa/brodo-vegetale.md": [
       "brodo vegetale"
+    ],
+    "Ingredients/dispensa/cipolla-test.md": [
+      "cipolla test"
     ],
     "Ingredients/dispensa/Farina/farina-0.md": [
       "farina 0"

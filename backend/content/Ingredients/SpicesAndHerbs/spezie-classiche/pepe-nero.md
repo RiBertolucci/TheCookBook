@@ -90,3 +90,4 @@ Spezia fondamentale della cucina italiana, usata in quasi tutte le categorie di 
 - [Zucchina Trombetta di Albenga](/api/ingredients/verdure/Zucchina/zucchina-trombetta-di-albenga.md)
 - [Carote Arancioni Standard](/api/ingredients/verdure/Carota/carote-arancioni-standard.md)
 - [Melanzana generica](/api/ingredients/verdure/Melanzana/melanzana-generica.md)
+- [Cipolla TEST](/api/ingredients/dispensa/cipolla-test.md)

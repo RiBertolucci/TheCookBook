@@ -32,3 +32,4 @@ Foglia aromatica usata in cotture lunghe, brodi, legumi e stufati per profondit√
 - [Carota Nantes](/api/ingredients/verdure/Carota/carota-nantes.md)
 - [Funghi Porcini](/api/ingredients/verdure/Funghi/funghi-porcini.md)
 - [Carote Arancioni Standard](/api/ingredients/verdure/Carota/carote-arancioni-standard.md)
+- [Cipolla TEST](/api/ingredients/dispensa/cipolla-test.md)

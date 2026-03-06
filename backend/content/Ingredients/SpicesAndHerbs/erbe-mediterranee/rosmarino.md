@@ -40,3 +40,4 @@ Erba aromatica resinosa e persistente, perfetta per cotture lunghe, arrosti, pat
 - [Zucchina Scura](/api/ingredients/verdure/Zucchina/zucchina-scura.md)
 - [Funghi Champignones](/api/ingredients/verdure/Funghi/funghi-champignones.md)
 - [Carote Arancioni Standard](/api/ingredients/verdure/Carota/carote-arancioni-standard.md)
+- [Cipolla TEST](/api/ingredients/dispensa/cipolla-test.md)

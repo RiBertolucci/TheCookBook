@@ -31,6 +31,7 @@ Proteina molto versatile nella cucina indiana e internazionale, adatta a marinat
 - [Cipolla Bianca](/api/ingredients/verdure/Cipolla/cipolla-bianca.md)
 - [Patata Americana](/api/ingredients/verdure/Patata/patata-americana.md)
 - [Carota Baby](/api/ingredients/verdure/Carota/carota-baby.md)
+- [Cipolla TEST](/api/ingredients/dispensa/cipolla-test.md)
 ## Goes with spicesAndHerbs
 - [Garam Masala](/api/ingredients/SpicesAndHerbs/mixes/garam-masala.md)
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)

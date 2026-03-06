@@ -1,6 +1,7 @@
 const express = require('express');
 const {
   addFile,
+  importMarkdownFile,
   updateFile,
   deleteFile,
   deleteFolder,
@@ -13,6 +14,7 @@ const {
 const router = express.Router();
 
 router.post('/api/addFile', addFile);
+router.post('/api/importMarkdown', importMarkdownFile);
 router.post('/api/updateFile', updateFile);
 router.post('/api/deleteFile', deleteFile);
 router.post('/api/deleteFolder', deleteFolder);

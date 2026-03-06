@@ -52,6 +52,7 @@ Ingrediente simbolo della cucina italiana, usato fresco, in salsa o passata per 
 - [Zucchina Romanesca](/api/ingredients/verdure/Zucchina/zucchina-romanesca.md)
 - [Carote Arancioni Standard](/api/ingredients/verdure/Carota/carote-arancioni-standard.md)
 - [Melanzana generica](/api/ingredients/verdure/Melanzana/melanzana-generica.md)
+- [Cipolla TEST](/api/ingredients/dispensa/cipolla-test.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)

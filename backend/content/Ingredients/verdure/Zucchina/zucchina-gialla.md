@@ -22,7 +22,7 @@ Varieta dolce e delicata, adatta a contorni estivi e piatti veloci.
 - [Mozzarella](/api/ingredients/latticini-e-formaggi/mozzarella.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
-
+- [Cipolla TEST](/api/ingredients/dispensa/cipolla-test.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
 - [Maggiorana](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/maggiorana.md)

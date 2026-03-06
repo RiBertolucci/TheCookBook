@@ -8,6 +8,8 @@ import {
   ContentFileResponse,
   CreateContentPayload,
   CreateContentResponse,
+  ImportMarkdownPayload,
+  ImportMarkdownResponse,
   DeleteFilePayload,
   DeleteFolderPayload,
   FolderNode,
@@ -170,6 +172,16 @@ export class ContentService {
   createContent(payload: CreateContentPayload): Observable<CreateContentResponse> {
     this.logger.info({ service: 'ContentService', method: 'createContent', data: payload.path }, 'creating content file');
     return this.http.post<CreateContentResponse>('/api/addFile', payload).pipe(
+      tap(() => this.invalidateContentCaches())
+    );
+  }
+
+  importMarkdown(payload: ImportMarkdownPayload): Observable<ImportMarkdownResponse> {
+    this.logger.info(
+      { service: 'ContentService', method: 'importMarkdown', data: { path: payload.path, kind: payload.kind, originalFilename: payload.originalFilename } },
+      'importing markdown file'
+    );
+    return this.http.post<ImportMarkdownResponse>('/api/importMarkdown', payload).pipe(
       tap(() => this.invalidateContentCaches())
     );
   }

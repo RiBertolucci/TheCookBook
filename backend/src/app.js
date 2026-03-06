@@ -7,7 +7,7 @@ const contentWriteRoutes = require('./routes/content-write.routes');
 const app = express();
 
 app.use(requestIdMiddleware);
-app.use(express.json());
+app.use(express.json({ limit: '5mb' }));
 app.use(systemRoutes);
 app.use(contentReadRoutes);
 app.use(contentWriteRoutes);

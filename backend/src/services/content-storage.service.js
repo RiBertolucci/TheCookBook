@@ -38,12 +38,22 @@ async function createMarkdownFile({ targetPath, title, markdown }) {
   ensureInsideContentRoot(destinationDir);
   await fs.mkdir(destinationDir, { recursive: true });
 
+  // Prevent duplicates in the same folder with a clear message.
+  // This also guards against casing differences in environments that allow them.
+  const existingEntries = await fs.readdir(destinationDir, { withFileTypes: true });
+  const duplicateFile = existingEntries.find(
+    (entry) => entry.isFile() && entry.name.toLowerCase() === filename.toLowerCase()
+  );
+  if (duplicateFile) {
+    throw createHttpError(409, `File \"${duplicateFile.name}\" already exists in this path`);
+  }
+
   const outputFile = path.resolve(destinationDir, filename);
   ensureInsideContentRoot(outputFile);
 
   try {
     await fs.access(outputFile);
-    throw createHttpError(409, 'File already exists');
+    throw createHttpError(409, `File \"${filename}\" already exists in this path`);
   } catch (err) {
     if (err && err.status === 409) throw err;
   }
