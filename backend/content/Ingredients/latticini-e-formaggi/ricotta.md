@@ -44,6 +44,7 @@ Formaggio fresco leggero e versatile, usato in ripieni, primi al forno, dolci e 
 - [Zucchina Romanesca](/api/ingredients/verdure/Zucchina/zucchina-romanesca.md)
 - [Funghi Champignones](/api/ingredients/verdure/Funghi/funghi-champignones.md)
 - [Zucchina Trombetta di Albenga](/api/ingredients/verdure/Zucchina/zucchina-trombetta-di-albenga.md)
+- [Melanzana generica](/api/ingredients/verdure/Melanzana/melanzana-generica.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)

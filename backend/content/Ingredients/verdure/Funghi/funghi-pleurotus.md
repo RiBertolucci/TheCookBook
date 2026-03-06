@@ -22,6 +22,7 @@ Fungo carnoso e leggero, ottimo alla piastra o in padella per preparazioni rapid
 - [Zucchina](/api/ingredients/verdure/Zucchina/zucchina.md)
 - [Ricotta](/api/ingredients/latticini-e-formaggi/ricotta.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
+- [Melanzana generica](/api/ingredients/verdure/Melanzana/melanzana-generica.md)
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
 - [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)

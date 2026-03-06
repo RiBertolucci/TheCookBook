@@ -20,3 +20,4 @@ Erba aromatica dolce e rotonda, affine all'origano ma più delicata, ottima in s
 - [Melanzana Violetta](/api/ingredients/verdure/Melanzana/melanzana-violetta.md)
 - [Zucchina Gialla](/api/ingredients/verdure/Zucchina/zucchina-gialla.md)
 - [Zucchina Trombetta di Albenga](/api/ingredients/verdure/Zucchina/zucchina-trombetta-di-albenga.md)
+- [Melanzana generica](/api/ingredients/verdure/Melanzana/melanzana-generica.md)

@@ -6,16 +6,55 @@
     </div>
 
     <div class="toolbar-actions">
-      <button id="create-button" class="btn btn-sm btn-success toolbar-icon-btn" (click)="goToEdit()" *ngIf="!isEditPage">+</button>
+      <div id="create-menu" class="create-menu" *ngIf="!isEditPage">
+        <button
+          id="create-button"
+          class="create-menu-trigger"
+          type="button"
+          (click)="toggleCreateMenu()"
+          aria-label="Create options"
+          [attr.aria-expanded]="isCreateMenuOpen"
+          title="Create options">
+          <span class="create-menu-plus">+</span>
+          <span class="create-menu-label">New</span>
+          <span class="create-menu-arrow">▾</span>
+        </button>
+
+        <div class="create-menu-popover" *ngIf="isCreateMenuOpen">
+          <button class="create-menu-option" type="button" (click)="openCreateEditor('frontend')">frontend</button>
+          <button class="create-menu-option" type="button" (click)="openCreateEditor('import')">import</button>
+        </div>
+      </div>
+
       <button id="back-button" class="btn btn-sm btn-outline-primary" (click)="goToBrowse()" *ngIf="isEditPage">Back</button>
 
-      <button id="sync-button" class="btn btn-sm btn-primary" (click)="runSync()" [disabled]="isSyncing || isEditPage">
-        {{ isSyncing ? 'Syncing...' : 'Sync' }}
+      <button
+        id="sync-button"
+        class="toolbar-plain-icon-btn sync-icon-btn"
+        [class.syncing]="isSyncing"
+        type="button"
+        (click)="runSync()"
+        [disabled]="isSyncing || isEditPage"
+        [title]="isSyncing ? 'Syncing...' : 'Sync'"
+        aria-label="Sync">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M20 6v5h-5" />
+          <path d="M4 18v-5h5" />
+          <path d="M20 11a8 8 0 0 0-13.66-3.66L4 9" />
+          <path d="M4 13a8 8 0 0 0 13.66 3.66L20 15" />
+        </svg>
       </button>
 
       <div id="settings-menu" class="settings-menu">
-        <button id="settings-button" class="btn btn-sm btn-outline-secondary" (click)="toggleSettings()">
-          Settings
+        <button
+          id="settings-button"
+          class="toolbar-plain-icon-btn settings-icon-btn"
+          type="button"
+          (click)="toggleSettings()"
+          aria-label="Settings"
+          [attr.aria-expanded]="isSettingsOpen"
+          title="Settings">
+          <span aria-hidden="true">⚙</span>
         </button>
         <div class="settings-popover" *ngIf="isSettingsOpen">
           <div class="settings-label">Theme</div>

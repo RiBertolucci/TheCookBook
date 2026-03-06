@@ -20,3 +20,4 @@ Spezia piccante tipica di molte cucine regionali italiane, usata in soffritti, o
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
 - [Pomodoro San Marzano](/api/ingredients/verdure/Pomodoro/pomodoro-san-marzano.md)
 - [Pomodoro Roma](/api/ingredients/verdure/Pomodoro/pomodoro-roma.md)
+- [Melanzana generica](/api/ingredients/verdure/Melanzana/melanzana-generica.md)

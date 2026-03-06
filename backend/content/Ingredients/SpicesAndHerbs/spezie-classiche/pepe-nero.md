@@ -89,3 +89,4 @@ Spezia fondamentale della cucina italiana, usata in quasi tutte le categorie di 
 - [Funghi Champignones](/api/ingredients/verdure/Funghi/funghi-champignones.md)
 - [Zucchina Trombetta di Albenga](/api/ingredients/verdure/Zucchina/zucchina-trombetta-di-albenga.md)
 - [Carote Arancioni Standard](/api/ingredients/verdure/Carota/carote-arancioni-standard.md)
+- [Melanzana generica](/api/ingredients/verdure/Melanzana/melanzana-generica.md)

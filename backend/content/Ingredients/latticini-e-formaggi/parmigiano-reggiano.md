@@ -43,6 +43,7 @@ Formaggio stagionato DOP essenziale nella cucina italiana, usato grattugiato, in
 - [Zucchina Scura](/api/ingredients/verdure/Zucchina/zucchina-scura.md)
 - [Funghi Champignones](/api/ingredients/verdure/Funghi/funghi-champignones.md)
 - [Zucchina Trombetta di Albenga](/api/ingredients/verdure/Zucchina/zucchina-trombetta-di-albenga.md)
+- [Melanzana generica](/api/ingredients/verdure/Melanzana/melanzana-generica.md)
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)

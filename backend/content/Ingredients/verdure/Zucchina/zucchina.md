@@ -43,6 +43,7 @@ Ortaggio estivo molto usato in padella, al forno, nelle paste e nei ripieni, dal
 - [Melanzana Lunga](/api/ingredients/verdure/Melanzana/melanzana-lunga.md)
 - [Funghi Champignones](/api/ingredients/verdure/Funghi/funghi-champignones.md)
 - [Carote Arancioni Standard](/api/ingredients/verdure/Carota/carote-arancioni-standard.md)
+- [Melanzana generica](/api/ingredients/verdure/Melanzana/melanzana-generica.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)

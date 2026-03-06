@@ -54,3 +54,4 @@ Erba aromatica simbolo della cucina italiana, fresca e profumata, usata soprattu
 - [Zucchina Romanesca](/api/ingredients/verdure/Zucchina/zucchina-romanesca.md)
 - [Zucchina Scura](/api/ingredients/verdure/Zucchina/zucchina-scura.md)
 - [Zucchina Trombetta di Albenga](/api/ingredients/verdure/Zucchina/zucchina-trombetta-di-albenga.md)
+- [Melanzana generica](/api/ingredients/verdure/Melanzana/melanzana-generica.md)

@@ -2,7 +2,7 @@
   "name": "ingredients-catalog",
   "version": 1,
   "strategy": "key-set",
-  "updatedAt": "2026-03-06T16:10:58.088Z",
+  "updatedAt": "2026-03-06T16:34:38.095Z",
   "entries": {
     "Ingredients/dispensa/brodo-vegetale.md": [
       "brodo vegetale"
@@ -145,9 +145,6 @@
     "Ingredients/verdure/Carota/carota-viola.md": [
       "carota viola"
     ],
-    "Ingredients/verdure/Carota/carota.md": [
-      "carota"
-    ],
     "Ingredients/verdure/Carota/carote-arancioni-standard.md": [
       "carote arancioni standard"
     ],
@@ -159,9 +156,6 @@
     ],
     "Ingredients/verdure/Cipolla/cipolla-rossa.md": [
       "cipolla rossa"
-    ],
-    "Ingredients/verdure/Cipolla/cipolla.md": [
-      "cipolla"
     ],
     "Ingredients/verdure/Funghi/funghi-champignon.md": [
       "funghi champignon"
@@ -175,8 +169,8 @@
     "Ingredients/verdure/Funghi/funghi-porcini.md": [
       "funghi porcini"
     ],
-    "Ingredients/verdure/Funghi/funghi.md": [
-      "funghi"
+    "Ingredients/verdure/Melanzana/melanzana-generica.md": [
+      "melanzana generica"
     ],
     "Ingredients/verdure/Melanzana/melanzana-lunga.md": [
       "melanzana lunga"
@@ -186,9 +180,6 @@
     ],
     "Ingredients/verdure/Melanzana/melanzana-violetta.md": [
       "melanzana violetta"
-    ],
-    "Ingredients/verdure/Melanzana/melanzana.md": [
-      "melanzana"
     ],
     "Ingredients/verdure/Patata/patata-americana.md": [
       "patata americana"

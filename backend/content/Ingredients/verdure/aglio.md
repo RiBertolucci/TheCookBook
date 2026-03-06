@@ -67,6 +67,7 @@ Bulbo aromatico fondamentale nella cucina italiana, usato per soffritti, intingo
 - [Funghi Champignones](/api/ingredients/verdure/Funghi/funghi-champignones.md)
 - [Zucchina Trombetta di Albenga](/api/ingredients/verdure/Zucchina/zucchina-trombetta-di-albenga.md)
 - [Carote Arancioni Standard](/api/ingredients/verdure/Carota/carote-arancioni-standard.md)
+- [Melanzana generica](/api/ingredients/verdure/Melanzana/melanzana-generica.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)

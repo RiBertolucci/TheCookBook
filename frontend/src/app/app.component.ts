@@ -45,6 +45,7 @@ export class AppComponent implements OnInit {
   title = 'TheCookBook';
   isEditPage = false;
   isSettingsOpen = false;
+  isCreateMenuOpen = false;
   isSyncing = false;
   isForceIndexing = false;
   isAddingTelegramUser = false;
@@ -70,8 +71,23 @@ export class AppComponent implements OnInit {
 
   goToEdit(): void {
     this.persistCurrentMainTabState();
+    this.isCreateMenuOpen = false;
     this.activeEditRequest = null;
     this.router.navigate(['/edit']);
+  }
+
+  toggleCreateMenu(): void {
+    this.isCreateMenuOpen = !this.isCreateMenuOpen;
+    if (this.isCreateMenuOpen) {
+      this.isSettingsOpen = false;
+      this.telegramAddUserMessage = '';
+      this.telegramAddUserError = false;
+    }
+  }
+
+  openCreateEditor(_mode: 'frontend' | 'import'): void {
+    this.isCreateMenuOpen = false;
+    this.goToEdit();
   }
 
   goToBrowse(): void {
@@ -79,8 +95,13 @@ export class AppComponent implements OnInit {
   }
 
   runSync(): void {
-    if (this.isEditPage) return;
-    this.contentBrowserInstance?.runSync();
+    if (this.isEditPage || this.isSyncing) return;
+
+    const browser = this.contentBrowserInstance;
+    if (!browser) return;
+
+    this.isSyncing = true;
+    browser.runSync();
   }
 
   runForceIndexing(): void {
@@ -161,6 +182,9 @@ export class AppComponent implements OnInit {
 
   toggleSettings(): void {
     this.isSettingsOpen = !this.isSettingsOpen;
+    if (this.isSettingsOpen) {
+      this.isCreateMenuOpen = false;
+    }
     if (!this.isSettingsOpen) {
       this.telegramAddUserMessage = '';
       this.telegramAddUserError = false;
@@ -180,6 +204,10 @@ export class AppComponent implements OnInit {
 
   private updateRouteState(url: string): void {
     this.isEditPage = url.startsWith('/edit');
+    if (this.isEditPage) {
+      this.isCreateMenuOpen = false;
+      this.isSettingsOpen = false;
+    }
   }
 
   private loadTheme(): void {

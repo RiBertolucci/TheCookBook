@@ -23,6 +23,7 @@ Pomodoro piccolo e profumato, perfetto per cotture brevi, insalate e preparazion
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Zucchina Gialla](/api/ingredients/verdure/Zucchina/zucchina-gialla.md)
+- [Melanzana generica](/api/ingredients/verdure/Melanzana/melanzana-generica.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
 - [Timo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/timo.md)
