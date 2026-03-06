@@ -8,7 +8,7 @@ import { LoggerService } from './core/services/logger.service';
 import { ContentService } from './core/services/content.service';
 import { ContentSection, IndexSearchFile } from './core/interfaces/content';
 
-type MainTab = 'overview' | 'search' | 'shopping';
+type MainTab = 'overview' | 'search' | 'shopping' | 'mixer';
 
 interface OpenContentFileRef {
   section: ContentSection;

@@ -10,6 +10,7 @@ import { ContentBrowserComponent } from './features/content/browser/content-brow
 import { ContentEditorComponent } from './features/content/editor/content-editor.component';
 import { SearchTabComponent } from './features/search/search-tab.component';
 import { ShoppingListComponent } from './features/shopping-list/shopping-list.component';
+import { IngredientsMixerComponent } from './features/ingredients-mixer/ingredients-mixer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ShoppingListComponent } from './features/shopping-list/shopping-list.co
     ContentBrowserComponent,
     ContentEditorComponent,
     SearchTabComponent,
-    ShoppingListComponent
+    ShoppingListComponent,
+    IngredientsMixerComponent
   ],
   imports: [
     BrowserModule,

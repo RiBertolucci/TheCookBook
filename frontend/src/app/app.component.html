@@ -46,6 +46,7 @@
     <button class="main-tab" [class.active]="activeMainTab === 'overview'" (click)="setMainTab('overview')">Overview</button>
     <button class="main-tab" [class.active]="activeMainTab === 'search'" (click)="setMainTab('search')">Search</button>
     <button class="main-tab" [class.active]="activeMainTab === 'shopping'" (click)="setMainTab('shopping')">Shopping list</button>
+    <button class="main-tab" [class.active]="activeMainTab === 'mixer'" (click)="setMainTab('mixer')">Ingredients mixer</button>
   </div>
 
   <div class="main-tab-content" *ngIf="!isEditPage">
@@ -57,6 +58,7 @@
 
     <app-search-tab *ngIf="activeMainTab === 'search'"></app-search-tab>
     <app-shopping-list *ngIf="activeMainTab === 'shopping'"></app-shopping-list>
+    <app-ingredients-mixer *ngIf="activeMainTab === 'mixer'"></app-ingredients-mixer>
   </div>
 
   <app-content-editor

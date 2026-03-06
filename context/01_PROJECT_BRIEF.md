@@ -17,6 +17,7 @@ Primary-data-store: Markdown files on disk
 - Auto-link recipe ingredients/spices and ingredient `Used for` recipe references.
 - Index-based search.
 - Shopping list + Telegram send/load.
+- Ingredients mixer suggestions based on overlap of selected ingredients' `Goes with ingredients` and `Goes with spicesAndHerbs` sections, with Telegram send/load.
 
 ## Runtime Ports
 - Frontend dev: `http://localhost:4200`

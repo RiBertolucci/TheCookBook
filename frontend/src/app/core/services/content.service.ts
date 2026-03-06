@@ -95,6 +95,21 @@ export class ContentService {
     return this.ingredientSuggestionsCache$;
   }
 
+  getCompatibleIngredientSuggestions(selected: string[]): Observable<IngredientSuggestionsResponse> {
+    const selectedValues = (Array.isArray(selected) ? selected : [])
+      .map((value) => String(value || '').trim())
+      .filter((value) => value.length > 0);
+    const query = selectedValues.map((value) => `selected=${encodeURIComponent(value)}`).join('&');
+    const url = query ? `/api/ingredients/compatible?${query}` : '/api/ingredients/compatible';
+
+    this.logger.debug(
+      { service: 'ContentService', method: 'getCompatibleIngredientSuggestions', data: { selectedCount: selectedValues.length } },
+      'requesting compatible ingredient suggestions'
+    );
+
+    return this.http.get<IngredientSuggestionsResponse>(url);
+  }
+
   getIngredientFamilies(forceRefresh = false): Observable<IngredientFamiliesResponse> {
     if (forceRefresh || !this.ingredientFamiliesCache$) {
       this.logger.debug({ service: 'ContentService', method: 'getIngredientFamilies' }, 'requesting ingredient families');

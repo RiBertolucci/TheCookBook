@@ -1,10 +1,16 @@
 {
-  "sentAt": "2026-03-06T09:45:38.029Z",
-  "messageId": 11,
+  "sentAt": "2026-03-06T14:58:54.894Z",
+  "messageId": 12,
   "targetId": "me",
   "targetName": "Riccardo",
   "items": [
-    "Brodo Vegetale",
-    "Guanciale"
+    "Aglio",
+    "Coriandolo In Semi",
+    "Cipolla",
+    "Pollo",
+    "Patata Novella",
+    "Latte Di Cocco",
+    "Chiodi Di Garofano",
+    "Pepe Nero"
   ]
 }

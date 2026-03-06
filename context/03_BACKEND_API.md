@@ -27,6 +27,7 @@ Base: `http://localhost:3000`
 
 ## Ingredients Discovery
 - `GET /api/ingredients/suggestions`
+- `GET /api/ingredients/compatible?selected=<ingredient>&selected=<ingredient>`
 - `GET /api/ingredients/families`
 - `GET /api/ingredients/families/:name`
 

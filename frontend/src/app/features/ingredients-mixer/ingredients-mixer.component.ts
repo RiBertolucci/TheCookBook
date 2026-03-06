@@ -2,21 +2,21 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { TelegramTarget } from '../../core/interfaces/content';
 import { ContentService } from '../../core/services/content.service';
+import { IngredientsMixerStateService } from '../../core/services/ingredients-mixer-state.service';
 import { LoggerService } from '../../core/services/logger.service';
-import { ShoppingListStateService } from '../../core/services/shopping-list-state.service';
 
 @Component({
-  selector: 'app-shopping-list',
-  templateUrl: './shopping-list.component.html',
-  styleUrls: ['./shopping-list.component.css']
+  selector: 'app-ingredients-mixer',
+  templateUrl: './ingredients-mixer.component.html',
+  styleUrls: ['./ingredients-mixer.component.css']
 })
-export class ShoppingListComponent implements OnInit, OnDestroy {
+export class IngredientsMixerComponent implements OnInit, OnDestroy {
   inputValue = '';
   items: string[] = [];
 
   showSuggestions = false;
   filteredSuggestions: string[] = [];
-  allIngredientSuggestions: string[] = [];
+  allCompatibleSuggestions: string[] = [];
   isLoadingSuggestions = false;
   isLoadingTelegramTargets = false;
   isSendingToTelegram = false;
@@ -29,6 +29,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   telegramError = '';
   telegramSuccess = '';
   private itemsSubscription?: Subscription;
+  private suggestionsRequestId = 0;
   private readonly onTelegramTargetsUpdated = () => {
     this.loadTelegramTargets();
   };
@@ -36,17 +37,16 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   constructor(
     private content: ContentService,
     private logger: LoggerService,
-    private shoppingListState: ShoppingListStateService
+    private mixerState: IngredientsMixerStateService
   ) {}
 
   ngOnInit(): void {
-    this.items = this.shoppingListState.getItems();
-    this.itemsSubscription = this.shoppingListState.items$.subscribe((items) => {
+    this.items = this.mixerState.getItems();
+    this.itemsSubscription = this.mixerState.items$.subscribe((items) => {
       this.items = items;
-      this.updateSuggestions(true);
+      this.refreshCompatibleSuggestions(true);
     });
     this.loadTelegramTargets();
-    this.loadIngredientSuggestions();
     window.addEventListener('telegram-targets-updated', this.onTelegramTargetsUpdated);
   }
 
@@ -63,7 +63,9 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   onInputKeydown(event: KeyboardEvent): void {
     if (event.key === 'Enter') {
       event.preventDefault();
-      this.addCurrentInput();
+      if (this.filteredSuggestions.length > 0) {
+        this.addItemFromSuggestion(this.filteredSuggestions[0]);
+      }
       return;
     }
 
@@ -86,19 +88,15 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   }
 
   selectSuggestion(value: string): void {
-    this.addItem(value);
-  }
-
-  addCurrentInput(): void {
-    this.addItem(this.inputValue);
+    this.addItemFromSuggestion(value);
   }
 
   removeItem(index: number): void {
-    this.shoppingListState.removeItemAt(index);
+    this.mixerState.removeItemAt(index);
   }
 
   clearItems(): void {
-    this.shoppingListState.clearItems();
+    this.mixerState.clearItems();
   }
 
   exportList(): void {
@@ -107,7 +105,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     const now = new Date();
     const dateTag = now.toISOString().slice(0, 10);
     const lines = [
-      'Shopping List',
+      'Ingredients Mixer',
       `Created: ${now.toLocaleString()}`,
       '',
       ...this.items.map((item, index) => `${index + 1}. ${item}`)
@@ -118,7 +116,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     const anchor = document.createElement('a');
 
     anchor.href = url;
-    anchor.download = `shopping-list-${dateTag}.txt`;
+    anchor.download = `ingredients-mixer-${dateTag}.txt`;
     document.body.appendChild(anchor);
     anchor.click();
     document.body.removeChild(anchor);
@@ -143,9 +141,9 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
       error: (err) => {
         this.isSendingToTelegram = false;
         this.telegramSuccess = '';
-        this.telegramError = err?.error?.error || err?.message || 'Failed to send shopping list to Telegram.';
+        this.telegramError = err?.error?.error || err?.message || 'Failed to send mixer list to Telegram.';
         this.logger.error(
-          { service: 'ShoppingListComponent', method: 'sendToTelegram', data: this.telegramError },
+          { service: 'IngredientsMixerComponent', method: 'sendToTelegram', data: this.telegramError },
           'telegram send failed'
         );
       }
@@ -170,7 +168,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     this.content.getLastShoppingListFromTelegram(target.id).subscribe({
       next: (response) => {
         const items = Array.isArray(response?.items) ? response.items : [];
-        this.shoppingListState.replaceItems(items);
+        this.mixerState.replaceItems(items);
         this.isLoadingFromTelegram = false;
         this.telegramSuccess = items.length > 0
           ? `Loaded last list from ${target.name}.`
@@ -181,7 +179,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
         this.telegramSuccess = '';
         this.telegramError = err?.error?.error || err?.message || 'Failed to load list from Telegram.';
         this.logger.error(
-          { service: 'ShoppingListComponent', method: 'loadLastFromTelegram', data: this.telegramError },
+          { service: 'IngredientsMixerComponent', method: 'loadLastFromTelegram', data: this.telegramError },
           'telegram list load failed'
         );
       }
@@ -258,7 +256,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
         this.isLoadingTelegramTargets = false;
         this.telegramError = err?.error?.error || err?.message || 'Failed to load Telegram targets.';
         this.logger.error(
-          { service: 'ShoppingListComponent', method: 'loadTelegramTargets', data: this.telegramError },
+          { service: 'IngredientsMixerComponent', method: 'loadTelegramTargets', data: this.telegramError },
           'telegram targets load failed'
         );
       }
@@ -270,26 +268,60 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     return target ? target.name : '';
   }
 
-  private addItem(rawValue: string): void {
+  private addItemFromSuggestion(rawValue: string): void {
     const normalized = this.normalizeItem(rawValue);
     if (!normalized) return;
 
-    const wasAdded = this.shoppingListState.addItem(normalized);
+    const suggestionExists = this.allCompatibleSuggestions.some((value) => this.toItemKey(value) === this.toItemKey(normalized));
+    if (!suggestionExists) {
+      this.telegramSuccess = '';
+      this.telegramError = 'Select an ingredient from suggestions.';
+      return;
+    }
+
+    const wasAdded = this.mixerState.addItem(normalized);
     if (!wasAdded) {
       this.showSuggestions = false;
       this.updateSuggestions(true);
       return;
     }
 
+    this.telegramError = '';
     this.inputValue = '';
     this.showSuggestions = false;
     this.filteredSuggestions = [];
   }
 
+  private refreshCompatibleSuggestions(preserveVisibility = false): void {
+    const requestId = ++this.suggestionsRequestId;
+    this.isLoadingSuggestions = true;
+
+    this.content.getCompatibleIngredientSuggestions(this.items).subscribe({
+      next: (response) => {
+        if (requestId !== this.suggestionsRequestId) return;
+
+        this.isLoadingSuggestions = false;
+        this.allCompatibleSuggestions = Array.isArray(response?.suggestions) ? response.suggestions : [];
+        this.updateSuggestions(preserveVisibility);
+      },
+      error: (err) => {
+        if (requestId !== this.suggestionsRequestId) return;
+
+        this.isLoadingSuggestions = false;
+        this.allCompatibleSuggestions = [];
+        this.updateSuggestions(preserveVisibility);
+        this.logger.error(
+          { service: 'IngredientsMixerComponent', method: 'refreshCompatibleSuggestions', data: err?.message || err?.error?.message || 'unknown error' },
+          'failed to load compatible ingredient suggestions'
+        );
+      }
+    });
+  }
+
   private updateSuggestions(preserveVisibility = false): void {
     const typed = this.inputValue.trim().toLowerCase();
     const selectedKeys = new Set(this.items.map((item) => this.toItemKey(item)));
-    const source = this.allIngredientSuggestions.filter((value) => !selectedKeys.has(this.toItemKey(value)));
+    const source = this.allCompatibleSuggestions.filter((value) => !selectedKeys.has(this.toItemKey(value)));
     const shouldShowSuggestions = (suggestions: string[]): boolean => {
       if (preserveVisibility) {
         return this.showSuggestions && suggestions.length > 0;
@@ -298,36 +330,15 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     };
 
     if (!typed) {
-      this.filteredSuggestions = source.slice(0, 12);
+      this.filteredSuggestions = source;
       this.showSuggestions = shouldShowSuggestions(this.filteredSuggestions);
       return;
     }
 
     this.filteredSuggestions = source
-      .filter((value) => value.toLowerCase().includes(typed))
-      .slice(0, 12);
+      .filter((value) => value.toLowerCase().includes(typed));
 
     this.showSuggestions = shouldShowSuggestions(this.filteredSuggestions);
-  }
-
-  private loadIngredientSuggestions(): void {
-    if (this.isLoadingSuggestions) return;
-
-    this.isLoadingSuggestions = true;
-    this.content.getIngredientSuggestions().subscribe({
-      next: (response) => {
-        this.isLoadingSuggestions = false;
-        this.allIngredientSuggestions = Array.isArray(response?.suggestions) ? response.suggestions : [];
-      },
-      error: (err) => {
-        this.isLoadingSuggestions = false;
-        this.allIngredientSuggestions = [];
-        this.logger.error(
-          { service: 'ShoppingListComponent', method: 'loadIngredientSuggestions', data: err?.message || err?.error?.message || 'unknown error' },
-          'failed to load ingredient suggestions'
-        );
-      }
-    });
   }
 
   private normalizeItem(value: string): string {

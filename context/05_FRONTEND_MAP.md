@@ -10,12 +10,14 @@ Framework: Angular 13
 - `overview` -> content browser
 - `search` -> indexed search view
 - `shopping` -> shopping + telegram
+- `mixer` -> ingredients compatibility mixer + telegram
 
 ## Feature Components
 - `features/content/browser/*`: file tree + viewer tabs
 - `features/content/editor/*`: markdown create/edit forms (includes ingredient `Used for` recipe list)
 - `features/search/*`: search by indexes, preview pane
 - `features/shopping-list/*`: list management + telegram send/load
+- `features/ingredients-mixer/*`: compatibility-based ingredient selection + telegram send/load
 - `features/viewer/*`: markdown rendering support
 
 ## Core Services

@@ -1,0 +1,142 @@
+<section class="panel mixer-panel">
+  <div class="panel-header">Ingredients mixer</div>
+
+  <div class="mixer-body">
+    <div class="mixer-layout">
+      <section class="mixer-list-column">
+        <div class="mixer-list-title">Selected ingredients</div>
+
+        <div class="mixer-empty" *ngIf="items.length === 0">No ingredients selected yet.</div>
+
+        <ol class="mixer-items" *ngIf="items.length > 0">
+          <li class="mixer-item" *ngFor="let item of items; let index = index">
+            <span>{{ item }}</span>
+            <button
+              type="button"
+              class="mixer-remove-btn"
+              (click)="removeItem(index)"
+              aria-label="Remove ingredient"
+              title="Remove ingredient"
+            >
+              ×
+            </button>
+          </li>
+        </ol>
+      </section>
+
+      <section class="mixer-controls-column">
+        <p class="mixer-help">Select ingredients from suggestions only. Suggestions are filtered by the overlap in each selected ingredient's pairing sections.</p>
+
+        <div class="edit-row mixer-input-row">
+          <label class="edit-label" for="mixer-item-input">Ingredient</label>
+          <div class="mixer-input-wrap">
+            <input
+              id="mixer-item-input"
+              class="form-control"
+              [(ngModel)]="inputValue"
+              (ngModelChange)="onInputChanged($event)"
+              (keydown)="onInputKeydown($event)"
+              (focus)="onInputFocus()"
+              placeholder="Search compatible ingredients" />
+
+            <button
+              type="button"
+              class="mixer-toggle-btn"
+              (click)="toggleSuggestions()"
+              [disabled]="isLoadingSuggestions || allCompatibleSuggestions.length === 0"
+              aria-label="Toggle compatible ingredient suggestions"
+              title="Compatible ingredient suggestions"
+            >
+              {{ showSuggestions ? '▴' : '▾' }}
+            </button>
+
+            <div class="mixer-suggestions" *ngIf="showSuggestions && filteredSuggestions.length > 0">
+              <button type="button" class="mixer-suggestion-item" *ngFor="let suggestion of filteredSuggestions" (click)="selectSuggestion(suggestion)">
+                {{ suggestion }}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="mixer-actions-row" [class.menu-open]="showSendTargetMenu || showLoadTargetMenu">
+          <button type="button" class="btn btn-sm btn-primary" (click)="exportList()" [disabled]="items.length === 0">Export .txt</button>
+          <div class="mixer-send-combo" [class.open]="showSendTargetMenu">
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-primary mixer-send-main-btn"
+              (click)="sendToTelegram()"
+              [disabled]="items.length === 0 || isSendingToTelegram || !selectedTelegramTargetId"
+              [title]="selectedTelegramTargetId ? ('Send to ' + getSelectedTargetName()) : 'Select chat target'"
+            >
+              {{ isSendingToTelegram ? 'Sending...' : ('Send to ' + (getSelectedTargetName() || 'Telegram')) }}
+            </button>
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-primary mixer-send-arrow-btn"
+              (click)="toggleSendTargetMenu()"
+              [disabled]="isLoadingTelegramTargets || telegramTargets.length === 0"
+              aria-label="Choose Telegram chat target"
+              title="Choose chat target"
+            >
+              ▾
+            </button>
+
+            <div class="mixer-send-target-menu" *ngIf="showSendTargetMenu">
+              <button
+                type="button"
+                class="mixer-send-target-item"
+                *ngFor="let target of telegramTargets"
+                (click)="selectTelegramTarget(target.id)"
+              >
+                <span class="mixer-target-radio" [class.active]="target.id === selectedTelegramTargetId" aria-hidden="true"></span>
+                <span class="mixer-target-label">{{ target.name }}</span>
+              </button>
+            </div>
+          </div>
+          <div class="mixer-load-combo" [class.open]="showLoadTargetMenu">
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-primary mixer-load-main-btn"
+              (click)="loadLastFromTelegram()"
+              [disabled]="isLoadingFromTelegram || !selectedLoadTargetId"
+              [title]="selectedLoadTargetId ? ('Load last list from ' + getSelectedLoadTargetName()) : 'Select chat target'"
+            >
+              {{ isLoadingFromTelegram ? 'Loading...' : ('Load from ' + (getSelectedLoadTargetName() || 'Telegram')) }}
+            </button>
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-primary mixer-load-arrow-btn"
+              (click)="toggleLoadTargetMenu()"
+              [disabled]="isLoadingTelegramTargets || telegramTargets.length === 0"
+              aria-label="Choose Telegram chat target for load"
+              title="Choose chat target"
+            >
+              ▾
+            </button>
+
+            <div class="mixer-load-target-menu" *ngIf="showLoadTargetMenu">
+              <button
+                type="button"
+                class="mixer-load-target-item"
+                *ngFor="let target of telegramTargets"
+                (click)="selectLoadTarget(target.id)"
+              >
+                <span class="mixer-target-radio" [class.active]="target.id === selectedLoadTargetId" aria-hidden="true"></span>
+                <span class="mixer-target-label">{{ target.name }}</span>
+              </button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="clearItems()" [disabled]="items.length === 0">Clear</button>
+        </div>
+
+        <div class="mixer-feedback-row">
+          <span class="mixer-success" *ngIf="telegramSuccess">{{ telegramSuccess }}</span>
+          <span class="mixer-error" *ngIf="telegramError">{{ telegramError }}</span>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<div class="mixer-target-backdrop" *ngIf="showSendTargetMenu" (click)="closeSendTargetMenu()"></div>
+<div class="mixer-target-backdrop" *ngIf="showLoadTargetMenu" (click)="closeLoadTargetMenu()"></div>
