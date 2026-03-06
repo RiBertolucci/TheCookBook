@@ -28,5 +28,8 @@ Formaggio ovino stagionato dal sapore deciso, usato soprattutto in paste romane,
 - [Peperoncino](/api/ingredients/verdure/peperoncino.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
 ## Goes with spicesAndHerbs
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+
+## Used for
+- 

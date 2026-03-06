@@ -3,6 +3,9 @@ const path = require('path');
 const parser = require('./parser');
 const logger = require('./logger');
 
+const SPICE_SUBFOLDER = 'SpicesAndHerbs';
+const CANONICAL_SPICE_API_PREFIX = '/api/ingredients/SpicesAndHerbs';
+
 /**
  * Linker service handles cross-document linking logic for all document types.
  */
@@ -286,6 +289,20 @@ function getTitleFromContent(content) {
   return line ? line.slice(2).trim() : '';
 }
 
+async function resolveSpiceDirectory(rootDir) {
+  const nestedSpiceDir = path.join(rootDir, 'Ingredients', SPICE_SUBFOLDER);
+  try {
+    const nestedStats = await fs.stat(nestedSpiceDir);
+    if (nestedStats.isDirectory()) {
+      return nestedSpiceDir;
+    }
+  } catch {
+    // Fall back to legacy top-level folder if nested one is not available.
+  }
+
+  return path.join(rootDir, SPICE_SUBFOLDER);
+}
+
 async function upsertBackLinkInTarget(targetFilePath, sectionCandidates, sourceDisplayName, sourceApiPath) {
   let targetContent;
   try {
@@ -309,7 +326,7 @@ async function upsertBackLinkInTarget(targetFilePath, sectionCandidates, sourceD
 
 async function propagateNewIngredient(sourceFilePath, sourceContent, rootDir) {
   const ingredientDir = path.join(rootDir, 'Ingredients');
-  const spiceDir = path.join(rootDir, 'SpicesAndHerbs');
+  const spiceDir = await resolveSpiceDirectory(rootDir);
   const sourceRelPath = toPosixPath(path.relative(ingredientDir, sourceFilePath));
   const sourceDisplayName = getTitleFromContent(sourceContent) || path.basename(sourceFilePath, '.md');
 
@@ -347,11 +364,11 @@ async function propagateNewIngredient(sourceFilePath, sourceContent, rootDir) {
 
 async function propagateNewSpice(sourceFilePath, sourceContent, rootDir) {
   const ingredientDir = path.join(rootDir, 'Ingredients');
-  const spiceDir = path.join(rootDir, 'SpicesAndHerbs');
+  const spiceDir = await resolveSpiceDirectory(rootDir);
   const sourceRelPath = toPosixPath(path.relative(spiceDir, sourceFilePath));
   const sourceDisplayName = getTitleFromContent(sourceContent) || path.basename(sourceFilePath, '.md');
 
-  const mixesWithSpices = parser.extractSection(sourceContent, 'Mixes Well With');
+  const mixesWithSpices = getSectionItemsByCandidates(sourceContent, ['Goes with spicesAndHerbs', 'Mixes Well With']);
   for (const item of mixesWithSpices) {
     const targetName = extractDisplayName(item);
     const targetRelPath = await parser.findFile(spiceDir, targetName);
@@ -361,13 +378,13 @@ async function propagateNewSpice(sourceFilePath, sourceContent, rootDir) {
 
     await upsertBackLinkInTarget(
       targetFilePath,
-      ['Mixes Well With', 'Goes with spicesAndHerbs'],
+      ['Goes with spicesAndHerbs', 'Mixes Well With'],
       sourceDisplayName,
-      `/api/spices/${sourceRelPath}`,
+      `${CANONICAL_SPICE_API_PREFIX}/${sourceRelPath}`,
     );
   }
 
-  const goodWithIngredients = parser.extractSection(sourceContent, 'Good With Ingredients');
+  const goodWithIngredients = getSectionItemsByCandidates(sourceContent, ['Goes with ingredients', 'Good With Ingredients']);
   for (const item of goodWithIngredients) {
     const targetName = extractDisplayName(item);
     const targetRelPath = await parser.findFile(ingredientDir, targetName);
@@ -378,7 +395,7 @@ async function propagateNewSpice(sourceFilePath, sourceContent, rootDir) {
       targetFilePath,
       ['Goes with spicesAndHerbs'],
       sourceDisplayName,
-      `/api/spices/${sourceRelPath}`,
+      `${CANONICAL_SPICE_API_PREFIX}/${sourceRelPath}`,
     );
   }
 }
@@ -410,11 +427,11 @@ async function processIngredient(content, filePath, rootDir) {
   // 2. Link to "Goes with spicesAndHerbs"
   const goesWithSpices = parser.extractSection(newContent, 'Goes with spicesAndHerbs');
   if (goesWithSpices.length > 0) {
-    const spiceDir = path.join(rootDir, 'SpicesAndHerbs');
+    const spiceDir = await resolveSpiceDirectory(rootDir);
     const result = await relinkSectionItems(
       goesWithSpices,
       spiceDir,
-      '/api/spices',
+      CANONICAL_SPICE_API_PREFIX,
       'processIngredient',
       'looking for spice file',
     );
@@ -425,20 +442,39 @@ async function processIngredient(content, filePath, rootDir) {
     }
   }
 
+  // 3. Link to "Used for" (recipes)
+  const usedForRecipes = parser.extractSection(newContent, 'Used for');
+  if (usedForRecipes.length > 0) {
+    const recipeDir = path.join(rootDir, 'Recipes');
+    const result = await relinkSectionItems(
+      usedForRecipes,
+      recipeDir,
+      '/api/recipes',
+      'processIngredient',
+      'looking for recipe file',
+    );
+
+    if (result.modified) {
+      modified = true;
+      newContent = parser.updateOrCreateSection(newContent, 'Used for', result.rewrittenItems);
+      logger.info({ service: 'linker', method: 'processIngredient', data: result.rewrittenItems }, 'updated used-for recipe links');
+    }
+  }
+
   return { newContent, modified };
 }
 
 async function processRecipe(content, filePath, rootDir) {
   let modified = false;
   let newContent = content;
+  const ingredientDir = path.join(rootDir, 'Ingredients');
 
   // Search for "Ingredients" section
   const ingredients = parser.extractSection(newContent, 'Ingredients');
   if (ingredients.length > 0) {
-    const ingredientDir = path.join(rootDir, 'Ingredients');
-    const spiceDir = path.join(rootDir, 'SpicesAndHerbs');
+    const spiceDir = await resolveSpiceDirectory(rootDir);
     const ingredientCatalog = await buildSearchCatalog(ingredientDir, '/api/ingredients', 'ingredient');
-    const spiceCatalog = await buildSearchCatalog(spiceDir, '/api/spices', 'spice');
+    const spiceCatalog = await buildSearchCatalog(spiceDir, CANONICAL_SPICE_API_PREFIX, 'spice');
     const searchCatalog = [...ingredientCatalog, ...spiceCatalog];
     const rewrittenItems = [];
 
@@ -460,6 +496,27 @@ async function processRecipe(content, filePath, rootDir) {
       // and the frontend viewer will navigate to referenced items when
       // clicked.
     }
+
+    const recipeDisplayName = getTitleFromContent(newContent) || path.basename(filePath, '.md');
+    const recipeRelPath = toPosixPath(path.relative(path.join(rootDir, 'Recipes'), filePath));
+    const recipeApiPath = `/api/recipes/${recipeRelPath}`;
+    const ingredientsForBackLinks = modified ? rewrittenItems : ingredients;
+
+    for (const item of ingredientsForBackLinks) {
+      const resolved = await resolveRecipeIngredientLine(item, ingredientDir);
+      if (!resolved.foundFile) continue;
+
+      const normalizedTarget = toPosixPath(resolved.foundFile);
+      if (normalizedTarget.toLowerCase().startsWith(`${SPICE_SUBFOLDER.toLowerCase()}/`)) continue;
+
+      const targetFilePath = path.join(ingredientDir, normalizedTarget.split('/').join(path.sep));
+      await upsertBackLinkInTarget(
+        targetFilePath,
+        ['Used for'],
+        recipeDisplayName,
+        recipeApiPath,
+      );
+    }
   }
 
   return { newContent, modified };
@@ -470,7 +527,7 @@ async function processSpice(content, filePath, rootDir) {
   let newContent = content;
 
   // 1. Link to "Goes with ingredients"
-  const goesWithIngredients = parser.extractSection(newContent, 'Goes with ingredients');
+  const goesWithIngredients = getSectionItemsByCandidates(newContent, ['Goes with ingredients', 'Good With Ingredients']);
   if (goesWithIngredients.length > 0) {
     const ingredientDir = path.join(rootDir, 'Ingredients');
     const result = await relinkSectionItems(
@@ -489,13 +546,13 @@ async function processSpice(content, filePath, rootDir) {
   }
 
   // 2. Link to "Goes with spicesAndHerbs"
-  const goesWithSpices = parser.extractSection(newContent, 'Goes with spicesAndHerbs');
+  const goesWithSpices = getSectionItemsByCandidates(newContent, ['Goes with spicesAndHerbs', 'Mixes Well With']);
   if (goesWithSpices.length > 0) {
-    const spiceDir = path.join(rootDir, 'SpicesAndHerbs');
+    const spiceDir = await resolveSpiceDirectory(rootDir);
     const result = await relinkSectionItems(
       goesWithSpices,
       spiceDir,
-      '/api/spices',
+      CANONICAL_SPICE_API_PREFIX,
       'processSpice',
       'searching spice for spice',
     );

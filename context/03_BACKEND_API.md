@@ -13,7 +13,12 @@ Base: `http://localhost:3000`
 - `GET /api/hierarchy`
 - `GET /api/recipes/:filename`
 - `GET /api/ingredients/*filename`
-- `GET /api/spices/*filename`
+- `GET /api/spices/*filename` (legacy compatibility alias)
+
+## Canonical Spice Reads
+- Canonical path for spices/herbs is under ingredients:
+- `GET /api/ingredients/SpicesAndHerbs/<relative-path>.md`
+- Legacy `GET /api/spices/*filename` remains for backward compatibility.
 
 ## Indexes
 - `GET /api/indexes`

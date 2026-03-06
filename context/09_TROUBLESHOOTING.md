@@ -8,6 +8,13 @@ Checks:
 - Route exists in `backend/src/routes/*.js`.
 - Frontend proxy active (`frontend/proxy.conf.json`).
 - Backend restarted after route changes.
+- For spices/herbs, prefer canonical path `/api/ingredients/SpicesAndHerbs/<relative-path>.md`.
+
+## Symptom: spice links fail after migration
+Checks:
+- Verify markdown links use `/api/ingredients/SpicesAndHerbs/...` for new content.
+- Legacy `/api/spices/...` reads are compatibility-only; prefer canonical links when editing files.
+- Run `npm run sync` in `backend` if indexes/links appear stale.
 
 ## Symptom: Telegram add user fails
 Checks:

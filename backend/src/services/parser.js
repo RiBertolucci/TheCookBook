@@ -15,9 +15,11 @@ function getDocumentType(filePath, rootDir) {
   const rel = path.relative(rootDir, filePath);
   const parts = rel.split(path.sep);
   const folder = parts[0];
+  const subFolder = parts[1] || '';
   logger.debug({ service: 'parser', method: 'getDocumentType', data: rel }, 'determining document type');
 
   if (folder === 'Recipes') return 'recipe';
+  if (folder === 'Ingredients' && subFolder === 'SpicesAndHerbs') return 'spice';
   if (folder === 'Ingredients') return 'ingredient';
   if (folder === 'SpicesAndHerbs') return 'spice';
   logger.warn({ service: 'parser', method: 'getDocumentType', data: folder }, 'unknown folder type');

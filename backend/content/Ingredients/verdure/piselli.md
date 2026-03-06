@@ -28,5 +28,8 @@ Legume dolce e tenero molto usato in primi, contorni e stufati italiani, sopratt
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
 ## Goes with spicesAndHerbs
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+
+## Used for
+- 

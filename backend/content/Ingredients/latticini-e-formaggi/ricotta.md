@@ -29,8 +29,16 @@ Formaggio fresco leggero e versatile, usato in ripieni, primi al forno, dolci e 
 - [Uova](/api/ingredients/salumi-e-proteine/uova.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
+- [Pomodoro Cuore di Bue](/api/ingredients/verdure/Pomodoro/pomodoro-cuore-di-bue.md)
+- [Pomodoro Datterino](/api/ingredients/verdure/Pomodoro/pomodoro-datterino.md)
+- [Patata Bianca](/api/ingredients/verdure/Patata/patata-bianca.md)
+- [Patata Viola](/api/ingredients/verdure/Patata/patata-viola.md)
+- [Pomodoro Costoluto Fiorentino](/api/ingredients/verdure/Pomodoro/pomodoro-costoluto-fiorentino.md)
 ## Goes with spicesAndHerbs
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Salvia](/api/spices/erbe-mediterranee/salvia.md)
-- [Noce moscata](/api/spices/spezie-classiche/noce-moscata.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Salvia](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/salvia.md)
+- [Noce moscata](/api/ingredients/SpicesAndHerbs/spezie-classiche/noce-moscata.md)
+
+## Used for
+- 

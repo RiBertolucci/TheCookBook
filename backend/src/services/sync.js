@@ -19,7 +19,18 @@ async function run(rootDir) {
   _rootDir = rootDir;
   await metadata.init(rootDir);
 
-  const folders = ['Recipes', 'Ingredients', 'SpicesAndHerbs'];
+  const folders = ['Recipes', 'Ingredients'];
+
+  const legacySpicesDir = path.join(rootDir, 'SpicesAndHerbs');
+  try {
+    const legacyStats = await fs.stat(legacySpicesDir);
+    if (legacyStats.isDirectory()) {
+      folders.push('SpicesAndHerbs');
+    }
+  } catch {
+    // Legacy top-level spices folder is optional.
+  }
+
   for (const folder of folders) {
     const dirPath = path.join(rootDir, folder);
     logger.debug({ service: 'sync', method: 'run', data: folder }, 'scanning folder');

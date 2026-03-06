@@ -1,0 +1,30 @@
+# Alloro
+
+Foglia aromatica usata in cotture lunghe, brodi, legumi e stufati per profondità e nota balsamica.
+
+## Goes with spicesAndHerbs
+- [Rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)
+- [Timo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/timo.md)
+- [Salvia](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/salvia.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Chiodi di garofano](/api/ingredients/SpicesAndHerbs/spezie-classiche/chiodi-di-garofano.md)
+- [Noce moscata](/api/ingredients/SpicesAndHerbs/spezie-classiche/noce-moscata.md)
+## Goes with ingredients
+- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Sedano](/api/ingredients/verdure/sedano.md)
+- [Carota](/api/ingredients/verdure/carota.md)
+- [Patata](/api/ingredients/verdure/patata.md)
+- [Salsiccia](/api/ingredients/salumi-e-proteine/salsiccia.md)
+- [Pancetta](/api/ingredients/salumi-e-proteine/pancetta.md)
+- [Riso basmati](/api/ingredients/esotici/riso-basmati.md)
+- [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [Sale](/api/ingredients/dispensa/sale.md)
+- [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
+- [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)
+- [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
+- [Cipolla Bianca](/api/ingredients/verdure/Cipolla/cipolla-bianca.md)
+- [Cipolla Dorata](/api/ingredients/verdure/Cipolla/cipolla-dorata.md)
+- [Patata Rossa](/api/ingredients/verdure/Patata/patata-rossa.md)
+- [Pomodoro San Marzano](/api/ingredients/verdure/Pomodoro/pomodoro-san-marzano.md)
+- [Pomodoro del Piennolo](/api/ingredients/verdure/Pomodoro/pomodoro-del-piennolo.md)

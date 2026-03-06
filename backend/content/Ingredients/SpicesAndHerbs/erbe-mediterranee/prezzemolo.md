@@ -2,16 +2,15 @@
 
 Erba fresca molto versatile usata per rifiniture, salse verdi, triti aromatici e preparazioni di pesce e verdure.
 
-## Mixes Well With
-
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
-- [Origano](/api/spices/erbe-mediterranee/oregano.md)
-- [Timo](/api/spices/erbe-mediterranee/timo.md)
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
+## Goes with spicesAndHerbs
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)
+- [Timo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/timo.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
 - Aglio in polvere
 - Erba cipollina
 
-## Good With Ingredients
+## Goes with ingredients
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Funghi](/api/ingredients/verdure/funghi.md)
 - [Patata](/api/ingredients/verdure/patata.md)
@@ -20,3 +19,4 @@ Erba fresca molto versatile usata per rifiniture, salse verdi, triti aromatici e
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
+- [Patata Gialla](/api/ingredients/verdure/Patata/patata-gialla.md)

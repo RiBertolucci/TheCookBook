@@ -144,7 +144,7 @@ export class ContentService {
         url = `/api/ingredients/${filename}`;
         break;
       case 'SpicesAndHerbs':
-        url = `/api/spices/${filename}`;
+        url = `/api/ingredients/SpicesAndHerbs/${filename}`;
         break;
       default:
         throw new Error(`Unknown section ${section}`);

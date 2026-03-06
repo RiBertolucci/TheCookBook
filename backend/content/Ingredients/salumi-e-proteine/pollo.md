@@ -28,12 +28,17 @@ Proteina molto versatile nella cucina indiana e internazionale, adatta a marinat
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
 - [Riso basmati](/api/ingredients/esotici/riso-basmati.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
+- [Cipolla Bianca](/api/ingredients/verdure/Cipolla/cipolla-bianca.md)
+- [Patata Americana](/api/ingredients/verdure/Patata/patata-americana.md)
 ## Goes with spicesAndHerbs
-- [Garam Masala](/api/spices/mixes/garam-masala.md)
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Paprika](/api/spices/spezie-classiche/paprika.md)
-- [Cannella](/api/spices/spezie-classiche/cannella.md)
-- [Cardamomo](/api/spices/spezie-classiche/cardamomo.md)
-- [Chiodi di garofano](/api/spices/spezie-classiche/chiodi-di-garofano.md)
-- [Coriandolo in semi](/api/spices/spezie-classiche/coriandolo-in-semi.md)
-- [Cumino](/api/spices/spezie-classiche/cumino.md)
+- [Garam Masala](/api/ingredients/SpicesAndHerbs/mixes/garam-masala.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md)
+- [Cannella](/api/ingredients/SpicesAndHerbs/spezie-classiche/cannella.md)
+- [Cardamomo](/api/ingredients/SpicesAndHerbs/spezie-classiche/cardamomo.md)
+- [Chiodi di garofano](/api/ingredients/SpicesAndHerbs/spezie-classiche/chiodi-di-garofano.md)
+- [Coriandolo in semi](/api/ingredients/SpicesAndHerbs/spezie-classiche/coriandolo-in-semi.md)
+- [Cumino](/api/ingredients/SpicesAndHerbs/spezie-classiche/cumino.md)
+
+## Used for
+- 

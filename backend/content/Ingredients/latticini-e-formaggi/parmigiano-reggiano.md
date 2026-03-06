@@ -34,7 +34,14 @@ Formaggio stagionato DOP essenziale nella cucina italiana, usato grattugiato, in
 - [Ricotta](/api/ingredients/latticini-e-formaggi/ricotta.md)
 - [Piselli](/api/ingredients/verdure/piselli.md)
 - [Spinaci](/api/ingredients/verdure/spinaci.md)
+- [Patata Gialla](/api/ingredients/verdure/Patata/patata-gialla.md)
+- [Pomodoro San Marzano](/api/ingredients/verdure/Pomodoro/pomodoro-san-marzano.md)
+- [Patata Bianca](/api/ingredients/verdure/Patata/patata-bianca.md)
+- [Patata Viola](/api/ingredients/verdure/Patata/patata-viola.md)
 ## Goes with spicesAndHerbs
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
-- [Salvia](/api/spices/erbe-mediterranee/salvia.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Salvia](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/salvia.md)
+
+## Used for
+- 

@@ -29,8 +29,11 @@ Ingrediente liquido aromatico usato in cottura per dare profondità, acidità e 
 - [olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [sale](/api/ingredients/dispensa/sale.md)
 ## Goes with spicesAndHerbs
-- [pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [alloro](/api/spices/erbe-mediterranee/alloro.md)
-- [rosmarino](/api/spices/erbe-mediterranee/rosmarino.md)
-- [chiodi di garofano](/api/spices/spezie-classiche/chiodi-di-garofano.md)
-- [timo](/api/spices/erbe-mediterranee/timo.md)
+- [pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [alloro](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md)
+- [rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)
+- [chiodi di garofano](/api/ingredients/SpicesAndHerbs/spezie-classiche/chiodi-di-garofano.md)
+- [timo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/timo.md)
+
+## Used for
+- [Brasato al vino rosso](/api/recipes/brasato-al-vino-rosso.md)

@@ -29,6 +29,15 @@ Formaggio fresco molto usato in pizze, paste al forno, antipasti e preparazioni 
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
+- [Pomodoro Cuore di Bue](/api/ingredients/verdure/Pomodoro/pomodoro-cuore-di-bue.md)
+- [Pomodoro Datterino](/api/ingredients/verdure/Pomodoro/pomodoro-datterino.md)
+- [Pomodoro San Marzano](/api/ingredients/verdure/Pomodoro/pomodoro-san-marzano.md)
+- [Pomodoro Costoluto Fiorentino](/api/ingredients/verdure/Pomodoro/pomodoro-costoluto-fiorentino.md)
+- [Pomodoro Roma](/api/ingredients/verdure/Pomodoro/pomodoro-roma.md)
 ## Goes with spicesAndHerbs
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)
+
+## Used for
+- 

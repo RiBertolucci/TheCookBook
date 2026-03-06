@@ -29,8 +29,11 @@ Taglio bovino adatto a cotture lente in umido, ideale per ottenere carne morbida
 - [farina 00](/api/ingredients/dispensa/farina-00.md)
 - [sale](/api/ingredients/dispensa/sale.md)
 ## Goes with spicesAndHerbs
-- [pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [alloro](/api/spices/erbe-mediterranee/alloro.md)
-- [rosmarino](/api/spices/erbe-mediterranee/rosmarino.md)
-- [chiodi di garofano](/api/spices/spezie-classiche/chiodi-di-garofano.md)
-- [salvia](/api/spices/erbe-mediterranee/salvia.md)
+- [pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [alloro](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md)
+- [rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)
+- [chiodi di garofano](/api/ingredients/SpicesAndHerbs/spezie-classiche/chiodi-di-garofano.md)
+- [salvia](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/salvia.md)
+
+## Used for
+- [Brasato al vino rosso](/api/recipes/brasato-al-vino-rosso.md)

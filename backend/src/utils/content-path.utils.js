@@ -15,7 +15,7 @@ function mapSectionToFolder(section) {
     case 'Ingredients':
       return 'Ingredients';
     case 'SpicesAndHerbs':
-      return 'SpicesAndHerbs';
+      return 'Ingredients/SpicesAndHerbs';
     default:
       return null;
   }

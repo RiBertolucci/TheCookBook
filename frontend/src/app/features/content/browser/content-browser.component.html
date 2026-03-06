@@ -50,6 +50,15 @@
             ✏️
           </button>
           <button
+            class="btn btn-sm btn-outline-success icon-add-btn"
+            *ngIf="canAddActiveIngredientToShoppingList()"
+            (click)="addActiveIngredientToShoppingList()"
+            aria-label="Add ingredient to shopping list"
+            title="Add ingredient to shopping list"
+          >
+            +
+          </button>
+          <button
             class="btn btn-sm btn-outline-danger icon-delete-btn"
             *ngIf="showFolderDeleteBins"
             (click)="deleteActiveFile()"

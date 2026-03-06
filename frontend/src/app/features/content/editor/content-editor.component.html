@@ -64,11 +64,19 @@
             <button class="btn btn-sm btn-outline-danger" (click)="removeItem('ingredientGoesWithSpicesAndHerbs', i)">-</button>
           </div>
         </div>
+
+        <div class="list-block">
+          <div class="list-header">Used for <button class="btn btn-sm btn-outline-primary" (click)="addItem('ingredientUsedFor')">+</button></div>
+          <div class="list-row" *ngFor="let item of ingredientUsedFor; let i = index; trackBy: trackByIndex">
+            <input class="form-control" [(ngModel)]="ingredientUsedFor[i]" placeholder="Recipe title" />
+            <button class="btn btn-sm btn-outline-danger" (click)="removeItem('ingredientUsedFor', i)">-</button>
+          </div>
+        </div>
       </ng-container>
 
       <ng-container *ngIf="selectedKind === 'spice'">
         <div class="list-block">
-          <div class="list-header">Mixes Well With <button class="btn btn-sm btn-outline-primary" (click)="addItem('spiceMixesWellWith')">+</button></div>
+          <div class="list-header">Goes with spicesAndHerbs <button class="btn btn-sm btn-outline-primary" (click)="addItem('spiceMixesWellWith')">+</button></div>
           <div class="list-row" *ngFor="let item of spiceMixesWellWith; let i = index; trackBy: trackByIndex">
             <input class="form-control" [(ngModel)]="spiceMixesWellWith[i]" />
             <button class="btn btn-sm btn-outline-danger" (click)="removeItem('spiceMixesWellWith', i)">-</button>
@@ -76,7 +84,7 @@
         </div>
 
         <div class="list-block">
-          <div class="list-header">Good With Ingredients <button class="btn btn-sm btn-outline-primary" (click)="addItem('spiceGoodWithIngredients')">+</button></div>
+          <div class="list-header">Goes with ingredients <button class="btn btn-sm btn-outline-primary" (click)="addItem('spiceGoodWithIngredients')">+</button></div>
           <div class="list-row" *ngFor="let item of spiceGoodWithIngredients; let i = index; trackBy: trackByIndex">
             <input class="form-control" [(ngModel)]="spiceGoodWithIngredients[i]" />
             <button class="btn btn-sm btn-outline-danger" (click)="removeItem('spiceGoodWithIngredients', i)">-</button>
@@ -94,7 +102,7 @@
         </div>
 
         <div class="list-block">
-          <div class="list-header">Mixes Well With <button class="btn btn-sm btn-outline-primary" (click)="addItem('mixMixesWellWith')">+</button></div>
+          <div class="list-header">Goes with spicesAndHerbs <button class="btn btn-sm btn-outline-primary" (click)="addItem('mixMixesWellWith')">+</button></div>
           <div class="list-row" *ngFor="let item of mixMixesWellWith; let i = index; trackBy: trackByIndex">
             <input class="form-control" [(ngModel)]="mixMixesWellWith[i]" />
             <button class="btn btn-sm btn-outline-danger" (click)="removeItem('mixMixesWellWith', i)">-</button>
@@ -102,7 +110,7 @@
         </div>
 
         <div class="list-block">
-          <div class="list-header">Good With Ingredients <button class="btn btn-sm btn-outline-primary" (click)="addItem('mixGoodWithIngredients')">+</button></div>
+          <div class="list-header">Goes with ingredients <button class="btn btn-sm btn-outline-primary" (click)="addItem('mixGoodWithIngredients')">+</button></div>
           <div class="list-row" *ngFor="let item of mixGoodWithIngredients; let i = index; trackBy: trackByIndex">
             <input class="form-control" [(ngModel)]="mixGoodWithIngredients[i]" />
             <button class="btn btn-sm btn-outline-danger" (click)="removeItem('mixGoodWithIngredients', i)">-</button>

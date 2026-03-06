@@ -32,8 +32,14 @@ Farina di grano tenero molto raffinata, base di pasta fresca, pizza, focacce, im
 - [Guanciale](/api/ingredients/salumi-e-proteine/guanciale.md)
 - [Spinaci](/api/ingredients/verdure/spinaci.md)
 - [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
+- [Patata Gialla](/api/ingredients/verdure/Patata/patata-gialla.md)
+- [Patata Bianca](/api/ingredients/verdure/Patata/patata-bianca.md)
 ## Goes with spicesAndHerbs
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
-- [Maggiorana](/api/spices/erbe-mediterranee/maggiorana.md)
-- [Noce moscata](/api/spices/spezie-classiche/noce-moscata.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Maggiorana](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/maggiorana.md)
+- [Noce moscata](/api/ingredients/SpicesAndHerbs/spezie-classiche/noce-moscata.md)
+- [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)
+
+## Used for
+- [Brasato al vino rosso](/api/recipes/brasato-al-vino-rosso.md)

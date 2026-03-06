@@ -29,9 +29,15 @@ Ortaggio mediterraneo centrale in molte ricette del Sud Italia, ideale per fritt
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
 - [Ricotta](/api/ingredients/latticini-e-formaggi/ricotta.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
+- [Cipolla Rossa](/api/ingredients/verdure/Cipolla/cipolla-rossa.md)
+- [Pomodoro Ciliegino](/api/ingredients/verdure/Pomodoro/pomodoro-ciliegino.md)
 ## Goes with spicesAndHerbs
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Maggiorana](/api/spices/erbe-mediterranee/maggiorana.md)
-- [Paprika](/api/spices/spezie-classiche/paprika.md)
-- [Peperoncino secco](/api/spices/spezie-classiche/peperoncino-secco.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Maggiorana](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/maggiorana.md)
+- [Paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md)
+- [Peperoncino secco](/api/ingredients/SpicesAndHerbs/spezie-classiche/peperoncino-secco.md)
+- [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)
+
+## Used for
+- 

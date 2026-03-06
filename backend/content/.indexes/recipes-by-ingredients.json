@@ -2,10 +2,10 @@
   "name": "recipes-by-ingredients",
   "version": 1,
   "strategy": "key-set",
-  "updatedAt": "2026-03-06T00:56:46.189Z",
+  "updatedAt": "2026-03-06T13:57:01.126Z",
   "entries": {
     "Recipes/brasato-al-vino-rosso.md": [
-      "[pepe nero](/api/spices/spezie-classiche/pepe-nero.md) q.b.",
+      "[pepe nero](/api/ingredients/spicesandherbs/spezie-classiche/pepe-nero.md) q.b.",
       "[sale](/api/ingredients/dispensa/sale.md) q.b.",
       "aglio",
       "alloro",
@@ -36,7 +36,7 @@
     "Recipes/ragu-vegano-di-soia.md": [
       "[cipolla](/api/ingredients/verdure/cipolla.md) piccola",
       "[macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md) secco",
-      "[pepe nero](/api/spices/spezie-classiche/pepe-nero.md) q.b.",
+      "[pepe nero](/api/ingredients/spicesandherbs/spezie-classiche/pepe-nero.md) q.b.",
       "[sale](/api/ingredients/dispensa/sale.md) q.b.",
       "aglio",
       "alloro",
@@ -49,6 +49,15 @@
       "rosmarino",
       "salsa di soia",
       "sedano"
+    ],
+    "Recipes/Salsiccia_e_cipolle.md": [
+      "[pepe nero](/api/ingredients/spicesandherbs/spezie-classiche/pepe-nero.md) q.b.",
+      "[sale](/api/ingredients/dispensa/sale.md) q.b.",
+      "cipolla dorata",
+      "panini",
+      "rosmarino",
+      "salsicce fresche",
+      "vino bianco"
     ]
   }
 }

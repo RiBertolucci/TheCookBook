@@ -26,6 +26,10 @@ Ingrediente piccante usato per dare calore e profondità a sughi, soffritti e co
 - [Guanciale](/api/ingredients/salumi-e-proteine/guanciale.md)
 - [Pecorino Romano](/api/ingredients/latticini-e-formaggi/pecorino-romano.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
+- [Cipolla Bianca](/api/ingredients/verdure/Cipolla/cipolla-bianca.md)
 ## Goes with spicesAndHerbs
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+
+## Used for
+- 

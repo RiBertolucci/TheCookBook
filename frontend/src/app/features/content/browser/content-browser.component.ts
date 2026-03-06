@@ -148,6 +148,21 @@ export class ContentBrowserComponent implements OnInit, OnDestroy {
     });
   }
 
+  canAddActiveIngredientToShoppingList(): boolean {
+    const ingredientItem = this.getActiveIngredientShoppingItem();
+    if (!ingredientItem) return false;
+
+    const normalizedKey = this.shoppingListState.normalizeKey(ingredientItem);
+    return !this.shoppingItemKeys.has(normalizedKey);
+  }
+
+  addActiveIngredientToShoppingList(): void {
+    const ingredientItem = this.getActiveIngredientShoppingItem();
+    if (!ingredientItem) return;
+
+    this.shoppingListState.addItem(ingredientItem);
+  }
+
   deleteActiveFile(): void {
     this.deleteError = '';
     if (this.activeTabId === null) return;
@@ -244,6 +259,33 @@ export class ContentBrowserComponent implements OnInit, OnDestroy {
   private getActiveTab(): OpenTab | null {
     if (this.activeTabId === null) return null;
     return this.tabs.find(t => t.id === this.activeTabId) || null;
+  }
+
+  private getActiveIngredientShoppingItem(): string | null {
+    const activeTab = this.getActiveTab();
+    if (!activeTab || activeTab.section !== 'Ingredients') return null;
+
+    const heading = this.extractTitleFromMarkdown(activeTab.rawContent);
+    if (heading) return heading;
+
+    const fileName = String(activeTab.filename || '').split('/').filter(Boolean).pop() || '';
+    const fallback = fileName
+      .replace(/\.md$/i, '')
+      .replace(/[-_]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    return fallback || null;
+  }
+
+  private extractTitleFromMarkdown(markdown: string): string {
+    const line = String(markdown || '')
+      .split('\n')
+      .map((entry) => entry.trim())
+      .find((entry) => entry.startsWith('# '));
+
+    if (!line) return '';
+    return line.slice(2).trim();
   }
 
   private refreshOpenTabs(): void {

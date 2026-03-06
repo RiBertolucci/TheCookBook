@@ -32,8 +32,13 @@ Base liquida aromatica ottenuta da ortaggi e odori, fondamentale per cotture in 
 - [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 ## Goes with spicesAndHerbs
-- [Alloro](/api/spices/erbe-mediterranee/alloro.md)
-- [Rosmarino](/api/spices/erbe-mediterranee/rosmarino.md)
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Maggiorana](/api/spices/erbe-mediterranee/maggiorana.md)
-- [Prezzemolo](/api/spices/erbe-mediterranee/prezzemolo.md)
+- [Alloro](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md)
+- [Rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Maggiorana](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/maggiorana.md)
+- [Prezzemolo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/prezzemolo.md)
+
+
+## Used for
+- [Brasato al vino rosso](/api/recipes/brasato-al-vino-rosso.md)
+- [Ragù vegano di macinato di soia reidratato](/api/recipes/ragu-vegano-di-soia.md)

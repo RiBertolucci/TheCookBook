@@ -12,16 +12,14 @@ Miscela di spezie tipica dell'India, calda e profumata, usata per dare profondit
 - Chiodi di garofano
 - Noce moscata
 
-## Mixes Well With
-
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Paprika](/api/spices/spezie-classiche/paprika.md)
-- [Peperoncino secco](/api/spices/spezie-classiche/peperoncino-secco.md)
+## Goes with spicesAndHerbs
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md)
+- [Peperoncino secco](/api/ingredients/SpicesAndHerbs/spezie-classiche/peperoncino-secco.md)
 - Curcuma
-- Cumino
+- [Cumino](/api/ingredients/SpicesAndHerbs/spezie-classiche/cumino.md)
 - Coriandolo
-
-## Good With Ingredients
+## Goes with ingredients
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
 - [Cipolla](/api/ingredients/verdure/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)

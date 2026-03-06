@@ -30,9 +30,14 @@ Proteina vegetale disidratata, versatile e ad alta resa: ideale per ragù vegani
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Pomodoro](/api/ingredients/verdure/pomodoro.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
+- [Cipolla Dorata](/api/ingredients/verdure/Cipolla/cipolla-dorata.md)
 ## Goes with spicesAndHerbs
-- [Paprika](/api/spices/spezie-classiche/paprika.md)
-- [Cumino](/api/spices/spezie-classiche/cumino.md)
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Rosmarino](/api/spices/erbe-mediterranee/rosmarino.md)
-- [Alloro](/api/spices/erbe-mediterranee/alloro.md)
+- [Paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md)
+- [Cumino](/api/ingredients/SpicesAndHerbs/spezie-classiche/cumino.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)
+- [Alloro](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md)
+
+
+## Used for
+- [Ragù vegano di macinato di soia reidratato](/api/recipes/ragu-vegano-di-soia.md)

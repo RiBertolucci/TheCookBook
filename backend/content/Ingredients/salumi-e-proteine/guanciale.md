@@ -28,6 +28,9 @@ Salume stagionato ricavato dalla guancia del suino, protagonista in piatti roman
 - [Cipolla](/api/ingredients/verdure/cipolla.md)
 - [Peperoncino](/api/ingredients/verdure/peperoncino.md)
 ## Goes with spicesAndHerbs
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
-- [Peperoncino secco](/api/spices/spezie-classiche/peperoncino-secco.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Peperoncino secco](/api/ingredients/SpicesAndHerbs/spezie-classiche/peperoncino-secco.md)
+
+## Used for
+- 

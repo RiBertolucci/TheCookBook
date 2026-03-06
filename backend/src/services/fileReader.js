@@ -20,7 +20,22 @@ async function getIngredient(rootDir, filename) {
 
 async function getSpice(rootDir, filename) {
   logger.debug({ service: 'fileReader', method: 'getSpice', data: filename }, 'invoked');
-  return readMarkdownFile(rootDir, 'SpicesAndHerbs', filename);
+  const normalized = String(filename || '').replace(/\\/g, '/').replace(/^\/+/, '');
+  const withoutPrefix = normalized.toLowerCase().startsWith('spicesandherbs/')
+    ? normalized.slice('spicesandherbs/'.length)
+    : normalized;
+
+  const nestedRelativeFilename = `SpicesAndHerbs/${withoutPrefix}`;
+  const nestedResult = await readMarkdownFile(rootDir, 'Ingredients', nestedRelativeFilename);
+  if (nestedResult) {
+    return {
+      ...nestedResult,
+      type: 'ingredients'
+    };
+  }
+
+  // Legacy fallback for older repositories still using top-level SpicesAndHerbs.
+  return readMarkdownFile(rootDir, 'SpicesAndHerbs', withoutPrefix);
 }
 
 /**
@@ -29,15 +44,35 @@ async function getSpice(rootDir, filename) {
  */
 async function getContentHierarchy(rootDir) {
   logger.info({ service: 'fileReader', method: 'getContentHierarchy' }, 'starting hierarchy scan');
-  const hierarchy = {};
-  const folders = ['Recipes', 'Ingredients', 'SpicesAndHerbs'];
+  const hierarchy = {
+    Recipes: await scanFolderRecursive(path.join(rootDir, 'Recipes')),
+    Ingredients: await scanFolderRecursive(path.join(rootDir, 'Ingredients'))
+  };
 
-  for (const folder of folders) {
-    const folderPath = path.join(rootDir, folder);
-    hierarchy[folder] = await scanFolderRecursive(folderPath);
+  const nestedSpicesPath = path.join(rootDir, 'Ingredients', 'SpicesAndHerbs');
+  const legacySpicesPath = path.join(rootDir, 'SpicesAndHerbs');
+
+  const hasNestedSpices = await directoryExists(nestedSpicesPath);
+  const hasLegacySpices = await directoryExists(legacySpicesPath);
+
+  if (!hasNestedSpices && hasLegacySpices) {
+    if (!hierarchy['Ingredients']) {
+      hierarchy['Ingredients'] = { files: [], subdirs: {} };
+    }
+    hierarchy['Ingredients'].subdirs = hierarchy['Ingredients'].subdirs || {};
+    hierarchy['Ingredients'].subdirs['SpicesAndHerbs'] = await scanFolderRecursive(legacySpicesPath);
   }
 
   return hierarchy;
+}
+
+async function directoryExists(dirPath) {
+  try {
+    const stats = await fs.stat(dirPath);
+    return stats.isDirectory();
+  } catch {
+    return false;
+  }
 }
 
 /**

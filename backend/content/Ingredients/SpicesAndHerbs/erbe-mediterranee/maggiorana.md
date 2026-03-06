@@ -2,16 +2,14 @@
 
 Erba aromatica dolce e rotonda, affine all'origano ma più delicata, ottima in sughi, ripieni e piatti al forno.
 
-## Mixes Well With
-
-- [Origano](/api/spices/erbe-mediterranee/oregano.md)
-- [Timo](/api/spices/erbe-mediterranee/timo.md)
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- Salvia
-- Rosmarino
-
-## Good With Ingredients
+## Goes with spicesAndHerbs
+- [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)
+- [Timo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/timo.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Salvia](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/salvia.md)
+- [Rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)
+## Goes with ingredients
 - [Pomodoro](/api/ingredients/verdure/pomodoro.md)
 - [Melanzana](/api/ingredients/verdure/melanzana.md)
 - [Zucchina](/api/ingredients/verdure/zucchina.md)

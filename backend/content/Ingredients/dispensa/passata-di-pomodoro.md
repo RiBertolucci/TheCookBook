@@ -28,9 +28,15 @@ Pomodoro setacciato e conservato, base pratica per sughi, ragù e cotture in umi
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
 - [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)
+- [Pomodoro del Piennolo](/api/ingredients/verdure/Pomodoro/pomodoro-del-piennolo.md)
+- [Pomodoro Roma](/api/ingredients/verdure/Pomodoro/pomodoro-roma.md)
 ## Goes with spicesAndHerbs
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
-- [Origano](/api/spices/erbe-mediterranee/oregano.md)
-- [Rosmarino](/api/spices/erbe-mediterranee/rosmarino.md)
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Paprika](/api/spices/spezie-classiche/paprika.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)
+- [Rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md)
+
+
+## Used for
+- [Ragù vegano di macinato di soia reidratato](/api/recipes/ragu-vegano-di-soia.md)

@@ -5,14 +5,14 @@ Ragù vegetale intenso e speziato, con macinato di soia ammollato in brodo aroma
 ## Ingredients
 - 120 g [macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md) secco
 - 700 ml [brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md) caldo (anche da dado, seguendo le dosi in etichetta)
-- 1ts [cumino](/api/spices/spezie-classiche/cumino.md)
-- 1ts [paprika](/api/spices/spezie-classiche/paprika.md) piccante (oppure dolce)
+- 1ts [cumino](/api/ingredients/SpicesAndHerbs/spezie-classiche/cumino.md)
+- 1ts [paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md) piccante (oppure dolce)
 - 2 bts [salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
 - 1 bts [olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [sale](/api/ingredients/dispensa/sale.md) q.b.
-- [pepe nero](/api/spices/spezie-classiche/pepe-nero.md) q.b.
-- 1 foglia di [alloro](/api/spices/erbe-mediterranee/alloro.md) (facoltativo)
-- 1 rametto di [rosmarino](/api/spices/erbe-mediterranee/rosmarino.md) (facoltativo)
+- [pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md) q.b.
+- 1 foglia di [alloro](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md) (facoltativo)
+- 1 rametto di [rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md) (facoltativo)
 - 1 [cipolla](/api/ingredients/verdure/cipolla.md) piccola
 - 1 [carota](/api/ingredients/verdure/carota.md)
 - 1 costa di [sedano](/api/ingredients/verdure/sedano.md)

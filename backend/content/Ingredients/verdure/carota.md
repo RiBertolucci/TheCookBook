@@ -36,9 +36,13 @@ Radice dolce usata per bilanciare acidità e sapidità, spesso nella base del so
 - [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)
 - [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
+- [Cipolla Dorata](/api/ingredients/verdure/Cipolla/cipolla-dorata.md)
 ## Goes with spicesAndHerbs
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Alloro](/api/spices/erbe-mediterranee/alloro.md)
-- [Cannella](/api/spices/spezie-classiche/cannella.md)
-- [Cardamomo](/api/spices/spezie-classiche/cardamomo.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Alloro](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md)
+- [Cannella](/api/ingredients/SpicesAndHerbs/spezie-classiche/cannella.md)
+- [Cardamomo](/api/ingredients/SpicesAndHerbs/spezie-classiche/cardamomo.md)
+
+## Used for
+- [Ragù vegano di macinato di soia reidratato](/api/recipes/ragu-vegano-di-soia.md)

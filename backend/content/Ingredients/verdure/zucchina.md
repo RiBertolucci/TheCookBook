@@ -34,9 +34,16 @@ Ortaggio estivo molto usato in padella, al forno, nelle paste e nei ripieni, dal
 - [Uova](/api/ingredients/salumi-e-proteine/uova.md)
 - [Carota](/api/ingredients/verdure/carota.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
+- [Cipolla Rossa](/api/ingredients/verdure/Cipolla/cipolla-rossa.md)
+- [Pomodoro Datterino](/api/ingredients/verdure/Pomodoro/pomodoro-datterino.md)
+- [Pomodoro Ciliegino](/api/ingredients/verdure/Pomodoro/pomodoro-ciliegino.md)
 ## Goes with spicesAndHerbs
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Maggiorana](/api/spices/erbe-mediterranee/maggiorana.md)
-- [Prezzemolo](/api/spices/erbe-mediterranee/prezzemolo.md)
-- [Paprika](/api/spices/spezie-classiche/paprika.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Maggiorana](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/maggiorana.md)
+- [Prezzemolo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/prezzemolo.md)
+- [Paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md)
+- [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)
+
+## Used for
+- 

@@ -43,10 +43,17 @@ Ingrediente simbolo della cucina italiana, usato fresco, in salsa o passata per 
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
+- [Cipolla Bianca](/api/ingredients/verdure/Cipolla/cipolla-bianca.md)
+- [Cipolla Dorata](/api/ingredients/verdure/Cipolla/cipolla-dorata.md)
+- [Cipolla Rossa](/api/ingredients/verdure/Cipolla/cipolla-rossa.md)
 ## Goes with spicesAndHerbs
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Maggiorana](/api/spices/erbe-mediterranee/maggiorana.md)
-- [Cumino](/api/spices/spezie-classiche/cumino.md)
-- [Paprika](/api/spices/spezie-classiche/paprika.md)
-- [Peperoncino secco](/api/spices/spezie-classiche/peperoncino-secco.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Maggiorana](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/maggiorana.md)
+- [Cumino](/api/ingredients/SpicesAndHerbs/spezie-classiche/cumino.md)
+- [Paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md)
+- [Peperoncino secco](/api/ingredients/SpicesAndHerbs/spezie-classiche/peperoncino-secco.md)
+- [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)
+
+## Used for
+- 

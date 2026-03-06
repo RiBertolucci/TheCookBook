@@ -2,7 +2,7 @@
   "name": "ingredients-catalog",
   "version": 1,
   "strategy": "key-set",
-  "updatedAt": "2026-03-06T00:56:46.191Z",
+  "updatedAt": "2026-03-06T13:57:01.127Z",
   "entries": {
     "Ingredients/dispensa/brodo-vegetale.md": [
       "brodo vegetale"
@@ -70,11 +70,74 @@
     "Ingredients/salumi-e-proteine/uova.md": [
       "uova"
     ],
+    "Ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md": [
+      "alloro"
+    ],
+    "Ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md": [
+      "basilico"
+    ],
+    "Ingredients/SpicesAndHerbs/erbe-mediterranee/maggiorana.md": [
+      "maggiorana"
+    ],
+    "Ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md": [
+      "oregano"
+    ],
+    "Ingredients/SpicesAndHerbs/erbe-mediterranee/prezzemolo.md": [
+      "prezzemolo"
+    ],
+    "Ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md": [
+      "rosmarino"
+    ],
+    "Ingredients/SpicesAndHerbs/erbe-mediterranee/salvia.md": [
+      "salvia"
+    ],
+    "Ingredients/SpicesAndHerbs/erbe-mediterranee/timo.md": [
+      "timo"
+    ],
+    "Ingredients/SpicesAndHerbs/mixes/garam-masala.md": [
+      "garam masala"
+    ],
+    "Ingredients/SpicesAndHerbs/spezie-classiche/cannella.md": [
+      "cannella"
+    ],
+    "Ingredients/SpicesAndHerbs/spezie-classiche/cardamomo.md": [
+      "cardamomo"
+    ],
+    "Ingredients/SpicesAndHerbs/spezie-classiche/chiodi-di-garofano.md": [
+      "chiodi di garofano"
+    ],
+    "Ingredients/SpicesAndHerbs/spezie-classiche/coriandolo-in-semi.md": [
+      "coriandolo in semi"
+    ],
+    "Ingredients/SpicesAndHerbs/spezie-classiche/cumino.md": [
+      "cumino"
+    ],
+    "Ingredients/SpicesAndHerbs/spezie-classiche/noce-moscata.md": [
+      "noce moscata"
+    ],
+    "Ingredients/SpicesAndHerbs/spezie-classiche/paprika.md": [
+      "paprika"
+    ],
+    "Ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md": [
+      "pepe nero"
+    ],
+    "Ingredients/SpicesAndHerbs/spezie-classiche/peperoncino-secco.md": [
+      "peperoncino secco"
+    ],
     "Ingredients/verdure/aglio.md": [
       "aglio"
     ],
     "Ingredients/verdure/carota.md": [
       "carota"
+    ],
+    "Ingredients/verdure/Cipolla/cipolla-bianca.md": [
+      "cipolla bianca"
+    ],
+    "Ingredients/verdure/Cipolla/cipolla-dorata.md": [
+      "cipolla dorata"
+    ],
+    "Ingredients/verdure/Cipolla/cipolla-rossa.md": [
+      "cipolla rossa"
     ],
     "Ingredients/verdure/cipolla.md": [
       "cipolla"
@@ -85,14 +148,50 @@
     "Ingredients/verdure/melanzana.md": [
       "melanzana"
     ],
+    "Ingredients/verdure/Patata/patata-americana.md": [
+      "patata americana"
+    ],
+    "Ingredients/verdure/Patata/patata-bianca.md": [
+      "patata bianca"
+    ],
+    "Ingredients/verdure/Patata/patata-gialla.md": [
+      "patata gialla"
+    ],
     "Ingredients/verdure/Patata/Patata-novella.md": [
       "patata novella"
+    ],
+    "Ingredients/verdure/Patata/patata-rossa.md": [
+      "patata rossa"
+    ],
+    "Ingredients/verdure/Patata/patata-viola.md": [
+      "patata viola"
     ],
     "Ingredients/verdure/peperoncino.md": [
       "peperoncino"
     ],
     "Ingredients/verdure/piselli.md": [
       "piselli"
+    ],
+    "Ingredients/verdure/Pomodoro/pomodoro-ciliegino.md": [
+      "pomodoro ciliegino"
+    ],
+    "Ingredients/verdure/Pomodoro/pomodoro-costoluto-fiorentino.md": [
+      "pomodoro costoluto fiorentino"
+    ],
+    "Ingredients/verdure/Pomodoro/pomodoro-cuore-di-bue.md": [
+      "pomodoro cuore di bue"
+    ],
+    "Ingredients/verdure/Pomodoro/pomodoro-datterino.md": [
+      "pomodoro datterino"
+    ],
+    "Ingredients/verdure/Pomodoro/pomodoro-del-piennolo.md": [
+      "pomodoro del piennolo"
+    ],
+    "Ingredients/verdure/Pomodoro/pomodoro-roma.md": [
+      "pomodoro roma"
+    ],
+    "Ingredients/verdure/Pomodoro/pomodoro-san-marzano.md": [
+      "pomodoro san marzano"
     ],
     "Ingredients/verdure/pomodoro.md": [
       "pomodoro"

@@ -31,9 +31,14 @@ Ingrediente tecnico e nutrizionale molto usato in impasti, ripieni, paste fresch
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
 - [Pecorino Romano](/api/ingredients/latticini-e-formaggi/pecorino-romano.md)
 - [Spinaci](/api/ingredients/verdure/spinaci.md)
+- [Patata Gialla](/api/ingredients/verdure/Patata/patata-gialla.md)
+- [Patata Bianca](/api/ingredients/verdure/Patata/patata-bianca.md)
 ## Goes with spicesAndHerbs
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
-- [Maggiorana](/api/spices/erbe-mediterranee/maggiorana.md)
-- [Prezzemolo](/api/spices/erbe-mediterranee/prezzemolo.md)
-- [Salvia](/api/spices/erbe-mediterranee/salvia.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Maggiorana](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/maggiorana.md)
+- [Prezzemolo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/prezzemolo.md)
+- [Salvia](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/salvia.md)
+
+## Used for
+- 

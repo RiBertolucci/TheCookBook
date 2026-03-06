@@ -13,13 +13,13 @@ Framework: Angular 13
 
 ## Feature Components
 - `features/content/browser/*`: file tree + viewer tabs
-- `features/content/editor/*`: markdown create/edit forms
+- `features/content/editor/*`: markdown create/edit forms (includes ingredient `Used for` recipe list)
 - `features/search/*`: search by indexes, preview pane
 - `features/shopping-list/*`: list management + telegram send/load
 - `features/viewer/*`: markdown rendering support
 
 ## Core Services
-- `core/services/content.service.ts`: all HTTP API calls
+- `core/services/content.service.ts`: all HTTP API calls (canonical spices via `/api/ingredients/SpicesAndHerbs/...`)
 - `core/services/shopping-list-state.service.ts`: shopping state store
 - `core/services/recipe-ingredient-render.service.ts`: recipe list decoration (add button, family dropdown)
 - `core/services/logger.service.ts`: client logging
@@ -29,6 +29,8 @@ Framework: Angular 13
 - API via proxy config in `frontend/proxy.conf.json`
 
 ## Notable UI Flows
+- Main tab switches keep open-file state (overview/search/shopping).
+- Ingredient viewer shows `+` next to edit only when active ingredient is not already in shopping list.
 - Settings menu contains theme + force indexing + telegram add user.
 - Shopping target dropdown has send/load target pickers.
 - Recipe ingredient family arrow opens variants dropdown.

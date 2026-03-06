@@ -33,11 +33,16 @@ Salume suino molto usato per dare grasso, sapore e rosolatura a soffritti, sughi
 - [Piselli](/api/ingredients/verdure/piselli.md)
 - [Sedano](/api/ingredients/verdure/sedano.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
+- [Patata Rossa](/api/ingredients/verdure/Patata/patata-rossa.md)
 ## Goes with spicesAndHerbs
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
-- [Alloro](/api/spices/erbe-mediterranee/alloro.md)
-- [Rosmarino](/api/spices/erbe-mediterranee/rosmarino.md)
-- [Timo](/api/spices/erbe-mediterranee/timo.md)
-- [Paprika](/api/spices/spezie-classiche/paprika.md)
-- [Peperoncino secco](/api/spices/spezie-classiche/peperoncino-secco.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Alloro](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md)
+- [Rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)
+- [Timo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/timo.md)
+- [Paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md)
+- [Peperoncino secco](/api/ingredients/SpicesAndHerbs/spezie-classiche/peperoncino-secco.md)
+- [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)
+
+## Used for
+- 

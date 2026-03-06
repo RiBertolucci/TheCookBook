@@ -14,7 +14,8 @@ Root: `backend/src`
 ## Core Services
 - `services/sync.js`: orchestrates markdown sync
 - `services/parser.js`: markdown section parsing
-- `services/linker.js`: auto-link logic
+- `services/linker.js`: auto-link logic, including ingredient `Used for` recipe linking/back-links
+- `services/fileReader.js`: markdown reads + hierarchy shape
 - `services/metadata.js`: tracks file mtimes
 - `services/index-store.service.js`: persistent index operations
 - `services/index-search.service.js`: index search
@@ -36,6 +37,8 @@ Root: `backend/src`
 
 ## Critical Invariants
 - Content lives under `backend/content/*`.
+- Spices/herbs are canonically stored under `backend/content/Ingredients/SpicesAndHerbs/*`.
+- Canonical spice links point to `/api/ingredients/SpicesAndHerbs/...`.
 - API always returns JSON.
 - Telegram features require valid `TELEGRAM_BOT_TOKEN`.
 - Route order matters for specific vs wildcard endpoints.

@@ -28,6 +28,9 @@ Verdura a foglia molto usata in ripieni, contorni, torte salate e primi della tr
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
 ## Goes with spicesAndHerbs
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
-- [Noce moscata](/api/spices/spezie-classiche/noce-moscata.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Noce moscata](/api/ingredients/SpicesAndHerbs/spezie-classiche/noce-moscata.md)
+
+## Used for
+- 

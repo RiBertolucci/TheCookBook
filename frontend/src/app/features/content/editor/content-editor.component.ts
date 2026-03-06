@@ -32,6 +32,7 @@ export class ContentEditorComponent implements OnInit, OnChanges {
   ingredientSubstitutes: string[] = [''];
   ingredientGoesWithIngredients: string[] = [''];
   ingredientGoesWithSpicesAndHerbs: string[] = [''];
+  ingredientUsedFor: string[] = [''];
 
   spiceMixesWellWith: string[] = [''];
   spiceGoodWithIngredients: string[] = [''];
@@ -234,16 +235,20 @@ export class ContentEditorComponent implements OnInit, OnChanges {
 
       lines.push('## Goes with spicesAndHerbs');
       this.pushLinkedSpices(lines, this.ingredientGoesWithSpicesAndHerbs);
+      lines.push('');
+
+      lines.push('## Used for');
+      this.pushLinkedRecipes(lines, this.ingredientUsedFor);
       return lines.join('\n');
     }
 
     if (this.selectedKind === 'spice') {
-      lines.push('## Mixes Well With');
+      lines.push('## Goes with spicesAndHerbs');
       lines.push('');
       this.pushBullets(lines, this.spiceMixesWellWith);
       lines.push('');
 
-      lines.push('## Good With Ingredients');
+      lines.push('## Goes with ingredients');
       lines.push('');
       this.pushBullets(lines, this.spiceGoodWithIngredients);
       return lines.join('\n');
@@ -254,12 +259,12 @@ export class ContentEditorComponent implements OnInit, OnChanges {
       this.pushLinkedSpices(lines, this.mixComposedOf);
       lines.push('');
 
-      lines.push('## Mixes Well With');
+      lines.push('## Goes with spicesAndHerbs');
       lines.push('');
       this.pushBullets(lines, this.mixMixesWellWith);
       lines.push('');
 
-      lines.push('## Good With Ingredients');
+      lines.push('## Goes with ingredients');
       lines.push('');
       this.pushBullets(lines, this.mixGoodWithIngredients);
       return lines.join('\n');
@@ -308,6 +313,15 @@ export class ContentEditorComponent implements OnInit, OnChanges {
     cleaned.forEach(value => lines.push(`- ${this.toSpiceReference(value)}`));
   }
 
+  private pushLinkedRecipes(lines: string[], values: string[]): void {
+    const cleaned = values.map(v => v.trim()).filter(Boolean);
+    if (cleaned.length === 0) {
+      lines.push('- ');
+      return;
+    }
+    cleaned.forEach(value => lines.push(`- ${this.toRecipeReference(value)}`));
+  }
+
   private pushRecipeIngredients(lines: string[]): void {
     const rowCount = Math.max(this.recipeIngredientNames.length, this.recipeIngredientQuantities.length);
     const output: string[] = [];
@@ -342,10 +356,18 @@ export class ContentEditorComponent implements OnInit, OnChanges {
     const resolved = this.resolveSectionFile('SpicesAndHerbs', value);
     if (!resolved) return value;
     const label = this.toTitleLabel(resolved.split('/').pop()?.replace(/\.md$/i, '') || value);
-    return `[${label}](/api/spices/${resolved})`;
+    return `[${label}](/api/ingredients/SpicesAndHerbs/${resolved})`;
   }
 
-  private resolveSectionFile(section: 'Ingredients' | 'SpicesAndHerbs', inputValue: string): string | null {
+  private toRecipeReference(value: string): string {
+    if (value.startsWith('[') && value.includes('](')) return value;
+    const resolved = this.resolveSectionFile('Recipes', value);
+    if (!resolved) return value;
+    const label = this.toTitleLabel(resolved.split('/').pop()?.replace(/\.md$/i, '') || value);
+    return `[${label}](/api/recipes/${resolved})`;
+  }
+
+  private resolveSectionFile(section: 'Ingredients' | 'SpicesAndHerbs' | 'Recipes', inputValue: string): string | null {
     const files = this.collectSectionFiles(section);
     if (files.length === 0) return null;
 
@@ -367,8 +389,11 @@ export class ContentEditorComponent implements OnInit, OnChanges {
     return null;
   }
 
-  private collectSectionFiles(section: 'Ingredients' | 'SpicesAndHerbs'): string[] {
-    const rootNode = this.hierarchy?.[section];
+  private collectSectionFiles(section: 'Ingredients' | 'SpicesAndHerbs' | 'Recipes'): string[] {
+    const rootNode = section === 'SpicesAndHerbs'
+      ? this.getSpicesRootNode()
+      : this.hierarchy?.[section];
+
     if (!rootNode) return [];
 
     const output: string[] = [];
@@ -390,9 +415,9 @@ export class ContentEditorComponent implements OnInit, OnChanges {
       case 'ingredient':
         return 'Ingredients';
       case 'spice':
-        return 'SpicesAndHerbs';
+        return 'Ingredients/SpicesAndHerbs';
       case 'mix':
-        return 'SpicesAndHerbs/mixes';
+        return 'Ingredients/SpicesAndHerbs/mixes';
       case 'recipe':
         return 'Recipes';
       default:
@@ -402,10 +427,19 @@ export class ContentEditorComponent implements OnInit, OnChanges {
 
   private getRootNodeForKind(kind: ContentKind): FolderNode | null {
     if (kind === 'mix') {
-      return this.hierarchy?.['SpicesAndHerbs']?.subdirs?.['mixes'] || null;
+      return this.getSpicesRootNode()?.subdirs?.['mixes'] || null;
+    }
+    if (kind === 'spice') {
+      return this.getSpicesRootNode();
     }
     const root = this.baseFolderForKind(kind);
     return this.hierarchy?.[root] || null;
+  }
+
+  private getSpicesRootNode(): FolderNode | null {
+    return this.hierarchy?.['Ingredients']?.subdirs?.['SpicesAndHerbs']
+      || this.hierarchy?.['SpicesAndHerbs']
+      || null;
   }
 
   private getAllFolderPathsForSelectedType(): string[] {
@@ -441,6 +475,7 @@ export class ContentEditorComponent implements OnInit, OnChanges {
     this.ingredientSubstitutes = [''];
     this.ingredientGoesWithIngredients = [''];
     this.ingredientGoesWithSpicesAndHerbs = [''];
+    this.ingredientUsedFor = [''];
     this.spiceMixesWellWith = [''];
     this.spiceGoodWithIngredients = [''];
     this.mixComposedOf = [''];
@@ -464,6 +499,8 @@ export class ContentEditorComponent implements OnInit, OnChanges {
         return this.ingredientGoesWithIngredients;
       case 'ingredientGoesWithSpicesAndHerbs':
         return this.ingredientGoesWithSpicesAndHerbs;
+      case 'ingredientUsedFor':
+        return this.ingredientUsedFor;
       case 'spiceMixesWellWith':
         return this.spiceMixesWellWith;
       case 'spiceGoodWithIngredients':
@@ -482,8 +519,13 @@ export class ContentEditorComponent implements OnInit, OnChanges {
   }
 
   private kindFromSection(section: string, filename: string, content: string): ContentKind | null {
+    const normalizedFilename = (filename || '').replace(/\\/g, '/').toLowerCase();
+
     switch (section) {
       case 'Ingredients':
+        if (normalizedFilename.startsWith('spicesandherbs/')) {
+          return this.isMixFile(filename, content) ? 'mix' : 'spice';
+        }
         return 'ingredient';
       case 'SpicesAndHerbs':
         return this.isMixFile(filename, content) ? 'mix' : 'spice';
@@ -535,6 +577,16 @@ export class ContentEditorComponent implements OnInit, OnChanges {
       return values.length ? values : [''];
     };
 
+    const bulletsFromCandidates = (names: string[]): string[] => {
+      for (const name of names) {
+        const values = bullets(name);
+        if (values.length !== 1 || values[0] !== '') {
+          return values;
+        }
+      }
+      return [''];
+    };
+
     const numbered = (name: string): string[] => {
       const block = sectionBlocks[name] || [];
       const values = block
@@ -550,19 +602,20 @@ export class ContentEditorComponent implements OnInit, OnChanges {
       this.ingredientSubstitutes = bullets('Substitutes');
       this.ingredientGoesWithIngredients = bullets('Goes with ingredients');
       this.ingredientGoesWithSpicesAndHerbs = bullets('Goes with spicesAndHerbs');
+      this.ingredientUsedFor = bullets('Used for');
       return;
     }
 
     if (kind === 'spice') {
-      this.spiceMixesWellWith = bullets('Mixes Well With');
-      this.spiceGoodWithIngredients = bullets('Good With Ingredients');
+      this.spiceMixesWellWith = bulletsFromCandidates(['Goes with spicesAndHerbs', 'Mixes Well With']);
+      this.spiceGoodWithIngredients = bulletsFromCandidates(['Goes with ingredients', 'Good With Ingredients']);
       return;
     }
 
     if (kind === 'mix') {
       this.mixComposedOf = bullets('Composed of');
-      this.mixMixesWellWith = bullets('Mixes Well With');
-      this.mixGoodWithIngredients = bullets('Good With Ingredients');
+      this.mixMixesWellWith = bulletsFromCandidates(['Goes with spicesAndHerbs', 'Mixes Well With']);
+      this.mixGoodWithIngredients = bulletsFromCandidates(['Goes with ingredients', 'Good With Ingredients']);
       return;
     }
 

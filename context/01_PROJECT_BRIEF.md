@@ -12,9 +12,9 @@ Primary-data-store: Markdown files on disk
 - `context/` (LLM context pack)
 
 ## Main Product Flows
-- Browse recipes/ingredients/spices from markdown files.
+- Browse recipes and ingredients from markdown files, including spices/herbs under `Ingredients/SpicesAndHerbs`.
 - Edit and create markdown files from UI.
-- Auto-link recipe ingredients/spices.
+- Auto-link recipe ingredients/spices and ingredient `Used for` recipe references.
 - Index-based search.
 - Shopping list + Telegram send/load.
 
@@ -25,7 +25,10 @@ Primary-data-store: Markdown files on disk
 
 ## Key Facts
 - Backend loads env from `backend/.env` via `dotenv`.
-- Content roots: `backend/content/Recipes`, `Ingredients`, `SpicesAndHerbs`.
+- Content roots: `backend/content/Recipes` and `backend/content/Ingredients`.
+- Spices/herbs are stored under `backend/content/Ingredients/SpicesAndHerbs`.
+- Canonical spice links use `/api/ingredients/SpicesAndHerbs/<relative-path>.md`.
+- Legacy read alias `/api/spices/*filename` is still supported.
 - Generated backend artifacts:
 - `backend/content/sync-metadata.json`
 - `backend/content/.indexes/*.json`

@@ -29,6 +29,9 @@ Radice aromatica piccante e profumata, fondamentale in molte preparazioni indian
 - [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 ## Goes with spicesAndHerbs
-- [Garam Masala](/api/spices/mixes/garam-masala.md)
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Paprika](/api/spices/spezie-classiche/paprika.md)
+- [Garam Masala](/api/ingredients/SpicesAndHerbs/mixes/garam-masala.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md)
+
+## Used for
+- [Pollo Garam Masala con Riso Basmati](/api/recipes/pollo-garam-masala.md)

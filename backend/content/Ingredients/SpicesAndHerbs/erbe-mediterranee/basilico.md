@@ -2,16 +2,16 @@
 
 Erba aromatica simbolo della cucina italiana, fresca e profumata, usata soprattutto a fine cottura o a crudo.
 
-## Mixes Well With
-- [Origano](/api/spices/erbe-mediterranee/oregano.md)
-- [Rosmarino](/api/spices/erbe-mediterranee/rosmarino.md)
-- [Timo](/api/spices/erbe-mediterranee/timo.md)
-- [Prezzemolo](/api/spices/erbe-mediterranee/prezzemolo.md)
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- Maggiorana
+## Goes with spicesAndHerbs
+- [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)
+- [Rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)
+- [Timo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/timo.md)
+- [Prezzemolo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/prezzemolo.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Maggiorana](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/maggiorana.md)
 - Erba cipollina
-- [Peperoncino secco](/api/spices/spezie-classiche/peperoncino-secco.md)
-## Good With Ingredients
+- [Peperoncino secco](/api/ingredients/SpicesAndHerbs/spezie-classiche/peperoncino-secco.md)
+## Goes with ingredients
 - [Pomodoro](/api/ingredients/verdure/pomodoro.md)
 - [Mozzarella](/api/ingredients/latticini-e-formaggi/mozzarella.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
@@ -37,3 +37,11 @@ Erba aromatica simbolo della cucina italiana, fresca e profumata, usata soprattu
 - [Spinaci](/api/ingredients/verdure/spinaci.md)
 - [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
+- [Cipolla Rossa](/api/ingredients/verdure/Cipolla/cipolla-rossa.md)
+- [Pomodoro Cuore di Bue](/api/ingredients/verdure/Pomodoro/pomodoro-cuore-di-bue.md)
+- [Pomodoro Datterino](/api/ingredients/verdure/Pomodoro/pomodoro-datterino.md)
+- [Pomodoro San Marzano](/api/ingredients/verdure/Pomodoro/pomodoro-san-marzano.md)
+- [Pomodoro Ciliegino](/api/ingredients/verdure/Pomodoro/pomodoro-ciliegino.md)
+- [Pomodoro Costoluto Fiorentino](/api/ingredients/verdure/Pomodoro/pomodoro-costoluto-fiorentino.md)
+- [Pomodoro del Piennolo](/api/ingredients/verdure/Pomodoro/pomodoro-del-piennolo.md)
+- [Pomodoro Roma](/api/ingredients/verdure/Pomodoro/pomodoro-roma.md)

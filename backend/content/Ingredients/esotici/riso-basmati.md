@@ -29,10 +29,13 @@ Riso a chicco lungo e profumato, ideale come accompagnamento per piatti speziati
 - [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
 - [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
 ## Goes with spicesAndHerbs
-- [Garam Masala](/api/spices/mixes/garam-masala.md)
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Alloro](/api/spices/erbe-mediterranee/alloro.md)
-- [Cannella](/api/spices/spezie-classiche/cannella.md)
-- [Cardamomo](/api/spices/spezie-classiche/cardamomo.md)
-- [Chiodi di garofano](/api/spices/spezie-classiche/chiodi-di-garofano.md)
-- [Cumino](/api/spices/spezie-classiche/cumino.md)
+- [Garam Masala](/api/ingredients/SpicesAndHerbs/mixes/garam-masala.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Alloro](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md)
+- [Cannella](/api/ingredients/SpicesAndHerbs/spezie-classiche/cannella.md)
+- [Cardamomo](/api/ingredients/SpicesAndHerbs/spezie-classiche/cardamomo.md)
+- [Chiodi di garofano](/api/ingredients/SpicesAndHerbs/spezie-classiche/chiodi-di-garofano.md)
+- [Cumino](/api/ingredients/SpicesAndHerbs/spezie-classiche/cumino.md)
+
+## Used for
+- [Pollo Garam Masala con Riso Basmati](/api/recipes/pollo-garam-masala.md)

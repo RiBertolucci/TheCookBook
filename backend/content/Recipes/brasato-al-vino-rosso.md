@@ -10,13 +10,13 @@ Secondo piatto a lunga cottura, ricco e morbido, con fondo aromatico di verdure 
 - 2 coste di [sedano](/api/ingredients/verdure/sedano.md)
 - 1 spicchio di [aglio](/api/ingredients/verdure/aglio.md)
 - 2 bts [olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
-- 1 foglia di [alloro](/api/spices/erbe-mediterranee/alloro.md)
-- 1 rametto di [rosmarino](/api/spices/erbe-mediterranee/rosmarino.md)
-- 2 [chiodi di garofano](/api/spices/spezie-classiche/chiodi-di-garofano.md) (facoltativi)
+- 1 foglia di [alloro](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md)
+- 1 rametto di [rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)
+- 2 [chiodi di garofano](/api/ingredients/SpicesAndHerbs/spezie-classiche/chiodi-di-garofano.md) (facoltativi)
 - 400 ml [brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
 - 1 bts [farina 00](/api/ingredients/dispensa/farina-00.md) (facoltativo, per addensare)
 - [sale](/api/ingredients/dispensa/sale.md) q.b.
-- [pepe nero](/api/spices/spezie-classiche/pepe-nero.md) q.b.
+- [pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md) q.b.
 ## Procedure
 
 1. Asciuga il manzo, salalo leggermente e pepalo.

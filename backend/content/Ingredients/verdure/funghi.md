@@ -34,9 +34,12 @@ Categoria molto usata nella cucina italiana per sughi, risotti, contorni e ripie
 - [Zucchina](/api/ingredients/verdure/zucchina.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 ## Goes with spicesAndHerbs
-- [Pepe nero](/api/spices/spezie-classiche/pepe-nero.md)
-- [Basilico](/api/spices/erbe-mediterranee/basilico.md)
-- [Prezzemolo](/api/spices/erbe-mediterranee/prezzemolo.md)
-- [Rosmarino](/api/spices/erbe-mediterranee/rosmarino.md)
-- [Salvia](/api/spices/erbe-mediterranee/salvia.md)
-- [Timo](/api/spices/erbe-mediterranee/timo.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Prezzemolo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/prezzemolo.md)
+- [Rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)
+- [Salvia](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/salvia.md)
+- [Timo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/timo.md)
+
+## Used for
+- 

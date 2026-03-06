@@ -1,0 +1,34 @@
+# Rosmarino
+
+Erba aromatica resinosa e persistente, perfetta per cotture lunghe, arrosti, patate al forno e fondi saporiti.
+
+## Goes with spicesAndHerbs
+- [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)
+- [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
+- [Timo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/timo.md)
+- [Alloro](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
+- [Salvia](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/salvia.md)
+- [Maggiorana](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/maggiorana.md)
+## Goes with ingredients
+- [Patata](/api/ingredients/verdure/patata.md)
+- [Aglio](/api/ingredients/verdure/aglio.md)
+- [Funghi](/api/ingredients/verdure/funghi.md)
+- [Salsiccia](/api/ingredients/salumi-e-proteine/salsiccia.md)
+- [Pancetta](/api/ingredients/salumi-e-proteine/pancetta.md)
+- [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
+- [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
+- [Sale](/api/ingredients/dispensa/sale.md)
+- [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
+- [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)
+- [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
+- [Cipolla Bianca](/api/ingredients/verdure/Cipolla/cipolla-bianca.md)
+- [Cipolla Dorata](/api/ingredients/verdure/Cipolla/cipolla-dorata.md)
+- [Patata Americana](/api/ingredients/verdure/Patata/patata-americana.md)
+- [Patata Gialla](/api/ingredients/verdure/Patata/patata-gialla.md)
+- [Patata Rossa](/api/ingredients/verdure/Patata/patata-rossa.md)
+- [Patata Bianca](/api/ingredients/verdure/Patata/patata-bianca.md)
+- [Patata Viola](/api/ingredients/verdure/Patata/patata-viola.md)
+- [Pomodoro Costoluto Fiorentino](/api/ingredients/verdure/Pomodoro/pomodoro-costoluto-fiorentino.md)
