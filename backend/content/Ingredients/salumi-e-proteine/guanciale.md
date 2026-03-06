@@ -21,11 +21,11 @@ Salume stagionato ricavato dalla guancia del suino, protagonista in piatti roman
 - Tofu affumicato a cubetti (croccantezza in padella)
 
 ## Goes with ingredients
-- [Pomodoro](/api/ingredients/verdure/pomodoro.md)
+- [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
 - [Pecorino Romano](/api/ingredients/latticini-e-formaggi/pecorino-romano.md)
 - [Uova](/api/ingredients/salumi-e-proteine/uova.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Peperoncino](/api/ingredients/verdure/peperoncino.md)
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)

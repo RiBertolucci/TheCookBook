@@ -13,7 +13,7 @@ Spezia agrumata e calda, molto usata in miscele e tostature per dare profondità
 
 ## Goes with ingredients
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Patata](/api/ingredients/verdure/patata.md)
 - Lenticchie rosse

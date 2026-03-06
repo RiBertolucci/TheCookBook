@@ -21,12 +21,12 @@ Ortaggio aromatico e strutturante, pilastro del soffritto e ingrediente chiave p
 - Carota + finocchio (mix tecnico per bilanciare aroma)
 
 ## Goes with ingredients
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
-- [Carota](/api/ingredients/verdure/carota.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
+- [Carota](/api/ingredients/verdure/Carota/carota.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
-- [Pomodoro](/api/ingredients/verdure/pomodoro.md)
+- [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
 - [Patata](/api/ingredients/verdure/patata.md)
-- [Funghi](/api/ingredients/verdure/funghi.md)
+- [Funghi](/api/ingredients/verdure/Funghi/funghi.md)
 - [Pancetta](/api/ingredients/salumi-e-proteine/pancetta.md)
 - [Salsiccia](/api/ingredients/salumi-e-proteine/salsiccia.md)
 - [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
@@ -36,6 +36,8 @@ Ortaggio aromatico e strutturante, pilastro del soffritto e ingrediente chiave p
 - [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 - [Cipolla Dorata](/api/ingredients/verdure/Cipolla/cipolla-dorata.md)
+- [Carota Nantes](/api/ingredients/verdure/Carota/carota-nantes.md)
+- [Carote Arancioni Standard](/api/ingredients/verdure/Carota/carote-arancioni-standard.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)

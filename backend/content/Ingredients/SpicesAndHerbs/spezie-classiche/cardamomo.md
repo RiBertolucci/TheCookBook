@@ -15,5 +15,6 @@ Spezia profumata con note balsamiche e agrumate, ideale per miscele aromatiche, 
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
-- [Carota](/api/ingredients/verdure/carota.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Carota](/api/ingredients/verdure/Carota/carota.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
+- [Carota Viola](/api/ingredients/verdure/Carota/carota-viola.md)

@@ -12,9 +12,9 @@ Spezia intensa con note tostate e terrose, perfetta in miscele calde, legumi, ca
 - [Garam Masala](/api/ingredients/SpicesAndHerbs/mixes/garam-masala.md)
 ## Goes with ingredients
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
-- [Pomodoro](/api/ingredients/verdure/pomodoro.md)
+- [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
 - [Riso basmati](/api/ingredients/esotici/riso-basmati.md)
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
 - [Sale](/api/ingredients/dispensa/sale.md)

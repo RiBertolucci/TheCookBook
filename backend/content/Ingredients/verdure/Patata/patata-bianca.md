@@ -11,12 +11,10 @@ Varieta farinosa e molto utile in cucina classica, ideale per pure, gnocchi e pr
 - Cottura uniforme in acqua
 
 ## Substitutes
-
-- Patata gialla
-- Patata Kennebec
-- Patata novella (in preparazioni meno farinose)
-- Zucca delica per puree dolci
-
+- [Patata gialla](/api/ingredients/verdure/Patata/patata-gialla.md) (stessa matrice amidacea, cambia solo leggermente la tenuta)
+- Patata Kennebec (stessa matrice amidacea, cambia solo leggermente la tenuta)
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md) (in preparazioni meno farinose)
+- Zucca delica per puree dolci (dolcezza e cremosita simili, ottima per purea e forno)
 ## Goes with ingredients
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)

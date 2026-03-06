@@ -21,12 +21,13 @@ Legume dolce e tenero molto usato in primi, contorni e stufati italiani, sopratt
 - Zucchine a cubetti (in primi leggeri)
 
 ## Goes with ingredients
-- [Carota](/api/ingredients/verdure/carota.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Carota](/api/ingredients/verdure/Carota/carota.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Pancetta](/api/ingredients/salumi-e-proteine/pancetta.md)
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
+- [Carota Baby](/api/ingredients/verdure/Carota/carota-baby.md)
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)

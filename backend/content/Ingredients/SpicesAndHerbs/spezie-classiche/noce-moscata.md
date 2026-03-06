@@ -21,3 +21,4 @@ Spezia calda e profumata usata in besciamella, ripieni, puree e preparazioni cre
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 - [Patata Gialla](/api/ingredients/verdure/Patata/patata-gialla.md)
 - [Patata Bianca](/api/ingredients/verdure/Patata/patata-bianca.md)
+- [Farina Manitoba](/api/ingredients/dispensa/Farina/farina-manitoba.md)

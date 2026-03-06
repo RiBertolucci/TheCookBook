@@ -11,18 +11,16 @@ Ingrediente piccante usato per dare calore e profondità a sughi, soffritti e co
 - Va dosato per non coprire gli aromi principali
 
 ## Substitutes
-
-- Pepe nero (piccantezza più moderata)
+- [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md) (piccantezza più moderata)
 - Paprika piccante (calore più dolce)
 - Harissa in piccola dose (intensità simile)
 - Gochugaru (piccantezza equilibrata)
 - Senape in grani pestata (spinta pungente)
-- Zenzero fresco (piccantezza aromatica diversa)
+- [Zenzero fresco](/api/ingredients/esotici/zenzero-fresco.md) (piccantezza aromatica diversa)
 - Rafano grattugiato (pungente immediato)
-
 ## Goes with ingredients
 - [Aglio](/api/ingredients/verdure/aglio.md)
-- [Pomodoro](/api/ingredients/verdure/pomodoro.md)
+- [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
 - [Guanciale](/api/ingredients/salumi-e-proteine/guanciale.md)
 - [Pecorino Romano](/api/ingredients/latticini-e-formaggi/pecorino-romano.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)

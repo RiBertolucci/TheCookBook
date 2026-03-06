@@ -11,20 +11,20 @@ Varieta versatile da cucina quotidiana, perfetta per soffritti, stufati e fondi 
 - Consistenza adatta a soffritti classici
 
 ## Substitutes
-
-- Cipolla bianca
-- Scalogno
-- Porro
-- Cipolla rossa in cotture lente
-
+- [Cipolla bianca](/api/ingredients/verdure/Cipolla/cipolla-bianca.md) (stessa funzione aromatica: costruisce base dolce-sapida nei fondi)
+- Scalogno (dolcezza elegante e fondo aromatico molto simile nei soffritti)
+- Porro (parte allium delicata che replica volume e morbidezza in stufato)
+- Cipolla rossa in cotture lente (stessa funzione aromatica: costruisce base dolce-sapida nei fondi)
 ## Goes with ingredients
 - [Aglio](/api/ingredients/verdure/aglio.md)
-- [Carota](/api/ingredients/verdure/carota.md)
+- [Carota](/api/ingredients/verdure/Carota/carota.md)
 - [Sedano](/api/ingredients/verdure/sedano.md)
-- [Pomodoro](/api/ingredients/verdure/pomodoro.md)
+- [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
-
+- [Melanzana Lunga](/api/ingredients/verdure/Melanzana/melanzana-lunga.md)
+- [Zucchina Scura](/api/ingredients/verdure/Zucchina/zucchina-scura.md)
+- [Zucchina Trombetta di Albenga](/api/ingredients/verdure/Zucchina/zucchina-trombetta-di-albenga.md)
 ## Goes with spicesAndHerbs
 - [Alloro](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md)
 - [Rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)

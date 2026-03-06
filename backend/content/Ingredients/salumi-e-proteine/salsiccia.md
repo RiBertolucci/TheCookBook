@@ -21,13 +21,13 @@ Preparazione di carne suina macinata e speziata, usata in sughi, ragù, teglie e
 - Seitan tritato (buona resa in sughi)
 
 ## Goes with ingredients
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Sedano](/api/ingredients/verdure/sedano.md)
-- [Carota](/api/ingredients/verdure/carota.md)
-- [Pomodoro](/api/ingredients/verdure/pomodoro.md)
+- [Carota](/api/ingredients/verdure/Carota/carota.md)
+- [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
 - [Patata](/api/ingredients/verdure/patata.md)
-- [Funghi](/api/ingredients/verdure/funghi.md)
+- [Funghi](/api/ingredients/verdure/Funghi/funghi.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 - [Cipolla Rossa](/api/ingredients/verdure/Cipolla/cipolla-rossa.md)

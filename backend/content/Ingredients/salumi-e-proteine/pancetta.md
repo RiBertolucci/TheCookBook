@@ -11,25 +11,23 @@ Salume suino molto usato per dare grasso, sapore e rosolatura a soffritti, sughi
 - Migliora consistenza e corpo di salse e ragù
 
 ## Substitutes
-
-- Guanciale (stessa logica tecnica in rosolatura)
+- [Guanciale](/api/ingredients/salumi-e-proteine/guanciale.md) (stessa logica tecnica in rosolatura)
 - Speck (profilo più affumicato, resa simile)
 - Prosciutto crudo a dadini (meno grasso, stessa funzione sapida)
 - Salsiccia sgranata (base grassa per sughi)
 - Lardo in piccola quantità (funzione grassa)
 - Tofu affumicato (alternativa vegetale sapida)
 - Tempeh affumicato (rosolatura e texture simili)
-
 ## Goes with ingredients
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
-- [Pomodoro](/api/ingredients/verdure/pomodoro.md)
+- [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
 - [Patata](/api/ingredients/verdure/patata.md)
-- [Funghi](/api/ingredients/verdure/funghi.md)
+- [Funghi](/api/ingredients/verdure/Funghi/funghi.md)
 - [Uova](/api/ingredients/salumi-e-proteine/uova.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
 - [Pecorino Romano](/api/ingredients/latticini-e-formaggi/pecorino-romano.md)
-- [Carota](/api/ingredients/verdure/carota.md)
+- [Carota](/api/ingredients/verdure/Carota/carota.md)
 - [Piselli](/api/ingredients/verdure/piselli.md)
 - [Sedano](/api/ingredients/verdure/sedano.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)

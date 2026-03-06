@@ -21,7 +21,7 @@ Miscela di spezie tipica dell'India, calda e profumata, usata per dare profondit
 - Coriandolo
 ## Goes with ingredients
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Zenzero fresco](/api/ingredients/esotici/zenzero-fresco.md)
 - [Patata](/api/ingredients/verdure/patata.md)

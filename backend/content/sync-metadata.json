@@ -73,67 +73,67 @@
   },
   "Ingredients\\dispensa\\farina-00.md": {
     "created": "2026-03-02T17:51:35.070Z",
-    "modified": "2026-03-06T13:57:00.587Z"
+    "modified": "2026-03-06T15:57:28.673Z"
   },
   "Ingredients\\dispensa\\olio-extravergine-di-oliva.md": {
     "created": "2026-03-02T17:51:34.658Z",
-    "modified": "2026-03-06T13:57:00.935Z"
+    "modified": "2026-03-06T15:57:28.951Z"
   },
   "Ingredients\\esotici\\latte-di-cocco.md": {
     "created": "2026-03-02T18:06:46.192Z",
-    "modified": "2026-03-06T13:44:03.932Z"
+    "modified": "2026-03-06T15:57:29.356Z"
   },
   "Ingredients\\esotici\\riso-basmati.md": {
     "created": "2026-03-02T18:06:46.198Z",
-    "modified": "2026-03-06T13:22:40.063Z"
+    "modified": "2026-03-06T15:57:29.410Z"
   },
   "Ingredients\\esotici\\zenzero-fresco.md": {
     "created": "2026-03-02T18:06:46.190Z",
-    "modified": "2026-03-06T13:22:40.064Z"
+    "modified": "2026-03-06T15:57:29.466Z"
   },
   "Ingredients\\latticini-e-formaggi\\burro.md": {
     "created": "2026-03-02T17:51:35.168Z",
-    "modified": "2026-03-06T13:57:00.686Z"
+    "modified": "2026-03-06T15:57:29.570Z"
   },
   "Ingredients\\latticini-e-formaggi\\mozzarella.md": {
     "created": "2026-03-02T17:51:34.381Z",
-    "modified": "2026-03-06T13:57:00.939Z"
+    "modified": "2026-03-06T15:29:24.848Z"
   },
   "Ingredients\\latticini-e-formaggi\\parmigiano-reggiano.md": {
     "created": "2026-03-02T17:51:33.921Z",
-    "modified": "2026-03-06T13:57:00.695Z"
+    "modified": "2026-03-06T15:57:29.840Z"
   },
   "Ingredients\\latticini-e-formaggi\\pecorino-romano.md": {
     "created": "2026-03-02T17:51:35.444Z",
-    "modified": "2026-03-06T13:22:40.070Z"
+    "modified": "2026-03-06T15:57:29.917Z"
   },
   "Ingredients\\latticini-e-formaggi\\ricotta.md": {
     "created": "2026-03-02T17:51:35.246Z",
-    "modified": "2026-03-06T13:57:00.788Z"
+    "modified": "2026-03-06T15:29:28.634Z"
   },
   "Ingredients\\salumi-e-proteine\\guanciale.md": {
     "created": "2026-03-02T17:51:35.380Z",
-    "modified": "2026-03-06T13:22:40.072Z"
+    "modified": "2026-03-06T15:57:30.097Z"
   },
   "Ingredients\\salumi-e-proteine\\pancetta.md": {
     "created": "2026-03-02T17:51:34.577Z",
-    "modified": "2026-03-06T13:44:04.015Z"
+    "modified": "2026-03-06T15:57:30.301Z"
   },
   "Ingredients\\salumi-e-proteine\\pollo.md": {
     "created": "2026-03-02T18:06:46.186Z",
-    "modified": "2026-03-06T13:44:03.937Z"
+    "modified": "2026-03-06T15:29:25.444Z"
   },
   "Ingredients\\salumi-e-proteine\\salsiccia.md": {
     "created": "2026-03-02T17:51:35.304Z",
-    "modified": "2026-03-06T13:57:00.902Z"
+    "modified": "2026-03-06T15:57:30.471Z"
   },
   "Ingredients\\salumi-e-proteine\\uova.md": {
     "created": "2026-03-02T17:51:34.869Z",
-    "modified": "2026-03-06T13:57:00.590Z"
+    "modified": "2026-03-06T15:57:30.555Z"
   },
   "Ingredients\\verdure\\aglio.md": {
     "created": "2026-03-02T17:51:33.410Z",
-    "modified": "2026-03-06T13:57:00.930Z"
+    "modified": "2026-03-06T15:54:33.865Z"
   },
   "Ingredients\\verdure\\carota.md": {
     "created": "2026-03-02T17:51:33.514Z",
@@ -141,7 +141,7 @@
   },
   "Ingredients\\verdure\\cipolla.md": {
     "created": "2026-03-02T17:51:33.514Z",
-    "modified": "2026-03-06T13:57:00.933Z"
+    "modified": "2026-03-06T15:26:35.314Z"
   },
   "Ingredients\\verdure\\funghi.md": {
     "created": "2026-03-02T17:51:33.921Z",
@@ -149,7 +149,7 @@
   },
   "Ingredients\\verdure\\melanzana.md": {
     "created": "2026-03-02T17:51:33.848Z",
-    "modified": "2026-03-06T13:57:00.748Z"
+    "modified": "2026-03-06T15:26:35.770Z"
   },
   "Ingredients\\verdure\\patata.md": {
     "created": "2026-03-02T17:51:33.661Z",
@@ -157,19 +157,19 @@
   },
   "Ingredients\\verdure\\peperoncino.md": {
     "created": "2026-03-02T17:52:03.785Z",
-    "modified": "2026-03-06T13:44:03.713Z"
+    "modified": "2026-03-06T15:57:33.220Z"
   },
   "Ingredients\\verdure\\piselli.md": {
     "created": "2026-03-02T17:52:03.781Z",
-    "modified": "2026-03-06T13:22:40.090Z"
+    "modified": "2026-03-06T15:57:33.279Z"
   },
   "Ingredients\\verdure\\pomodoro.md": {
     "created": "2026-03-02T17:51:33.557Z",
-    "modified": "2026-03-06T13:44:03.823Z"
+    "modified": "2026-03-06T15:26:35.909Z"
   },
   "Ingredients\\verdure\\sedano.md": {
     "created": "2026-03-02T17:51:33.537Z",
-    "modified": "2026-03-06T13:44:03.775Z"
+    "modified": "2026-03-06T15:30:40.842Z"
   },
   "Ingredients\\verdure\\spinaci.md": {
     "created": "2026-03-02T17:52:03.784Z",
@@ -177,7 +177,7 @@
   },
   "Ingredients\\verdure\\zucchina.md": {
     "created": "2026-03-02T17:51:33.759Z",
-    "modified": "2026-03-06T13:57:00.744Z"
+    "modified": "2026-03-06T15:26:35.859Z"
   },
   "SpicesAndHerbs\\erbe-mediterranee\\alloro.md": {
     "created": "2026-03-02T17:58:22.997Z",
@@ -261,23 +261,23 @@
   },
   "Ingredients\\dispensa\\brodo-vegetale.md": {
     "created": "2026-03-04T00:39:47.825Z",
-    "modified": "2026-03-06T13:22:40.052Z"
+    "modified": "2026-03-06T15:47:12.454Z"
   },
   "Ingredients\\dispensa\\passata-di-pomodoro.md": {
     "created": "2026-03-04T00:39:47.987Z",
-    "modified": "2026-03-06T13:57:00.936Z"
+    "modified": "2026-03-06T15:54:32.132Z"
   },
   "Ingredients\\dispensa\\sale.md": {
     "created": "2026-03-04T00:39:48.152Z",
-    "modified": "2026-03-06T13:57:00.937Z"
+    "modified": "2026-03-06T15:54:32.285Z"
   },
   "Ingredients\\dispensa\\salsa-di-soia.md": {
     "created": "2026-03-04T00:39:47.691Z",
-    "modified": "2026-03-06T13:22:40.059Z"
+    "modified": "2026-03-06T15:57:29.186Z"
   },
   "Ingredients\\salumi-e-proteine\\macinato-di-soia.md": {
     "created": "2026-03-04T00:39:47.535Z",
-    "modified": "2026-03-06T13:44:03.786Z"
+    "modified": "2026-03-06T15:54:32.560Z"
   },
   "Recipes\\brasato-al-vino-rosso.md": {
     "created": "2026-03-04T00:46:33.530Z",
@@ -285,87 +285,87 @@
   },
   "Ingredients\\dispensa\\vino-rosso.md": {
     "created": "2026-03-04T00:46:33.883Z",
-    "modified": "2026-03-06T13:22:40.060Z"
+    "modified": "2026-03-06T15:47:12.462Z"
   },
   "Ingredients\\salumi-e-proteine\\manzo-da-brasato.md": {
     "created": "2026-03-04T00:46:33.739Z",
-    "modified": "2026-03-06T13:22:40.075Z"
+    "modified": "2026-03-06T15:47:12.467Z"
   },
   "Ingredients\\verdure\\Patata\\Patata-novella.md": {
     "created": "2026-03-06T00:51:45.802Z",
-    "modified": "2026-03-06T13:22:40.087Z"
+    "modified": "2026-03-06T15:57:33.097Z"
   },
   "Ingredients\\SpicesAndHerbs\\erbe-mediterranee\\alloro.md": {
     "created": "2026-03-02T17:58:22.997Z",
-    "modified": "2026-03-06T13:57:00.908Z"
+    "modified": "2026-03-06T15:30:39.734Z"
   },
   "Ingredients\\SpicesAndHerbs\\erbe-mediterranee\\basilico.md": {
     "created": "2026-03-02T17:58:22.793Z",
-    "modified": "2026-03-06T13:57:00.941Z"
+    "modified": "2026-03-06T15:29:28.642Z"
   },
   "Ingredients\\SpicesAndHerbs\\erbe-mediterranee\\maggiorana.md": {
     "created": "2026-03-02T17:58:22.947Z",
-    "modified": "2026-03-06T11:07:06.306Z"
+    "modified": "2026-03-06T15:29:28.647Z"
   },
   "Ingredients\\SpicesAndHerbs\\erbe-mediterranee\\oregano.md": {
     "created": "2026-03-02T17:58:22.793Z",
-    "modified": "2026-03-06T10:55:05.074Z"
+    "modified": "2026-03-06T15:57:30.819Z"
   },
   "Ingredients\\SpicesAndHerbs\\erbe-mediterranee\\prezzemolo.md": {
     "created": "2026-03-02T17:58:22.843Z",
-    "modified": "2026-03-06T13:44:03.982Z"
+    "modified": "2026-03-06T15:30:39.738Z"
   },
   "Ingredients\\SpicesAndHerbs\\erbe-mediterranee\\rosmarino.md": {
     "created": "2026-03-02T17:58:22.814Z",
-    "modified": "2026-03-06T13:57:00.800Z"
+    "modified": "2026-03-06T15:30:39.735Z"
   },
   "Ingredients\\SpicesAndHerbs\\erbe-mediterranee\\salvia.md": {
     "created": "2026-03-02T17:58:22.944Z",
-    "modified": "2026-03-06T13:57:00.598Z"
+    "modified": "2026-03-06T15:57:30.989Z"
   },
   "Ingredients\\SpicesAndHerbs\\erbe-mediterranee\\timo.md": {
     "created": "2026-03-02T17:58:22.869Z",
-    "modified": "2026-03-06T13:57:00.754Z"
+    "modified": "2026-03-06T15:29:27.951Z"
   },
   "Ingredients\\SpicesAndHerbs\\mixes\\garam-masala.md": {
     "created": "2026-03-02T18:06:46.198Z",
-    "modified": "2026-03-06T11:07:06.602Z"
+    "modified": "2026-03-06T15:57:31.089Z"
   },
   "Ingredients\\SpicesAndHerbs\\spezie-classiche\\cannella.md": {
     "created": "2026-03-02T18:13:34.889Z",
-    "modified": "2026-03-06T13:44:03.943Z"
+    "modified": "2026-03-06T15:57:31.119Z"
   },
   "Ingredients\\SpicesAndHerbs\\spezie-classiche\\cardamomo.md": {
     "created": "2026-03-02T18:13:34.885Z",
-    "modified": "2026-03-06T10:55:05.110Z"
+    "modified": "2026-03-06T15:29:26.432Z"
   },
   "Ingredients\\SpicesAndHerbs\\spezie-classiche\\chiodi-di-garofano.md": {
     "created": "2026-03-02T18:13:34.890Z",
-    "modified": "2026-03-06T10:55:05.115Z"
+    "modified": "2026-03-06T15:57:31.179Z"
   },
   "Ingredients\\SpicesAndHerbs\\spezie-classiche\\coriandolo-in-semi.md": {
     "created": "2026-03-02T18:13:34.883Z",
-    "modified": "2026-03-06T10:55:05.119Z"
+    "modified": "2026-03-06T15:57:31.217Z"
   },
   "Ingredients\\SpicesAndHerbs\\spezie-classiche\\cumino.md": {
     "created": "2026-03-02T18:13:34.884Z",
-    "modified": "2026-03-06T13:44:03.946Z"
+    "modified": "2026-03-06T15:57:31.252Z"
   },
   "Ingredients\\SpicesAndHerbs\\spezie-classiche\\noce-moscata.md": {
     "created": "2026-03-02T17:58:23.168Z",
-    "modified": "2026-03-06T13:57:00.594Z"
+    "modified": "2026-03-06T15:26:33.231Z"
   },
   "Ingredients\\SpicesAndHerbs\\spezie-classiche\\paprika.md": {
     "created": "2026-03-02T17:58:23.197Z",
-    "modified": "2026-03-06T13:57:00.709Z"
+    "modified": "2026-03-06T15:29:26.530Z"
   },
   "Ingredients\\SpicesAndHerbs\\spezie-classiche\\pepe-nero.md": {
     "created": "2026-03-02T17:58:23.131Z",
-    "modified": "2026-03-06T13:57:00.944Z"
+    "modified": "2026-03-06T15:30:39.732Z"
   },
   "Ingredients\\SpicesAndHerbs\\spezie-classiche\\peperoncino-secco.md": {
     "created": "2026-03-02T17:58:23.238Z",
-    "modified": "2026-03-06T13:57:00.946Z"
+    "modified": "2026-03-06T15:57:31.605Z"
   },
   "Recipes\\Salsiccia_e_cipolle.md": {
     "created": "2026-03-06T13:21:47.275Z",
@@ -373,62 +373,158 @@
   },
   "Ingredients\\verdure\\Cipolla\\cipolla-bianca.md": {
     "created": "2026-03-06T13:41:54.378Z",
-    "modified": "2026-03-06T13:44:41.344Z"
+    "modified": "2026-03-06T15:54:34.362Z"
   },
   "Ingredients\\verdure\\Cipolla\\cipolla-dorata.md": {
     "created": "2026-03-06T13:41:53.490Z",
-    "modified": "2026-03-06T13:44:41.329Z"
+    "modified": "2026-03-06T15:54:34.448Z"
   },
   "Ingredients\\verdure\\Cipolla\\cipolla-rossa.md": {
     "created": "2026-03-06T13:41:54.153Z",
-    "modified": "2026-03-06T13:44:41.335Z"
+    "modified": "2026-03-06T15:54:34.536Z"
   },
   "Ingredients\\verdure\\Patata\\patata-americana.md": {
     "created": "2026-03-06T13:41:53.243Z",
-    "modified": "2026-03-06T13:44:41.329Z"
+    "modified": "2026-03-06T15:54:35.052Z"
   },
   "Ingredients\\verdure\\Patata\\patata-gialla.md": {
     "created": "2026-03-06T13:41:52.772Z",
-    "modified": "2026-03-06T13:44:41.329Z"
+    "modified": "2026-03-06T15:47:12.490Z"
   },
   "Ingredients\\verdure\\Patata\\patata-rossa.md": {
     "created": "2026-03-06T13:41:53.026Z",
-    "modified": "2026-03-06T13:44:41.329Z"
+    "modified": "2026-03-06T15:54:35.233Z"
   },
   "Ingredients\\verdure\\Pomodoro\\pomodoro-cuore-di-bue.md": {
     "created": "2026-03-06T13:40:57.050Z",
-    "modified": "2026-03-06T13:44:41.329Z"
+    "modified": "2026-03-06T15:54:35.489Z"
   },
   "Ingredients\\verdure\\Pomodoro\\pomodoro-datterino.md": {
     "created": "2026-03-06T13:40:56.914Z",
-    "modified": "2026-03-06T13:44:41.329Z"
+    "modified": "2026-03-06T15:47:12.498Z"
   },
   "Ingredients\\verdure\\Pomodoro\\pomodoro-san-marzano.md": {
     "created": "2026-03-06T13:40:56.693Z",
-    "modified": "2026-03-06T13:44:41.329Z"
+    "modified": "2026-03-06T15:47:12.500Z"
   },
   "Ingredients\\verdure\\Patata\\patata-bianca.md": {
     "created": "2026-03-06T13:48:28.798Z",
-    "modified": "2026-03-06T13:59:06.107Z"
+    "modified": "2026-03-06T15:54:35.111Z"
   },
   "Ingredients\\verdure\\Patata\\patata-viola.md": {
     "created": "2026-03-06T13:48:29.009Z",
-    "modified": "2026-03-06T13:59:06.107Z"
+    "modified": "2026-03-06T15:54:35.290Z"
   },
   "Ingredients\\verdure\\Pomodoro\\pomodoro-ciliegino.md": {
     "created": "2026-03-06T13:48:07.330Z",
-    "modified": "2026-03-06T13:59:06.107Z"
+    "modified": "2026-03-06T15:54:35.360Z"
   },
   "Ingredients\\verdure\\Pomodoro\\pomodoro-costoluto-fiorentino.md": {
     "created": "2026-03-06T13:48:07.513Z",
-    "modified": "2026-03-06T13:59:06.107Z"
+    "modified": "2026-03-06T15:54:35.432Z"
   },
   "Ingredients\\verdure\\Pomodoro\\pomodoro-del-piennolo.md": {
     "created": "2026-03-06T13:48:28.527Z",
-    "modified": "2026-03-06T13:59:06.107Z"
+    "modified": "2026-03-06T15:54:35.628Z"
   },
   "Ingredients\\verdure\\Pomodoro\\pomodoro-roma.md": {
     "created": "2026-03-06T13:48:07.066Z",
-    "modified": "2026-03-06T13:59:06.107Z"
+    "modified": "2026-03-06T15:54:35.684Z"
+  },
+  "Ingredients\\dispensa\\Farina\\farina-0.md": {
+    "created": "2026-03-06T15:23:28.451Z",
+    "modified": "2026-03-06T15:54:31.921Z"
+  },
+  "Ingredients\\dispensa\\Farina\\farina-manitoba.md": {
+    "created": "2026-03-06T15:23:47.095Z",
+    "modified": "2026-03-06T15:47:12.456Z"
+  },
+  "Ingredients\\dispensa\\Farina\\farina-tipo-1.md": {
+    "created": "2026-03-06T15:23:38.459Z",
+    "modified": "2026-03-06T15:54:32.039Z"
+  },
+  "Ingredients\\verdure\\Carota\\carota-baby.md": {
+    "created": "2026-03-06T15:23:00.158Z",
+    "modified": "2026-03-06T15:54:34.082Z"
+  },
+  "Ingredients\\verdure\\Carota\\carota-nantes.md": {
+    "created": "2026-03-06T15:23:08.660Z",
+    "modified": "2026-03-06T15:54:34.143Z"
+  },
+  "Ingredients\\verdure\\Carota\\carota-viola.md": {
+    "created": "2026-03-06T15:23:19.659Z",
+    "modified": "2026-03-06T15:54:34.210Z"
+  },
+  "Ingredients\\verdure\\Funghi\\funghi-champignon.md": {
+    "created": "2026-03-06T15:23:56.105Z",
+    "modified": "2026-03-06T16:06:02.475Z"
+  },
+  "Ingredients\\verdure\\Funghi\\funghi-pleurotus.md": {
+    "created": "2026-03-06T15:24:15.459Z",
+    "modified": "2026-03-06T16:10:38.867Z"
+  },
+  "Ingredients\\verdure\\Funghi\\funghi-porcini.md": {
+    "created": "2026-03-06T15:24:05.036Z",
+    "modified": "2026-03-06T16:10:54.488Z"
+  },
+  "Ingredients\\verdure\\Melanzana\\melanzana-lunga.md": {
+    "created": "2026-03-06T15:24:31.059Z",
+    "modified": "2026-03-06T15:54:34.868Z"
+  },
+  "Ingredients\\verdure\\Melanzana\\melanzana-tonda.md": {
+    "created": "2026-03-06T15:24:22.804Z",
+    "modified": "2026-03-06T15:54:34.929Z"
+  },
+  "Ingredients\\verdure\\Melanzana\\melanzana-violetta.md": {
+    "created": "2026-03-06T15:24:40.657Z",
+    "modified": "2026-03-06T15:54:34.988Z"
+  },
+  "Ingredients\\verdure\\Zucchina\\zucchina-gialla.md": {
+    "created": "2026-03-06T15:25:11.371Z",
+    "modified": "2026-03-06T15:54:35.944Z"
+  },
+  "Ingredients\\verdure\\Zucchina\\zucchina-romanesca.md": {
+    "created": "2026-03-06T15:25:02.511Z",
+    "modified": "2026-03-06T15:54:35.999Z"
+  },
+  "Ingredients\\verdure\\Zucchina\\zucchina-scura.md": {
+    "created": "2026-03-06T15:25:23.134Z",
+    "modified": "2026-03-06T15:54:36.062Z"
+  },
+  "Ingredients\\verdure\\Carota\\carota.md": {
+    "created": "2026-03-02T17:51:33.514Z",
+    "modified": "2026-03-06T15:57:32.004Z"
+  },
+  "Ingredients\\verdure\\Cipolla\\cipolla.md": {
+    "created": "2026-03-02T17:51:33.514Z",
+    "modified": "2026-03-06T15:30:39.702Z"
+  },
+  "Ingredients\\verdure\\Funghi\\funghi-champignones.md": {
+    "created": "2026-03-06T15:29:00.236Z",
+    "modified": "2026-03-06T15:54:34.666Z"
+  },
+  "Ingredients\\verdure\\Funghi\\funghi.md": {
+    "created": "2026-03-02T17:51:33.921Z",
+    "modified": "2026-03-06T15:29:27.997Z"
+  },
+  "Ingredients\\verdure\\Melanzana\\melanzana.md": {
+    "created": "2026-03-02T17:51:33.848Z",
+    "modified": "2026-03-06T15:57:32.890Z"
+  },
+  "Ingredients\\verdure\\Pomodoro\\pomodoro.md": {
+    "created": "2026-03-02T17:51:33.557Z",
+    "modified": "2026-03-06T15:57:33.697Z"
+  },
+  "Ingredients\\verdure\\Zucchina\\zucchina-trombetta-di-albenga.md": {
+    "created": "2026-03-06T15:28:51.691Z",
+    "modified": "2026-03-06T15:54:36.131Z"
+  },
+  "Ingredients\\verdure\\Zucchina\\zucchina.md": {
+    "created": "2026-03-02T17:51:33.759Z",
+    "modified": "2026-03-06T15:30:39.726Z"
+  },
+  "Ingredients\\verdure\\Carota\\carote-arancioni-standard.md": {
+    "created": "2026-03-06T15:30:18.837Z",
+    "modified": "2026-03-06T15:54:34.283Z"
   }
 }

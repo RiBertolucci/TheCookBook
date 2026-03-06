@@ -12,19 +12,18 @@ Pomodoro grande e carnoso, con polpa ricca e pochi semi, perfetto per uso a crud
 
 ## Substitutes
 
-- Pomodoro costoluto maturo
-- Pomodoro insalataro
-- Pomodoro ramato grande
-- Pomodoro tondo liscio maturo
+- Pomodoro costoluto maturo (acidita, succosita e tenore zuccherino compatibili con sughi e basi rosse)
+- Pomodoro insalataro (profilo rosso equilibrato, adatto a cotture in salsa e teglia)
+- Pomodoro ramato grande (profilo rosso equilibrato, adatto a cotture in salsa e teglia)
+- Pomodoro tondo liscio maturo (profilo rosso equilibrato, adatto a cotture in salsa e teglia)
 
 ## Goes with ingredients
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Mozzarella](/api/ingredients/latticini-e-formaggi/mozzarella.md)
 - [Ricotta](/api/ingredients/latticini-e-formaggi/ricotta.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
-
 ## Goes with spicesAndHerbs
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
 - [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)

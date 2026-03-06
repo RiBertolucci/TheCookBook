@@ -21,7 +21,7 @@ Proteina molto versatile nella cucina indiana e internazionale, adatta a marinat
 - Ceci lessati (versione vegetale in curry e masala)
 
 ## Goes with ingredients
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Zenzero fresco](/api/ingredients/esotici/zenzero-fresco.md)
 - [Patata](/api/ingredients/verdure/patata.md)
@@ -30,6 +30,7 @@ Proteina molto versatile nella cucina indiana e internazionale, adatta a marinat
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 - [Cipolla Bianca](/api/ingredients/verdure/Cipolla/cipolla-bianca.md)
 - [Patata Americana](/api/ingredients/verdure/Patata/patata-americana.md)
+- [Carota Baby](/api/ingredients/verdure/Carota/carota-baby.md)
 ## Goes with spicesAndHerbs
 - [Garam Masala](/api/ingredients/SpicesAndHerbs/mixes/garam-masala.md)
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)

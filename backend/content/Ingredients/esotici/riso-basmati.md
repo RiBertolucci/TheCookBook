@@ -23,7 +23,7 @@ Riso a chicco lungo e profumato, ideale come accompagnamento per piatti speziati
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Zenzero fresco](/api/ingredients/esotici/zenzero-fresco.md)
 - [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)

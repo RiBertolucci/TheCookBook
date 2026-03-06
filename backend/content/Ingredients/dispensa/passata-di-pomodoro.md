@@ -12,16 +12,16 @@ Pomodoro setacciato e conservato, base pratica per sughi, ragù e cotture in umi
 
 ## Substitutes
 
-- Polpa di pomodoro frullata
-- Pomodori pelati schiacciati e setacciati
-- Concentrato di pomodoro diluito
-- Pomodoro fresco cotto e passato al passaverdure
+- Polpa di pomodoro frullata (stessa matrice di pomodoro con tessitura appena piu rustica)
+- Pomodori pelati schiacciati e setacciati (stessa intensita di frutto, con consistenza regolabile al setaccio)
+- Concentrato di pomodoro diluito (garantisce corpo e colore: stemperare per bilanciare acidita)
+- Pomodoro fresco cotto e passato al passaverdure (profilo aromatico vivo, ideale dopo riduzione controllata)
 - Salsa rustica di pomodoro a pezzi (texture più grossolana)
 
 ## Goes with ingredients
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
-- [Carota](/api/ingredients/verdure/carota.md)
+- [Carota](/api/ingredients/verdure/Carota/carota.md)
 - [Sedano](/api/ingredients/verdure/sedano.md)
 - [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
@@ -30,6 +30,7 @@ Pomodoro setacciato e conservato, base pratica per sughi, ragù e cotture in umi
 - [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)
 - [Pomodoro del Piennolo](/api/ingredients/verdure/Pomodoro/pomodoro-del-piennolo.md)
 - [Pomodoro Roma](/api/ingredients/verdure/Pomodoro/pomodoro-roma.md)
+- [Farina Tipo 1](/api/ingredients/dispensa/Farina/farina-tipo-1.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
 - [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)

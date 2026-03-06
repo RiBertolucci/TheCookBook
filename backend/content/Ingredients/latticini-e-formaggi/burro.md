@@ -11,17 +11,15 @@ Grasso lattiero usato in mantecature, salse, impasti e cotture dolci o salate, s
 - Più sensibile al calore rispetto all'olio
 
 ## Substitutes
-
-- Olio extravergine di oliva (sostituto principale in cucina salata)
+- [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md) (sostituto principale in cucina salata)
 - Burro chiarificato (maggiore stabilità termica)
 - Ghee (versione chiarificata più aromatica)
 - Margarina di qualità (in impasti)
 - Ricotta + olio (mix per cremosità in ripieni)
 - Panna fresca (morbidezza in salse)
 - Strutto (in alcune preparazioni tradizionali)
-
 ## Goes with ingredients
-- [Funghi](/api/ingredients/verdure/funghi.md)
+- [Funghi](/api/ingredients/verdure/Funghi/funghi.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
 - [Uova](/api/ingredients/salumi-e-proteine/uova.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
@@ -35,6 +33,11 @@ Grasso lattiero usato in mantecature, salse, impasti e cotture dolci o salate, s
 - [Patata Gialla](/api/ingredients/verdure/Patata/patata-gialla.md)
 - [Patata Bianca](/api/ingredients/verdure/Patata/patata-bianca.md)
 - [Patata Viola](/api/ingredients/verdure/Patata/patata-viola.md)
+- [Farina Manitoba](/api/ingredients/dispensa/Farina/farina-manitoba.md)
+- [Carota Baby](/api/ingredients/verdure/Carota/carota-baby.md)
+- [Funghi Champignon](/api/ingredients/verdure/Funghi/funghi-champignon.md)
+- [Funghi Porcini](/api/ingredients/verdure/Funghi/funghi-porcini.md)
+- [Funghi Champignones](/api/ingredients/verdure/Funghi/funghi-champignones.md)
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)

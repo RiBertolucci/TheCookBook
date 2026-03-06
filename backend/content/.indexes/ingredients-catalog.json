@@ -2,10 +2,19 @@
   "name": "ingredients-catalog",
   "version": 1,
   "strategy": "key-set",
-  "updatedAt": "2026-03-06T15:01:00.133Z",
+  "updatedAt": "2026-03-06T16:10:58.088Z",
   "entries": {
     "Ingredients/dispensa/brodo-vegetale.md": [
       "brodo vegetale"
+    ],
+    "Ingredients/dispensa/Farina/farina-0.md": [
+      "farina 0"
+    ],
+    "Ingredients/dispensa/Farina/farina-manitoba.md": [
+      "farina manitoba"
+    ],
+    "Ingredients/dispensa/Farina/farina-tipo-1.md": [
+      "farina tipo 1"
     ],
     "Ingredients/dispensa/farina-00.md": [
       "farina 00"
@@ -127,8 +136,20 @@
     "Ingredients/verdure/aglio.md": [
       "aglio"
     ],
-    "Ingredients/verdure/carota.md": [
+    "Ingredients/verdure/Carota/carota-baby.md": [
+      "carota baby"
+    ],
+    "Ingredients/verdure/Carota/carota-nantes.md": [
+      "carota nantes"
+    ],
+    "Ingredients/verdure/Carota/carota-viola.md": [
+      "carota viola"
+    ],
+    "Ingredients/verdure/Carota/carota.md": [
       "carota"
+    ],
+    "Ingredients/verdure/Carota/carote-arancioni-standard.md": [
+      "carote arancioni standard"
     ],
     "Ingredients/verdure/Cipolla/cipolla-bianca.md": [
       "cipolla bianca"
@@ -139,13 +160,34 @@
     "Ingredients/verdure/Cipolla/cipolla-rossa.md": [
       "cipolla rossa"
     ],
-    "Ingredients/verdure/cipolla.md": [
+    "Ingredients/verdure/Cipolla/cipolla.md": [
       "cipolla"
     ],
-    "Ingredients/verdure/funghi.md": [
+    "Ingredients/verdure/Funghi/funghi-champignon.md": [
+      "funghi champignon"
+    ],
+    "Ingredients/verdure/Funghi/funghi-champignones.md": [
+      "funghi champignones"
+    ],
+    "Ingredients/verdure/Funghi/funghi-pleurotus.md": [
+      "funghi pleurotus"
+    ],
+    "Ingredients/verdure/Funghi/funghi-porcini.md": [
+      "funghi porcini"
+    ],
+    "Ingredients/verdure/Funghi/funghi.md": [
       "funghi"
     ],
-    "Ingredients/verdure/melanzana.md": [
+    "Ingredients/verdure/Melanzana/melanzana-lunga.md": [
+      "melanzana lunga"
+    ],
+    "Ingredients/verdure/Melanzana/melanzana-tonda.md": [
+      "melanzana tonda"
+    ],
+    "Ingredients/verdure/Melanzana/melanzana-violetta.md": [
+      "melanzana violetta"
+    ],
+    "Ingredients/verdure/Melanzana/melanzana.md": [
       "melanzana"
     ],
     "Ingredients/verdure/Patata/patata-americana.md": [
@@ -193,7 +235,7 @@
     "Ingredients/verdure/Pomodoro/pomodoro-san-marzano.md": [
       "pomodoro san marzano"
     ],
-    "Ingredients/verdure/pomodoro.md": [
+    "Ingredients/verdure/Pomodoro/pomodoro.md": [
       "pomodoro"
     ],
     "Ingredients/verdure/sedano.md": [
@@ -202,7 +244,19 @@
     "Ingredients/verdure/spinaci.md": [
       "spinaci"
     ],
-    "Ingredients/verdure/zucchina.md": [
+    "Ingredients/verdure/Zucchina/zucchina-gialla.md": [
+      "zucchina gialla"
+    ],
+    "Ingredients/verdure/Zucchina/zucchina-romanesca.md": [
+      "zucchina romanesca"
+    ],
+    "Ingredients/verdure/Zucchina/zucchina-scura.md": [
+      "zucchina scura"
+    ],
+    "Ingredients/verdure/Zucchina/zucchina-trombetta-di-albenga.md": [
+      "zucchina trombetta di albenga"
+    ],
+    "Ingredients/verdure/Zucchina/zucchina.md": [
       "zucchina"
     ]
   }

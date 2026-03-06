@@ -12,19 +12,18 @@ Tubero dolce e profumato, eccellente in forno, vellutate e preparazioni dove si 
 
 ## Substitutes
 
-- Zucca delica
-- Zucca butternut
-- Carota in crema
-- Patata gialla con aggiunta di miele
+- Zucca delica (dolcezza e cremosita simili, ottima per purea e forno)
+- Zucca butternut (dolcezza e cremosita simili, ottima per purea e forno)
+- Carota in crema (dolcezza naturale utile quando serve una purea piu morbida)
+- Patata gialla con aggiunta di miele (stessa matrice amidacea, cambia solo leggermente la tenuta)
 
 ## Goes with ingredients
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
-
 ## Goes with spicesAndHerbs
 - [Paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md)
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)

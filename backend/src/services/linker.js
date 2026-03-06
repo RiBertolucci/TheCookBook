@@ -265,6 +265,98 @@ async function relinkSectionItems(items, searchDir, apiPrefix, logMethod, logMes
   return { rewrittenItems, modified };
 }
 
+function parseSubstituteItem(rawItem) {
+  const trimmed = String(rawItem || '').trim();
+  if (!trimmed) {
+    return {
+      original: trimmed,
+      displayName: '',
+      explanation: '',
+      existingHref: '',
+      hasLink: false,
+    };
+  }
+
+  const explanationMatch = trimmed.match(/^(.*?)(\s*\([^\)]*\)\s*)$/);
+  const withoutExplanation = explanationMatch ? String(explanationMatch[1] || '').trim() : trimmed;
+  const explanation = explanationMatch ? String(explanationMatch[2] || '').trim() : '';
+
+  const linkMatch = withoutExplanation.match(/^\[(.+?)\]\((.+?)\)$/);
+  if (linkMatch) {
+    return {
+      original: trimmed,
+      displayName: String(linkMatch[1] || '').trim(),
+      explanation,
+      existingHref: String(linkMatch[2] || '').trim(),
+      hasLink: true,
+    };
+  }
+
+  return {
+    original: trimmed,
+    displayName: withoutExplanation,
+    explanation,
+    existingHref: '',
+    hasLink: false,
+  };
+}
+
+async function resolveSubstituteTarget(displayName, ingredientDir, spiceDir) {
+  const ingredientFile = await parser.findFile(ingredientDir, displayName);
+  if (ingredientFile) {
+    return {
+      apiPath: `/api/ingredients/${ingredientFile.split('\\').join('/')}`,
+      relativePath: ingredientFile,
+      kind: 'ingredient',
+    };
+  }
+
+  const spiceFile = await parser.findFile(spiceDir, displayName);
+  if (spiceFile) {
+    return {
+      apiPath: `${CANONICAL_SPICE_API_PREFIX}/${spiceFile.split('\\').join('/')}`,
+      relativePath: spiceFile,
+      kind: 'spice',
+    };
+  }
+
+  return null;
+}
+
+async function relinkSubstituteItems(items, ingredientDir, spiceDir, logMethod, logMessage) {
+  if (!items.length) {
+    return { rewrittenItems: items, modified: false };
+  }
+
+  let modified = false;
+  const rewrittenItems = [];
+
+  for (const item of items) {
+    const parsed = parseSubstituteItem(item);
+    if (!parsed.displayName) {
+      rewrittenItems.push(item);
+      continue;
+    }
+
+    logger.debug({ service: 'linker', method: logMethod, data: parsed.displayName }, logMessage);
+    const target = await resolveSubstituteTarget(parsed.displayName, ingredientDir, spiceDir);
+    if (!target) {
+      rewrittenItems.push(item);
+      continue;
+    }
+
+    const linkedLabel = `[${parsed.displayName}](${target.apiPath})`;
+    const rewritten = parsed.explanation ? `${linkedLabel} ${parsed.explanation}` : linkedLabel;
+
+    rewrittenItems.push(rewritten);
+    if (rewritten !== item) {
+      modified = true;
+    }
+  }
+
+  return { rewrittenItems, modified };
+}
+
 function sectionExists(content, sectionName) {
   return content.includes(`## ${sectionName}`);
 }
@@ -404,11 +496,12 @@ async function propagateNewSpice(sourceFilePath, sourceContent, rootDir) {
 async function processIngredient(content, filePath, rootDir) {
   let modified = false;
   let newContent = content;
+  const ingredientDir = path.join(rootDir, 'Ingredients');
+  const spiceDir = await resolveSpiceDirectory(rootDir);
 
   // 1. Link to "Goes with ingredients"
   const goesWithIngredients = parser.extractSection(newContent, 'Goes with ingredients');
   if (goesWithIngredients.length > 0) {
-    const ingredientDir = path.join(rootDir, 'Ingredients');
     const result = await relinkSectionItems(
       goesWithIngredients,
       ingredientDir,
@@ -427,7 +520,6 @@ async function processIngredient(content, filePath, rootDir) {
   // 2. Link to "Goes with spicesAndHerbs"
   const goesWithSpices = parser.extractSection(newContent, 'Goes with spicesAndHerbs');
   if (goesWithSpices.length > 0) {
-    const spiceDir = await resolveSpiceDirectory(rootDir);
     const result = await relinkSectionItems(
       goesWithSpices,
       spiceDir,
@@ -442,7 +534,25 @@ async function processIngredient(content, filePath, rootDir) {
     }
   }
 
-  // 3. Link to "Used for" (recipes)
+  // 3. Link to "Substitutes" (ingredients/spices) preserving explanations.
+  const substitutes = parser.extractSection(newContent, 'Substitutes');
+  if (substitutes.length > 0) {
+    const result = await relinkSubstituteItems(
+      substitutes,
+      ingredientDir,
+      spiceDir,
+      'processIngredient',
+      'looking for substitute target file',
+    );
+
+    if (result.modified) {
+      modified = true;
+      newContent = parser.updateOrCreateSection(newContent, 'Substitutes', result.rewrittenItems);
+      logger.info({ service: 'linker', method: 'processIngredient', data: result.rewrittenItems }, 'updated substitute links');
+    }
+  }
+
+  // 4. Link to "Used for" (recipes)
   const usedForRecipes = parser.extractSection(newContent, 'Used for');
   if (usedForRecipes.length > 0) {
     const recipeDir = path.join(rootDir, 'Recipes');
@@ -525,11 +635,12 @@ async function processRecipe(content, filePath, rootDir) {
 async function processSpice(content, filePath, rootDir) {
   let modified = false;
   let newContent = content;
+  const ingredientDir = path.join(rootDir, 'Ingredients');
+  const spiceDir = await resolveSpiceDirectory(rootDir);
 
   // 1. Link to "Goes with ingredients"
   const goesWithIngredients = getSectionItemsByCandidates(newContent, ['Goes with ingredients', 'Good With Ingredients']);
   if (goesWithIngredients.length > 0) {
-    const ingredientDir = path.join(rootDir, 'Ingredients');
     const result = await relinkSectionItems(
       goesWithIngredients,
       ingredientDir,
@@ -548,7 +659,6 @@ async function processSpice(content, filePath, rootDir) {
   // 2. Link to "Goes with spicesAndHerbs"
   const goesWithSpices = getSectionItemsByCandidates(newContent, ['Goes with spicesAndHerbs', 'Mixes Well With']);
   if (goesWithSpices.length > 0) {
-    const spiceDir = await resolveSpiceDirectory(rootDir);
     const result = await relinkSectionItems(
       goesWithSpices,
       spiceDir,
@@ -561,6 +671,24 @@ async function processSpice(content, filePath, rootDir) {
       modified = true;
       newContent = parser.updateOrCreateSection(newContent, 'Goes with spicesAndHerbs', result.rewrittenItems);
       logger.info({ service: 'linker', method: 'processSpice', data: result.rewrittenItems }, 'updated spice links for spice');
+    }
+  }
+
+  // 3. Link to "Substitutes" (ingredients/spices) preserving explanations.
+  const substitutes = parser.extractSection(newContent, 'Substitutes');
+  if (substitutes.length > 0) {
+    const result = await relinkSubstituteItems(
+      substitutes,
+      ingredientDir,
+      spiceDir,
+      'processSpice',
+      'looking for substitute target file for spice',
+    );
+
+    if (result.modified) {
+      modified = true;
+      newContent = parser.updateOrCreateSection(newContent, 'Substitutes', result.rewrittenItems);
+      logger.info({ service: 'linker', method: 'processSpice', data: result.rewrittenItems }, 'updated substitute links for spice');
     }
   }
 

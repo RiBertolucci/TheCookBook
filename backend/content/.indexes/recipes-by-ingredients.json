@@ -2,7 +2,7 @@
   "name": "recipes-by-ingredients",
   "version": 1,
   "strategy": "key-set",
-  "updatedAt": "2026-03-06T15:01:00.131Z",
+  "updatedAt": "2026-03-06T16:10:58.086Z",
   "entries": {
     "Recipes/brasato-al-vino-rosso.md": [
       "[pepe nero](/api/ingredients/spicesandherbs/spezie-classiche/pepe-nero.md) q.b.",

@@ -12,9 +12,9 @@ Tubero dalla polpa compatta e cremosa, ideale per puree, gnocchi e cotture al fo
 
 ## Substitutes
 
-- Patata bianca farinosa
-- Patata novella ben asciutta
-- Patata rossa a pasta media
+- Patata bianca farinosa (stessa matrice amidacea, cambia solo leggermente la tenuta)
+- Patata novella ben asciutta (stessa matrice amidacea, cambia solo leggermente la tenuta)
+- Patata rossa a pasta media (stessa matrice amidacea, cambia solo leggermente la tenuta)
 - Zucca mantovana (per puree dolci)
 
 ## Goes with ingredients
@@ -24,7 +24,7 @@ Tubero dalla polpa compatta e cremosa, ideale per puree, gnocchi e cotture al fo
 - [Uova](/api/ingredients/salumi-e-proteine/uova.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
-
+- [Zucchina Scura](/api/ingredients/verdure/Zucchina/zucchina-scura.md)
 ## Goes with spicesAndHerbs
 - [Noce moscata](/api/ingredients/SpicesAndHerbs/spezie-classiche/noce-moscata.md)
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)

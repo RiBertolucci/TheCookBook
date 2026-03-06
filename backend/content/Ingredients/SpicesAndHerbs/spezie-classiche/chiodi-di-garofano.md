@@ -11,7 +11,7 @@ Spezia potente e balsamica, da usare in piccole dosi per aromatizzare stufati, b
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
 - [Alloro](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md)
 ## Goes with ingredients
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
 - [Patata](/api/ingredients/verdure/patata.md)

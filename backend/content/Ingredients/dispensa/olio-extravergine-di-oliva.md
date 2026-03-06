@@ -11,21 +11,19 @@ Grasso cardine della cucina italiana, usato a crudo, in soffritto, in emulsione 
 - Migliora texture e rotondità del gusto
 
 ## Substitutes
-
 - Olio di oliva delicato (stessa tecnica, minore intensità)
 - Burro chiarificato (ottimo in rosolatura)
-- Burro (in mantecatura e cotture dolci)
+- [Burro](/api/ingredients/latticini-e-formaggi/burro.md) (in mantecatura e cotture dolci)
 - Olio di semi alto oleico (neutralità in frittura)
 - Olio di vinacciolo (emulsioni leggere)
 - Strutto (ricette tradizionali rustiche)
 - Ghee (sostituto tecnico ad alta stabilità)
-
 ## Goes with ingredients
 - [Aglio](/api/ingredients/verdure/aglio.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
-- [Pomodoro](/api/ingredients/verdure/pomodoro.md)
-- [Melanzana](/api/ingredients/verdure/melanzana.md)
-- [Zucchina](/api/ingredients/verdure/zucchina.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
+- [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
+- [Melanzana](/api/ingredients/verdure/Melanzana/melanzana.md)
+- [Zucchina](/api/ingredients/verdure/Zucchina/zucchina.md)
 - [Patata](/api/ingredients/verdure/patata.md)
 - [Mozzarella](/api/ingredients/latticini-e-formaggi/mozzarella.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
@@ -50,6 +48,18 @@ Grasso cardine della cucina italiana, usato a crudo, in soffritto, in emulsione 
 - [Pomodoro Costoluto Fiorentino](/api/ingredients/verdure/Pomodoro/pomodoro-costoluto-fiorentino.md)
 - [Pomodoro del Piennolo](/api/ingredients/verdure/Pomodoro/pomodoro-del-piennolo.md)
 - [Pomodoro Roma](/api/ingredients/verdure/Pomodoro/pomodoro-roma.md)
+- [Farina 0](/api/ingredients/dispensa/Farina/farina-0.md)
+- [Farina Tipo 1](/api/ingredients/dispensa/Farina/farina-tipo-1.md)
+- [Carota Baby](/api/ingredients/verdure/Carota/carota-baby.md)
+- [Carota Viola](/api/ingredients/verdure/Carota/carota-viola.md)
+- [Funghi Pleurotus](/api/ingredients/verdure/Funghi/funghi-pleurotus.md)
+- [Melanzana Lunga](/api/ingredients/verdure/Melanzana/melanzana-lunga.md)
+- [Melanzana Tonda](/api/ingredients/verdure/Melanzana/melanzana-tonda.md)
+- [Melanzana Violetta](/api/ingredients/verdure/Melanzana/melanzana-violetta.md)
+- [Zucchina Gialla](/api/ingredients/verdure/Zucchina/zucchina-gialla.md)
+- [Zucchina Romanesca](/api/ingredients/verdure/Zucchina/zucchina-romanesca.md)
+- [Zucchina Scura](/api/ingredients/verdure/Zucchina/zucchina-scura.md)
+- [Zucchina Trombetta di Albenga](/api/ingredients/verdure/Zucchina/zucchina-trombetta-di-albenga.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)

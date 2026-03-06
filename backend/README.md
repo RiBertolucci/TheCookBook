@@ -1,77 +1,116 @@
-# Backend Skeleton
+# TheCookBook Backend
 
-This directory contains the initial Node.js backend for TheCookBook project.
+Node.js + Express backend for markdown-based cookbook content.
 
-## Structure
+## Purpose
 
-```
-backend/
-├── package.json         # Node project manifest
-├── README.md            # Backend-specific documentation
-├── content/             # Markdown repository (Recipes, Ingredients, SpicesAndHerbs)
-└── src/
-    ├── index.js         # Entry point / CLI
-    └── sync.js          # Sync logic placeholder
-```
+- Serve recipe, ingredient, and spice/herb markdown content via HTTP.
+- Run content sync/linking logic on demand.
+- Build and query persistent indexes.
+- Support shopping list Telegram send/load flows.
+- Provide ingredient suggestion endpoints used by Shopping and Ingredients Mixer tabs.
 
-## Getting started
+## Quick Start
 
-1. `cd backend`
-2. `npm install` (add dependencies as needed)
-3. `npm run sync` to perform a scan of the content folders.
-
-Sync currently logs parsed files; real linking/parsing will be implemented later.
-
-### API / Communication
-
-A minimal HTTP layer (Express) exposes the sync functionality to a frontend or other clients.
-
-- `POST /sync` – triggers a full repository scan; returns `{ status: 'ok' }` on success.
-- Root `/` responds with a simple liveness message.
-
-### Telegram Shopping List
-
-The backend can forward a shopping list to Telegram through a bot.
-
-- `POST /api/shopping-list/telegram`
-    - Request body: `{ "items": ["Item 1", "Item 2"], "targetId": "me" }`
-    - Response: `{ "status": "ok", "messageId": 123, "targetId": "me", "targetName": "Riccardo" }`
-
-- `GET /api/shopping-list/telegram/last`
-    - Query: `?targetId=me`
-    - Response: `{ "status": "ok", "items": ["Item 1"], "sentAt": "...", "messageId": 123, "targetId": "me", "targetName": "Riccardo" }`
-
-- `GET /api/shopping-list/telegram/targets`
-    - Response: `{ "status": "ok", "targets": [{ "id": "me", "name": "Riccardo" }] }`
-
-- `POST /api/shopping-list/telegram/targets/add-latest`
-    - Reads `TELEGRAM_BOT_TOKEN` from env and calls Telegram `getUpdates`.
-    - Uses the chat from the latest update only.
-    - Response: `{ "status": "ok", "created": true, "target": { "id": "riccardo-202258240", "name": "Riccardo", "chatId": "202258240" } }`
-    - If the chat already exists in configured/stored targets: `"created": false`.
-
-Required environment variables:
-
-- `TELEGRAM_BOT_TOKEN`
-- `TELEGRAM_TARGETS_JSON` (recommended for multiple named chats)
-
-Legacy fallback (single chat):
-
-- `TELEGRAM_CHAT_ID`
-
-You can store them in `backend/.env`:
-
-```env
-TELEGRAM_BOT_TOKEN=<your-bot-token>
-TELEGRAM_TARGETS_JSON=[{"id":"me","name":"Riccardo","chatId":"202258240"},{"id":"family","name":"Family","chatId":"-1001234567890"}]
-```
-
-PowerShell example before starting backend:
-
-```powershell
-$env:TELEGRAM_BOT_TOKEN = "<your-bot-token>"
-$env:TELEGRAM_TARGETS_JSON = '[{"id":"me","name":"Riccardo","chatId":"202258240"}]'
+```bash
+cd backend
+npm install
 npm start
 ```
 
-The server is started with `npm start` (defaults to port 3000).
+Backend default URL: `http://localhost:3000`
+
+### Useful scripts
+
+- `npm start`: starts HTTP server (`src/server.js`)
+- `npm run sync`: runs CLI sync (`src/index.js sync`)
+
+## Environment Variables
+
+- `PORT`: optional HTTP port (default `3000`)
+- `TELEGRAM_BOT_TOKEN`: required for Telegram APIs
+- `TELEGRAM_TARGETS_JSON`: optional named chat targets (recommended)
+- `TELEGRAM_CHAT_ID`: optional legacy single-target fallback
+
+Example `backend/.env`:
+
+```env
+PORT=3000
+TELEGRAM_BOT_TOKEN=<token>
+TELEGRAM_TARGETS_JSON=[{"id":"me","name":"Riccardo","chatId":"202258240"}]
+```
+
+## API Overview
+
+All responses are JSON.
+
+### System
+
+- `GET /`: liveness check
+- `POST /sync`: run sync
+- `POST /api/sync`: run sync (alias)
+- `POST /api/indexes/rebuild`: force index rebuild
+
+### Content Read
+
+- `GET /api/hierarchy`
+- `GET /api/recipes/:filename`
+- `GET /api/ingredients/*filename`
+- `GET /api/spices/*filename` (legacy alias)
+
+### Ingredient Discovery
+
+- `GET /api/ingredients/suggestions`
+- `GET /api/ingredients/compatible?selected=<value>&selected=<value>`
+- `GET /api/ingredients/families`
+- `GET /api/ingredients/families/:name`
+
+`/api/ingredients/compatible` behavior:
+
+- If `selected` is empty: returns full ingredient catalog suggestions.
+- If one or more `selected` values are present: returns intersection of items found in each selected ingredient markdown under:
+- `## Goes with ingredients`
+- `## Goes with spicesAndHerbs`
+- Selected items are excluded from results.
+- Result can be empty.
+
+### Index APIs
+
+- `GET /api/indexes`
+- `GET /api/indexes/:indexName`
+- `POST /api/indexes/:indexName/search`
+
+### Content Write
+
+- `POST /api/addFile`
+- `POST /api/updateFile`
+- `POST /api/deleteFile`
+- `POST /api/deleteFolder`
+
+### Telegram Shopping APIs
+
+- `POST /api/shopping-list/telegram`
+- `GET /api/shopping-list/telegram/last?targetId=<id>`
+- `GET /api/shopping-list/telegram/targets`
+- `POST /api/shopping-list/telegram/targets/add-latest`
+
+## Content and Generated Artifacts
+
+Primary content root: `backend/content`
+
+- `Recipes/`
+- `Ingredients/`
+- `Ingredients/SpicesAndHerbs/` (canonical location for spices/herbs)
+
+Generated by sync/runtime:
+
+- `content/sync-metadata.json`
+- `content/.indexes/*.json`
+- `content/.telegram/*.json`
+
+## Notes
+
+- Route order matters for specific vs wildcard paths.
+- The compatible suggestions endpoint relies on markdown section headings being spelled exactly:
+- `Goes with ingredients`
+- `Goes with spicesAndHerbs`

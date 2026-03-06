@@ -20,13 +20,12 @@ Condimento fermentato sapido e umami, utile per dare profondità a marinature, s
 
 ## Goes with ingredients
 - [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Zenzero fresco](/api/ingredients/esotici/zenzero-fresco.md)
 - [Riso basmati](/api/ingredients/esotici/riso-basmati.md)
 - [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
-
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
 - [Paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md)

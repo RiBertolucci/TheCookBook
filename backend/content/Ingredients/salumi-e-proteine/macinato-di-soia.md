@@ -16,19 +16,19 @@ Proteina vegetale disidratata, versatile e ad alta resa: ideale per ragù vegani
 - Lenticchie cotte e tritate (versione più morbida)
 - Tempeh sbriciolato (profilo più intenso)
 - Tofu sbriciolato ben pressato (consistenza più delicata)
-- Fiocchi di soia grossi tritati dopo ammollo
+- Fiocchi di soia grossi tritati dopo ammollo (stessa granulometria proteica dopo ammollo, con tenuta simile in ragu)
 - Seitan tritato (più elastico e “carnoso”)
 
 ## Goes with ingredients
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
-- [Carota](/api/ingredients/verdure/carota.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
+- [Carota](/api/ingredients/verdure/Carota/carota.md)
 - [Sedano](/api/ingredients/verdure/sedano.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
 - [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
 - [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
-- [Pomodoro](/api/ingredients/verdure/pomodoro.md)
+- [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Cipolla Dorata](/api/ingredients/verdure/Cipolla/cipolla-dorata.md)
 ## Goes with spicesAndHerbs

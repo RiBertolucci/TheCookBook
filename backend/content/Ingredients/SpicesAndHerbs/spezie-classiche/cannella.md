@@ -12,8 +12,8 @@ Spezia calda e dolce-speziata, utile in mix aromatici salati e dolci, soprattutt
 
 ## Goes with ingredients
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
-- [Carota](/api/ingredients/verdure/carota.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
+- [Carota](/api/ingredients/verdure/Carota/carota.md)
 - [Patata](/api/ingredients/verdure/patata.md)
 - [Riso basmati](/api/ingredients/esotici/riso-basmati.md)
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)

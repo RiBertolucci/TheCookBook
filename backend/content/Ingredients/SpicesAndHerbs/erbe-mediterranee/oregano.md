@@ -11,9 +11,9 @@ Erba aromatica intensa, essenziale in pizze, sughi al pomodoro, teglie e prepara
 - [Paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md)
 
 ## Goes with ingredients
-- [Pomodoro](/api/ingredients/verdure/pomodoro.md)
-- [Melanzana](/api/ingredients/verdure/melanzana.md)
-- [Zucchina](/api/ingredients/verdure/zucchina.md)
+- [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
+- [Melanzana](/api/ingredients/verdure/Melanzana/melanzana.md)
+- [Zucchina](/api/ingredients/verdure/Zucchina/zucchina.md)
 - [Mozzarella](/api/ingredients/latticini-e-formaggi/mozzarella.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
 - [Pancetta](/api/ingredients/salumi-e-proteine/pancetta.md)

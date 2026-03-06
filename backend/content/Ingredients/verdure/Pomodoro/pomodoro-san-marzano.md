@@ -12,19 +12,19 @@ Varieta dalla polpa densa e poco acquosa, molto apprezzata per sughi lunghi, con
 
 ## Substitutes
 
-- Pomodoro Roma maturo
-- Pomodoro datterino in cottura
-- Pomodoro pelato di qualita
-- Passata di pomodoro densa
+- Pomodoro Roma maturo (acidita, succosita e tenore zuccherino compatibili con sughi e basi rosse)
+- Pomodoro datterino in cottura (acidita, succosita e tenore zuccherino compatibili con sughi e basi rosse)
+- Pomodoro pelato di qualita (polpa ricca e resa omogenea nelle lunghe riduzioni)
+- Passata di pomodoro densa (stesso equilibrio tra acidita e dolcezza, ideale per sughi)
 
 ## Goes with ingredients
 - [Aglio](/api/ingredients/verdure/aglio.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Mozzarella](/api/ingredients/latticini-e-formaggi/mozzarella.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
-
+- [Zucchina Scura](/api/ingredients/verdure/Zucchina/zucchina-scura.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
 - [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)

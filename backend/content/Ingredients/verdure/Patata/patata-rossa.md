@@ -11,20 +11,17 @@ Patata a pasta soda, molto adatta a forno, padella e insalate tiepide grazie all
 - Sapore intenso ma equilibrato
 
 ## Substitutes
-
-- Patata novella
-- Patata gialla poco farinosa
-- Patata bianca a pasta compatta
-- Topinambur in cotture al forno
-
+- [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md) (stessa matrice amidacea, cambia solo leggermente la tenuta)
+- Patata gialla poco farinosa (stessa matrice amidacea, cambia solo leggermente la tenuta)
+- Patata bianca a pasta compatta (stessa matrice amidacea, cambia solo leggermente la tenuta)
+- Topinambur in cotture al forno (struttura amidacea e comportamento al forno molto vicino)
 ## Goes with ingredients
 - [Aglio](/api/ingredients/verdure/aglio.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Pancetta](/api/ingredients/salumi-e-proteine/pancetta.md)
 - [Salsiccia](/api/ingredients/salumi-e-proteine/salsiccia.md)
-
 ## Goes with spicesAndHerbs
 - [Rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)
 - [Timo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/timo.md)

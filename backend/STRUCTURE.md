@@ -1,66 +1,118 @@
-# Backend Project Structure
+# Backend Structure
 
-## Directory Layout
+## Root Layout
 
-```
+```text
 backend/
-├── package.json              # Node dependencies and scripts
-├── .gitignore                # Git exclusions
-├── README.md                 # Backend documentation
-│
-├── content/                  # Markdown repository (scanned during sync)
-│   ├── Recipes/              # Recipe files (.md)
-│   ├── Ingredients/          # Ingredient files (.md)
-│   └── SpicesAndHerbs/       # Spice and herb files (.md)
-│   └── sync-metadata.json    # Metadata (auto-generated, tracks file changes)
-│   └── .indexes/             # Persistent search indexes (auto-generated JSON)
-│
-└── src/                      # Application source code
-    ├── index.js              # CLI entry point (npm run sync)
-    ├── server.js             # HTTP server (Express, npm start)
-    │
-    └── services/             # Core business logic
-        ├── index-adapters/   # One adapter per index (preprocessing + mapping)
-        │   ├── registry.js
-        │   ├── recipes-by-ingredients.adapter.js
-        │   └── ingredients-by-goes-with-ingredients.adapter.js
-        ├── metadata.js       # Tracks file creation/modification times
-        ├── parser.js         # Markdown parsing and link formatting
-        ├── linker.js         # Cross-document linking logic
-        ├── index-store.service.js # Generic key-set persistent indexing engine
-        └── sync.js           # Main sync orchestration
+|-- package.json
+|-- README.md
+|-- STRUCTURE.md
+|-- content/
+|   |-- Recipes/
+|   |-- Ingredients/
+|   |   |-- SpicesAndHerbs/
+|   |-- .indexes/                # generated
+|   |-- .telegram/               # generated
+|   `-- sync-metadata.json       # generated
+`-- src/
+    |-- app.js
+    |-- server.js
+    |-- index.js
+    |-- controllers/
+    |-- routes/
+    |-- services/
+    |-- middleware/
+    `-- utils/
 ```
 
-## Service Layers
+## HTTP Application Layer
 
-### `services/metadata.js`
-- Manages persistent file tracking via JSON.
-- Detects new and modified files.
+### `src/app.js`
 
-### `services/parser.js`
-- Parses markdown sections and extracts bullet-point items.
-- Determines document type (recipe, ingredient, spice).
-- Handles link formatting and section updates.
+- Creates Express app.
+- Registers middleware and all route modules.
 
-### `services/linker.js`
-- Orchestrates linking logic for each document type.
-- Handles ingredient, recipe, and spice/herb processing.
-- Calls parser helpers to read and update markdown.
+### `src/server.js`
 
-### `services/sync.js`
-- Main orchestration module.
-- Scans directories recursively.
-- Delegates to metadata and linker services.
+- Loads env via `dotenv`.
+- Starts HTTP server.
 
-## Usage
+### `src/middleware/request-id.middleware.js`
 
-```bash
-# Start HTTP server (port 3000)
-npm start
+- Attaches request identifier used by logs/controllers.
 
-# Trigger sync via CLI
-npm run sync
+## Routing and Controllers
 
-# Trigger sync via HTTP
-POST http://localhost:3000/sync
-```
+### Routes
+
+- `src/routes/system.routes.js`
+- `src/routes/content-read.routes.js`
+- `src/routes/content-write.routes.js`
+
+### Controllers
+
+- `src/controllers/system.controller.js`
+- `src/controllers/content-read.controller.js`
+- `src/controllers/content-write.controller.js`
+
+Controller responsibilities:
+
+- Request validation and status mapping.
+- Delegation to services.
+- Stable JSON response shapes.
+
+## Services
+
+### Content and Files
+
+- `src/services/fileReader.js`: read hierarchy and markdown files.
+- `src/services/content-storage.service.js`: write/delete filesystem operations.
+- `src/services/parser.js`: markdown section parsing and updates.
+- `src/services/linker.js`: sync/linking logic for cross-file relations.
+- `src/services/metadata.js`: metadata tracking for sync.
+- `src/services/sync.js`: sync orchestration.
+
+### Indexing
+
+- `src/services/index-store.service.js`: persistent index loading/writing/rebuild.
+- `src/services/index-search.service.js`: index-based search operations.
+- `src/services/index-validator.js`: index schema validation.
+- `src/services/ingredient-families.service.js`: family/group transformations.
+- `src/services/index-adapters/registry.js`: adapter registry.
+- `src/services/index-adapters/recipes-by-ingredients.adapter.js`
+- `src/services/index-adapters/ingredients-by-goes-with-ingredients.adapter.js`
+- `src/services/index-adapters/ingredients-catalog.adapter.js`
+
+### Telegram
+
+- `src/services/telegram-shopping.service.js`: Telegram send/load/target operations.
+
+### Support
+
+- `src/services/logger.js`: structured logging helper.
+
+## Utilities
+
+### `src/utils/content-path.utils.js`
+
+- Path normalization and safety checks.
+- Section-to-folder mapping helpers.
+
+## CLI Entry
+
+### `src/index.js`
+
+- Provides `sync` command used by `npm run sync`.
+
+## Runtime and Data Flow
+
+1. Request reaches route module.
+2. Controller validates input and calls service layer.
+3. Services read/write markdown and indexes under `content/`.
+4. Controller returns JSON response with appropriate status code.
+
+## Generated Files and Folders
+
+- `content/.indexes/*.json`: persistent indexes.
+- `content/.telegram/*.json`: Telegram targets and last-list snapshots.
+- `content/sync-metadata.json`: sync file tracking.

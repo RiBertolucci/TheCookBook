@@ -15,7 +15,7 @@ Erba aromatica dal profumo caldo e canforato, usata in burro fuso, ripieni, seco
 - [Uova](/api/ingredients/salumi-e-proteine/uova.md)
 - [Ricotta](/api/ingredients/latticini-e-formaggi/ricotta.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
-- [Funghi](/api/ingredients/verdure/funghi.md)
+- [Funghi](/api/ingredients/verdure/Funghi/funghi.md)
 - [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 - [Patata Bianca](/api/ingredients/verdure/Patata/patata-bianca.md)

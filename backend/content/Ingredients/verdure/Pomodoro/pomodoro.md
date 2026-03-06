@@ -11,8 +11,7 @@ Ingrediente simbolo della cucina italiana, usato fresco, in salsa o passata per 
 - Si abbina bene a grassi e formaggi stagionati
 
 ## Substitutes
-
-- Passata di pomodoro (stessa tecnica per sughi)
+- [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md) (stessa tecnica per sughi)
 - Pomodori pelati in scatola (resa molto simile)
 - Concentrato di pomodoro diluito (base intensa)
 - Salsa di peperoni rossi arrostiti (dolcezza e colore affini)
@@ -20,16 +19,15 @@ Ingrediente simbolo della cucina italiana, usato fresco, in salsa o passata per 
 - Barbabietola + limone (colore e acidità controllata)
 - Tamarillo cotto (acidità e fruttato simili)
 - Prugne rosse cotte in salsa salata (in ricette rustiche)
-
 ## Goes with ingredients
 - [Aglio](/api/ingredients/verdure/aglio.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
-- [Carota](/api/ingredients/verdure/carota.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
+- [Carota](/api/ingredients/verdure/Carota/carota.md)
 - [Sedano](/api/ingredients/verdure/sedano.md)
-- [Melanzana](/api/ingredients/verdure/melanzana.md)
-- [Zucchina](/api/ingredients/verdure/zucchina.md)
+- [Melanzana](/api/ingredients/verdure/Melanzana/melanzana.md)
+- [Zucchina](/api/ingredients/verdure/Zucchina/zucchina.md)
 - [Patata](/api/ingredients/verdure/patata.md)
-- [Funghi](/api/ingredients/verdure/funghi.md)
+- [Funghi](/api/ingredients/verdure/Funghi/funghi.md)
 - [Mozzarella](/api/ingredients/latticini-e-formaggi/mozzarella.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
 - [Pancetta](/api/ingredients/salumi-e-proteine/pancetta.md)
@@ -46,6 +44,13 @@ Ingrediente simbolo della cucina italiana, usato fresco, in salsa o passata per 
 - [Cipolla Bianca](/api/ingredients/verdure/Cipolla/cipolla-bianca.md)
 - [Cipolla Dorata](/api/ingredients/verdure/Cipolla/cipolla-dorata.md)
 - [Cipolla Rossa](/api/ingredients/verdure/Cipolla/cipolla-rossa.md)
+- [Farina 0](/api/ingredients/dispensa/Farina/farina-0.md)
+- [Farina Manitoba](/api/ingredients/dispensa/Farina/farina-manitoba.md)
+- [Carota Nantes](/api/ingredients/verdure/Carota/carota-nantes.md)
+- [Melanzana Lunga](/api/ingredients/verdure/Melanzana/melanzana-lunga.md)
+- [Melanzana Tonda](/api/ingredients/verdure/Melanzana/melanzana-tonda.md)
+- [Zucchina Romanesca](/api/ingredients/verdure/Zucchina/zucchina-romanesca.md)
+- [Carote Arancioni Standard](/api/ingredients/verdure/Carota/carote-arancioni-standard.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)

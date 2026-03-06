@@ -2,11 +2,14 @@
   "name": "ingredients-by-goes-with-ingredients",
   "version": 1,
   "strategy": "key-set",
-  "updatedAt": "2026-03-06T15:01:00.131Z",
+  "updatedAt": "2026-03-06T16:10:58.087Z",
   "entries": {
     "Ingredients/dispensa/brodo-vegetale.md": [
       "carota",
+      "carota nantes",
+      "carote arancioni standard",
       "cipolla",
+      "farina 0",
       "macinato di soia",
       "manzo da brasato",
       "passata di pomodoro",
@@ -18,8 +21,35 @@
       "sedano",
       "vino rosso"
     ],
+    "Ingredients/dispensa/Farina/farina-0.md": [
+      "brodo vegetale",
+      "mozzarella",
+      "olio extravergine di oliva",
+      "pomodoro",
+      "sale",
+      "uova"
+    ],
+    "Ingredients/dispensa/Farina/farina-manitoba.md": [
+      "burro",
+      "mozzarella",
+      "pomodoro",
+      "ricotta",
+      "sale",
+      "uova"
+    ],
+    "Ingredients/dispensa/Farina/farina-tipo-1.md": [
+      "mozzarella",
+      "olio extravergine di oliva",
+      "passata di pomodoro",
+      "ricotta",
+      "sale",
+      "zucchina",
+      "zucchina trombetta di albenga"
+    ],
     "Ingredients/dispensa/farina-00.md": [
       "burro",
+      "funghi champignon",
+      "funghi porcini",
       "guanciale",
       "manzo da brasato",
       "mozzarella",
@@ -31,18 +61,27 @@
       "pomodoro",
       "ricotta",
       "spinaci",
-      "uova"
+      "uova",
+      "zucchina gialla"
     ],
     "Ingredients/dispensa/olio-extravergine-di-oliva.md": [
       "aglio",
+      "carota baby",
+      "carota viola",
       "cipolla",
       "cipolla bianca",
       "cipolla dorata",
       "cipolla rossa",
+      "farina 0",
       "farina 00",
+      "farina tipo 1",
+      "funghi pleurotus",
       "macinato di soia",
       "manzo da brasato",
       "melanzana",
+      "melanzana lunga",
+      "melanzana tonda",
+      "melanzana violetta",
       "mozzarella",
       "parmigiano reggiano",
       "passata di pomodoro",
@@ -62,13 +101,18 @@
       "sale",
       "salsa di soia",
       "vino rosso",
-      "zucchina"
+      "zucchina",
+      "zucchina gialla",
+      "zucchina romanesca",
+      "zucchina scura",
+      "zucchina trombetta di albenga"
     ],
     "Ingredients/dispensa/passata-di-pomodoro.md": [
       "aglio",
       "brodo vegetale",
       "carota",
       "cipolla",
+      "farina tipo 1",
       "macinato di soia",
       "olio extravergine di oliva",
       "pomodoro del piennolo",
@@ -82,6 +126,10 @@
       "cipolla",
       "cipolla bianca",
       "cipolla rossa",
+      "farina 0",
+      "farina manitoba",
+      "farina tipo 1",
+      "funghi pleurotus",
       "macinato di soia",
       "manzo da brasato",
       "olio extravergine di oliva",
@@ -115,7 +163,10 @@
       "aglio",
       "brodo vegetale",
       "carota",
+      "carota nantes",
+      "carote arancioni standard",
       "cipolla",
+      "funghi porcini",
       "manzo da brasato",
       "olio extravergine di oliva",
       "passata di pomodoro",
@@ -153,8 +204,13 @@
       "salsa di soia"
     ],
     "Ingredients/latticini-e-formaggi/burro.md": [
+      "carota baby",
       "farina 00",
+      "farina manitoba",
       "funghi",
+      "funghi champignon",
+      "funghi champignones",
+      "funghi porcini",
       "parmigiano reggiano",
       "patata",
       "patata americana",
@@ -170,8 +226,14 @@
     ],
     "Ingredients/latticini-e-formaggi/mozzarella.md": [
       "aglio",
+      "carota viola",
+      "farina 0",
       "farina 00",
+      "farina manitoba",
+      "farina tipo 1",
       "melanzana",
+      "melanzana tonda",
+      "melanzana violetta",
       "olio extravergine di oliva",
       "patata",
       "patata novella",
@@ -181,13 +243,18 @@
       "pomodoro datterino",
       "pomodoro roma",
       "pomodoro san marzano",
-      "zucchina"
+      "zucchina",
+      "zucchina gialla"
     ],
     "Ingredients/latticini-e-formaggi/parmigiano-reggiano.md": [
       "burro",
       "farina 00",
       "funghi",
+      "funghi champignon",
+      "funghi champignones",
+      "funghi porcini",
       "melanzana",
+      "melanzana tonda",
       "olio extravergine di oliva",
       "pancetta",
       "patata bianca",
@@ -200,11 +267,15 @@
       "salsiccia",
       "spinaci",
       "uova",
-      "zucchina"
+      "zucchina",
+      "zucchina romanesca",
+      "zucchina scura",
+      "zucchina trombetta di albenga"
     ],
     "Ingredients/latticini-e-formaggi/pecorino-romano.md": [
       "farina 00",
       "guanciale",
+      "melanzana violetta",
       "pancetta",
       "peperoncino",
       "pomodoro",
@@ -212,8 +283,15 @@
     ],
     "Ingredients/latticini-e-formaggi/ricotta.md": [
       "burro",
+      "carota viola",
       "farina 00",
+      "farina manitoba",
+      "farina tipo 1",
+      "funghi champignon",
+      "funghi champignones",
+      "funghi pleurotus",
       "melanzana",
+      "melanzana lunga",
       "parmigiano reggiano",
       "patata bianca",
       "patata viola",
@@ -223,7 +301,10 @@
       "pomodoro datterino",
       "spinaci",
       "uova",
-      "zucchina"
+      "zucchina",
+      "zucchina gialla",
+      "zucchina romanesca",
+      "zucchina trombetta di albenga"
     ],
     "Ingredients/salumi-e-proteine/guanciale.md": [
       "cipolla",
@@ -250,8 +331,10 @@
       "aglio",
       "brodo vegetale",
       "carota",
+      "carota nantes",
       "cipolla",
       "farina 00",
+      "funghi porcini",
       "olio extravergine di oliva",
       "sale",
       "sedano",
@@ -274,6 +357,7 @@
     ],
     "Ingredients/salumi-e-proteine/pollo.md": [
       "aglio",
+      "carota baby",
       "cipolla",
       "cipolla bianca",
       "latte di cocco",
@@ -299,7 +383,9 @@
     ],
     "Ingredients/salumi-e-proteine/uova.md": [
       "burro",
+      "farina 0",
       "farina 00",
+      "farina manitoba",
       "funghi",
       "guanciale",
       "pancetta",
@@ -314,9 +400,13 @@
     "Ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md": [
       "brodo vegetale",
       "carota",
+      "carota baby",
+      "carota nantes",
+      "carote arancioni standard",
       "cipolla",
       "cipolla bianca",
       "cipolla dorata",
+      "funghi porcini",
       "macinato di soia",
       "manzo da brasato",
       "pancetta",
@@ -337,10 +427,15 @@
       "carota",
       "cipolla",
       "cipolla rossa",
+      "farina 0",
       "farina 00",
+      "farina manitoba",
       "funghi",
       "guanciale",
       "melanzana",
+      "melanzana lunga",
+      "melanzana tonda",
+      "melanzana violetta",
       "mozzarella",
       "olio extravergine di oliva",
       "pancetta",
@@ -364,16 +459,23 @@
       "sedano",
       "spinaci",
       "uova",
-      "zucchina"
+      "zucchina",
+      "zucchina gialla",
+      "zucchina romanesca",
+      "zucchina scura",
+      "zucchina trombetta di albenga"
     ],
     "Ingredients/SpicesAndHerbs/erbe-mediterranee/maggiorana.md": [
       "brodo vegetale",
       "farina 00",
       "melanzana",
+      "melanzana violetta",
       "pomodoro",
       "salsiccia",
       "uova",
-      "zucchina"
+      "zucchina",
+      "zucchina gialla",
+      "zucchina trombetta di albenga"
     ],
     "Ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md": [
       "farina 00",
@@ -388,19 +490,35 @@
       "aglio",
       "brodo vegetale",
       "burro",
+      "carota baby",
+      "carota nantes",
+      "carote arancioni standard",
+      "farina tipo 1",
       "funghi",
+      "funghi champignon",
+      "funghi champignones",
+      "funghi pleurotus",
+      "funghi porcini",
       "patata",
       "patata gialla",
       "patata novella",
       "uova",
-      "zucchina"
+      "zucchina",
+      "zucchina romanesca"
     ],
     "Ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md": [
       "aglio",
       "brodo vegetale",
+      "carota nantes",
+      "carote arancioni standard",
       "cipolla bianca",
       "cipolla dorata",
+      "farina 0",
+      "farina tipo 1",
       "funghi",
+      "funghi champignon",
+      "funghi champignones",
+      "funghi porcini",
       "macinato di soia",
       "manzo da brasato",
       "olio extravergine di oliva",
@@ -416,7 +534,8 @@
       "pomodoro costoluto fiorentino",
       "sale",
       "salsiccia",
-      "vino rosso"
+      "vino rosso",
+      "zucchina scura"
     ],
     "Ingredients/SpicesAndHerbs/erbe-mediterranee/salvia.md": [
       "burro",
@@ -432,8 +551,14 @@
     "Ingredients/SpicesAndHerbs/erbe-mediterranee/timo.md": [
       "aglio",
       "burro",
+      "carota baby",
+      "carota viola",
       "cipolla rossa",
       "funghi",
+      "funghi champignon",
+      "funghi champignones",
+      "funghi pleurotus",
+      "melanzana tonda",
       "pancetta",
       "patata",
       "patata novella",
@@ -442,7 +567,8 @@
       "pomodoro ciliegino",
       "pomodoro datterino",
       "salsiccia",
-      "vino rosso"
+      "vino rosso",
+      "zucchina gialla"
     ],
     "Ingredients/SpicesAndHerbs/mixes/garam-masala.md": [
       "aglio",
@@ -467,6 +593,7 @@
     "Ingredients/SpicesAndHerbs/spezie-classiche/cardamomo.md": [
       "burro",
       "carota",
+      "carota viola",
       "cipolla",
       "latte di cocco",
       "pollo",
@@ -508,6 +635,7 @@
     "Ingredients/SpicesAndHerbs/spezie-classiche/noce-moscata.md": [
       "burro",
       "farina 00",
+      "farina manitoba",
       "latte intero",
       "patata",
       "patata bianca",
@@ -521,6 +649,7 @@
       "cipolla dorata",
       "macinato di soia",
       "melanzana",
+      "melanzana lunga",
       "pancetta",
       "passata di pomodoro",
       "patata",
@@ -541,17 +670,31 @@
       "brodo vegetale",
       "burro",
       "carota",
+      "carota baby",
+      "carota nantes",
+      "carota viola",
+      "carote arancioni standard",
       "cipolla",
       "cipolla bianca",
       "cipolla dorata",
       "cipolla rossa",
+      "farina 0",
       "farina 00",
+      "farina manitoba",
+      "farina tipo 1",
       "funghi",
+      "funghi champignon",
+      "funghi champignones",
+      "funghi pleurotus",
+      "funghi porcini",
       "guanciale",
       "latte di cocco",
       "macinato di soia",
       "manzo da brasato",
       "melanzana",
+      "melanzana lunga",
+      "melanzana tonda",
+      "melanzana violetta",
       "mozzarella",
       "olio extravergine di oliva",
       "pancetta",
@@ -586,7 +729,11 @@
       "uova",
       "vino rosso",
       "zenzero fresco",
-      "zucchina"
+      "zucchina",
+      "zucchina gialla",
+      "zucchina romanesca",
+      "zucchina scura",
+      "zucchina trombetta di albenga"
     ],
     "Ingredients/SpicesAndHerbs/spezie-classiche/peperoncino-secco.md": [
       "aglio",
@@ -601,14 +748,22 @@
     ],
     "Ingredients/verdure/aglio.md": [
       "carota",
+      "carote arancioni standard",
       "cipolla",
       "cipolla bianca",
       "cipolla dorata",
       "funghi",
+      "funghi champignon",
+      "funghi champignones",
+      "funghi pleurotus",
+      "funghi porcini",
       "latte di cocco",
       "macinato di soia",
       "manzo da brasato",
       "melanzana",
+      "melanzana lunga",
+      "melanzana tonda",
+      "melanzana violetta",
       "mozzarella",
       "olio extravergine di oliva",
       "pancetta",
@@ -635,9 +790,36 @@
       "spinaci",
       "vino rosso",
       "zenzero fresco",
+      "zucchina",
+      "zucchina romanesca",
+      "zucchina scura",
+      "zucchina trombetta di albenga"
+    ],
+    "Ingredients/verdure/Carota/carota-baby.md": [
+      "burro",
+      "cipolla",
+      "olio extravergine di oliva",
+      "patata",
+      "piselli",
+      "pollo"
+    ],
+    "Ingredients/verdure/Carota/carota-nantes.md": [
+      "brodo vegetale",
+      "cipolla",
+      "manzo da brasato",
+      "pomodoro",
+      "sedano",
+      "vino rosso"
+    ],
+    "Ingredients/verdure/Carota/carota-viola.md": [
+      "cipolla rossa",
+      "mozzarella",
+      "olio extravergine di oliva",
+      "patata viola",
+      "ricotta",
       "zucchina"
     ],
-    "Ingredients/verdure/carota.md": [
+    "Ingredients/verdure/Carota/carota.md": [
       "aglio",
       "brodo vegetale",
       "cipolla",
@@ -655,40 +837,62 @@
       "vino rosso",
       "zucchina"
     ],
+    "Ingredients/verdure/Carota/carote-arancioni-standard.md": [
+      "aglio",
+      "brodo vegetale",
+      "cipolla",
+      "patata",
+      "pomodoro",
+      "sedano",
+      "vino rosso",
+      "zucchina"
+    ],
     "Ingredients/verdure/Cipolla/cipolla-bianca.md": [
       "aglio",
       "olio extravergine di oliva",
       "peperoncino",
       "pollo",
       "pomodoro",
-      "sale"
+      "sale",
+      "zucchina gialla"
     ],
     "Ingredients/verdure/Cipolla/cipolla-dorata.md": [
       "aglio",
       "carota",
       "macinato di soia",
+      "melanzana lunga",
       "olio extravergine di oliva",
       "pomodoro",
-      "sedano"
+      "sedano",
+      "zucchina scura",
+      "zucchina trombetta di albenga"
     ],
     "Ingredients/verdure/Cipolla/cipolla-rossa.md": [
+      "carota viola",
       "melanzana",
+      "melanzana violetta",
       "olio extravergine di oliva",
       "pomodoro",
       "sale",
       "salsiccia",
       "zucchina"
     ],
-    "Ingredients/verdure/cipolla.md": [
+    "Ingredients/verdure/Cipolla/cipolla.md": [
       "aglio",
       "brodo vegetale",
       "carota",
+      "carota baby",
+      "carota nantes",
+      "carote arancioni standard",
       "funghi",
+      "funghi champignon",
+      "funghi champignones",
       "guanciale",
       "latte di cocco",
       "macinato di soia",
       "manzo da brasato",
       "melanzana",
+      "melanzana tonda",
       "olio extravergine di oliva",
       "pancetta",
       "passata di pomodoro",
@@ -714,9 +918,43 @@
       "sedano",
       "vino rosso",
       "zenzero fresco",
+      "zucchina",
+      "zucchina romanesca"
+    ],
+    "Ingredients/verdure/Funghi/funghi-champignon.md": [
+      "aglio",
+      "burro",
+      "cipolla",
+      "farina 00",
+      "parmigiano reggiano",
+      "ricotta"
+    ],
+    "Ingredients/verdure/Funghi/funghi-champignones.md": [
+      "aglio",
+      "burro",
+      "cipolla",
+      "parmigiano reggiano",
+      "patata",
+      "ricotta",
       "zucchina"
     ],
-    "Ingredients/verdure/funghi.md": [
+    "Ingredients/verdure/Funghi/funghi-pleurotus.md": [
+      "aglio",
+      "melanzana",
+      "olio extravergine di oliva",
+      "ricotta",
+      "sale",
+      "zucchina"
+    ],
+    "Ingredients/verdure/Funghi/funghi-porcini.md": [
+      "aglio",
+      "burro",
+      "farina 00",
+      "manzo da brasato",
+      "parmigiano reggiano",
+      "vino rosso"
+    ],
+    "Ingredients/verdure/Funghi/funghi.md": [
       "aglio",
       "burro",
       "cipolla",
@@ -730,10 +968,35 @@
       "uova",
       "zucchina"
     ],
-    "Ingredients/verdure/melanzana.md": [
+    "Ingredients/verdure/Melanzana/melanzana-lunga.md": [
+      "aglio",
+      "cipolla dorata",
+      "olio extravergine di oliva",
+      "pomodoro",
+      "ricotta",
+      "zucchina"
+    ],
+    "Ingredients/verdure/Melanzana/melanzana-tonda.md": [
+      "aglio",
+      "cipolla",
+      "mozzarella",
+      "olio extravergine di oliva",
+      "parmigiano reggiano",
+      "pomodoro"
+    ],
+    "Ingredients/verdure/Melanzana/melanzana-violetta.md": [
+      "aglio",
+      "cipolla rossa",
+      "mozzarella",
+      "olio extravergine di oliva",
+      "pecorino romano",
+      "pomodoro datterino"
+    ],
+    "Ingredients/verdure/Melanzana/melanzana.md": [
       "aglio",
       "cipolla",
       "cipolla rossa",
+      "funghi pleurotus",
       "mozzarella",
       "olio extravergine di oliva",
       "parmigiano reggiano",
@@ -764,7 +1027,8 @@
       "latte intero",
       "parmigiano reggiano",
       "sale",
-      "uova"
+      "uova",
+      "zucchina scura"
     ],
     "Ingredients/verdure/Patata/Patata-novella.md": [
       "aglio",
@@ -795,6 +1059,7 @@
     ],
     "Ingredients/verdure/Patata/patata-viola.md": [
       "burro",
+      "carota viola",
       "cipolla",
       "olio extravergine di oliva",
       "parmigiano reggiano",
@@ -813,6 +1078,7 @@
       "aglio",
       "burro",
       "carota",
+      "carota baby",
       "cipolla",
       "pancetta",
       "parmigiano reggiano"
@@ -823,7 +1089,8 @@
       "melanzana",
       "olio extravergine di oliva",
       "sale",
-      "zucchina"
+      "zucchina",
+      "zucchina gialla"
     ],
     "Ingredients/verdure/Pomodoro/pomodoro-costoluto-fiorentino.md": [
       "aglio",
@@ -844,10 +1111,12 @@
     "Ingredients/verdure/Pomodoro/pomodoro-datterino.md": [
       "aglio",
       "cipolla",
+      "melanzana violetta",
       "mozzarella",
       "olio extravergine di oliva",
       "ricotta",
-      "zucchina"
+      "zucchina",
+      "zucchina trombetta di albenga"
     ],
     "Ingredients/verdure/Pomodoro/pomodoro-del-piennolo.md": [
       "aglio",
@@ -871,20 +1140,27 @@
       "mozzarella",
       "olio extravergine di oliva",
       "parmigiano reggiano",
-      "sale"
+      "sale",
+      "zucchina scura"
     ],
-    "Ingredients/verdure/pomodoro.md": [
+    "Ingredients/verdure/Pomodoro/pomodoro.md": [
       "aglio",
       "carota",
+      "carota nantes",
+      "carote arancioni standard",
       "cipolla",
       "cipolla bianca",
       "cipolla dorata",
       "cipolla rossa",
+      "farina 0",
       "farina 00",
+      "farina manitoba",
       "funghi",
       "guanciale",
       "macinato di soia",
       "melanzana",
+      "melanzana lunga",
+      "melanzana tonda",
       "mozzarella",
       "olio extravergine di oliva",
       "pancetta",
@@ -897,12 +1173,15 @@
       "sale",
       "salsiccia",
       "sedano",
-      "zucchina"
+      "zucchina",
+      "zucchina romanesca"
     ],
     "Ingredients/verdure/sedano.md": [
       "aglio",
       "brodo vegetale",
       "carota",
+      "carota nantes",
+      "carote arancioni standard",
       "cipolla",
       "cipolla dorata",
       "funghi",
@@ -924,13 +1203,52 @@
       "ricotta",
       "uova"
     ],
-    "Ingredients/verdure/zucchina.md": [
+    "Ingredients/verdure/Zucchina/zucchina-gialla.md": [
+      "cipolla bianca",
+      "farina 00",
+      "mozzarella",
+      "olio extravergine di oliva",
+      "pomodoro ciliegino",
+      "ricotta"
+    ],
+    "Ingredients/verdure/Zucchina/zucchina-romanesca.md": [
+      "aglio",
+      "cipolla",
+      "olio extravergine di oliva",
+      "parmigiano reggiano",
+      "pomodoro",
+      "ricotta"
+    ],
+    "Ingredients/verdure/Zucchina/zucchina-scura.md": [
+      "aglio",
+      "cipolla dorata",
+      "olio extravergine di oliva",
+      "parmigiano reggiano",
+      "patata gialla",
+      "pomodoro san marzano"
+    ],
+    "Ingredients/verdure/Zucchina/zucchina-trombetta-di-albenga.md": [
+      "aglio",
+      "cipolla dorata",
+      "farina tipo 1",
+      "olio extravergine di oliva",
+      "parmigiano reggiano",
+      "pomodoro datterino",
+      "ricotta"
+    ],
+    "Ingredients/verdure/Zucchina/zucchina.md": [
       "aglio",
       "carota",
+      "carota viola",
+      "carote arancioni standard",
       "cipolla",
       "cipolla rossa",
+      "farina tipo 1",
       "funghi",
+      "funghi champignones",
+      "funghi pleurotus",
       "melanzana",
+      "melanzana lunga",
       "mozzarella",
       "olio extravergine di oliva",
       "parmigiano reggiano",

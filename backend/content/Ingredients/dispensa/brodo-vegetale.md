@@ -12,15 +12,15 @@ Base liquida aromatica ottenuta da ortaggi e odori, fondamentale per cotture in 
 
 ## Substitutes
 
-- Acqua calda + dado vegetale
-- Acqua di cottura di verdure non amare
-- Infuso leggero di sedano, carota e cipolla
+- Acqua calda + dado vegetale (offre base sapida e aromaticita pronta, utile nelle cotture rapide)
+- Acqua di cottura di verdure non amare (restituisce mineralita vegetale e buona continuita di sapore)
+- Infuso leggero di sedano, carota e cipolla (ricrea un fondo vegetale pulito e delicato per risotti e umidi)
 - Brodo di funghi secchi (più intenso)
 - Acqua + salsa di soia molto diluita (uso tecnico breve)
 
 ## Goes with ingredients
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
-- [Carota](/api/ingredients/verdure/carota.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
+- [Carota](/api/ingredients/verdure/Carota/carota.md)
 - [Sedano](/api/ingredients/verdure/sedano.md)
 - [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
 - [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
@@ -31,6 +31,9 @@ Base liquida aromatica ottenuta da ortaggi e odori, fondamentale per cotture in 
 - [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)
 - [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
+- [Farina 0](/api/ingredients/dispensa/Farina/farina-0.md)
+- [Carota Nantes](/api/ingredients/verdure/Carota/carota-nantes.md)
+- [Carote Arancioni Standard](/api/ingredients/verdure/Carota/carote-arancioni-standard.md)
 ## Goes with spicesAndHerbs
 - [Alloro](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md)
 - [Rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)

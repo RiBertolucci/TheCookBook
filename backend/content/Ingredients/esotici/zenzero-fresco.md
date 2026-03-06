@@ -22,7 +22,7 @@ Radice aromatica piccante e profumata, fondamentale in molte preparazioni indian
 ## Goes with ingredients
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
 - [Patata](/api/ingredients/verdure/patata.md)
 - [Riso basmati](/api/ingredients/esotici/riso-basmati.md)

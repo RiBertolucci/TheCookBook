@@ -11,20 +11,18 @@ Pomodoro piccolo e profumato, perfetto per cotture brevi, insalate e preparazion
 - Buona resa in confit
 
 ## Substitutes
-
-- Pomodoro datterino
-- Pomodoro piccadilly
-- Pomodoro grappolo maturo
-- Pomodoro cuore di bue a cubetti
-
+- [Pomodoro datterino](/api/ingredients/verdure/Pomodoro/pomodoro-datterino.md) (acidita, succosita e tenore zuccherino compatibili con sughi e basi rosse)
+- Pomodoro piccadilly (acidita, succosita e tenore zuccherino compatibili con sughi e basi rosse)
+- Pomodoro grappolo maturo (acidita, succosita e tenore zuccherino compatibili con sughi e basi rosse)
+- Pomodoro cuore di bue a cubetti (profilo rosso equilibrato, adatto a cotture in salsa e teglia)
 ## Goes with ingredients
 - [Aglio](/api/ingredients/verdure/aglio.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
-- [Zucchina](/api/ingredients/verdure/zucchina.md)
-- [Melanzana](/api/ingredients/verdure/melanzana.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
+- [Zucchina](/api/ingredients/verdure/Zucchina/zucchina.md)
+- [Melanzana](/api/ingredients/verdure/Melanzana/melanzana.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
-
+- [Zucchina Gialla](/api/ingredients/verdure/Zucchina/zucchina-gialla.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
 - [Timo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/timo.md)

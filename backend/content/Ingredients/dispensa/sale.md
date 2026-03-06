@@ -11,18 +11,16 @@ Condimento essenziale per bilanciare i sapori e valorizzare aromi, dolcezza natu
 - In eccesso copre profumi e finezza aromatica
 
 ## Substitutes
-
-- Salsa di soia (apporta anche umami)
+- [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md) (apporta anche umami)
 - Tamari (alternativa sapida e aromatica)
-- Miso in piccole quantità
+- Miso in piccole quantità (fornisce sapidita e umami profondi: usarne poco e assaggiare)
 - Gomasio (sale + sesamo tostato)
 - Capperi o olive tritate (in salse e condimenti)
-
 ## Goes with ingredients
-- [Pomodoro](/api/ingredients/verdure/pomodoro.md)
+- [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
 - [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
 - [Patata](/api/ingredients/verdure/patata.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
 - [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
@@ -42,6 +40,10 @@ Condimento essenziale per bilanciare i sapori e valorizzare aromi, dolcezza natu
 - [Pomodoro Costoluto Fiorentino](/api/ingredients/verdure/Pomodoro/pomodoro-costoluto-fiorentino.md)
 - [Pomodoro del Piennolo](/api/ingredients/verdure/Pomodoro/pomodoro-del-piennolo.md)
 - [Pomodoro Roma](/api/ingredients/verdure/Pomodoro/pomodoro-roma.md)
+- [Farina 0](/api/ingredients/dispensa/Farina/farina-0.md)
+- [Farina Manitoba](/api/ingredients/dispensa/Farina/farina-manitoba.md)
+- [Farina Tipo 1](/api/ingredients/dispensa/Farina/farina-tipo-1.md)
+- [Funghi Pleurotus](/api/ingredients/verdure/Funghi/funghi-pleurotus.md)
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
 - [Paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md)

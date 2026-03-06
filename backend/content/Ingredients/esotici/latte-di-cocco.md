@@ -23,7 +23,7 @@ Ingrediente cremoso e aromatico usato in curry e stufati per dare corpo, dolcezz
 - [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
 - [Zenzero fresco](/api/ingredients/esotici/zenzero-fresco.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
-- [Cipolla](/api/ingredients/verdure/cipolla.md)
+- [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Patata](/api/ingredients/verdure/patata.md)
 - [Riso basmati](/api/ingredients/esotici/riso-basmati.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
