@@ -11,20 +11,18 @@ Taglio bovino adatto a cotture lente in umido, ideale per ottenere carne morbida
 - Ottimo anche per preparazioni del giorno dopo
 
 ## Substitutes
-
 - Reale di manzo (taglio ricco di tessuto connettivo, perfetto per cotture lente)
-- Muscolo di manzo (taglio ricco di tessuto connettivo, perfetto per cotture lente)
+- [Muscolo di manzo](/api/ingredients/carni/manzo/tagli-da-brodo/muscolo-di-manzo.md) (taglio ricco di tessuto connettivo, perfetto per cotture lente)
 - Cappello del prete (taglio ricco di tessuto connettivo, perfetto per cotture lente)
 - Guancia di manzo (molto collagene: cottura lunga e risultato succoso come il brasato)
 - Spalla di vitello (risultato più delicato)
-
 ## Goes with ingredients
 - [vino rosso](/api/ingredients/dispensa/vino-rosso.md)
 - [cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [carota](/api/ingredients/verdure/Carota/carota.md)
 - [sedano](/api/ingredients/verdure/sedano.md)
 - [aglio](/api/ingredients/verdure/aglio.md)
-- [brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [brodo vegetale](/api/recipes/Brodi/brodo-vegetale.md)
 - [olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [farina 00](/api/ingredients/dispensa/farina-00.md)
 - [sale](/api/ingredients/dispensa/sale.md)

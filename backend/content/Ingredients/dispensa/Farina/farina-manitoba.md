@@ -18,7 +18,7 @@ Farina forte ad alto contenuto proteico, indicata per impasti ricchi e lunghe li
 - Semola rimacinata in parte (aggiunge struttura e masticabilita mantenendo buona lavorabilita)
 
 ## Goes with ingredients
-- [Uova](/api/ingredients/salumi-e-proteine/uova.md)
+- [Uova](/api/ingredients/salumi/uova.md)
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Mozzarella](/api/ingredients/latticini-e-formaggi/mozzarella.md)
 - [Ricotta](/api/ingredients/latticini-e-formaggi/ricotta.md)

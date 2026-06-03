@@ -22,8 +22,8 @@ Ingrediente tecnico e nutrizionale molto usato in impasti, ripieni, paste fresch
 
 ## Goes with ingredients
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
-- [Pancetta](/api/ingredients/salumi-e-proteine/pancetta.md)
-- [Guanciale](/api/ingredients/salumi-e-proteine/guanciale.md)
+- [Pancetta](/api/ingredients/salumi/pancetta.md)
+- [Guanciale](/api/ingredients/salumi/guanciale.md)
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Funghi](/api/ingredients/verdure/Funghi/funghi.md)
 - [Zucchina](/api/ingredients/verdure/Zucchina/zucchina.md)

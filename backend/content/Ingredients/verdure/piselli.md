@@ -24,7 +24,7 @@ Legume dolce e tenero molto usato in primi, contorni e stufati italiani, sopratt
 - [Carota](/api/ingredients/verdure/Carota/carota.md)
 - [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
-- [Pancetta](/api/ingredients/salumi-e-proteine/pancetta.md)
+- [Pancetta](/api/ingredients/salumi/pancetta.md)
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
 - [Carota Baby](/api/ingredients/verdure/Carota/carota-baby.md)

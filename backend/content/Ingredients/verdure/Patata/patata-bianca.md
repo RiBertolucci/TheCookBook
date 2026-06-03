@@ -20,7 +20,7 @@ Varieta farinosa e molto utile in cucina classica, ideale per pure, gnocchi e pr
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
 - [Ricotta](/api/ingredients/latticini-e-formaggi/ricotta.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
-- [Uova](/api/ingredients/salumi-e-proteine/uova.md)
+- [Uova](/api/ingredients/salumi/uova.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
 
 ## Goes with spicesAndHerbs

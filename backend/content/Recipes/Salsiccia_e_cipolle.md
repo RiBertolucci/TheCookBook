@@ -3,8 +3,8 @@
 Preparazione rustica da panino: salsiccia rosolata in padella di ghisa, deglassata con vino e servita con cipolle morbide e saporite.
 
 ## Ingredients
-- 2 [salsicce fresche](/api/ingredients/salumi-e-proteine/salsiccia.md)
-- 1 grande [cipolla dorata](/api/ingredients/verdure/cipolla.md)
+- 2 [salsicce fresche](/api/ingredients/salumi/salsiccia.md)
+- 1 grande [cipolla dorata](/api/ingredients/verdure/Cipolla/cipolla-dorata.md)
 - 120 ml [vino bianco](/api/ingredients/dispensa/vino-rosso.md) (oppure [vino rosso](/api/ingredients/dispensa/vino-rosso.md))
 - 1 rametto di [rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)
 - [sale](/api/ingredients/dispensa/sale.md) q.b.

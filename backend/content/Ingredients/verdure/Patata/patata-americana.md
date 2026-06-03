@@ -23,7 +23,7 @@ Tubero dolce e profumato, eccellente in forno, vellutate e preparazioni dove si 
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
-- [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
+- [Pollo](/api/ingredients/carni/pollo/tagli-da-griglia/pollo.md)
 ## Goes with spicesAndHerbs
 - [Paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md)
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)

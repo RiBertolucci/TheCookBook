@@ -25,7 +25,7 @@ Proteina vegetale disidratata, versatile e ad alta resa: ideale per ragù vegani
 - [Sedano](/api/ingredients/verdure/sedano.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
-- [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [Brodo vegetale](/api/recipes/Brodi/brodo-vegetale.md)
 - [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)

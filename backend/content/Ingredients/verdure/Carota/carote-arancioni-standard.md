@@ -22,7 +22,7 @@ Varieta comune e versatile, ideale per soffritti, zuppe, stufati e contorni al f
 - [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
 - [Patata](/api/ingredients/verdure/Patata/patata.md)
 - [Zucchina](/api/ingredients/verdure/Zucchina/zucchina.md)
-- [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [Brodo vegetale](/api/recipes/Brodi/brodo-vegetale.md)
 - [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)
 
 ## Goes with spicesAndHerbs

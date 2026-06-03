@@ -23,7 +23,7 @@ Salume stagionato ricavato dalla guancia del suino, protagonista in piatti roman
 ## Goes with ingredients
 - [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
 - [Pecorino Romano](/api/ingredients/latticini-e-formaggi/pecorino-romano.md)
-- [Uova](/api/ingredients/salumi-e-proteine/uova.md)
+- [Uova](/api/ingredients/salumi/uova.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
 - [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Peperoncino](/api/ingredients/verdure/peperoncino.md)

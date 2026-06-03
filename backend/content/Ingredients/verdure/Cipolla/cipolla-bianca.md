@@ -19,7 +19,7 @@ Varieta dal gusto netto e dalla polpa croccante, adatta a cotture veloci, frittu
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Peperoncino](/api/ingredients/verdure/peperoncino.md)
 - [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
-- [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
+- [Pollo](/api/ingredients/carni/pollo/tagli-da-griglia/pollo.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Zucchina Gialla](/api/ingredients/verdure/Zucchina/zucchina-gialla.md)

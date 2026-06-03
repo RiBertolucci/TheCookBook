@@ -20,8 +20,8 @@ Patata a pasta soda, molto adatta a forno, padella e insalate tiepide grazie all
 - [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
-- [Pancetta](/api/ingredients/salumi-e-proteine/pancetta.md)
-- [Salsiccia](/api/ingredients/salumi-e-proteine/salsiccia.md)
+- [Pancetta](/api/ingredients/salumi/pancetta.md)
+- [Salsiccia](/api/ingredients/salumi/salsiccia.md)
 ## Goes with spicesAndHerbs
 - [Rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)
 - [Timo](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/timo.md)

@@ -11,7 +11,7 @@ Spezia calda e dolce-speziata, utile in mix aromatici salati e dolci, soprattutt
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
 
 ## Goes with ingredients
-- [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
+- [Pollo](/api/ingredients/carni/pollo/tagli-da-griglia/pollo.md)
 - [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Carota](/api/ingredients/verdure/Carota/carota.md)
 - [Patata](/api/ingredients/verdure/patata.md)

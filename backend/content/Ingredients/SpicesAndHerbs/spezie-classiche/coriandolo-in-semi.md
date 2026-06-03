@@ -12,7 +12,7 @@ Spezia agrumata e calda, molto usata in miscele e tostature per dare profondità
 - Ciao
 
 ## Goes with ingredients
-- [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
+- [Pollo](/api/ingredients/carni/pollo/tagli-da-griglia/pollo.md)
 - [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Patata](/api/ingredients/verdure/patata.md)
@@ -20,3 +20,4 @@ Spezia agrumata e calda, molto usata in miscele e tostature per dare profondità
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
 - [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
+- [Cartilagine di costato di manzo](/api/ingredients/carni/manzo/tagli-da-brodo/cartilagine-di-costato-di-manzo.md)

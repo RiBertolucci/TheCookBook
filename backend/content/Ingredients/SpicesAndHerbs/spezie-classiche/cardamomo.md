@@ -13,7 +13,7 @@ Spezia profumata con note balsamiche e agrumate, ideale per miscele aromatiche, 
 ## Goes with ingredients
 - [Riso basmati](/api/ingredients/esotici/riso-basmati.md)
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
-- [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
+- [Pollo](/api/ingredients/carni/pollo/tagli-da-griglia/pollo.md)
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Carota](/api/ingredients/verdure/Carota/carota.md)
 - [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)

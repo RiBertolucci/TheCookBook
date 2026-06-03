@@ -211,10 +211,18 @@ async function resolveRecipeIngredientLine(item, ingredientDir) {
     return { quantity: '', ingredientName: '', foundFile: null };
   }
 
-  const linkedMatch = raw.match(/^(.*?)\[(.+?)\]\(.+?\)\s*$/);
+  const linkedMatch = raw.match(/^(.*?)\[(.+?)\]\((.+?)\)\s*$/);
   if (linkedMatch) {
     const quantity = linkedMatch[1].trim();
     const ingredientName = linkedMatch[2].trim();
+    const linkedHref = String(linkedMatch[3] || '').trim().toLowerCase();
+
+    // Recipe references inside a recipe ingredient line are supported, but
+    // they are not ingredient targets and must not receive ingredient back-links.
+    if (linkedHref.startsWith('/api/recipes/')) {
+      return { quantity, ingredientName, foundFile: null };
+    }
+
     const foundFile = await parser.findFile(ingredientDir, ingredientName);
     return { quantity, ingredientName, foundFile };
   }
@@ -578,6 +586,8 @@ async function processRecipe(content, filePath, rootDir) {
   let modified = false;
   let newContent = content;
   const ingredientDir = path.join(rootDir, 'Ingredients');
+  const recipeDir = path.join(rootDir, 'Recipes');
+  const recipeRelPath = toPosixPath(path.relative(recipeDir, filePath));
 
   // Search for "Ingredients" section
   const ingredients = parser.extractSection(newContent, 'Ingredients');
@@ -585,7 +595,9 @@ async function processRecipe(content, filePath, rootDir) {
     const spiceDir = await resolveSpiceDirectory(rootDir);
     const ingredientCatalog = await buildSearchCatalog(ingredientDir, '/api/ingredients', 'ingredient');
     const spiceCatalog = await buildSearchCatalog(spiceDir, CANONICAL_SPICE_API_PREFIX, 'spice');
-    const searchCatalog = [...ingredientCatalog, ...spiceCatalog];
+    const recipeCatalog = (await buildSearchCatalog(recipeDir, '/api/recipes', 'recipe'))
+      .filter((entry) => entry.relativePath.toLowerCase() !== recipeRelPath.toLowerCase());
+    const searchCatalog = [...ingredientCatalog, ...spiceCatalog, ...recipeCatalog];
     const rewrittenItems = [];
 
     for (const item of ingredients) {
@@ -608,7 +620,6 @@ async function processRecipe(content, filePath, rootDir) {
     }
 
     const recipeDisplayName = getTitleFromContent(newContent) || path.basename(filePath, '.md');
-    const recipeRelPath = toPosixPath(path.relative(path.join(rootDir, 'Recipes'), filePath));
     const recipeApiPath = `/api/recipes/${recipeRelPath}`;
     const ingredientsForBackLinks = modified ? rewrittenItems : ingredients;
 

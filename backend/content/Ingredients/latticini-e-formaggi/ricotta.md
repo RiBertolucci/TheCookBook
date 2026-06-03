@@ -26,7 +26,7 @@ Formaggio fresco leggero e versatile, usato in ripieni, primi al forno, dolci e 
 - [Melanzana](/api/ingredients/verdure/Melanzana/melanzana.md)
 - [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
-- [Uova](/api/ingredients/salumi-e-proteine/uova.md)
+- [Uova](/api/ingredients/salumi/uova.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Pomodoro Cuore di Bue](/api/ingredients/verdure/Pomodoro/pomodoro-cuore-di-bue.md)

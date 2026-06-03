@@ -20,7 +20,7 @@ Ingrediente cremoso e aromatico usato in curry e stufati per dare corpo, dolcezz
 - Bevanda di cocco senza zucchero + panna vegetale (alternativa leggera)
 
 ## Goes with ingredients
-- [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
+- [Pollo](/api/ingredients/carni/pollo/tagli-da-griglia/pollo.md)
 - [Zenzero fresco](/api/ingredients/esotici/zenzero-fresco.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)

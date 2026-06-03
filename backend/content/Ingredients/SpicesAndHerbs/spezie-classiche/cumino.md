@@ -11,7 +11,7 @@ Spezia intensa con note tostate e terrose, perfetta in miscele calde, legumi, ca
 - [Paprika](/api/ingredients/SpicesAndHerbs/spezie-classiche/paprika.md)
 - [Garam Masala](/api/ingredients/SpicesAndHerbs/mixes/garam-masala.md)
 ## Goes with ingredients
-- [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
+- [Pollo](/api/ingredients/carni/pollo/tagli-da-griglia/pollo.md)
 - [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
@@ -19,5 +19,5 @@ Spezia intensa con note tostate e terrose, perfetta in miscele calde, legumi, ca
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
-- [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
+- [Macinato di soia](/api/ingredients/salumi/macinato-di-soia.md)
 - [Patata Americana](/api/ingredients/verdure/Patata/patata-americana.md)

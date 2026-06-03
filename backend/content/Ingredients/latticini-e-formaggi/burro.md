@@ -21,7 +21,7 @@ Grasso lattiero usato in mantecature, salse, impasti e cotture dolci o salate, s
 ## Goes with ingredients
 - [Funghi](/api/ingredients/verdure/Funghi/funghi.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
-- [Uova](/api/ingredients/salumi-e-proteine/uova.md)
+- [Uova](/api/ingredients/salumi/uova.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
 - [Ricotta](/api/ingredients/latticini-e-formaggi/ricotta.md)
 - [Patata](/api/ingredients/verdure/patata.md)
@@ -38,6 +38,7 @@ Grasso lattiero usato in mantecature, salse, impasti e cotture dolci o salate, s
 - [Funghi Champignon](/api/ingredients/verdure/Funghi/funghi-champignon.md)
 - [Funghi Porcini](/api/ingredients/verdure/Funghi/funghi-porcini.md)
 - [Funghi Champignones](/api/ingredients/verdure/Funghi/funghi-champignones.md)
+- [Muscolo di manzo](/api/ingredients/carni/manzo/tagli-da-brodo/muscolo-di-manzo.md)
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
@@ -49,3 +50,4 @@ Grasso lattiero usato in mantecature, salse, impasti e cotture dolci o salate, s
 
 ## Used for
 - [Pollo Garam Masala con Riso Basmati](/api/recipes/pollo-garam-masala.md)
+- [Arrosto di manzo al forno con salsa al fondo](/api/recipes/arrosto-di-manzo-al-forno.md)

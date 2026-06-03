@@ -2,10 +2,22 @@
   "name": "ingredients-catalog",
   "version": 1,
   "strategy": "key-set",
-  "updatedAt": "2026-03-06T16:51:45.709Z",
+  "updatedAt": "2026-04-26T14:26:40.206Z",
   "entries": {
-    "Ingredients/dispensa/brodo-vegetale.md": [
-      "brodo vegetale"
+    "Ingredients/carni/manzo/tagli-da-brasato/manzo-da-brasato.md": [
+      "manzo da brasato"
+    ],
+    "Ingredients/carni/manzo/tagli-da-brodo/biancostato-di-manzo.md": [
+      "biancostato di manzo"
+    ],
+    "Ingredients/carni/manzo/tagli-da-brodo/cartilagine-di-costato-di-manzo.md": [
+      "cartilagine di costato di manzo"
+    ],
+    "Ingredients/carni/manzo/tagli-da-brodo/muscolo-di-manzo.md": [
+      "muscolo di manzo"
+    ],
+    "Ingredients/carni/pollo/tagli-da-griglia/pollo.md": [
+      "pollo"
     ],
     "Ingredients/dispensa/cipolla-test.md": [
       "cipolla test"
@@ -61,25 +73,19 @@
     "Ingredients/latticini-e-formaggi/ricotta.md": [
       "ricotta"
     ],
-    "Ingredients/salumi-e-proteine/guanciale.md": [
+    "Ingredients/salumi/guanciale.md": [
       "guanciale"
     ],
-    "Ingredients/salumi-e-proteine/macinato-di-soia.md": [
+    "Ingredients/salumi/macinato-di-soia.md": [
       "macinato di soia"
     ],
-    "Ingredients/salumi-e-proteine/manzo-da-brasato.md": [
-      "manzo da brasato"
-    ],
-    "Ingredients/salumi-e-proteine/pancetta.md": [
+    "Ingredients/salumi/pancetta.md": [
       "pancetta"
     ],
-    "Ingredients/salumi-e-proteine/pollo.md": [
-      "pollo"
-    ],
-    "Ingredients/salumi-e-proteine/salsiccia.md": [
+    "Ingredients/salumi/salsiccia.md": [
       "salsiccia"
     ],
-    "Ingredients/salumi-e-proteine/uova.md": [
+    "Ingredients/salumi/uova.md": [
       "uova"
     ],
     "Ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md": [

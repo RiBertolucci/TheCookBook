@@ -20,7 +20,7 @@ Fungo aromatico e strutturato, ideale per sughi, risotti e secondi dal sapore in
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
-- [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
+- [Manzo da brasato](/api/ingredients/carni/manzo/tagli-da-brasato/manzo-da-brasato.md)
 - [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)
 
 ## Goes with spicesAndHerbs

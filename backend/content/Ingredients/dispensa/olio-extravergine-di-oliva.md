@@ -32,9 +32,9 @@ Grasso cardine della cucina italiana, usato a crudo, in soffritto, in emulsione 
 - [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
-- [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
+- [Macinato di soia](/api/ingredients/salumi/macinato-di-soia.md)
 - [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)
-- [Manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
+- [Manzo da brasato](/api/ingredients/carni/manzo/tagli-da-brasato/manzo-da-brasato.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 - [Cipolla Bianca](/api/ingredients/verdure/Cipolla/cipolla-bianca.md)
 - [Cipolla Dorata](/api/ingredients/verdure/Cipolla/cipolla-dorata.md)
@@ -62,6 +62,7 @@ Grasso cardine della cucina italiana, usato a crudo, in soffritto, in emulsione 
 - [Zucchina Trombetta di Albenga](/api/ingredients/verdure/Zucchina/zucchina-trombetta-di-albenga.md)
 - [Melanzana generica](/api/ingredients/verdure/Melanzana/melanzana-generica.md)
 - [Cipolla TEST](/api/ingredients/dispensa/cipolla-test.md)
+- [Muscolo di manzo](/api/ingredients/carni/manzo/tagli-da-brodo/muscolo-di-manzo.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
@@ -71,3 +72,7 @@ Grasso cardine della cucina italiana, usato a crudo, in soffritto, in emulsione 
 ## Used for
 - [Brasato al vino rosso](/api/recipes/brasato-al-vino-rosso.md)
 - [Ragù vegano di macinato di soia reidratato](/api/recipes/ragu-vegano-di-soia.md)
+- [Arrosto di manzo al forno con salsa al fondo](/api/recipes/arrosto-di-manzo-al-forno.md)
+- [Brodo tostato di manzo (stile fondo bruno)](/api/recipes/Brodi/brodo-tostato-di-manzo.md)
+- [Risotto ai porri e salmone affumicato](/api/recipes/risotto-porri-e-salmone.md)
+- [Lingue di pizza senza lievito (stile forni romani)](/api/recipes/Lingue_di_pizza.md)

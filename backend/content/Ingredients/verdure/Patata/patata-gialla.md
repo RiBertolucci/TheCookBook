@@ -21,10 +21,12 @@ Tubero dalla polpa compatta e cremosa, ideale per puree, gnocchi e cotture al fo
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - Latte intero
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
-- [Uova](/api/ingredients/salumi-e-proteine/uova.md)
+- [Uova](/api/ingredients/salumi/uova.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Zucchina Scura](/api/ingredients/verdure/Zucchina/zucchina-scura.md)
+- [Biancostato di manzo](/api/ingredients/carni/manzo/tagli-da-brodo/biancostato-di-manzo.md)
+- [Muscolo di manzo](/api/ingredients/carni/manzo/tagli-da-brodo/muscolo-di-manzo.md)
 ## Goes with spicesAndHerbs
 - [Noce moscata](/api/ingredients/SpicesAndHerbs/spezie-classiche/noce-moscata.md)
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)

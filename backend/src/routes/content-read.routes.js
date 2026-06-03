@@ -15,7 +15,7 @@ const {
 
 const router = express.Router();
 
-router.get('/api/recipes/:filename', getRecipe);
+router.get('/api/recipes/*filename', getRecipe);
 router.get('/api/ingredients/suggestions', getIngredientSuggestions);
 router.get('/api/ingredients/compatible', getCompatibleIngredientSuggestions);
 router.get('/api/ingredients/families', getIngredientFamilies);

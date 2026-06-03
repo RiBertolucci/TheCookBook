@@ -16,5 +16,5 @@ Erba aromatica intensa, essenziale in pizze, sughi al pomodoro, teglie e prepara
 - [Zucchina](/api/ingredients/verdure/Zucchina/zucchina.md)
 - [Mozzarella](/api/ingredients/latticini-e-formaggi/mozzarella.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)
-- [Pancetta](/api/ingredients/salumi-e-proteine/pancetta.md)
-- [Salsiccia](/api/ingredients/salumi-e-proteine/salsiccia.md)
+- [Pancetta](/api/ingredients/salumi/pancetta.md)
+- [Salsiccia](/api/ingredients/salumi/salsiccia.md)

@@ -20,13 +20,13 @@ Riso a chicco lungo e profumato, ideale come accompagnamento per piatti speziati
 - Quinoa bianca (alternativa diversa ma funzionale)
 
 ## Goes with ingredients
-- [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
+- [Pollo](/api/ingredients/carni/pollo/tagli-da-griglia/pollo.md)
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Zenzero fresco](/api/ingredients/esotici/zenzero-fresco.md)
-- [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [Brodo vegetale](/api/recipes/Brodi/brodo-vegetale.md)
 - [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
 ## Goes with spicesAndHerbs
 - [Garam Masala](/api/ingredients/SpicesAndHerbs/mixes/garam-masala.md)

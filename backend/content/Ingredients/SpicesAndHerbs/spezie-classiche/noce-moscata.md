@@ -22,3 +22,4 @@ Spezia calda e profumata usata in besciamella, ripieni, puree e preparazioni cre
 - [Patata Gialla](/api/ingredients/verdure/Patata/patata-gialla.md)
 - [Patata Bianca](/api/ingredients/verdure/Patata/patata-bianca.md)
 - [Farina Manitoba](/api/ingredients/dispensa/Farina/farina-manitoba.md)
+- [Muscolo di manzo](/api/ingredients/carni/manzo/tagli-da-brodo/muscolo-di-manzo.md)

@@ -34,7 +34,8 @@ Goal: Load minimal files for maximal context accuracy.
 - Prompting another LLM/agent:
 1. `context/01_PROJECT_BRIEF.md`
 2. `context/08_PROMPT_TEMPLATES.md`
-3. Add only one domain file (`03`, `04`, `05`, or `07`).
+3. `context/11_RECIPE_INGREDIENT_FORMAT.md` (when generating recipe/ingredient markdown)
+4. Add only one domain file (`03`, `04`, `05`, or `07`).
 
 ## Compression Policy
 - Keep bullets flat (no nested bullets).

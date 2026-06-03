@@ -11,7 +11,7 @@ Salume suino molto usato per dare grasso, sapore e rosolatura a soffritti, sughi
 - Migliora consistenza e corpo di salse e ragù
 
 ## Substitutes
-- [Guanciale](/api/ingredients/salumi-e-proteine/guanciale.md) (stessa logica tecnica in rosolatura)
+- [Guanciale](/api/ingredients/salumi/guanciale.md) (stessa logica tecnica in rosolatura)
 - Speck (profilo più affumicato, resa simile)
 - Prosciutto crudo a dadini (meno grasso, stessa funzione sapida)
 - Salsiccia sgranata (base grassa per sughi)
@@ -24,7 +24,7 @@ Salume suino molto usato per dare grasso, sapore e rosolatura a soffritti, sughi
 - [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
 - [Patata](/api/ingredients/verdure/patata.md)
 - [Funghi](/api/ingredients/verdure/Funghi/funghi.md)
-- [Uova](/api/ingredients/salumi-e-proteine/uova.md)
+- [Uova](/api/ingredients/salumi/uova.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
 - [Pecorino Romano](/api/ingredients/latticini-e-formaggi/pecorino-romano.md)
 - [Carota](/api/ingredients/verdure/Carota/carota.md)

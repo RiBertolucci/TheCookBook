@@ -19,9 +19,9 @@ Formaggio ovino stagionato dal sapore deciso, usato soprattutto in paste romane,
 - Mix parmigiano + sale (approssima sapidità)
 - Lievito alimentare + sale (alternativa vegetale)
 ## Goes with ingredients
-- [Guanciale](/api/ingredients/salumi-e-proteine/guanciale.md)
-- [Uova](/api/ingredients/salumi-e-proteine/uova.md)
-- [Pancetta](/api/ingredients/salumi-e-proteine/pancetta.md)
+- [Guanciale](/api/ingredients/salumi/guanciale.md)
+- [Uova](/api/ingredients/salumi/uova.md)
+- [Pancetta](/api/ingredients/salumi/pancetta.md)
 - [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
 - [Peperoncino](/api/ingredients/verdure/peperoncino.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)

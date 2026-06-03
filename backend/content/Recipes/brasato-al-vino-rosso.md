@@ -3,9 +3,9 @@
 Secondo piatto a lunga cottura, ricco e morbido, con fondo aromatico di verdure e vino rosso.
 
 ## Ingredients
-- 1 kg [manzo da brasato](/api/ingredients/salumi-e-proteine/manzo-da-brasato.md)
+- 1 kg [manzo da brasato](/api/ingredients/carni/manzo/tagli-da-brasato/manzo-da-brasato.md)
 - 750 ml [vino rosso](/api/ingredients/dispensa/vino-rosso.md)
-- 1 [cipolla](/api/ingredients/verdure/cipolla.md)
+- 1 cipolla
 - 2 carote
 - 2 coste di [sedano](/api/ingredients/verdure/sedano.md)
 - 1 spicchio di [aglio](/api/ingredients/verdure/aglio.md)
@@ -13,7 +13,7 @@ Secondo piatto a lunga cottura, ricco e morbido, con fondo aromatico di verdure 
 - 1 foglia di [alloro](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md)
 - 1 rametto di [rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)
 - 2 [chiodi di garofano](/api/ingredients/SpicesAndHerbs/spezie-classiche/chiodi-di-garofano.md) (facoltativi)
-- 400 ml [brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- 400 ml [brodo vegetale](/api/recipes/Brodi/brodo-vegetale.md)
 - 1 bts [farina 00](/api/ingredients/dispensa/farina-00.md) (facoltativo, per addensare)
 - [sale](/api/ingredients/dispensa/sale.md) q.b.
 - [pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md) q.b.

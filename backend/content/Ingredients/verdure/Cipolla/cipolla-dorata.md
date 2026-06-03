@@ -21,10 +21,13 @@ Varieta versatile da cucina quotidiana, perfetta per soffritti, stufati e fondi 
 - [Sedano](/api/ingredients/verdure/sedano.md)
 - [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
-- [Macinato di soia](/api/ingredients/salumi-e-proteine/macinato-di-soia.md)
+- [Macinato di soia](/api/ingredients/salumi/macinato-di-soia.md)
 - [Melanzana Lunga](/api/ingredients/verdure/Melanzana/melanzana-lunga.md)
 - [Zucchina Scura](/api/ingredients/verdure/Zucchina/zucchina-scura.md)
 - [Zucchina Trombetta di Albenga](/api/ingredients/verdure/Zucchina/zucchina-trombetta-di-albenga.md)
+- [Biancostato di manzo](/api/ingredients/carni/manzo/tagli-da-brodo/biancostato-di-manzo.md)
+- [Cartilagine di costato di manzo](/api/ingredients/carni/manzo/tagli-da-brodo/cartilagine-di-costato-di-manzo.md)
+- [Muscolo di manzo](/api/ingredients/carni/manzo/tagli-da-brodo/muscolo-di-manzo.md)
 ## Goes with spicesAndHerbs
 - [Alloro](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md)
 - [Rosmarino](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md)
@@ -36,3 +39,7 @@ Varieta versatile da cucina quotidiana, perfetta per soffritti, stufati e fondi 
 - Soffritto classico italiano
 - Zuppa di cipolle gratinata
 - [Salsiccia e cipolle al vino (per panino)](/api/recipes/Salsiccia_e_cipolle.md)
+- [Arrosto di manzo al forno con salsa al fondo](/api/recipes/arrosto-di-manzo-al-forno.md)
+- [Brodo classico di manzo limpido](/api/recipes/Brodi/brodo-classico-di-manzo.md)
+- [Brodo ricco e gelatinoso di manzo](/api/recipes/Brodi/brodo-ricco-e-gelatinoso-di-manzo.md)
+- [Brodo tostato di manzo (stile fondo bruno)](/api/recipes/Brodi/brodo-tostato-di-manzo.md)

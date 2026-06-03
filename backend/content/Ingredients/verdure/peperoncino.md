@@ -21,7 +21,7 @@ Ingrediente piccante usato per dare calore e profondità a sughi, soffritti e co
 ## Goes with ingredients
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
-- [Guanciale](/api/ingredients/salumi-e-proteine/guanciale.md)
+- [Guanciale](/api/ingredients/salumi/guanciale.md)
 - [Pecorino Romano](/api/ingredients/latticini-e-formaggi/pecorino-romano.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Cipolla Bianca](/api/ingredients/verdure/Cipolla/cipolla-bianca.md)

@@ -223,6 +223,9 @@ export class AppComponent implements OnInit {
             this.importSuccess = `Imported: ${response.file || file.name}`;
             this.importSelectedFile = null;
             this.importPath = '';
+
+            // Automatically run sync after import to apply linking and index updates.
+            this.runSync();
           },
           error: (err) => {
             this.isImporting = false;
@@ -244,10 +247,26 @@ export class AppComponent implements OnInit {
     if (this.isEditPage || this.isSyncing) return;
 
     const browser = this.contentBrowserInstance;
-    if (!browser) return;
+    if (browser) {
+      this.isSyncing = true;
+      browser.runSync();
+      return;
+    }
 
+    // Fallback when Overview tab is not mounted: still run backend sync.
     this.isSyncing = true;
-    browser.runSync();
+    this.content.sync().subscribe({
+      next: () => {
+        this.isSyncing = false;
+      },
+      error: (err) => {
+        this.isSyncing = false;
+        this.logger.error(
+          { service: 'AppComponent', method: 'runSync', data: err?.message || err?.error?.message || 'unknown error' },
+          'sync failed'
+        );
+      }
+    });
   }
 
   runForceIndexing(): void {

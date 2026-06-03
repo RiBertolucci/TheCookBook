@@ -21,7 +21,7 @@ Varieta piu dolce da cruda e molto aromatica da cotta, ideale per insalate, mari
 - [Melanzana](/api/ingredients/verdure/Melanzana/melanzana.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
-- [Salsiccia](/api/ingredients/salumi-e-proteine/salsiccia.md)
+- [Salsiccia](/api/ingredients/salumi/salsiccia.md)
 - [Carota Viola](/api/ingredients/verdure/Carota/carota-viola.md)
 - [Melanzana Violetta](/api/ingredients/verdure/Melanzana/melanzana-violetta.md)
 - [Melanzana generica](/api/ingredients/verdure/Melanzana/melanzana-generica.md)

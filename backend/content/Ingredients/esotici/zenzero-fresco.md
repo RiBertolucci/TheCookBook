@@ -20,7 +20,7 @@ Radice aromatica piccante e profumata, fondamentale in molte preparazioni indian
 - Aglio fresco + pepe (se serve base pungente)
 
 ## Goes with ingredients
-- [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
+- [Pollo](/api/ingredients/carni/pollo/tagli-da-griglia/pollo.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Latte di cocco](/api/ingredients/esotici/latte-di-cocco.md)
@@ -28,6 +28,7 @@ Radice aromatica piccante e profumata, fondamentale in molte preparazioni indian
 - [Riso basmati](/api/ingredients/esotici/riso-basmati.md)
 - [Salsa di soia](/api/ingredients/dispensa/salsa-di-soia.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
+- [Cartilagine di costato di manzo](/api/ingredients/carni/manzo/tagli-da-brodo/cartilagine-di-costato-di-manzo.md)
 ## Goes with spicesAndHerbs
 - [Garam Masala](/api/ingredients/SpicesAndHerbs/mixes/garam-masala.md)
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)

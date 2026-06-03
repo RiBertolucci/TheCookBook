@@ -2,24 +2,60 @@
   "name": "ingredients-by-goes-with-ingredients",
   "version": 1,
   "strategy": "key-set",
-  "updatedAt": "2026-03-06T16:51:45.708Z",
+  "updatedAt": "2026-04-26T14:26:40.206Z",
   "entries": {
-    "Ingredients/dispensa/brodo-vegetale.md": [
+    "Ingredients/carni/manzo/tagli-da-brasato/manzo-da-brasato.md": [
+      "aglio",
+      "brodo vegetale",
       "carota",
       "carota nantes",
-      "carote arancioni standard",
       "cipolla",
-      "farina 0",
-      "macinato di soia",
-      "manzo da brasato",
-      "passata di pomodoro",
-      "patata",
-      "patata novella",
-      "riso basmati",
+      "farina 00",
+      "funghi porcini",
+      "olio extravergine di oliva",
       "sale",
-      "salsa di soia",
       "sedano",
       "vino rosso"
+    ],
+    "Ingredients/carni/manzo/tagli-da-brodo/biancostato-di-manzo.md": [
+      "aglio",
+      "carota nantes",
+      "cipolla dorata",
+      "patata gialla",
+      "pomodoro",
+      "sedano",
+      "vino rosso"
+    ],
+    "Ingredients/carni/manzo/tagli-da-brodo/cartilagine-di-costato-di-manzo.md": [
+      "aglio",
+      "carota nantes",
+      "cipolla dorata",
+      "porro",
+      "sedano",
+      "zenzero fresco"
+    ],
+    "Ingredients/carni/manzo/tagli-da-brodo/muscolo-di-manzo.md": [
+      "burro",
+      "carota nantes",
+      "cipolla dorata",
+      "olio extravergine di oliva",
+      "patata gialla",
+      "pomodoro",
+      "sedano",
+      "vino rosso"
+    ],
+    "Ingredients/carni/pollo/tagli-da-griglia/pollo.md": [
+      "aglio",
+      "carota baby",
+      "cipolla",
+      "cipolla bianca",
+      "cipolla test",
+      "latte di cocco",
+      "patata",
+      "patata americana",
+      "patata novella",
+      "riso basmati",
+      "zenzero fresco"
     ],
     "Ingredients/dispensa/cipolla-test.md": [
       "aglio",
@@ -94,6 +130,7 @@
       "melanzana tonda",
       "melanzana violetta",
       "mozzarella",
+      "muscolo di manzo",
       "parmigiano reggiano",
       "passata di pomodoro",
       "patata",
@@ -173,6 +210,7 @@
     ],
     "Ingredients/dispensa/vino-rosso.md": [
       "aglio",
+      "biancostato di manzo",
       "brodo vegetale",
       "carota",
       "carota nantes",
@@ -180,6 +218,7 @@
       "cipolla",
       "funghi porcini",
       "manzo da brasato",
+      "muscolo di manzo",
       "olio extravergine di oliva",
       "passata di pomodoro",
       "sale",
@@ -207,6 +246,7 @@
     ],
     "Ingredients/esotici/zenzero-fresco.md": [
       "aglio",
+      "cartilagine di costato di manzo",
       "cipolla",
       "latte di cocco",
       "patata",
@@ -223,6 +263,7 @@
       "funghi champignon",
       "funghi champignones",
       "funghi porcini",
+      "muscolo di manzo",
       "parmigiano reggiano",
       "patata",
       "patata americana",
@@ -321,7 +362,7 @@
       "zucchina romanesca",
       "zucchina trombetta di albenga"
     ],
-    "Ingredients/salumi-e-proteine/guanciale.md": [
+    "Ingredients/salumi/guanciale.md": [
       "cipolla",
       "farina 00",
       "pecorino romano",
@@ -329,7 +370,7 @@
       "pomodoro",
       "uova"
     ],
-    "Ingredients/salumi-e-proteine/macinato-di-soia.md": [
+    "Ingredients/salumi/macinato-di-soia.md": [
       "aglio",
       "brodo vegetale",
       "carota",
@@ -342,20 +383,7 @@
       "salsa di soia",
       "sedano"
     ],
-    "Ingredients/salumi-e-proteine/manzo-da-brasato.md": [
-      "aglio",
-      "brodo vegetale",
-      "carota",
-      "carota nantes",
-      "cipolla",
-      "farina 00",
-      "funghi porcini",
-      "olio extravergine di oliva",
-      "sale",
-      "sedano",
-      "vino rosso"
-    ],
-    "Ingredients/salumi-e-proteine/pancetta.md": [
+    "Ingredients/salumi/pancetta.md": [
       "aglio",
       "carota",
       "cipolla",
@@ -370,20 +398,7 @@
       "sedano",
       "uova"
     ],
-    "Ingredients/salumi-e-proteine/pollo.md": [
-      "aglio",
-      "carota baby",
-      "cipolla",
-      "cipolla bianca",
-      "cipolla test",
-      "latte di cocco",
-      "patata",
-      "patata americana",
-      "patata novella",
-      "riso basmati",
-      "zenzero fresco"
-    ],
-    "Ingredients/salumi-e-proteine/salsiccia.md": [
+    "Ingredients/salumi/salsiccia.md": [
       "aglio",
       "carota",
       "cipolla",
@@ -397,7 +412,7 @@
       "pomodoro del piennolo",
       "sedano"
     ],
-    "Ingredients/salumi-e-proteine/uova.md": [
+    "Ingredients/salumi/uova.md": [
       "burro",
       "farina 0",
       "farina 00",
@@ -414,11 +429,13 @@
       "zucchina"
     ],
     "Ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md": [
+      "biancostato di manzo",
       "brodo vegetale",
       "carota",
       "carota baby",
       "carota nantes",
       "carote arancioni standard",
+      "cartilagine di costato di manzo",
       "cipolla",
       "cipolla bianca",
       "cipolla dorata",
@@ -426,6 +443,7 @@
       "funghi porcini",
       "macinato di soia",
       "manzo da brasato",
+      "muscolo di manzo",
       "pancetta",
       "patata",
       "patata novella",
@@ -527,6 +545,7 @@
     ],
     "Ingredients/SpicesAndHerbs/erbe-mediterranee/rosmarino.md": [
       "aglio",
+      "biancostato di manzo",
       "brodo vegetale",
       "carota nantes",
       "carote arancioni standard",
@@ -541,6 +560,7 @@
       "funghi porcini",
       "macinato di soia",
       "manzo da brasato",
+      "muscolo di manzo",
       "olio extravergine di oliva",
       "pancetta",
       "passata di pomodoro",
@@ -558,9 +578,11 @@
       "zucchina scura"
     ],
     "Ingredients/SpicesAndHerbs/erbe-mediterranee/salvia.md": [
+      "biancostato di manzo",
       "burro",
       "funghi",
       "manzo da brasato",
+      "muscolo di manzo",
       "parmigiano reggiano",
       "patata",
       "patata bianca",
@@ -621,9 +643,12 @@
     ],
     "Ingredients/SpicesAndHerbs/spezie-classiche/chiodi-di-garofano.md": [
       "aglio",
+      "biancostato di manzo",
+      "cartilagine di costato di manzo",
       "cipolla",
       "latte di cocco",
       "manzo da brasato",
+      "muscolo di manzo",
       "patata",
       "patata novella",
       "pollo",
@@ -632,6 +657,7 @@
     ],
     "Ingredients/SpicesAndHerbs/spezie-classiche/coriandolo-in-semi.md": [
       "aglio",
+      "cartilagine di costato di manzo",
       "cipolla",
       "latte di cocco",
       "lenticchie rosse",
@@ -657,6 +683,7 @@
       "farina 00",
       "farina manitoba",
       "latte intero",
+      "muscolo di manzo",
       "patata",
       "patata bianca",
       "patata gialla",
@@ -689,6 +716,7 @@
     ],
     "Ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md": [
       "aglio",
+      "biancostato di manzo",
       "brodo vegetale",
       "burro",
       "carota",
@@ -696,6 +724,7 @@
       "carota nantes",
       "carota viola",
       "carote arancioni standard",
+      "cartilagine di costato di manzo",
       "cipolla",
       "cipolla bianca",
       "cipolla dorata",
@@ -720,6 +749,7 @@
       "melanzana tonda",
       "melanzana violetta",
       "mozzarella",
+      "muscolo di manzo",
       "olio extravergine di oliva",
       "pancetta",
       "parmigiano reggiano",
@@ -772,8 +802,10 @@
       "pomodoro san marzano"
     ],
     "Ingredients/verdure/aglio.md": [
+      "biancostato di manzo",
       "carota",
       "carote arancioni standard",
+      "cartilagine di costato di manzo",
       "cipolla",
       "cipolla bianca",
       "cipolla dorata",
@@ -831,9 +863,12 @@
       "pollo"
     ],
     "Ingredients/verdure/Carota/carota-nantes.md": [
+      "biancostato di manzo",
       "brodo vegetale",
+      "cartilagine di costato di manzo",
       "cipolla",
       "manzo da brasato",
+      "muscolo di manzo",
       "pomodoro",
       "sedano",
       "vino rosso"
@@ -867,9 +902,12 @@
     ],
     "Ingredients/verdure/Cipolla/cipolla-dorata.md": [
       "aglio",
+      "biancostato di manzo",
       "carota",
+      "cartilagine di costato di manzo",
       "macinato di soia",
       "melanzana lunga",
+      "muscolo di manzo",
       "olio extravergine di oliva",
       "pomodoro",
       "sedano",
@@ -975,9 +1013,11 @@
       "uova"
     ],
     "Ingredients/verdure/Patata/patata-gialla.md": [
+      "biancostato di manzo",
       "burro",
       "farina 00",
       "latte intero",
+      "muscolo di manzo",
       "parmigiano reggiano",
       "sale",
       "uova",
@@ -1100,6 +1140,7 @@
     ],
     "Ingredients/verdure/Pomodoro/pomodoro.md": [
       "aglio",
+      "biancostato di manzo",
       "carota",
       "carota nantes",
       "carote arancioni standard",
@@ -1119,6 +1160,7 @@
       "melanzana lunga",
       "melanzana tonda",
       "mozzarella",
+      "muscolo di manzo",
       "olio extravergine di oliva",
       "pancetta",
       "parmigiano reggiano",
@@ -1135,15 +1177,18 @@
     ],
     "Ingredients/verdure/sedano.md": [
       "aglio",
+      "biancostato di manzo",
       "brodo vegetale",
       "carota",
       "carota nantes",
       "carote arancioni standard",
+      "cartilagine di costato di manzo",
       "cipolla",
       "cipolla dorata",
       "funghi",
       "macinato di soia",
       "manzo da brasato",
+      "muscolo di manzo",
       "pancetta",
       "passata di pomodoro",
       "patata",

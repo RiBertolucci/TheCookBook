@@ -23,7 +23,7 @@ Verdura a foglia molto usata in ripieni, contorni, torte salate e primi della tr
 ## Goes with ingredients
 - [Ricotta](/api/ingredients/latticini-e-formaggi/ricotta.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
-- [Uova](/api/ingredients/salumi-e-proteine/uova.md)
+- [Uova](/api/ingredients/salumi/uova.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Farina 00](/api/ingredients/dispensa/farina-00.md)

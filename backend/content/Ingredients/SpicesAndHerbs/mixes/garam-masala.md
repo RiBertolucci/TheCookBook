@@ -20,7 +20,7 @@ Miscela di spezie tipica dell'India, calda e profumata, usata per dare profondit
 - [Cumino](/api/ingredients/SpicesAndHerbs/spezie-classiche/cumino.md)
 - Coriandolo
 ## Goes with ingredients
-- [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
+- [Pollo](/api/ingredients/carni/pollo/tagli-da-griglia/pollo.md)
 - [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Zenzero fresco](/api/ingredients/esotici/zenzero-fresco.md)

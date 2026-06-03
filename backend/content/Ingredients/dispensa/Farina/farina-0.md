@@ -16,12 +16,12 @@ Farina di grano tenero meno raffinata della 00, adatta a pane, pizza e impasti q
 - [Farina manitoba](/api/ingredients/dispensa/Farina/farina-manitoba.md) (con idratazione maggiore)
 - Semola rimacinata (per impasti piu strutturati)
 ## Goes with ingredients
-- [Brodo vegetale](/api/ingredients/dispensa/brodo-vegetale.md)
+- [Brodo vegetale](/api/recipes/Brodi/brodo-vegetale.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Mozzarella](/api/ingredients/latticini-e-formaggi/mozzarella.md)
 - [Pomodoro](/api/ingredients/verdure/Pomodoro/pomodoro.md)
-- [Uova](/api/ingredients/salumi-e-proteine/uova.md)
+- [Uova](/api/ingredients/salumi/uova.md)
 ## Goes with spicesAndHerbs
 - [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)

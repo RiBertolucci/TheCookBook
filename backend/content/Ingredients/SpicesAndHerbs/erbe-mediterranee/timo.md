@@ -15,8 +15,8 @@ Erba aromatica dalle note balsamiche, adatta a cotture al forno, umidi, funghi e
 ## Goes with ingredients
 - [Funghi](/api/ingredients/verdure/Funghi/funghi.md)
 - [Patata](/api/ingredients/verdure/patata.md)
-- [Salsiccia](/api/ingredients/salumi-e-proteine/salsiccia.md)
-- [Pancetta](/api/ingredients/salumi-e-proteine/pancetta.md)
+- [Salsiccia](/api/ingredients/salumi/salsiccia.md)
+- [Pancetta](/api/ingredients/salumi/pancetta.md)
 - [Aglio](/api/ingredients/verdure/aglio.md)
 - [Burro](/api/ingredients/latticini-e-formaggi/burro.md)
 - [Vino rosso](/api/ingredients/dispensa/vino-rosso.md)

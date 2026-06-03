@@ -31,7 +31,7 @@ Ortaggio estivo molto usato in padella, al forno, nelle paste e nei ripieni, dal
 - [Ricotta](/api/ingredients/latticini-e-formaggi/ricotta.md)
 - [Parmigiano Reggiano](/api/ingredients/latticini-e-formaggi/parmigiano-reggiano.md)
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
-- [Uova](/api/ingredients/salumi-e-proteine/uova.md)
+- [Uova](/api/ingredients/salumi/uova.md)
 - [Carota](/api/ingredients/verdure/Carota/carota.md)
 - [Patata novella](/api/ingredients/verdure/Patata/Patata-novella.md)
 - [Cipolla Rossa](/api/ingredients/verdure/Cipolla/cipolla-rossa.md)

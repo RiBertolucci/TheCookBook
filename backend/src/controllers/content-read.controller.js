@@ -104,11 +104,12 @@ function toSafeIngredientAbsolutePath(relativePath) {
 }
 
 async function getRecipe(req, res) {
-  logger.debug({ service: 'fileReader', method: 'getRecipe', requestId: req.requestId, data: req.params.filename }, 'fetching recipe');
+  const filename = normalizeFilenameParam(req.params.filename);
+  logger.debug({ service: 'fileReader', method: 'getRecipe', requestId: req.requestId, data: filename }, 'fetching recipe');
   try {
-    const data = await fileReader.getRecipe(contentRoot, req.params.filename);
+    const data = await fileReader.getRecipe(contentRoot, filename);
     if (!data) {
-      logger.warn({ service: 'fileReader', method: 'getRecipe', requestId: req.requestId, data: req.params.filename }, 'recipe not found');
+      logger.warn({ service: 'fileReader', method: 'getRecipe', requestId: req.requestId, data: filename }, 'recipe not found');
       return res.status(404).json({ error: 'Recipe not found' });
     }
     res.json(data);

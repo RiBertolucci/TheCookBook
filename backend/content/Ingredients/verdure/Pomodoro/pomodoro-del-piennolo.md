@@ -21,7 +21,7 @@ Pomodoro tradizionale campano a lunga conservazione, molto aromatico e ideale pe
 - [Olio extravergine di oliva](/api/ingredients/dispensa/olio-extravergine-di-oliva.md)
 - [Passata di pomodoro](/api/ingredients/dispensa/passata-di-pomodoro.md)
 - [Sale](/api/ingredients/dispensa/sale.md)
-- [Salsiccia](/api/ingredients/salumi-e-proteine/salsiccia.md)
+- [Salsiccia](/api/ingredients/salumi/salsiccia.md)
 ## Goes with spicesAndHerbs
 - [Basilico](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/basilico.md)
 - [Origano](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/oregano.md)

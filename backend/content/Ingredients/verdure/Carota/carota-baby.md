@@ -21,7 +21,7 @@ Carota piccola e tenera, adatta a contorni veloci, glassature e cotture brevi.
 - [Cipolla](/api/ingredients/verdure/Cipolla/cipolla.md)
 - [Piselli](/api/ingredients/verdure/piselli.md)
 - [Patata](/api/ingredients/verdure/patata.md)
-- [Pollo](/api/ingredients/salumi-e-proteine/pollo.md)
+- [Pollo](/api/ingredients/carni/pollo/tagli-da-griglia/pollo.md)
 ## Goes with spicesAndHerbs
 - [Pepe nero](/api/ingredients/SpicesAndHerbs/spezie-classiche/pepe-nero.md)
 - [Alloro](/api/ingredients/SpicesAndHerbs/erbe-mediterranee/alloro.md)
